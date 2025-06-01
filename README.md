@@ -1,211 +1,115 @@
-# Moh-AI Tech Platform
 
-A comprehensive full-stack web platform for Moh-AI Tech with user authentication, content management, booking system, and admin dashboard built with React and Express.js.
+# Moh-AI Tech
 
-## Features
-
-- **Authentication System**: Replit-based OAuth authentication with user management
-- **Responsive Design**: Modern UI with dark/light theme support
-- **Content Management**: Blog posts, careers, and contact submissions
-- **Booking System**: Product booking with admin management
-- **Admin Dashboard**: Complete admin interface for content management
-- **Database Integration**: PostgreSQL with Drizzle ORM
-- **API Documentation**: RESTful API with comprehensive endpoints
+Moh-AI Tech is a modern web application showcasing innovative AI solutions. It features a range of AI-powered products, a company blog, career opportunities, and an administrative dashboard for content management. The application supports both English and Tamil languages, and includes a dark/light mode theme switcher.
 
 ## Tech Stack
 
-### Frontend
-- React 18 with TypeScript
-- Tailwind CSS for styling
-- Wouter for routing
-- TanStack Query for data fetching
-- React Hook Form for form handling
-- Radix UI components
-- Framer Motion for animations
+This project is built with a modern, robust tech stack:
 
-### Backend
-- Express.js with TypeScript
-- PostgreSQL database
-- Drizzle ORM
-- Replit Authentication (OpenID Connect)
-- Session management with connect-pg-simple
+-   **Framework:** Next.js (App Router)
+-   **UI Library:** React
+-   **Components:** ShadCN UI
+-   **Styling:** Tailwind CSS
+-   **AI Integration:** Genkit (for AI flows and model interaction)
+-   **Language:** TypeScript
 
-## Prerequisites
+## Key Features
 
-- Node.js 18+ 
-- PostgreSQL database
-- Replit account (for authentication)
+-   **AI-Powered Products Showcase:** Demonstrates various AI tools like Resume Builder, Smart Chatbot, Video Generator, OCR Engine, and Text Summarizer.
+-   **Multilingual Support:** Toggle between English and Tamil languages across the website.
+-   **Theme Toggling:** Switch between light and dark modes for optimal viewing comfort.
+-   **Company Blog:** Platform for sharing insights, news, and updates.
+-   **Career Listings:** Browse and learn about job openings.
+-   **Contact Form:** Allows users to get in touch.
+-   **User Authentication:** Secure login and registration for users.
+-   **Admin Dashboard:**
+    -   Protected area for administrators.
+    -   Manage blog posts (CRUD operations).
+    -   Manage career openings (CRUD operations).
+    -   View basic site analytics.
+-   **Responsive Design:** Adapts to various screen sizes for a seamless experience on desktop and mobile.
+-   **Interactive Chatbot Placeholder:** Demonstrates a potential AI assistant integration.
 
-## Installation
+## Getting Started
 
-1. **Clone the repository**
-   ```bash
-   git clone <your-repo-url>
-   cd moh-ai-tech-platform
-   ```
+To get this project up and running on your local machine, follow these steps:
 
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
+### Prerequisites
 
-3. **Set up environment variables**
-   Create a `.env` file in the root directory:
-   ```env
-   DATABASE_URL=postgresql://username:password@localhost:5432/database_name
-   SESSION_SECRET=your-session-secret-key
-   REPL_ID=your-replit-app-id
-   ISSUER_URL=https://replit.com/oidc
-   REPLIT_DOMAINS=your-domain.replit.dev
-   ```
+-   Node.js (v18 or later recommended)
+-   npm or yarn
 
-4. **Set up the database**
-   ```bash
-   npm run db:push
-   ```
+### Installation
 
-## Running the Application
+1.  **Clone the repository (if you haven't already):**
+    ```bash
+    git clone <repository-url>
+    cd <repository-name>
+    ```
 
-### Development Mode
-```bash
-npm run dev
-```
+2.  **Install dependencies:**
+    ```bash
+    npm install
+    # or
+    # yarn install
+    ```
+    *Note: Firebase Studio handles package installation automatically when `package.json` is updated.*
 
-The application will start on `http://localhost:5000` with both frontend and backend served from the same port.
+### Running the Application
 
-### Production Build
-```bash
-npm run build
-npm start
-```
+1.  **Start the Next.js development server:**
+    This runs the main application on `http://localhost:9002` (as per `package.json`).
+    ```bash
+    npm run dev
+    ```
+
+2.  **Start the Genkit development server (for AI features):**
+    If you are working with or testing Genkit AI flows, you'll need to run the Genkit development server in a separate terminal. This typically runs on `http://localhost:3400`.
+    ```bash
+    npm run genkit:dev
+    ```
+    Or, to watch for changes in Genkit flow files:
+    ```bash
+    npm run genkit:watch
+    ```
 
 ## Project Structure
 
-```
-├── client/                 # Frontend React application
-│   ├── src/
-│   │   ├── components/     # Reusable UI components
-│   │   ├── pages/          # Page components
-│   │   ├── hooks/          # Custom React hooks
-│   │   └── lib/            # Utility functions
-├── server/                 # Backend Express application
-│   ├── db.ts              # Database configuration
-│   ├── routes.ts          # API routes
-│   ├── storage.ts         # Data access layer
-│   └── replitAuth.ts      # Authentication setup
-├── shared/                 # Shared types and schemas
-│   └── schema.ts          # Database schema and types
-└── package.json
-```
+Here's a brief overview of some important directories:
 
-## API Endpoints
+-   `src/app/`: Contains all the pages and layouts using the Next.js App Router.
+    -   `src/app/admin/`: Admin-specific pages and layout.
+-   `src/components/`: Reusable React components, categorized into UI, shared, features, and layout.
+    -   `src/components/ui/`: ShadCN UI components.
+-   `src/actions/`: Server Actions for form submissions and data mutations (e.g., auth, blog, careers).
+-   `src/ai/`: Genkit related code, including flows.
+    -   `src/ai/flows/`: Genkit flow definitions.
+-   `src/contexts/`: React Context providers (e.g., AuthContext, LanguageContext).
+-   `src/lib/`: Utility functions, constants, and mock data stores.
+-   `public/`: Static assets.
 
-### Authentication
-- `GET /api/login` - Initiate login flow
-- `GET /api/logout` - Logout user
-- `GET /api/callback` - OAuth callback
-- `GET /api/auth/user` - Get current user
+## Admin Access
 
-### Blog Management
-- `GET /api/blog` - Get all blog posts
-- `GET /api/blog/:slug` - Get blog post by slug
-- `POST /api/blog` - Create new blog post (admin only)
-- `PUT /api/blog/:id` - Update blog post (admin only)
-- `DELETE /api/blog/:id` - Delete blog post (admin only)
+To access the admin dashboard:
+1.  Navigate to `/login`.
+2.  Use the following credentials:
+    -   **Email:** `admin@mohai.tech`
+    -   **Password:** `password` (or any password, as it's mocked for the `admin@mohai.tech` user in the current setup)
+You will be redirected to `/admin/dashboard`.
 
-### Booking System
-- `GET /api/bookings` - Get all bookings (admin only)
-- `POST /api/bookings` - Create new booking
-- `PUT /api/bookings/:id` - Update booking status (admin only)
+## Available Scripts
 
-### Contact & Careers
-- `GET /api/contact` - Get contact submissions (admin only)
-- `POST /api/contact` - Submit contact form
-- `GET /api/careers` - Get career listings
-- `POST /api/careers` - Create career listing (admin only)
+In the `package.json`, you can find several scripts for development and building:
 
-### Admin Dashboard
-- `GET /api/admin/stats` - Get dashboard statistics (admin only)
+-   `npm run dev`: Starts the Next.js development server with Turbopack.
+-   `npm run build`: Builds the application for production.
+-   `npm run start`: Starts a Next.js production server.
+-   `npm run lint`: Runs ESLint to check for code quality issues.
+-   `npm run typecheck`: Runs TypeScript compiler to check for type errors.
+-   `npm run genkit:dev`: Starts the Genkit development server.
+-   `npm run genkit:watch`: Starts the Genkit development server with file watching.
 
-## Pages
+---
 
-### Public Pages
-- **Landing Page** (`/`) - Welcome page for non-authenticated users
-- **About** (`/about`) - Company information
-- **Products** (`/products`) - AI product showcase
-- **Blog** (`/blog`) - Blog posts and articles
-- **Careers** (`/careers`) - Job listings
-- **Contact** (`/contact`) - Contact form
-- **Support** (`/support`) - Help and support
-- **Documentation** (`/docs`) - Technical documentation
-
-### Authenticated Pages
-- **Home** (`/`) - User dashboard after login
-- **Admin Dashboard** (`/admin`) - Admin management interface (admin users only)
-
-## Authentication Flow
-
-1. Users click "Login" to start authentication
-2. Redirected to Replit OAuth provider
-3. After successful authentication, redirected back to the application
-4. User session is maintained with secure cookies
-5. Protected routes check authentication status
-
-## Database Schema
-
-The application uses the following main tables:
-- `users` - User profiles and authentication data
-- `sessions` - User session storage
-- `blog_posts` - Blog content management
-- `bookings` - Product booking requests
-- `contact_submissions` - Contact form submissions
-- `careers` - Job posting management
-
-## Deployment
-
-### Replit Deployment
-1. Push your code to a Git repository
-2. Import to Replit
-3. Set up environment variables in Replit Secrets
-4. The application will automatically deploy
-
-### Manual Deployment
-1. Build the application: `npm run build`
-2. Set up PostgreSQL database
-3. Configure environment variables
-4. Start the application: `npm start`
-
-## Development Guidelines
-
-### Adding New Features
-1. Update database schema in `shared/schema.ts`
-2. Run `npm run db:push` to apply changes
-3. Update storage interface in `server/storage.ts`
-4. Add API routes in `server/routes.ts`
-5. Create frontend components and pages
-
-### Styling
-- Use Tailwind CSS classes
-- Follow dark/light theme patterns
-- Maintain responsive design principles
-
-### State Management
-- Use TanStack Query for server state
-- Use React hooks for local state
-- Follow established patterns for data fetching
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test thoroughly
-5. Submit a pull request
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## Support
-
-For support and questions, please contact the development team or create an issue in the repository.
+This project was initialized and developed in Firebase Studio.
