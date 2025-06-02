@@ -42,7 +42,7 @@ export default function ContactPage() {
               </CardTitle>
             </CardHeader>
             <CardContent className="text-muted-foreground">
-              <p>Vasanthaburam</p>
+              <p>Vasanthapuram</p>
               <p>Namakkal , Tamil Nadu</p>
             </CardContent>
           </Card>
