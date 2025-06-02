@@ -42,8 +42,8 @@ export default function ContactPage() {
               </CardTitle>
             </CardHeader>
             <CardContent className="text-muted-foreground">
-              <p>123 AI Avenue, Tech Park</p>
-              <p>Innovate City, CA 94000, USA</p>
+              <p>Vasanthaburam</p>
+              <p>Namakkal , Tamil Nadu</p>
             </CardContent>
           </Card>
           <Card className="shadow-lg">
@@ -67,8 +67,8 @@ export default function ContactPage() {
               </CardTitle>
             </CardHeader>
             <CardContent className="text-muted-foreground">
-              <p>{t({ en: "Main Office:", ta: "தலைமை அலுவலகம்:" })} +1 (555) 123-4567</p>
-              <p>{t({ en: "Sales:", ta: "விற்பனை:" })} +1 (555) 987-6543</p>
+              <p>{t({ en: "Main Office:", ta: "தலைமை அலுவலகம்:" })} +91 (956)-685-2700</p>
+              <p>{t({ en: "Sales:", ta: "விற்பனை:" })} +91 (956)-685-2700</p>
             </CardContent>
           </Card>
         </div>
