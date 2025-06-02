@@ -124,12 +124,15 @@ export const PRODUCTS_DATA: Product[] = [
 export const TEAM_MEMBERS_DATA: TeamMember[] = [
   {
     id: '1',
-    name: { en: 'Dr. Anya Sharma', ta: 'டாக்டர். அன்யா ஷர்மா' },
-    role: { en: 'CEO & Chief AI Strategist', ta: 'தலைமை நிர்வாக அதிகாரி & தலைமை AI உத்தியாளர்' },
-    bio: { 
-      en: 'Visionary leader with 15+ years in AI research and development, driving Moh-AI Tech towards a future of intelligent innovation.',
-      ta: 'புத்திசாலித்தனமான கண்டுபிடிப்புகளின் எதிர்காலத்தை நோக்கி மோ-ஏஐ டெக்கை செலுத்தும், AI ஆராய்ச்சி மற்றும் மேம்பாட்டில் 15+ ஆண்டுகள் அனுபவம் வாய்ந்த தொலைநோக்கு தலைவர்.'
-    },
+    name: { en: 'Mr. Mohan Kumar', ta: 'டாக்டர். மோகன் குமார்' },
+    role: { 
+  en: 'CEO & Founder, AI Solutions Architect', 
+  ta: 'CEO மற்றும் நிறுவனர், ஏஐ தீர்வு வடிவமைப்பாளர்' 
+},
+bio: { 
+  en: 'CEO and founder of Moh-AI Tech, driving innovation in AI development. Passionate about building powerful tools that transform business intelligence and empower users globally.',
+  ta: 'மோ-ஏஐ டெக் நிறுவனத்தின் CEO மற்றும் நிறுவனர், ஏஐ மேம்பாட்டில் புதுமைகளை வழிநடத்துகிறார். வணிக நுண்ணறிவை மாற்றும் மற்றும் உலகளாவிய பயனர்களை அதிகாரப்படுத்தும் சக்திவாய்ந்த கருவிகளை உருவாக்கும் ஆர்வமுள்ளவர்.'
+},
     imageUrl: 'https://placehold.co/300x300.png',
     dataAiHint: 'professional woman'
   },
