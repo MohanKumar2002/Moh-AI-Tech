@@ -6,12 +6,26 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import PageHeader from '@/components/shared/page-header';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { CheckCircle, Zap, Brain } from 'lucide-react';
-import { PRODUCTS_DATA } from '@/lib/constants';
+import { CheckCircle, Zap, Brain, PlayCircle } from 'lucide-react'; // Added PlayCircle
+import { productsData } from '@/lib/data-store';
 import { useLanguage } from '@/contexts/language-context';
+import { getIconComponent } from '@/lib/icon-map';
+import type { Product } from '@/types';
+import { useEffect, useState } from 'react';
+
+async function getHomepageProductsSsr(): Promise<Product[]> {
+  return Array.from(productsData.values()).slice(0,3); // Get first 3 for homepage
+}
+
 
 export default function HomePage() {
   const { language, t } = useLanguage();
+  const [homeProducts, setHomeProducts] = useState<Product[]>([]);
+
+  useEffect(() => {
+    getHomepageProductsSsr().then(setHomeProducts);
+  }, []);
+
 
   const pageHeaderTitle = t({
     en: "Welcome to Moh-AI Tech",
@@ -115,22 +129,25 @@ export default function HomePage() {
           })}
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4">
-          {PRODUCTS_DATA.slice(0,3).map(product => (
-             <Card key={product.id} className="text-left hover:border-primary transition-colors">
-              <CardHeader>
-                <div className="flex items-center gap-3 mb-2">
-                  {product.icon && <product.icon className="h-7 w-7 text-primary" />}
-                  <CardTitle className="font-headline text-xl">{product.name[language]}</CardTitle>
-                </div>
-                <CardDescription>{product.description[language].substring(0,100)}...</CardDescription>
-              </CardHeader>
-              <CardContent>
-                 <Button variant="link" asChild className="p-0 h-auto">
-                    <Link href={`/products#${product.id}`}>{t({en: "Learn More", ta: "மேலும் அறிக"})} &rarr;</Link>
-                 </Button>
-              </CardContent>
-            </Card>
-          ))}
+          {homeProducts.map(product => {
+             const IconComponent = getIconComponent(product.iconName);
+             return (
+               <Card key={product.id} className="text-left hover:border-primary transition-colors">
+                <CardHeader>
+                  <div className="flex items-center gap-3 mb-2">
+                    {IconComponent && <IconComponent className="h-7 w-7 text-primary" />}
+                    <CardTitle className="font-headline text-xl">{product.name[language]}</CardTitle>
+                  </div>
+                  <CardDescription>{product.description[language].substring(0,100)}...</CardDescription>
+                </CardHeader>
+                <CardContent>
+                   <Button variant="link" asChild className="p-0 h-auto">
+                      <Link href={`/products#${product.id}`}>{t({en: "Learn More", ta: "மேலும் அறிக"})} &rarr;</Link>
+                   </Button>
+                </CardContent>
+              </Card>
+             );
+          })}
         </div>
          <div className="mt-8">
             <Button variant="outline" asChild>
@@ -139,15 +156,41 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* New Company Overview Video Section */}
+      <section className="py-12">
+        <div className="text-center mb-10">
+          <h2 className="text-3xl font-headline font-semibold">
+            {t({en: "Discover Moh-AI Tech: Our Story", ta: "மோ-ஏஐ டெக்கைக் கண்டறியுங்கள்: எங்கள் கதை"})}
+          </h2>
+          <p className="mt-2 text-muted-foreground max-w-xl mx-auto">
+            {t({
+              en: "Get a glimpse into our mission, vision, and the innovative spirit that drives us. Watch our company overview.",
+              ta: "எங்கள் நோக்கம், பார்வை மற்றும் எங்களை இயக்கும் புதுமையான உணர்வைப் பற்றிய ஒரு பார்வையைப் பெறுங்கள். எங்கள் நிறுவனத்தின் மேலோட்டத்தைப் பாருங்கள்."
+            })}
+          </p>
+        </div>
+        <div className="max-w-3xl mx-auto">
+          <div className="aspect-video bg-muted rounded-lg shadow-lg flex items-center justify-center">
+            {/* Placeholder for video embed (e.g., iframe for YouTube/Vimeo) */}
+            {/* Replace this div with your actual video embed code when ready */}
+            <div className="text-center text-foreground p-8">
+              <PlayCircle className="h-16 w-16 text-primary mx-auto mb-4" />
+              <p className="font-semibold">{t({en: "Company Overview Video Coming Soon", ta: "நிறுவனத்தின் மேலோட்ட வீடியோ விரைவில்"})}</p>
+              <p className="text-sm text-muted-foreground">{t({en: "You'll be able to watch our story here.", ta: "எங்கள் கதையை இங்கே பார்க்க முடியும்."})}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
       <section className="flex flex-col md:flex-row items-center gap-8 py-12">
         <div className="md:w-1/2">
-          <Image 
-            src="https://placehold.co/600x400.png" 
+          <Image
+            src="/images/general/home1.png"
             alt={t({ en: "AI Technology", ta: "AI தொழில்நுட்பம்"})}
-            width={600} 
-            height={400} 
+            width={600}
+            height={400}
             className="rounded-lg shadow-md"
-            data-ai-hint="abstract technology" 
           />
         </div>
         <div className="md:w-1/2">
