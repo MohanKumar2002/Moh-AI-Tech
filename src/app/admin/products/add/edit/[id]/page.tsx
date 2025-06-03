@@ -72,4 +72,3 @@ export default function EditProductPage() {
 }
 
 export const dynamic = 'force-dynamic'; // Ensure data is fresh for editing
-
