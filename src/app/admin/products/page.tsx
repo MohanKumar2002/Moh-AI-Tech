@@ -70,4 +70,3 @@ export default async function ManageProductsPage() {
 }
 
 export const dynamic = 'force-dynamic'; // Ensure data is fresh
-
