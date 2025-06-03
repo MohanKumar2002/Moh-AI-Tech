@@ -1,5 +1,6 @@
 
 import type { Language } from '@/contexts/language-context';
+import type { LucideIcon } from 'lucide-react'; // Keep for potential direct use, but iconName is primary for data
 
 export interface BlogPostMapping {
   id: string;
@@ -36,7 +37,7 @@ export interface Product {
   name: Record<Language, string>;
   description: Record<Language, string>;
   keyFeatures: Record<Language, string[]>;
-  icon?: React.ElementType; // For Lucide icons or custom SVGs
+  iconName?: string; // Changed from icon: React.ElementType to string name
   imageUrl?: string;
   dataAiHint?: string;
   subscriptionOptions?: SubscriptionOption[];
