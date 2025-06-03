@@ -1,4 +1,3 @@
-
 import type { BlogPostMapping, CareerOpening, Product, TeamMember, SubscriptionOption } from '@/types';
 import type { Language } from '@/contexts/language-context';
 
