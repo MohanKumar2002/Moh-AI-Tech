@@ -6,12 +6,24 @@ import PageHeader from '@/components/shared/page-header';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Target, Eye, Users as TeamIcon } from 'lucide-react'; 
 import type { TeamMember } from '@/types';
-import { TEAM_MEMBERS_DATA } from '@/lib/constants';
+import { teamMembersData } from '@/lib/data-store'; // Changed import
 import Link from 'next/link';
 import { useLanguage } from '@/contexts/language-context';
+import { useEffect, useState } from 'react';
+
+async function getTeamMembersSsr(): Promise<TeamMember[]> {
+  return Array.from(teamMembersData.values());
+}
+
 
 export default function AboutUsPage() {
   const { language, t } = useLanguage();
+  const [members, setMembers] = useState<TeamMember[]>([]);
+
+  useEffect(() => {
+    getTeamMembersSsr().then(setMembers);
+  }, []);
+
 
   return (
     <div className="space-y-16">
@@ -38,12 +50,11 @@ export default function AboutUsPage() {
         </div>
         <div>
           <Image 
-            src="https://placehold.co/600x400.png" 
+            src="/images/general/team-working-banner.jpg" 
             alt={t({ en: "Moh-AI Tech Team Working", ta: "மோ-ஏஐ டெக் குழு வேலை செய்கிறது" })}
             width={600} 
             height={400} 
             className="rounded-lg shadow-xl"
-            data-ai-hint="team collaboration"
           />
         </div>
       </section>
@@ -86,7 +97,7 @@ export default function AboutUsPage() {
       <section>
         <h2 className="text-3xl font-headline font-semibold text-center mb-10">{t({ en: "Meet Our Team", ta: "எங்கள் அணியைச் சந்திக்கவும்" })}</h2>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {TEAM_MEMBERS_DATA.map((member: TeamMember) => (
+          {members.map((member: TeamMember) => (
             <Card key={member.id} className="text-center shadow-lg hover:shadow-xl transition-shadow duration-300">
               <CardHeader className="items-center">
                 <Image 
@@ -95,7 +106,7 @@ export default function AboutUsPage() {
                   width={120} 
                   height={120} 
                   className="rounded-full mb-4 border-4 border-primary/20"
-                  data-ai-hint={member.dataAiHint || 'portrait person'}
+                  data-ai-hint={member.imageUrl.startsWith('https://placehold.co') ? (member.dataAiHint || 'portrait person') : undefined}
                 />
                 <CardTitle className="font-headline text-xl">{member.name[language]}</CardTitle>
                 <p className="text-sm text-primary font-medium">{member.role[language]}</p>
@@ -128,3 +139,4 @@ export default function AboutUsPage() {
     </div>
   );
 }
+
