@@ -42,8 +42,8 @@ export default function ContactPage() {
               </CardTitle>
             </CardHeader>
             <CardContent className="text-muted-foreground">
-              <p>Vasanthapuram</p>
-              <p>Namakkal , Tamil Nadu</p>
+              <p>{t({ en: "Vasanthapuram", ta: "வசந்தபுரம்" })}</p>
+              <p>{t({ en: "Namakkal, Tamil Nadu", ta: "நாமக்கல், தமிழ்நாடு" })}</p>
             </CardContent>
           </Card>
           <Card className="shadow-lg">
