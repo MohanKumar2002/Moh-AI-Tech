@@ -9,6 +9,7 @@ import { CheckCircle } from 'lucide-react';
 import type { Product } from '@/types';
 import Link from 'next/link';
 import { useLanguage } from '@/contexts/language-context';
+import { getIconComponent } from '@/lib/icon-map'; // Import the helper
 
 interface ProductCardProps {
   product: Product;
@@ -16,6 +17,7 @@ interface ProductCardProps {
 
 export default function ProductCard({ product }: ProductCardProps) {
   const { language, t } = useLanguage();
+  const IconComponent = getIconComponent(product.iconName);
 
   return (
     <Card id={product.id} className="flex flex-col overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 h-full">
@@ -32,7 +34,7 @@ export default function ProductCard({ product }: ProductCardProps) {
       )}
       <CardHeader>
         <div className="flex items-center gap-3 mb-2">
-          {product.icon && <product.icon className="h-8 w-8 text-primary" />}
+          {IconComponent && <IconComponent className="h-8 w-8 text-primary" />}
           <CardTitle className="font-headline text-2xl">{product.name[language]}</CardTitle>
         </div>
         <CardDescription>{product.description[language]}</CardDescription>
