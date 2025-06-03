@@ -1,5 +1,5 @@
 
-import type { NavLinkItem } from '@/types'; // Removed Product, TeamMember as they are now in data-store
+import type { NavLinkItem } from '@/types';
 import type { Language } from '@/contexts/language-context';
 
 export const APP_NAME: Record<Language, string> = {
@@ -20,8 +20,8 @@ export const ADMIN_NAV_LINKS: NavLinkItem[] = [
   { href: '/admin/dashboard', labelTranslations: { en: 'Dashboard', ta: 'கட்டுப்பாட்டகம்' } },
   { href: '/admin/blog', labelTranslations: { en: 'Manage Blog', ta: 'வலைப்பதிவை நிர்வகி' } },
   { href: '/admin/careers', labelTranslations: { en: 'Manage Careers', ta: 'வேலைவாய்ப்புகளை நிர்வகி' } },
-  { href: '/admin/team', labelTranslations: { en: 'Manage Team', ta: 'குழுவை நிர்வகி' } },
   { href: '/admin/products', labelTranslations: { en: 'Manage Products', ta: 'தயாரிப்புகளை நிர்வகி' } },
+  { href: '/admin/team', labelTranslations: { en: 'Manage Team', ta: 'குழுவை நிர்வகி' } },
 ];
 
 // MOCK_ANALYTICS can remain here if it's purely for display and not dynamic from data-store sizes yet.
@@ -30,5 +30,4 @@ export const MOCK_ANALYTICS = {
   totalBlogPosts: 42, // This will be different from blogPostsData.size
   totalContacts: 315, // This will be different from contactMessages.length
   totalCareers: 5, // This will be different from careerOpeningsData.size
-  // totalProducts: This would be new if we want to show it.
 };
