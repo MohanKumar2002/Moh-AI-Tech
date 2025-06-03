@@ -2,8 +2,9 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image'; // Added Image import
 import { usePathname } from 'next/navigation';
-import { Bot, LogIn, LogOut, UserPlus, LayoutDashboard, Menu, X } from 'lucide-react';
+import { LogIn, LogOut, UserPlus, LayoutDashboard, Menu, X } from 'lucide-react'; // Removed Bot icon as it's replaced by logo
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
 import { APP_NAME, NAV_LINKS } from '@/lib/constants';
@@ -26,7 +27,7 @@ export default function Navbar() {
 
   const translatedNavLinks: NavLinkItem[] = NAV_LINKS.map(link => ({
     ...link,
-    labelTranslations: link.labelTranslations, // Already in correct format
+    labelTranslations: link.labelTranslations,
   }));
 
   const appNameTranslated = isMounted ? APP_NAME[language] : APP_NAME['en'];
@@ -100,9 +101,20 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center justify-between">
-        <Link href="/" className="flex items-center gap-2">
-          <Bot className="h-7 w-7 text-primary" />
-          <span className="font-headline text-xl font-semibold">{appNameTranslated}</span>
+        <Link href="/" className="flex items-center gap-2" aria-label={appNameTranslated}>
+          {isMounted ? (
+            <Image 
+              src="/images/general/logo.png" 
+              alt={appNameTranslated} 
+              width={100} // Adjust as needed
+              height={30} // Adjust as needed
+              className="h-auto" // To maintain aspect ratio if width/height are for bounding box
+              priority 
+            />
+          ) : (
+            // Fallback or skeleton while not mounted to prevent layout shift
+            <div style={{ width: '100px', height: '30px' }} className="bg-muted rounded"></div>
+          )}
         </Link>
 
         <nav className="hidden md:flex items-center space-x-4 lg:space-x-6">
@@ -126,9 +138,18 @@ export default function Navbar() {
               <SheetContent side="right" className="w-full max-w-xs p-0">
                 <div className="flex flex-col h-full">
                   <div className="flex justify-between items-center p-4 border-b">
-                    <Link href="/" className="flex items-center gap-2">
-                      <Bot className="h-6 w-6 text-primary" />
-                      <span className="font-headline text-lg font-semibold">{appNameTranslated}</span>
+                    <Link href="/" className="flex items-center gap-2" aria-label={appNameTranslated}>
+                       {isMounted ? (
+                        <Image 
+                          src="/images/general/logo.png" 
+                          alt={appNameTranslated} 
+                          width={90} // Adjust as needed for mobile
+                          height={28} // Adjust as needed for mobile
+                          className="h-auto"
+                        />
+                      ) : (
+                        <div style={{ width: '90px', height: '28px' }} className="bg-muted rounded"></div>
+                      )}
                     </Link>
                     <SheetClose asChild>
                        <Button variant="ghost" size="icon"><X className="h-5 w-5"/></Button>
