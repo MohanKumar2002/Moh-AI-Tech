@@ -1,3 +1,4 @@
+
 import type { ForwardRefExoticComponent, RefAttributes } from 'react';
 import type { LucideProps } from 'lucide-react';
 import { 
@@ -31,4 +32,3 @@ export const LUCIDE_ICON_MAP: Record<string, ForwardRefExoticComponent<Omit<Luci
 export const getIconComponent = (iconName?: string): ForwardRefExoticComponent<Omit<LucideProps, "ref"> & RefAttributes<SVGSVGElement>> => {
   return LUCIDE_ICON_MAP[iconName || 'Package'] || Package; // Default to Package icon
 };
-
