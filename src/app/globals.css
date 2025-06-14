@@ -1,0 +1,106 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: var(--font-body), sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-headline), sans-serif;
+}
+
+@layer base {
+  :root {
+    --background: 210 20% 98%; /* Very light cool grey */
+    --foreground: 210 10% 23%; /* Dark grey for text */
+
+    --card: 0 0% 100%; /* White */
+    --card-foreground: 210 10% 23%; /* Dark grey text on cards */
+
+    --popover: 0 0% 100%; /* White */
+    --popover-foreground: 210 10% 23%; /* Dark grey text on popovers */
+
+    --primary: 220 70% 55%; /* Modern Blue */
+    --primary-foreground: 0 0% 100%; /* White */
+
+    --secondary: 210 15% 94%; /* Lighter cool grey */
+    --secondary-foreground: 210 10% 23%; /* Dark grey */
+
+    --muted: 210 15% 96%; /* Even lighter cool grey */
+    --muted-foreground: 210 10% 45%; /* Medium grey */
+
+    --accent: 180 60% 45%; /* Vibrant Teal/Cyan */
+    --accent-foreground: 0 0% 100%; /* White */
+
+    --destructive: 0 84.2% 60.2%; /* Standard Red */
+    --destructive-foreground: 0 0% 98%; /* Light text for destructive */
+
+    --border: 210 15% 88%; /* Light cool grey border */
+    --input: 210 15% 94%; /* Light cool grey input background */
+    --ring: 220 70% 55%; /* Modern Blue for rings */
+
+    --radius: 0.5rem;
+
+    /* Sidebar specific variables */
+    --sidebar-background: 0 0% 100%; /* White, same as card */
+    --sidebar-foreground: 210 10% 23%; /* Main text color */
+    --sidebar-border: 210 15% 88%; /* Slightly darker than main border or same */
+    /* Sidebar will use main primary/accent for active items */
+    --sidebar-accent: 210 15% 94%; /* Background for hover/active non-primary items */
+    --sidebar-accent-foreground: 210 10% 23%;
+    --sidebar-primary: hsl(var(--primary)); /* Use main primary */
+    --sidebar-primary-foreground: hsl(var(--primary-foreground)); /* Use main primary foreground */
+    --sidebar-ring: hsl(var(--ring)); /* Use main ring */
+  }
+
+  .dark {
+    --background: 210 15% 12%; /* Dark cool grey */
+    --foreground: 210 15% 92%; /* Increased lightness for better dark mode visibility */
+
+    --card: 210 15% 18%; /* Slightly lighter dark grey card */
+    --card-foreground: 210 15% 92%; /* Match main foreground for consistency */
+
+    --popover: 210 15% 18%;
+    --popover-foreground: 210 15% 92%; /* Match main foreground */
+
+    --primary: 220 70% 65%; /* Lighter Modern Blue for dark mode */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 15% 25%; /* Darker cool grey */
+    --secondary-foreground: 210 15% 92%; /* Match main foreground */
+
+    --muted: 210 15% 22%; /* Darker muted cool grey */
+    --muted-foreground: 210 15% 75%; /* Significantly increased lightness for muted text */
+
+    --accent: 180 60% 55%; /* Lighter Vibrant Teal/Cyan for dark mode */
+    --accent-foreground: 0 0% 100%; /* White */
+
+    --destructive: 0 70% 50%; /* Adjusted Red for dark mode */
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 210 15% 25%; /* Dark cool grey border */
+    --input: 210 15% 22%; /* Dark cool grey input background */
+    --ring: 220 70% 65%; /* Lighter Modern Blue for rings */
+
+    /* Sidebar specific variables for dark mode */
+    --sidebar-background: 210 15% 10%; /* Darker than main dark bg */
+    --sidebar-foreground: 210 15% 85%; /* Adjusted for sidebar text */
+    --sidebar-border: 210 15% 20%; /* Darker than main dark border */
+    --sidebar-accent: 210 15% 22%; /* Background for hover/active non-primary items */
+    --sidebar-accent-foreground: 210 15% 92%;
+    --sidebar-primary: hsl(var(--primary));
+    --sidebar-primary-foreground: hsl(var(--primary-foreground));
+    --sidebar-ring: hsl(var(--ring));
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
