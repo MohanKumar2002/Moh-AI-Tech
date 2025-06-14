@@ -1,4 +1,3 @@
-
 import type { Language } from '@/contexts/language-context';
 import type { LucideIcon } from 'lucide-react'; // Keep for potential direct use, but iconName is primary for data
 
@@ -11,7 +10,7 @@ export interface BlogPostMapping {
   excerpt: string;
   content: string; // Should be HTML string
   imageUrl?: string;
-  dataAiHint?: string; // For image generation hints
+  dataAiHint?: string;
   tags?: string[];
 }
 
@@ -22,14 +21,13 @@ export interface CareerOpening {
   type: 'Full-time' | 'Part-time' | 'Contract' | 'Internship';
   department: string;
   description: string;
-  requirements: string[]; // List of requirements
+  requirements: string[];
   postedDate: string; // ISO date string
 }
 
 export interface SubscriptionOption {
   type: 'monthly' | 'yearly';
   price: number;
-  // currency could be added here, e.g., currency: 'USD';
 }
 
 export interface Product {
@@ -37,10 +35,16 @@ export interface Product {
   name: Record<Language, string>;
   description: Record<Language, string>;
   keyFeatures: Record<Language, string[]>;
-  iconName?: string; // Changed from icon: React.ElementType to string name
+  iconName?: string;
   imageUrl?: string;
   dataAiHint?: string;
   subscriptionOptions?: SubscriptionOption[];
+
+  // ✅ NEW: Full flow and stack content
+  details?: {
+    explanation?: Record<Language, string>;
+    stack?: Record<Language, string>;
+  };
 }
 
 export type UserRole = 'user' | 'admin';
@@ -61,7 +65,6 @@ export interface TeamMember {
   dataAiHint?: string;
 }
 
-// For NAV_LINKS and ADMIN_NAV_LINKS
 export interface NavLinkItem {
   href: string;
   labelTranslations: Record<Language, string>;
