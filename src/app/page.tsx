@@ -158,41 +158,29 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="text-center py-12 bg-card rounded-lg shadow-sm">
-        <h2 className="text-3xl font-headline font-semibold mb-6">
-          {t({en: "Our Flagship AI Products", ta: "எங்கள் முதன்மை AI கருவிகள்"})} 
-        </h2>
-        <p className="max-w-xl mx-auto text-muted-foreground mb-8">
-          {t({
-            en: "Discover a suite of AI-powered Products designed to enhance productivity and creativity.",
-            ta: "உற்பத்தித்திறன் மற்றும் படைப்பாற்றலை மேம்படுத்த வடிவமைக்கப்பட்ட AI-இயங்கும் கருவிகளின் தொகுப்பைக் கண்டறியவும்."
-          })}
-        </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4">
-          {homeProducts.map(tool => { 
-             const IconComponent = getIconComponent(tool.iconName);
-             return (
-               <Card key={tool.id} className="text-left hover:border-primary transition-colors">
-                <CardHeader>
-                  <div className="flex items-center gap-3 mb-2">
-                    {IconComponent && <IconComponent className="h-7 w-7 text-primary" />}
-                    <CardTitle className="font-headline text-xl">{tool.name[language]}</CardTitle>
-                  </div>
-                  <CardDescription>{tool.description[language].substring(0,100)}...</CardDescription>
-                </CardHeader>
-                <CardContent>
-                   <Button variant="link" asChild className="p-0 h-auto">
-                      <Link href={`/Products/${tool.id}`}>{t({en: "Learn More", ta: "மேலும் அறிக"})} &rarr;</Link>
-                   </Button>
-                </CardContent>
-              </Card>
-             );
-          })}
+      <section className="flex flex-col md:flex-row items-center gap-8 py-12">
+        <div className="md:w-1/2">
+          <Image
+            src="/images/ai_revolution.png"
+            alt={t({ en: "AI Technology", ta: "AI தொழில்நுட்பம்"})}
+            width={600}
+            height={400}
+            className="rounded-lg shadow-md"
+          />
         </div>
-         <div className="mt-8">
-            <Button variant="outline" asChild>
-                <Link href="/Products">{t({en: "View All AI Products", ta: "அனைத்து AI கருவிகளையும் காண்க"})}</Link>
-            </Button>
+        <div className="md:w-1/2">
+          <h2 className="text-3xl font-headline font-semibold mb-4">
+            {t({en: "Join the AI Revolution", ta: "AI புரட்சியில் இணையுங்கள்"})}
+          </h2>
+          <p className="text-muted-foreground mb-6">
+            {t({
+              en: "Moh-AI Tech is committed to making advanced AI accessible and beneficial for everyone. Whether you're looking to optimize business processes, enhance creative workflows, or simply explore the potential of artificial intelligence, we have the tools and expertise to help you succeed.",
+              ta: "மேம்பட்ட AI-ஐ அனைவருக்கும் அணுகக்கூடியதாகவும் நன்மை பயக்கும் வகையிலும் மாற்றுவதில் Moh-AI Tech உறுதிபூண்டுள்ளது. நீங்கள் வணிக செயல்முறைகளை மேம்படுத்த விரும்பினாலும், படைப்பாற்றல் பணிப்பாய்வுகளை மேம்படுத்த விரும்பினாலும், அல்லது செயற்கை நுண்ணறிவின் திறனை ஆராய விரும்பினாலும், நீங்கள் வெற்றிபெற உதவும் கருவிகளும் நிபுணத்துவமும் எங்களிடம் உள்ளன."
+            })}
+          </p>
+          <Button asChild>
+            <Link href="/about">{t({en: "Learn More About Us", ta: "எங்களைப் பற்றி மேலும் அறிக"})}</Link>
+          </Button>
         </div>
       </section>
     </div>
