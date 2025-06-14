@@ -120,7 +120,7 @@ export default function HomePage() {
      <section className="flex flex-col md:flex-row items-center gap-8 py-12">
         <div className="md:w-1/2">
           <Image
-            src="/images/general/home1.png"
+            src="/images/ai_revolution.png"
             alt={t({ en: "AI Technology", ta: "AI தொழில்நுட்பம்"})}
             width={600}
             height={400}
