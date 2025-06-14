@@ -1,4 +1,3 @@
-
 'use client';
 
 import ProductForm from '@/components/admin/product-form';
@@ -44,12 +43,15 @@ export default function EditProductPage() {
     return (
       <div>
         <PageHeader 
-            title={t({ en: "Error: Product Not Found", ta: "பிழை: தயாரிப்பு காணப்படவில்லை" })} 
-            className="text-left mb-8" 
+          title={t({ en: "Error: Product Not Found", ta: "பிழை: தயாரிப்பு காணப்படவில்லை" })} 
+          className="text-left mb-8" 
         />
         <p>{t({ en: "The product you are trying to edit does not exist.", ta: "நீங்கள் திருத்த முயற்சிக்கும் தயாரிப்பு இல்லை." })}</p>
         <Button asChild variant="link" className="mt-4 pl-0">
-            <Link href="/admin/products"><ArrowLeft className="mr-2 h-4 w-4"/>{t({ en: "Back to Product Management", ta: "தயாரிப்பு நிர்வாகத்திற்குத் திரும்பு" })}</Link>
+          <Link href="/admin/products">
+            <ArrowLeft className="mr-2 h-4 w-4" />
+            {t({ en: "Back to Product Management", ta: "தயாரிப்பு நிர்வாகத்திற்குத் திரும்பு" })}
+          </Link>
         </Button>
       </div>
     );
@@ -61,14 +63,24 @@ export default function EditProductPage() {
         title={t({ en: "Edit Product", ta: "தயாரிப்பைத் திருத்து" })} 
         className="text-left mb-8" 
       />
+
       <ProductForm 
         action={updateProduct} 
         initialData={product}
         formTitle={t({ en: "Update Product Details", ta: "தயாரிப்பு விவரங்களைப் புதுப்பிக்கவும்" })}
         submitButtonText={t({ en: "Save Changes", ta: "மாற்றங்களைச் சேமி" })}
       />
+
+      {/* ➕ Link to edit additional details like full explanation and stack */}
+      <div className="mt-6">
+        <Button asChild variant="outline">
+          <Link href={`/admin/products/edit/${id}/details`}>
+            {t({ en: "Edit Full Explanation & Stack", ta: "முழு விளக்கம் மற்றும் ஸ்டேக் திருத்து" })}
+          </Link>
+        </Button>
+      </div>
     </div>
   );
 }
 
-export const dynamic = 'force-dynamic'; // Ensure data is fresh for editing
+export const dynamic = 'force-dynamic';
