@@ -1,114 +1,147 @@
+// 🧠 Home Page (cleaned spacing only)
 
 'use client';
 
-import { useEffect, useRef } from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { type AuthFormState } from '@/actions/auth';
-import { useToast } from '@/hooks/use-toast';
-import { useAuth } from '@/contexts/auth-context';
-import { UserPlus } from 'lucide-react';
-import { useFormStatus } from 'react-dom';
-import { useActionState } from 'react';
+import PageHeader from '@/components/shared/page-header';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { CheckCircle, Zap, Brain, PlayCircle } from 'lucide-react';
+import { toolsData } from '@/lib/data-store'; 
 import { useLanguage } from '@/contexts/language-context';
+import { getIconComponent } from '@/lib/icon-map';
+import type { Tool } from '@/types'; 
+import { useEffect, useState } from 'react';
 
-function SubmitButton() {
-  const { pending } = useFormStatus();
-  const { t } = useLanguage();
-  return (
-    <Button type="submit" disabled={pending} className="w-full">
-      {pending ? t({ en: 'Registering...', ta: 'பதிவு செய்கிறது...' }) : t({ en: 'Create Account', ta: 'கணக்கை உருவாக்கு' })}
-    </Button>
-  );
+async function getHomepageToolsSsr(): Promise<Tool[]> { 
+  return Array.from(toolsData.values()).slice(0,3); 
 }
 
-export default function RegisterPage() {
-  const { register: contextRegister, user } = useAuth();
-  const router = useRouter();
-  const { t } = useLanguage();
-  const initialState: AuthFormState = { message: '', success: false };
-   const [state, formAction] = useActionState(
-    async (prevState: AuthFormState, formData: FormData) => {
-      const name = formData.get('name') as string;
-      const email = formData.get('email') as string;
-      const password = formData.get('password') as string;
-      const result = await contextRegister(name, email, password); 
-      
-      if (result.success) {
-        return { ...result, message: 'Registration successful! You can now log in.', redirectTo: '/login' };
-      }
-      return result;
-    }, 
-    initialState
-  );
-  const { toast } = useToast();
-  const formRef = useRef<HTMLFormElement>(null);
+export default function HomePage() {
+  const { language, t } = useLanguage();
+  const [homeTools, setHomeTools] = useState<Tool[]>([]); 
 
   useEffect(() => {
-    if(user) { 
-        router.push('/');
-    }
-  }, [user, router]);
-
-  useEffect(() => {
-    if (state.message) {
-      toast({
-        title: state.success ? t({ en: 'Success!', ta: 'வெற்றி!' }) : t({ en: 'Error', ta: 'பிழை' }),
-        description: state.message, // Server messages may not be translated yet
-        variant: state.success ? 'default' : 'destructive',
-      });
-      if (state.success && state.redirectTo) {
-        router.push(state.redirectTo);
-      }
-    }
-  }, [state, toast, router, t]);
+    getHomepageToolsSsr().then(setHomeTools); 
+  }, []);
 
   return (
-    <div className="flex items-center justify-center py-12">
-      <Card className="w-full max-w-md shadow-xl">
-        <CardHeader className="text-center">
-           <div className="inline-block p-3 bg-primary/10 rounded-full mb-3 mx-auto w-fit">
-             <UserPlus className="h-8 w-8 text-primary" />
+    <div className="space-y-14">
+      {/* Hero Section */}
+      <section className="text-center py-10 bg-gradient-to-br from-primary/10 via-background to-accent/10 rounded-lg shadow-sm">
+        <PageHeader
+          title={t({ en: "Welcome to Moh-AI Tech", ta: "மோ-ஏஐ டெக்கிற்கு வரவேற்கிறோம்" })}
+          description={t({ en: "Empowering Your Future with Cutting-Edge Artificial Intelligence Solutions.", ta: "உங்கள் எதிர்காலத்தை அதிநவீன செயற்கை நுண்ணறிவு தீர்வுகள் மூலம் மேம்படுத்துகிறோம்." })}
+        />
+        <p className="max-w-2xl mx-auto text-foreground mb-6">
+          {t({
+            en: "At Moh-AI Tech, we harness the power of artificial intelligence to build innovative tools...",
+            ta: "மோ-ஏஐ டெக்கில், செயற்கை நுண்ணறிவின் ஆற்றலைப் பயன்படுத்தி..."
+          })}
+        </p>
+        <div className="space-x-4">
+          <Button size="lg" asChild><Link href="/products">{t({ en: "Explore Our AI Tools", ta: "AI கருவிகளை பார்வையிடவும்" })}</Link></Button>
+          <Button size="lg" variant="outline" asChild><Link href="/contact">{t({ en: "Get in Touch", ta: "தொடர்பு கொள்ளுங்கள்" })}</Link></Button>
+        </div>
+      </section>
+
+      {/* Why Us Section */}
+      <section>
+        <h2 className="text-3xl font-headline font-semibold text-center mb-6">
+          {t({ en: "Why Choose Moh-AI Tech?", ta: "ஏன் மோ-ஏஐ டெக்?" })}
+        </h2>
+        <div className="grid md:grid-cols-3 gap-6">
+          {[
+            { icon: Zap, title: "Innovation at Core", ta: "மையத்தில் புதுமை", desc: "We are pioneers in AI..." },
+            { icon: Brain, title: "Intelligent Solutions", ta: "நுண்ணறிவு தீர்வுகள்", desc: "Our products are designed..." },
+            { icon: CheckCircle, title: "User-Centric Design", ta: "பயனர் மைய வடிவமைப்பு", desc: "We prioritize user experience..." }
+          ].map(({ icon: Icon, title, ta, desc }, idx) => (
+            <Card key={idx} className="shadow-lg hover:shadow-xl transition-shadow">
+              <CardHeader className="items-center text-center">
+                <div className="p-3 bg-primary/10 rounded-full mb-2"><Icon className="h-8 w-8 text-primary" /></div>
+                <CardTitle className="font-headline">{t({ en: title, ta })}</CardTitle>
+              </CardHeader>
+              <CardContent className="text-center text-muted-foreground">{t({ en: desc, ta: '' })}</CardContent>
+            </Card>
+          ))}
+        </div>
+      </section>
+
+      {/* Featured Tools Section */}
+      <section className="text-center py-10 bg-card rounded-lg shadow-sm">
+        <h2 className="text-3xl font-headline font-semibold mb-4">{t({ en: "Our Flagship AI Tools", ta: "எங்கள் முதன்மை AI கருவிகள்" })}</h2>
+        <p className="max-w-xl mx-auto text-muted-foreground mb-6">{t({ en: "Discover AI tools designed to enhance productivity and creativity.", ta: "AI கருவிகளை கண்டறியவும்." })}</p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4">
+          {homeTools.map(tool => {
+            const IconComponent = getIconComponent(tool.iconName);
+            return (
+              <Card key={tool.id} className="text-left hover:border-primary">
+                <CardHeader>
+                  <div className="flex items-center gap-3 mb-1">
+                    {IconComponent && <IconComponent className="h-6 w-6 text-primary" />}
+                    <CardTitle className="font-headline text-xl">{tool.name[language]}</CardTitle>
+                  </div>
+                  <CardDescription>{tool.description[language].substring(0, 90)}...</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <Button variant="link" asChild className="p-0 h-auto">
+                    <Link href={`/products/${tool.id}`}>{t({ en: "Learn More", ta: "மேலும் அறிக" })} →</Link>
+                  </Button>
+                </CardContent>
+              </Card>
+            );
+          })}
+        </div>
+        <div className="mt-6">
+          <Button variant="outline" asChild>
+            <Link href="/products">{t({ en: "View All AI Tools", ta: "அனைத்து AI கருவிகள்" })}</Link>
+          </Button>
+        </div>
+      </section>
+
+      {/* About & Video Section */}
+      <section className="py-10">
+        <div className="text-center mb-6">
+          <h2 className="text-3xl font-headline font-semibold">{t({ en: "Discover Moh-AI Tech: Our Story", ta: "எங்கள் கதை" })}</h2>
+          <p className="mt-2 text-muted-foreground max-w-xl mx-auto">{t({ en: "Watch our company overview soon.", ta: "எங்கள் நிறுவன மேலோட்டத்தை விரைவில் பாருங்கள்." })}</p>
+        </div>
+        <div className="max-w-3xl mx-auto">
+          <div className="aspect-video bg-muted rounded-lg shadow-lg flex items-center justify-center">
+            <div className="text-center p-6">
+              <PlayCircle className="h-14 w-14 text-primary mx-auto mb-3" />
+              <p className="font-semibold">{t({ en: "Coming Soon", ta: "விரைவில்" })}</p>
+            </div>
           </div>
-          <CardTitle className="font-headline text-2xl">{t({ en: "Create an Account", ta: "ஒரு கணக்கை உருவாக்கவும்" })}</CardTitle>
-          <CardDescription>{t({ en: "Join Moh-AI Tech to access our suite of AI tools.", ta: "எங்கள் AI கருவிகளின் தொகுப்பை அணுக Moh-AI Tech இல் சேரவும்." })}</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <form ref={formRef} action={formAction} className="space-y-6">
-            <div>
-              <Label htmlFor="name">{t({ en: "Full Name", ta: "முழு பெயர்" })}</Label>
-              <Input id="name" name="name" type="text" placeholder={t({ en: "John Doe", ta: "ஜான் டோ" })} required />
-            </div>
-            <div>
-              <Label htmlFor="email">{t({ en: "Email Address", ta: "மின்னஞ்சல் முகவரி" })}</Label>
-              <Input id="email" name="email" type="email" placeholder={t({ en: "you@example.com", ta: "you@example.com" })} required />
-            </div>
-            <div>
-              <Label htmlFor="password">{t({ en: "Password", ta: "கடவுச்சொல்" })}</Label>
-              <Input id="password" name="password" type="password" placeholder={`${t({ en: "(min. 6 characters)", ta: "(குறைந்தது 6 எழுத்துக்கள்)" })}`} required />
-            </div>
-             {state.issues && state.issues.map((issue, index) => (
-              <p key={index} className="text-sm text-destructive mt-1">{issue}</p>
-            ))}
-            {!state.success && state.message && !state.issues && (
-                 <p className="text-sm text-destructive mt-1">{state.message}</p>
-            )}
-            <SubmitButton />
-          </form>
-        </CardContent>
-        <CardFooter className="flex flex-col items-center space-y-2">
-          <p className="text-sm text-muted-foreground">
-            {t({ en: "Already have an account?", ta: "ஏற்கனவே கணக்கு உள்ளதா?" })}{' '}
-            <Button variant="link" asChild className="p-0 h-auto">
-              <Link href="/login">{t({ en: "Login here", ta: "இங்கே உள்நுழையவும்" })}</Link>
-            </Button>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+     <section className="flex flex-col md:flex-row items-center gap-8 py-12">
+        <div className="md:w-1/2">
+          <Image
+            src="/images/general/home1.png"
+            alt={t({ en: "AI Technology", ta: "AI தொழில்நுட்பம்"})}
+            width={600}
+            height={400}
+            className="rounded-lg shadow-md"
+          />
+        </div>
+        <div className="md:w-1/2">
+          <h2 className="text-3xl font-headline font-semibold mb-4">
+            {t({en: "Join the AI Revolution", ta: "AI புரட்சியில் இணையுங்கள்"})}
+          </h2>
+          <p className="text-muted-foreground mb-6">
+            {t({
+              en: "Moh-AI Tech is committed to making advanced AI accessible and beneficial for everyone. Whether you're looking to optimize business processes, enhance creative workflows, or simply explore the potential of artificial intelligence, we have the tools and expertise to help you succeed.",
+              ta: "மேம்பட்ட AI-ஐ அனைவருக்கும் அணுகக்கூடியதாகவும் நன்மை பயக்கும் வகையிலும் மாற்றுவதில் Moh-AI Tech உறுதிபூண்டுள்ளது. நீங்கள் வணிக செயல்முறைகளை மேம்படுத்த விரும்பினாலும், படைப்பாற்றல் பணிப்பாய்வுகளை மேம்படுத்த விரும்பினாலும், அல்லது செயற்கை நுண்ணறிவின் திறனை ஆராய விரும்பினாலும், நீங்கள் வெற்றிபெற உதவும் கருவிகளும் நிபுணத்துவமும் எங்களிடம் உள்ளன."
+            })}
           </p>
-        </CardFooter>
-      </Card>
+          <Button asChild>
+            <Link href="/about">{t({en: "Learn More About Us", ta: "எங்களைப் பற்றி மேலும் அறிக"})}</Link>
+          </Button>
+        </div>
+      </section>
     </div>
   );
 }
