@@ -54,9 +54,7 @@ export default function ContactPage() {
               </CardTitle>
             </CardHeader>
             <CardContent className="text-muted-foreground">
-              <p>{t({ en: "General Inquiries:", ta: "பொது விசாரணைகள்:" })} <a href="mailto:info@mohai.tech" className="text-accent hover:underline">info@mohai.tech</a></p>
-              <p>{t({ en: "Support:", ta: "ஆதரவு:" })} <a href="mailto:support@mohai.tech" className="text-accent hover:underline">support@mohai.tech</a></p>
-              <p>{t({ en: "Careers:", ta: "வேலைவாய்ப்புகள்:" })} <a href="mailto:careers@mohai.tech" className="text-accent hover:underline">careers@mohai.tech</a></p>
+              <p>{t({ en: "General Inquiries:", ta: "பொது விசாரணைகள்:" })} <a href="mohaitechpvt@gmail.com" className="text-accent hover:underline">mohaitechpvt@gmail.com</a></p>
             </CardContent>
           </Card>
           <Card className="shadow-lg">
