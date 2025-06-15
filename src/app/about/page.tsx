@@ -94,30 +94,52 @@ export default function AboutUsPage() {
         </Card>
       </section>
 
-      <section>
-        <h2 className="text-3xl font-headline font-semibold text-center mb-10">{t({ en: "Meet Our Team", ta: "எங்கள் அணியைச் சந்திக்கவும்" })}</h2>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {members.map((member: TeamMember) => (
-            <Card key={member.id} className="text-center shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <CardHeader className="items-center">
-                <Image 
-                  src={member.imageUrl} 
-                  alt={member.name[language]} 
-                  width={120} 
-                  height={120} 
-                  className="rounded-full mb-4 border-4 border-primary/20"
-                  data-ai-hint={member.imageUrl.startsWith('https://placehold.co') ? (member.dataAiHint || 'portrait person') : undefined}
-                />
-                <CardTitle className="font-headline text-xl">{member.name[language]}</CardTitle>
-                <p className="text-sm text-primary font-medium">{member.role[language]}</p>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground text-sm">{member.bio[language]}</p>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </section>
+ <section>
+  <h2 className="text-3xl font-headline font-semibold text-center mb-10">
+    {t({ en: "Meet Our Team", ta: "எங்கள் அணியைச் சந்திக்கவும்" })}
+  </h2>
+  <div
+    className={`grid gap-8 ${
+      members.length === 1
+        ? 'place-items-center' // center single card
+        : 'sm:grid-cols-2 lg:grid-cols-3' // grid layout for 2+ members
+    }`}
+  >
+    {members.map((member: TeamMember) => (
+      <Card
+        key={member.id}
+        className="text-center shadow-lg hover:shadow-xl transition-shadow duration-300"
+      >
+        <CardHeader className="items-center">
+          <Image
+            src={member.imageUrl}
+            alt={member.name[language]}
+            width={120}
+            height={120}
+            className="rounded-full mb-4 border-4 border-primary/20"
+            data-ai-hint={
+              member.imageUrl.startsWith('https://placehold.co')
+                ? member.dataAiHint || 'portrait person'
+                : undefined
+            }
+          />
+          <CardTitle className="font-headline text-xl">
+            {member.name[language]}
+          </CardTitle>
+          <p className="text-sm text-primary font-medium">
+            {member.role[language]}
+          </p>
+        </CardHeader>
+        <CardContent>
+          <p className="text-muted-foreground text-sm">
+            {member.bio[language]}
+          </p>
+        </CardContent>
+      </Card>
+    ))}
+  </div>
+</section>
+
       
       <section className="text-center py-12 bg-card rounded-lg shadow-sm">
         <div className="p-3 bg-primary/10 rounded-full mb-4 inline-block">
