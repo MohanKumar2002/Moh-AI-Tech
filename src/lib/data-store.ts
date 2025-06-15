@@ -60,7 +60,9 @@ export let teamMembersData: Map<string, TeamMember> = new Map([
       ta: 'மோ-ஏஐ டெக்கின் தலைமை நிர்வாக அதிகாரி மற்றும் நிறுவனர், AI மேம்பாட்டில் புதுமைகளை உருவாக்குகிறார். வணிக நுண்ணறிவை மாற்றும் மற்றும் உலகளவில் பயனர்களுக்கு அதிகாரம் அளிக்கும் சக்திவாய்ந்த கருவிகளை உருவாக்குவதில் ஆர்வமாக உள்ளார்.'
     },
     imageUrl: '/images/mohan.jpg',
-  }],
+  }]
+]);
+
 
 export let productsData: Map<string, Product> = new Map([
   ['resume-builder', {
