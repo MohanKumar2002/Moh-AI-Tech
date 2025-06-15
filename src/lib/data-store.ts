@@ -28,25 +28,15 @@ export let blogPostsData: Map<string, BlogPostMapping> = new Map([
 ]);
 
 export let careerOpeningsData: Map<string, CareerOpening> = new Map([
-  ['1', { // Changed key to ID
-    id: '1',
-    title: 'Senior AI Engineer',
-    location: 'Remote / San Francisco, CA',
-    type: 'Full-time',
-    department: 'Engineering',
-    description: 'Join our innovative team to design and implement cutting-edge AI solutions that redefine industries. You will work on challenging projects, leveraging machine learning, deep learning, and NLP techniques.',
-    requirements: ['5+ years of experience in AI/ML development', 'Proficiency in Python, TensorFlow/PyTorch', 'Strong understanding of algorithms and data structures', 'MSc or PhD in Computer Science or related field preferred'],
-    postedDate: '2024-07-01'
-  }],
-  ['2', { // Changed key to ID
-    id: '2',
-    title: 'Machine Learning Researcher',
-    location: 'New York, NY',
-    type: 'Full-time',
-    department: 'Research & Development',
-    description: 'Conduct pioneering research in machine learning to develop novel algorithms and models. Collaborate with a team of world-class scientists and engineers to publish findings and contribute to our product pipeline.',
-    requirements: ['PhD in Machine Learning, AI, or a related field', 'Proven track record of publications in top-tier conferences/journals', 'Expertise in statistical modeling and experimental design', 'Strong programming skills in Python'],
-    postedDate: '2024-06-20'
+  ['0', {
+    id: '0',
+    title: 'Career Opportunities Coming Soon',
+    location: 'Global',
+    type: '—',
+    department: 'All Departments',
+    description: 'We’re not hiring at the moment, but exciting roles will be posted here soon. Stay connected!',
+    requirements: ['Stay tuned for future openings'],
+    postedDate: '2025-06-15'
   }]
 ]);
 
