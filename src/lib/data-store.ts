@@ -61,40 +61,6 @@ export let teamMembersData: Map<string, TeamMember> = new Map([
     },
     imageUrl: '/images/mohan.jpg',
   }],
-  ['priya-sharma', {
-    id: 'priya-sharma',
-    name: { en: 'Priya Sharma', ta: 'பிரியா ஷர்மா' },
-    role: { en: 'Head of Human Resources', ta: 'மனித வளங்கள் துறைத் தலைவர்' },
-    bio: {
-      en: 'Fostering a vibrant and talented team environment at Moh-AI Tech, ensuring our people are our greatest asset.',
-      ta: 'மோ-ஏஐ டெக்கில் ஒரு துடிப்பான மற்றும் திறமையான குழு சூழலை வளர்த்து, எங்கள் மக்களே எங்கள் மிகப்பெரிய சொத்து என்பதை உறுதிசெய்கிறார்.'
-    },
-    imageUrl: '/images/priya-sharma.jpg',
-    dataAiHint: 'portrait woman'
-  }],
-  ['rajesh-singh', {
-    id: 'rajesh-singh',
-    name: { en: 'Rajesh Singh', ta: 'ராஜேஷ் சிங்' },
-    role: { en: 'Chief Technology Officer', ta: 'தலைமை தொழில்நுட்ப அதிகாரி' },
-    bio: {
-      en: 'Leading Moh-AI Tech\'s technological advancements, platform architecture, and engineering excellence.',
-      ta: 'மோ-ஏஐ டெக்கின் தொழில்நுட்ப முன்னேற்றங்கள், தளத்தின் கட்டமைப்பு மற்றும் பொறியியல் சிறப்பை வழிநடத்துகிறார்.'
-    },
-    imageUrl: '/images/team/rajesh-singh.jpg',
-    dataAiHint: 'portrait man'
-  }],
-  ['anita-desai', {
-    id: 'anita-desai',
-    name: { en: 'Anita Desai', ta: 'அனிதா தேசாய்' },
-    role: { en: 'Lead AI Developer', ta: 'முதன்மை AI டெவலப்பர்' },
-    bio: {
-      en: 'Building the next generation of AI tools with passion and precision, focusing on cutting-edge algorithms.',
-      ta: 'அடுத்த தலைமுறை AI கருவிகளை ஆர்வத்துடனும் துல்லியத்துடனும் உருவாக்குகிறார், அதிநவீன அல்காரிதங்களில் கவனம் செலுத்துகிறார்.'
-    },
-    imageUrl: '/images/anita-desai.jpg',
-    dataAiHint: 'portrait person'
-  }]
-]);
 
 export let productsData: Map<string, Product> = new Map([
   ['resume-builder', {
