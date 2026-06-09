@@ -5,7 +5,7 @@ import React, { createContext, useContext, useState, useEffect } from 'react';
 const TR: Record<string, Record<string, string>> = {
   en: {
     nav_services: "Services",
-    nav_solutions: "Solutions",
+    nav_solutions: "Solution Architectures",
     nav_agents: "AI Agents",
     nav_industries: "Industries",
     nav_process: "Process",
@@ -23,8 +23,8 @@ const TR: Record<string, Record<string, string>> = {
     tag_services: "What we build",
     h2_services: "Every AI capability your business needs",
     lead_services: "From custom model development to business intelligence dashboards — we cover the full stack of intelligent technology.",
-    tag_solutions: "Solutions we build",
-    h2_solutions: "Focused solutions, real implementation",
+    tag_solutions: "Solution Architectures",
+    h2_solutions: "Tested Solution Architectures",
     lead_solutions: "These aren't off-the-shelf products — each is a solution architecture we design, customize, and build for your specific problem.",
     tag_agents: "AI Agents",
     h2_agents: "Autonomous agents that work for you",

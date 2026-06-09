@@ -92,93 +92,35 @@ export default function Home() {
     <div className="tag fu" data-t="tag_services">{t('tag_services')}</div>
     <h2 className="h2 fu d1" data-t="h2_services">{t('h2_services')}</h2>
     <p className="lead fu d2" data-t="lead_services">{t('lead_services')}</p>
-    <div className="services-grid fu d3">
-      <div className="svc-card">
-        <div className="svc-icon">🤖</div>
-        <div className="svc-title">AI Agents & Automation</div>
-        <div className="svc-desc">Autonomous intelligent agents that handle complex workflows — data processing, reporting, customer interactions — built to your exact requirements.</div>
-        <div className="svc-tags">
-          <span className="svc-tag">LLM Integration</span>
-          <span className="svc-tag">RAG Systems</span>
-          <span className="svc-tag">Multi-Agent</span>
-          <span className="svc-tag">Workflow Automation</span>
-        </div>
-      </div>
-      <div className="svc-card">
-        <div className="svc-icon">📈</div>
-        <div className="svc-title">Machine Learning</div>
-        <div className="svc-desc">Custom ML models for prediction, classification, clustering, and anomaly detection — trained on your data, evaluated rigorously.</div>
-        <div className="svc-tags">
-          <span className="svc-tag">Predictive Models</span>
-          <span className="svc-tag">Classification</span>
-          <span className="svc-tag">Anomaly Detection</span>
-          <span className="svc-tag">Forecasting</span>
-        </div>
-      </div>
+    <div className="services-grid fu d3" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '24px' }}>
       <div className="svc-card">
         <div className="svc-icon">🧠</div>
-        <div className="svc-title">Deep Learning</div>
-        <div className="svc-desc">Neural architectures for speech, text, time series, and multi-modal data. Transformers, CNNs, and fine-tuning of foundation models.</div>
-        <div className="svc-tags">
-          <span className="svc-tag">Transformers</span>
-          <span className="svc-tag">CNN / RNN</span>
-          <span className="svc-tag">Fine-tuning</span>
-          <span className="svc-tag">Transfer Learning</span>
-        </div>
-      </div>
-      <div className="svc-card">
-        <div className="svc-icon">👁️</div>
-        <div className="svc-title">Computer Vision</div>
-        <div className="svc-desc">Object detection, OCR, face recognition, defect inspection, video analytics — real-world vision AI for production environments.</div>
-        <div className="svc-tags">
-          <span className="svc-tag">Object Detection</span>
-          <span className="svc-tag">OCR</span>
-          <span className="svc-tag">Video Analytics</span>
-          <span className="svc-tag">Quality Inspection</span>
-        </div>
-      </div>
-      <div className="svc-card">
-        <div className="svc-icon">📊</div>
-        <div className="svc-title">PowerBI & Data Intelligence</div>
-        <div className="svc-desc">We ingest your raw company data, model it properly, and deliver interactive PowerBI dashboards and data pipelines your team will actually use.</div>
-        <div className="svc-tags">
-          <span className="svc-tag">PowerBI</span>
-          <span className="svc-tag">ETL Pipelines</span>
-          <span className="svc-tag">Data Modeling</span>
-          <span className="svc-tag">KPI Dashboards</span>
-        </div>
-      </div>
-      <div className="svc-card">
-        <div className="svc-icon">💬</div>
-        <div className="svc-title">NLP & Language AI</div>
-        <div className="svc-desc">Chatbots, document intelligence, sentiment analysis, and summarization — with multilingual support including Tamil, Hindi, and Arabic.</div>
+        <div className="svc-title">Custom AI Applications</div>
+        <div className="svc-desc">Intelligent, conversational, and generative systems built specifically for your business data and logic.</div>
         <div className="svc-tags">
           <span className="svc-tag">Chatbots</span>
-          <span className="svc-tag">Document AI</span>
-          <span className="svc-tag">Multilingual</span>
-          <span className="svc-tag">Sentiment Analysis</span>
+          <span className="svc-tag">AI Agents</span>
+          <span className="svc-tag">RAG Systems</span>
         </div>
       </div>
       <div className="svc-card">
-        <div className="svc-icon">🌐</div>
-        <div className="svc-title">IoT & Edge AI</div>
-        <div className="svc-desc">AI inference on devices and sensors — for smart manufacturing, agriculture monitoring, and real-time edge processing.</div>
+        <div className="svc-icon">⚙️</div>
+        <div className="svc-title">Business Automation</div>
+        <div className="svc-desc">We replace manual data entry and repetitive tasks with AI pipelines that extract, process, and route information.</div>
         <div className="svc-tags">
-          <span className="svc-tag">Edge Inference</span>
-          <span className="svc-tag">IoT Integration</span>
-          <span className="svc-tag">Real-time Processing</span>
-          <span className="svc-tag">Embedded AI</span>
+          <span className="svc-tag">Workflows</span>
+          <span className="svc-tag">Dashboards</span>
+          <span className="svc-tag">Document Processing</span>
         </div>
       </div>
       <div className="svc-card">
-        <div className="svc-icon">🔧</div>
-        <div className="svc-title">AI Consulting & Upskilling</div>
-        <div className="svc-desc">Not sure where to start? We help you assess your data landscape, identify the right AI approach, and upskill your internal team to manage it.</div>
+        <div className="svc-icon">💻</div>
+        <div className="svc-title">Intelligent Web Platforms</div>
+        <div className="svc-desc">High-performance, modern web applications designed to house complex AI logic and deliver seamless user experiences.</div>
         <div className="svc-tags">
-          <span className="svc-tag">AI Strategy</span>
-          <span className="svc-tag">Data Audit</span>
-          <span className="svc-tag">Team Training</span>
-          <span className="svc-tag">Roadmap Planning</span>
+          <span className="svc-tag">React.js</span>
+          <span className="svc-tag">FastAPI</span>
+          <span className="svc-tag">Full-Stack Systems</span>
         </div>
       </div>
     </div>
@@ -347,7 +289,34 @@ export default function Home() {
       <div className="ind-card"><span className="ind-icon">🛒</span><div className="ind-name">Retail & E-commerce</div><div className="ind-desc">Recommendations, inventory AI, demand sensing</div></div>
       <div className="ind-card"><span className="ind-icon">⚡</span><div className="ind-name">Energy</div><div className="ind-desc">Consumption prediction, fault detection, smart metering</div></div>
       <div className="ind-card"><span className="ind-icon">🏗️</span><div className="ind-name">Construction</div><div className="ind-desc">Safety monitoring, project analytics, cost forecasting</div></div>
-      <div className="ind-card"><span className="ind-icon">🌆</span><div className="ind-name">Urban Infrastructure</div><div className="ind-desc">Traffic, waste management, public service AI — future focus</div></div>
+      <div className="ind-card"><span className="ind-icon">🏛️</span><div className="ind-name">Public Sector Solutions</div><div className="ind-desc">Traffic, waste management, public service AI — future focus</div></div>
+    </div>
+  </div>
+</section>
+
+{/* ===== FOUNDER ===== */}
+<section id="founder" style={{ background: 'var(--bg2)', padding: '60px 0' }}>
+  <div className="inner">
+    <div className="global-grid fu d1" style={{ alignItems: 'center' }}>
+      <div>
+        <div className="tag" style={{ marginBottom: '16px' }}>Leadership</div>
+        <h2 className="h2" style={{ marginBottom: '24px' }}>Founder-Led Engineering</h2>
+        <p className="lead" style={{ fontSize: '18px', color: 'var(--text)', lineHeight: '1.7', marginBottom: '24px' }}>
+          Founded by <strong>Mohan Kumar S</strong>, Moh-AI Tech is an MSME-registered AI company focused on building practical AI solutions that solve real business problems.
+        </p>
+        <p style={{ fontSize: '16px', color: 'var(--muted)', lineHeight: '1.6' }}>
+          We don't just sell software; we engineer custom architectures. From deep learning and computer vision to intelligent web platforms, we build systems that automate work and scale operations for businesses worldwide.
+        </p>
+      </div>
+      <div style={{ textAlign: 'center' }}>
+        <img 
+          src="/images/team/mohan.jpg" 
+          alt="Mohan Kumar S" 
+          style={{ width: '220px', height: '220px', borderRadius: '50%', objectFit: 'cover', border: '4px solid var(--border)', boxShadow: 'var(--shadow)' }} 
+        />
+        <div style={{ marginTop: '16px', fontWeight: '700', fontSize: '18px', color: 'var(--text)' }}>Mohan Kumar S</div>
+        <div style={{ fontSize: '14px', color: 'var(--accent)' }}>Founder & CEO</div>
+      </div>
     </div>
   </div>
 </section>
@@ -590,7 +559,7 @@ export default function Home() {
         </ul>
       </div>
       <div>
-        <div className="footer-col-title">Solutions</div>
+        <div className="footer-col-title">Solution Architectures</div>
         <ul className="footer-links">
           <li><a href="#solutions">Enterprise AI Brain</a></li>
           <li><a href="#solutions">Vision Inspection</a></li>
