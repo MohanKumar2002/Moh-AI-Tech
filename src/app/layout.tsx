@@ -4,6 +4,7 @@ import { Toaster } from '@/components/ui/toaster';
 import { Navbar } from '@/components/layout/navbar';
 import ChatbotPlaceholder from '@/components/chatbot-placeholder';
 import { LanguageProvider } from '@/components/i18n-provider';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 export const metadata: Metadata = {
   title: 'Moh-AI Tech | Custom AI Solutions & Intelligent Automation',
@@ -52,6 +53,7 @@ export default function RootLayout({
             <ChatbotPlaceholder />
             <Toaster />
           </LanguageProvider>
+          <SpeedInsights />
         
       </body>
     </html>
