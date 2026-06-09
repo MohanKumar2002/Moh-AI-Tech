@@ -143,8 +143,8 @@ section { position: relative; z-index: 1; }
   padding: 4px 12px; border-radius: 4px; margin-bottom: 18px;
 }
 .h2 {
-  font-family: var(--syne); font-size: clamp(30px, 4vw, 48px);
-  font-weight: 800; line-height: 1.1; letter-spacing: -1.5px;
+  font-family: var(--syne); font-size: clamp(30px, 4vw, 44px);
+  font-weight: 700; line-height: 1.2; letter-spacing: -1px;
   color: var(--text); margin-bottom: 16px;
 }
 .h2 em { font-style: normal; color: var(--accent); }
@@ -197,9 +197,9 @@ section { position: relative; z-index: 1; }
 
 .hero-h1 {
   font-family: var(--syne);
-  font-size: clamp(38px, 5.5vw, 70px);
-  font-weight: 800; line-height: 1.05;
-  letter-spacing: -2px; color: var(--text); margin-bottom: 24px;
+  font-size: clamp(38px, 5.5vw, 64px);
+  font-weight: 700; line-height: 1.1;
+  letter-spacing: -1.5px; color: var(--text); margin-bottom: 24px;
 }
 .hero-h1 em { font-style: normal; }  /* gradient via .grad-text CSS */
 
@@ -437,7 +437,7 @@ section { position: relative; z-index: 1; }
 /* ===== PROCESS ===== */
 #process { background: var(--bg2); }
 .steps {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 32px; position: relative;
 }
 .step-num-row {
