@@ -76,7 +76,7 @@ export default function ContactPage() {
                 <div className="cmethod-icon">📧</div>
                 <div>
                   <div className="cmethod-lbl">Email Us</div>
-                  <div className="cmethod-val">mohaitechpvt@gmail.com</div>
+                  <div className="cmethod-val">info@mohaitech.in</div>
                 </div>
               </div>
               <div className="contact-method">
@@ -99,7 +99,7 @@ export default function ContactPage() {
                 <div className="cta-sub">Start with a free conversation. No pitch deck. Just honest talk about your goals.</div>
                 <div className="cta-btns">
                   <a href="https://wa.me/919566852700" target="_blank" rel="noopener noreferrer" className="btn-primary">WhatsApp Us</a>
-                  <a href="mailto:mohaitechpvt@gmail.com" className="btn-ghost">Email Us</a>
+                  <a href="mailto:info@mohaitech.in" className="btn-ghost">Email Us</a>
                 </div>
               </div>
             </div>

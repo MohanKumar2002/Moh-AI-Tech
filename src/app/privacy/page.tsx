@@ -95,7 +95,7 @@ export default function PrivacyPage() {
         })}
       </p>
       <p className="mt-1">
-        Email: <a href="mailto:moh.aitech@gmail.com" className="text-primary hover:underline">moh.aitech@gmail.com</a>
+        Email: <a href="mailto:info@mohaitech.in" className="text-primary hover:underline">info@mohaitech.in</a>
       </p>
     </div>
   );

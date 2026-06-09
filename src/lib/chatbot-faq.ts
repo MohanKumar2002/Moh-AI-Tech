@@ -13,7 +13,7 @@ export const chatbotFaqs = [
   },
   {
     keywords: ['contact', 'support', 'தொடர்பு'],
-    answer: `📨 Contact us via the Contact page or email us at mohaitechpvt@gmail.com.\n\nஎங்களை தொடர்பு கொள்ள: mohaitechpvt@gmail.com.`
+    answer: `📨 Contact us via the Contact page or email us at info@mohaitech.in.\n\nஎங்களை தொடர்பு கொள்ள: info@mohaitech.in.`
   },
   {
     keywords: ['moh-ai', 'mohai', 'company', 'நிறுவனம்'],

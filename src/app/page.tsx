@@ -69,6 +69,33 @@ export default function Home() {
   </div>
 </section>
 
+{/* ===== FOUNDER ===== */}
+<section id="founder" style={{ background: 'var(--bg2)', padding: '60px 0' }}>
+  <div className="inner">
+    <div className="global-grid fu d1" style={{ alignItems: 'center' }}>
+      <div>
+        <div className="tag" style={{ marginBottom: '16px' }}>Leadership</div>
+        <h2 className="h2" style={{ marginBottom: '24px' }}>Founder-Led Engineering</h2>
+        <p className="lead" style={{ fontSize: '18px', color: 'var(--text)', lineHeight: '1.7', marginBottom: '24px' }}>
+          Founded by <strong>Mohan Kumar S</strong>, Moh-AI Tech is an MSME-registered AI company focused on building practical AI solutions that solve real business problems.
+        </p>
+        <p style={{ fontSize: '16px', color: 'var(--muted)', lineHeight: '1.6' }}>
+          We don't just sell software; we engineer custom architectures. From deep learning and computer vision to intelligent web platforms, we build systems that automate work and scale operations for businesses worldwide.
+        </p>
+      </div>
+      <div style={{ textAlign: 'center' }}>
+        <img 
+          src="/images/team/mohan.jpg" 
+          alt="Mohan Kumar S" 
+          style={{ width: '220px', height: '220px', borderRadius: '50%', objectFit: 'cover', border: '4px solid var(--border)', boxShadow: 'var(--shadow)' }} 
+        />
+        <div style={{ marginTop: '16px', fontWeight: '700', fontSize: '18px', color: 'var(--text)' }}>Mohan Kumar S</div>
+        <div style={{ fontSize: '14px', color: 'var(--accent)' }}>Founder & CEO</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 {/* ===== TRUST BAND ===== */}
 <section id="trust">
   <div className="trust-inner">
@@ -222,6 +249,45 @@ export default function Home() {
   </div>
 </section>
 
+{/* ===== PROJECT SHOWCASE ===== */}
+<section id="projects" style={{ background: 'var(--bg)', padding: '88px 0' }}>
+  <div className="inner">
+    <div className="tag fu">Recent Work</div>
+    <h2 className="h2 fu d1">Real Projects. Real Results.</h2>
+    <p className="lead fu d2">A glimpse into some of the custom solution architectures we've engineered for our clients.</p>
+    <div className="fu d3" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px' }}>
+      <div className="project-card" style={{ background: 'var(--card)', borderRadius: '12px', overflow: 'hidden', border: '1px solid var(--border)' }}>
+        <img src="/images/products/ocr.png" alt="Document OCR Pipeline" style={{ width: '100%', height: '200px', objectFit: 'cover', borderBottom: '1px solid var(--border)' }} />
+        <div style={{ padding: '20px' }}>
+          <h3 style={{ fontSize: '16px', fontWeight: '700', marginBottom: '8px' }}>Smart Document Pipeline</h3>
+          <p style={{ fontSize: '14px', color: 'var(--muted)', lineHeight: '1.5' }}>High-accuracy OCR for automated data extraction from legacy records.</p>
+        </div>
+      </div>
+      <div className="project-card" style={{ background: 'var(--card)', borderRadius: '12px', overflow: 'hidden', border: '1px solid var(--border)' }}>
+        <img src="/images/products/video.png" alt="Video Analytics" style={{ width: '100%', height: '200px', objectFit: 'cover', borderBottom: '1px solid var(--border)' }} />
+        <div style={{ padding: '20px' }}>
+          <h3 style={{ fontSize: '16px', fontWeight: '700', marginBottom: '8px' }}>Vision Analytics System</h3>
+          <p style={{ fontSize: '14px', color: 'var(--muted)', lineHeight: '1.5' }}>Real-time computer vision pipeline for automated defect detection.</p>
+        </div>
+      </div>
+      <div className="project-card" style={{ background: 'var(--card)', borderRadius: '12px', overflow: 'hidden', border: '1px solid var(--border)' }}>
+        <img src="/images/products/chatbot.png" alt="Custom Chatbot" style={{ width: '100%', height: '200px', objectFit: 'cover', borderBottom: '1px solid var(--border)' }} />
+        <div style={{ padding: '20px' }}>
+          <h3 style={{ fontSize: '16px', fontWeight: '700', marginBottom: '8px' }}>RAG Support Agent</h3>
+          <p style={{ fontSize: '14px', color: 'var(--muted)', lineHeight: '1.5' }}>Context-aware conversational AI integrated directly into client workflows.</p>
+        </div>
+      </div>
+      <div className="project-card" style={{ background: 'var(--card)', borderRadius: '12px', overflow: 'hidden', border: '1px solid var(--border)' }}>
+        <img src="/images/products/resume.png" alt="Resume Parser" style={{ width: '100%', height: '200px', objectFit: 'cover', borderBottom: '1px solid var(--border)' }} />
+        <div style={{ padding: '20px' }}>
+          <h3 style={{ fontSize: '16px', fontWeight: '700', marginBottom: '8px' }}>HR Automation</h3>
+          <p style={{ fontSize: '14px', color: 'var(--muted)', lineHeight: '1.5' }}>Automated resume parsing and candidate ranking intelligence.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 {/* ===== AI AGENTS ===== */}
 <section id="agents">
   <div className="inner">
@@ -294,32 +360,7 @@ export default function Home() {
   </div>
 </section>
 
-{/* ===== FOUNDER ===== */}
-<section id="founder" style={{ background: 'var(--bg2)', padding: '60px 0' }}>
-  <div className="inner">
-    <div className="global-grid fu d1" style={{ alignItems: 'center' }}>
-      <div>
-        <div className="tag" style={{ marginBottom: '16px' }}>Leadership</div>
-        <h2 className="h2" style={{ marginBottom: '24px' }}>Founder-Led Engineering</h2>
-        <p className="lead" style={{ fontSize: '18px', color: 'var(--text)', lineHeight: '1.7', marginBottom: '24px' }}>
-          Founded by <strong>Mohan Kumar S</strong>, Moh-AI Tech is an MSME-registered AI company focused on building practical AI solutions that solve real business problems.
-        </p>
-        <p style={{ fontSize: '16px', color: 'var(--muted)', lineHeight: '1.6' }}>
-          We don't just sell software; we engineer custom architectures. From deep learning and computer vision to intelligent web platforms, we build systems that automate work and scale operations for businesses worldwide.
-        </p>
-      </div>
-      <div style={{ textAlign: 'center' }}>
-        <img 
-          src="/images/team/mohan.jpg" 
-          alt="Mohan Kumar S" 
-          style={{ width: '220px', height: '220px', borderRadius: '50%', objectFit: 'cover', border: '4px solid var(--border)', boxShadow: 'var(--shadow)' }} 
-        />
-        <div style={{ marginTop: '16px', fontWeight: '700', fontSize: '18px', color: 'var(--text)' }}>Mohan Kumar S</div>
-        <div style={{ fontSize: '14px', color: 'var(--accent)' }}>Founder & CEO</div>
-      </div>
-    </div>
-  </div>
-</section>
+
 
 {/* ===== TECH STACK ===== */}
 <section id="tech">
@@ -344,6 +385,31 @@ export default function Home() {
       <div className="tech-pill"><span className="tech-dot" style={{'background': '#2496ED'}}></span>Docker / K8s</div>
       <div className="tech-pill"><span className="tech-dot" style={{'background': '#336791'}}></span>PostgreSQL</div>
       <div className="tech-pill"><span className="tech-dot" style={{'background': '#FFCA28'}}></span>Apache Spark</div>
+    </div>
+  </div>
+</section>
+
+{/* ===== WHY US ===== */}
+<section id="why-us" style={{ background: 'var(--bg2)', padding: '40px 0 60px' }}>
+  <div className="inner">
+    <div className="tag fu">Why Moh-AI Tech?</div>
+    <h2 className="h2 fu d1">Built for Trust & Reliability</h2>
+    <div className="fu d2" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px', marginTop: '32px' }}>
+      <div style={{ background: 'var(--card)', padding: '32px', borderRadius: '12px', border: '1px solid var(--border)', boxShadow: 'var(--shadow)' }}>
+        <div style={{ fontSize: '32px', marginBottom: '16px' }}>🎯</div>
+        <h3 style={{ fontFamily: 'var(--syne)', fontSize: '18px', fontWeight: '700', marginBottom: '12px' }}>Practical AI</h3>
+        <p style={{ fontSize: '14px', color: 'var(--muted)', lineHeight: '1.6' }}>No hype. No unnecessary features. We build solutions focused strictly on measurable business outcomes and real-world utility.</p>
+      </div>
+      <div style={{ background: 'var(--card)', padding: '32px', borderRadius: '12px', border: '1px solid var(--border)', boxShadow: 'var(--shadow)' }}>
+        <div style={{ fontSize: '32px', marginBottom: '16px' }}>🤝</div>
+        <h3 style={{ fontFamily: 'var(--syne)', fontSize: '18px', fontWeight: '700', marginBottom: '12px' }}>Founder-Led Delivery</h3>
+        <p style={{ fontSize: '14px', color: 'var(--muted)', lineHeight: '1.6' }}>Direct communication with the engineer building your solution. No account managers, no lost context.</p>
+      </div>
+      <div style={{ background: 'var(--card)', padding: '32px', borderRadius: '12px', border: '1px solid var(--border)', boxShadow: 'var(--shadow)' }}>
+        <div style={{ fontSize: '32px', marginBottom: '16px' }}>🛡️</div>
+        <h3 style={{ fontFamily: 'var(--syne)', fontSize: '18px', fontWeight: '700', marginBottom: '12px' }}>Long-Term Partnership</h3>
+        <p style={{ fontSize: '14px', color: 'var(--muted)', lineHeight: '1.6' }}>We provide full documentation, transparent code handovers, and reliable support long after your project is deployed.</p>
+      </div>
     </div>
   </div>
 </section>
