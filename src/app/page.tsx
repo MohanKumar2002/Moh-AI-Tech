@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useEffect } from 'react';
+import Image from 'next/image';
 import { useLanguage } from '@/components/i18n-provider';
 import { ContactForm } from '@/components/ContactForm';
 
@@ -84,9 +85,12 @@ export default function Home() {
         </p>
       </div>
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
-        <img 
+        <Image 
           src="/images/team/mohan.jpg" 
           alt="Mohan Kumar S" 
+          width={220}
+          height={220}
+          priority
           style={{ width: '220px', height: '220px', borderRadius: '50%', objectFit: 'cover', border: '4px solid var(--border)', boxShadow: 'var(--shadow)' }} 
         />
         <div style={{ marginTop: '16px', fontWeight: '700', fontSize: '18px', color: 'var(--text)', textAlign: 'center', width: '100%' }}>Mohan Kumar S</div>
@@ -257,28 +261,28 @@ export default function Home() {
     <p className="lead fu d2">A glimpse into some of the custom solution architectures we've engineered for our clients.</p>
     <div className="fu d3" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px' }}>
       <div className="project-card" style={{ background: 'var(--card)', borderRadius: '12px', overflow: 'hidden', border: '1px solid var(--border)' }}>
-        <img src="/images/products/ocr.png" alt="Document OCR Pipeline" style={{ width: '100%', height: '200px', objectFit: 'cover', borderBottom: '1px solid var(--border)' }} />
+        <Image src="/images/products/ocr.png" alt="Document OCR Pipeline" width={800} height={600} style={{ width: '100%', height: '200px', objectFit: 'cover', borderBottom: '1px solid var(--border)' }} />
         <div style={{ padding: '20px' }}>
           <h3 style={{ fontSize: '16px', fontWeight: '700', marginBottom: '8px' }}>Smart Document Pipeline</h3>
           <p style={{ fontSize: '14px', color: 'var(--muted)', lineHeight: '1.5' }}>High-accuracy OCR for automated data extraction from legacy records.</p>
         </div>
       </div>
       <div className="project-card" style={{ background: 'var(--card)', borderRadius: '12px', overflow: 'hidden', border: '1px solid var(--border)' }}>
-        <img src="/images/products/video.png" alt="Video Analytics" style={{ width: '100%', height: '200px', objectFit: 'cover', borderBottom: '1px solid var(--border)' }} />
+        <Image src="/images/products/video.png" alt="Video Analytics" width={800} height={600} style={{ width: '100%', height: '200px', objectFit: 'cover', borderBottom: '1px solid var(--border)' }} />
         <div style={{ padding: '20px' }}>
           <h3 style={{ fontSize: '16px', fontWeight: '700', marginBottom: '8px' }}>Vision Analytics System</h3>
           <p style={{ fontSize: '14px', color: 'var(--muted)', lineHeight: '1.5' }}>Real-time computer vision pipeline for automated defect detection.</p>
         </div>
       </div>
       <div className="project-card" style={{ background: 'var(--card)', borderRadius: '12px', overflow: 'hidden', border: '1px solid var(--border)' }}>
-        <img src="/images/products/chatbot.png" alt="Custom Chatbot" style={{ width: '100%', height: '200px', objectFit: 'cover', borderBottom: '1px solid var(--border)' }} />
+        <Image src="/images/products/chatbot.png" alt="Custom Chatbot" width={800} height={600} style={{ width: '100%', height: '200px', objectFit: 'cover', borderBottom: '1px solid var(--border)' }} />
         <div style={{ padding: '20px' }}>
           <h3 style={{ fontSize: '16px', fontWeight: '700', marginBottom: '8px' }}>RAG Support Agent</h3>
           <p style={{ fontSize: '14px', color: 'var(--muted)', lineHeight: '1.5' }}>Context-aware conversational AI integrated directly into client workflows.</p>
         </div>
       </div>
       <div className="project-card" style={{ background: 'var(--card)', borderRadius: '12px', overflow: 'hidden', border: '1px solid var(--border)' }}>
-        <img src="/images/products/resume.png" alt="Resume Parser" style={{ width: '100%', height: '200px', objectFit: 'cover', borderBottom: '1px solid var(--border)' }} />
+        <Image src="/images/products/resume.png" alt="Resume Parser" width={800} height={600} style={{ width: '100%', height: '200px', objectFit: 'cover', borderBottom: '1px solid var(--border)' }} />
         <div style={{ padding: '20px' }}>
           <h3 style={{ fontSize: '16px', fontWeight: '700', marginBottom: '8px' }}>HR Automation</h3>
           <p style={{ fontSize: '14px', color: 'var(--muted)', lineHeight: '1.5' }}>Automated resume parsing and candidate ranking intelligence.</p>
@@ -608,7 +612,7 @@ export default function Home() {
     <div className="footer-grid">
       <div>
         <a href="#" className="logo">
-          <img src="/logo.png" alt="Moh-AI Tech Logo" style={{ height: "42px", width: "auto", display: "block", objectFit: "contain" }} />
+          <Image src="/logo.png" alt="Moh-AI Tech Logo" width={100} height={42} style={{ height: "42px", width: "auto", display: "block", objectFit: "contain" }} />
           <span className="grad-text" style={{ marginLeft: "8px", fontWeight: "800", fontSize: "18px", letterSpacing: "1px" }}>MOH-AI TECH</span>
           </a>
         <div className="footer-tagline">Custom AI, ML, and Data Intelligence solutions built honestly — for businesses and institutions worldwide. Based in Namakkal, India.</div>
