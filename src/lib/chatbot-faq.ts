@@ -34,5 +34,9 @@ export const chatbotFaqs = [
   {
     keywords: ['chatbot', 'சாட்பாட்', 'agent'],
     answer: `💬 We build Custom RAG Support Agents and multi-channel conversational AI that learns directly from your internal company data.`
+  },
+  {
+    keywords: ['projects', 'portfolio', 'work', 'done', 'built', 'past', 'case study', 'வேலை', 'ப்ராஜெக்ட்'],
+    answer: `🚀 **Our Recent Work Includes:**\n- **Smart Document Pipeline:** High-accuracy OCR for extracting data from legacy records.\n- **Vision Analytics System:** Real-time computer vision for defect detection.\n- **RAG Support Agents:** Context-aware conversational AI.\n- **HR Automation:** Resume parsing and candidate ranking intelligence.\n\n*Check out the "Recent Work" section on our homepage for screenshots!*`
   }
 ];
