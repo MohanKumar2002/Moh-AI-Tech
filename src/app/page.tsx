@@ -83,14 +83,14 @@ export default function Home() {
           We don't just sell software; we engineer custom architectures. From deep learning and computer vision to intelligent web platforms, we build systems that automate work and scale operations for businesses worldwide.
         </p>
       </div>
-      <div style={{ textAlign: 'center' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
         <img 
           src="/images/team/mohan.jpg" 
           alt="Mohan Kumar S" 
           style={{ width: '220px', height: '220px', borderRadius: '50%', objectFit: 'cover', border: '4px solid var(--border)', boxShadow: 'var(--shadow)' }} 
         />
-        <div style={{ marginTop: '16px', fontWeight: '700', fontSize: '18px', color: 'var(--text)' }}>Mohan Kumar S</div>
-        <div style={{ fontSize: '14px', color: 'var(--accent)' }}>Founder & CEO</div>
+        <div style={{ marginTop: '16px', fontWeight: '700', fontSize: '18px', color: 'var(--text)', textAlign: 'center', width: '100%' }}>Mohan Kumar S</div>
+        <div style={{ fontSize: '14px', color: 'var(--accent)', textAlign: 'center', width: '100%' }}>Founder & CEO</div>
       </div>
     </div>
   </div>
