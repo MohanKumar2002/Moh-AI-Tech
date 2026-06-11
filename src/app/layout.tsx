@@ -7,12 +7,12 @@ import { LanguageProvider } from '@/components/i18n-provider';
 
 export const metadata: Metadata = {
   title: 'Moh-AI Tech | Custom AI Solutions & Intelligent Automation',
-  description: 'MSME Registered AI development company in Namakkal, India. We specialize in custom AI applications, intelligent automation, AI agents, and business platforms.',
-  keywords: 'AI Development, Next.js, Custom AI Agents, Automation, MSME Registered AI Company, Computer Vision, RAG, Namakkal AI',
+  description: 'Enterprise AI automation company in India. We specialize in custom RAG chatbots, computer vision pipelines, and intelligent web platforms for businesses globally.',
+  keywords: 'hire RAG developer India, computer vision company India, custom AI automation company, enterprise NLP developer, custom AI solutions, AI agency India',
   openGraph: {
     title: 'Moh-AI Tech | Custom AI Solutions',
-    description: 'MSME Registered AI development company in Namakkal, India.',
-    url: 'https://mohaitech.com',
+    description: 'Enterprise AI automation company in India.',
+    url: 'https://moh-ai-tech.vercel.app',
     siteName: 'Moh-AI Tech',
     locale: 'en_US',
     type: 'website',

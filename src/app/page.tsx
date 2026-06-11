@@ -259,6 +259,22 @@ export default function Home() {
     <div className="tag fu">Recent Work</div>
     <h2 className="h2 fu d1">Real Projects. Real Results.</h2>
     <p className="lead fu d2">A glimpse into some of the custom solution architectures we've engineered for our clients.</p>
+    
+    <div className="metrics-bar fu d3" style={{ display: 'flex', flexWrap: 'wrap', gap: '24px', margin: '40px 0', background: 'var(--card)', border: '1px solid var(--border)', borderRadius: '12px', padding: '32px', justifyContent: 'space-around' }}>
+      <div style={{ textAlign: 'center' }}>
+        <div style={{ fontSize: '32px', fontWeight: '800', background: 'var(--accent-gradient)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>500+</div>
+        <div style={{ fontSize: '14px', color: 'var(--muted)', marginTop: '8px' }}>CVs Processed in 4 Mins</div>
+      </div>
+      <div style={{ textAlign: 'center' }}>
+        <div style={{ fontSize: '32px', fontWeight: '800', background: 'var(--accent-gradient)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>98%</div>
+        <div style={{ fontSize: '14px', color: 'var(--muted)', marginTop: '8px' }}>Vision Defect Accuracy</div>
+      </div>
+      <div style={{ textAlign: 'center' }}>
+        <div style={{ fontSize: '32px', fontWeight: '800', background: 'var(--accent-gradient)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>30+</div>
+        <div style={{ fontSize: '14px', color: 'var(--muted)', marginTop: '8px' }}>Hours Saved/Week per Client</div>
+      </div>
+    </div>
+
     <div className="fu d3" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px' }}>
       <div className="project-card" style={{ background: 'var(--card)', borderRadius: '12px', overflow: 'hidden', border: '1px solid var(--border)' }}>
         <Image src="/images/products/ocr.png" alt="Document OCR Pipeline" width={800} height={600} style={{ width: '100%', height: '200px', objectFit: 'cover', borderBottom: '1px solid var(--border)' }} />
