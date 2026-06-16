@@ -262,15 +262,15 @@ export default function Home() {
     
     <div className="metrics-bar fu d3" style={{ display: 'flex', flexWrap: 'wrap', gap: '24px', margin: '40px 0', background: 'var(--card)', border: '1px solid var(--border)', borderRadius: '12px', padding: '32px', justifyContent: 'space-around' }}>
       <div style={{ textAlign: 'center' }}>
-        <div style={{ fontSize: '32px', fontWeight: '800', background: 'var(--accent-gradient)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>500+</div>
+        <div style={{ fontSize: '32px', fontWeight: '800', color: '#000' }}>500+</div>
         <div style={{ fontSize: '14px', color: 'var(--muted)', marginTop: '8px' }}>CVs Processed in 4 Mins</div>
       </div>
       <div style={{ textAlign: 'center' }}>
-        <div style={{ fontSize: '32px', fontWeight: '800', background: 'var(--accent-gradient)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>98%</div>
+        <div style={{ fontSize: '32px', fontWeight: '800', color: '#000' }}>98%</div>
         <div style={{ fontSize: '14px', color: 'var(--muted)', marginTop: '8px' }}>Vision Defect Accuracy</div>
       </div>
       <div style={{ textAlign: 'center' }}>
-        <div style={{ fontSize: '32px', fontWeight: '800', background: 'var(--accent-gradient)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>30+</div>
+        <div style={{ fontSize: '32px', fontWeight: '800', color: '#000' }}>30+</div>
         <div style={{ fontSize: '14px', color: 'var(--muted)', marginTop: '8px' }}>Hours Saved/Week per Client</div>
       </div>
     </div>

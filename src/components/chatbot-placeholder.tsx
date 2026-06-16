@@ -4,9 +4,15 @@ import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Bot, X, Send, Sparkles, MessageCircle } from 'lucide-react';
 import { chatbotFaqs } from '../lib/chatbot-faq';
+import { usePathname } from 'next/navigation';
 
 export default function ChatbotPlaceholder() {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
+
+  if (pathname?.startsWith('/documind')) {
+    return null;
+  }
   const [messages, setMessages] = useState([
     {
       type: 'bot',

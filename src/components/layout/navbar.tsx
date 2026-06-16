@@ -2,9 +2,16 @@
 
 import React, { useState } from 'react';
 import { useLanguage } from '@/components/i18n-provider';
+import { usePathname } from 'next/navigation';
 
 export function Navbar() {
   const { lang, setLang, t } = useLanguage();  const [menuOpen, setMenuOpen] = useState(false);
+  const pathname = usePathname();
+  
+  if (pathname?.startsWith('/documind')) {
+    return null; // Hide main navbar on DocuMind pages
+  }
+
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
