@@ -1,8 +1,8 @@
-﻿'use client';
+'use client';
 
 import React, { useEffect } from 'react';
 import { Navbar } from '@/components/layout/navbar';
-import { Footer } from '@/components/layout/footer';
+import Footer from '@/components/layout/footer';
 
 export default function PlaybookPage() {
   useEffect(() => {
