@@ -693,7 +693,6 @@ export default function Home() {
         <div className="footer-col-title">Company & Connect</div>
         <ul className="footer-links">
           <li><a href="#industries">Industries</a></li>
-          <li><a href="#pricing">Pricing</a></li>
           <li><a href="/coming-soon">Upcoming Products</a></li>
           <li><a href="https://www.linkedin.com/company/107518449/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
           <li><a href="https://www.instagram.com/moh_ai_tech/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
@@ -701,10 +700,10 @@ export default function Home() {
       </div>
     </div>
     <div className="footer-bottom">
-      <div className="footer-copy">© 2025 Moh-AI Tech. MSME Registered. Namakkal, Tamil Nadu, India.</div>
+      <div className="footer-copy">© {new Date().getFullYear()} Moh-AI Tech. MSME Registered. Namakkal, Tamil Nadu, India.</div>
       <div className="footer-legal">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Service</a>
+        <a href="/privacy">Privacy Policy</a>
+        <a href="/terms">Terms of Service</a>
       </div>
     </div>
   </div>

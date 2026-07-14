@@ -44,7 +44,6 @@ export default function Footer() {
               <li><Link href="/#tech">Technology Stack</Link></li>
               <li><Link href="/#featured">Featured Projects</Link></li>
               <li><Link href="/#public-sector">Public Sector Solutions</Link></li>
-              <li><Link href="/#pricing">Pricing</Link></li>
             </ul>
           </div>
 
