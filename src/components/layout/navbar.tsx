@@ -8,8 +8,8 @@ export function Navbar() {
   const { lang, setLang, t } = useLanguage();  const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
   
-  if (pathname?.startsWith('/documind') || pathname?.startsWith('/erp')) {
-    return null; // Hide main navbar on DocuMind and ERP pages
+  if (pathname?.startsWith('/documind')) {
+    return null; // Hide main navbar on DocuMind pages
   }
 
   const toggleMenu = () => {
@@ -36,9 +36,6 @@ export function Navbar() {
           <button className={`lang-btn ${lang === 'de' ? 'active' : ''}`} data-lang="de" onClick={() => setLang('de')}>DE</button>
         </div>
         <a href="#contact" className="nav-cta" data-t="nav_contact">{t('nav_contact')}</a>
-        <a href="/erp/login" className="erp-login" title="Staff / Intern Portal" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '38px', height: '38px', borderRadius: '50%', background: 'rgba(255,255,255,0.05)', color: 'var(--text)', border: '1px solid rgba(255,255,255,0.1)', marginLeft: '12px' }}>
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
-        </a>
         <button className="menu-toggle" onClick={toggleMenu} aria-label="Menu">☰</button>
       </div>
     </nav>

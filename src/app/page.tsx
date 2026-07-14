@@ -630,7 +630,6 @@ export default function Home() {
         <ul className="footer-links">
           <li><a href="#industries">Industries</a></li>
           <li><a href="#pricing">Pricing</a></li>
-          <li><a href="/erp/login">Staff / Intern ERP Portal</a></li>
           <li><a href="https://www.linkedin.com/company/107518449/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
           <li><a href="https://www.instagram.com/moh_ai_tech/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
         </ul>
