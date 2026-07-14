@@ -94,45 +94,7 @@ export default function Home() {
   </div>
 </section>
 
-{/* ===== THE FUNNEL OF GROWTH ===== */}
-<section id="funnel" style={{ background: 'var(--bg)', padding: '100px 0', borderBottom: '1px solid var(--border)' }}>
-  <div className="inner">
-    <div style={{ textAlign: 'center', marginBottom: '60px' }}>
-      <div className="tag" style={{ marginBottom: '16px' }} data-t="tag_funnel">{t('tag_funnel') || 'Our Philosophy'}</div>
-      <h2 className="h2 fu d1" data-t="h2_funnel">{t('h2_funnel') || 'The Funnel of Growth'}</h2>
-      <p className="lead fu d2" style={{ maxWidth: '600px', margin: '0 auto' }} data-t="lead_funnel">
-        {t('lead_funnel') || 'We translate high-level philosophy into practical steps for the end-user. You enter as a student, and leave as an industry pioneer.'}
-      </p>
-      <a href="/playbook" className="btn-ghost fu d3" style={{ marginTop: '24px', display: 'inline-block' }}>Read Our Full Playbook →</a>
-    </div>
 
-    <div className="global-grid">
-      <div className="card fu d1" style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
-        <div style={{ width: '48px', height: '48px', background: 'rgba(99, 102, 241, 0.1)', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '20px', color: 'var(--accent)', fontWeight: 'bold', fontSize: '20px' }}>1</div>
-        <h3 className="card-h3" data-t="funnel_1_title">{t('funnel_1_title') || 'Learn with AI'}</h3>
-        <p className="card-p" style={{ flexGrow: 1 }} data-t="funnel_1_desc">
-          {t('funnel_1_desc') || 'The journey begins with comprehensive demystification. We systematically guide you through operational mechanics, stripping away fear and replacing it with technical confidence.'}
-        </p>
-      </div>
-
-      <div className="card fu d2" style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
-        <div style={{ width: '48px', height: '48px', background: 'rgba(99, 102, 241, 0.1)', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '20px', color: 'var(--accent)', fontWeight: 'bold', fontSize: '20px' }}>2</div>
-        <h3 className="card-h3" data-t="funnel_2_title">{t('funnel_2_title') || 'Earn with AI'}</h3>
-        <p className="card-p" style={{ flexGrow: 1 }} data-t="funnel_2_desc">
-          {t('funnel_2_desc') || 'With technical comprehension comes direct application. Leverage our robust, stress-free software to streamline operations, reduce friction, and introduce high-margin automation for immediate financial return.'}
-        </p>
-      </div>
-
-      <div className="card fu d3" style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
-        <div style={{ width: '48px', height: '48px', background: 'rgba(99, 102, 241, 0.1)', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '20px', color: 'var(--accent)', fontWeight: 'bold', fontSize: '20px' }}>3</div>
-        <h3 className="card-h3" data-t="funnel_3_title">{t('funnel_3_title') || 'Lead with AI'}</h3>
-        <p className="card-p" style={{ flexGrow: 1 }} data-t="funnel_3_desc">
-          {t('funnel_3_desc') || 'Transition from an adaptive consumer to an industry leader. Armed with continuous insights, you set new industry benchmarks and out-pace competitors relying on legacy paradigms.'}
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
 
 {/* ===== FOUNDER ===== */}
 <section id="founder" style={{ background: 'var(--bg2)', padding: '60px 0' }}>
