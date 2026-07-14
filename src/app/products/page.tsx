@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import Footer from '@/components/layout/footer';
 import { Bot, FileText } from 'lucide-react';
 import { WaitlistForm } from '@/components/waitlist-form';
@@ -43,49 +44,55 @@ export default function ComingSoonPage() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '40px' }}>
             
             {/* Product 1: Docu-Mind */}
-            <div className="sol-card" style={{ padding: '40px', position: 'relative', overflow: 'hidden' }}>
-              <div style={{ position: 'absolute', top: '-50px', right: '-50px', width: '150px', height: '150px', background: 'radial-gradient(circle, rgba(0,200,224,0.15) 0%, transparent 70%)', borderRadius: '50%' }}></div>
-              
-              <div className="sol-icon" style={{ background: 'rgba(0,180,216,0.1)', color: '#00B4D8', border: '1px solid rgba(0,180,216,0.2)' }}>
-                <FileText size={28} />
+            <div className="sol-card" style={{ padding: '0', position: 'relative', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
+              <div style={{ width: '100%', height: '260px', position: 'relative', borderBottom: '1px solid var(--border)', background: 'var(--bg)' }}>
+                <Image src="/images/products/documind.png" alt="DocuMind AI Interface" fill style={{ objectFit: 'cover', objectPosition: 'top' }} />
               </div>
-              
-              <h3 className="sol-name" style={{ fontSize: '28px', marginBottom: '8px' }}>Docu-Mind</h3>
-              <div className="sol-tagline" style={{ color: 'var(--accent2)', fontWeight: '600', marginBottom: '24px' }}>Intelligent Document Understanding</div>
-              
-              <p className="sol-desc" style={{ marginBottom: '32px' }}>
-                Stop manually entering data from invoices, forms, and contracts. Docu-Mind reads any complex document, extracts structured JSON data instantly, and pushes it directly to your CRM or ERP.
-              </p>
-              
-              <ul className="sol-feats" style={{ margin: '0' }}>
-                <li>Handwriting & Bad Scan OCR</li>
-                <li>Table Extraction & Line Items</li>
-                <li>Zero-shot Custom Form Training</li>
-                <li>Enterprise API Integration</li>
-              </ul>
+              <div style={{ padding: '32px', flex: 1, display: 'flex', flexDirection: 'column' }}>
+                <div style={{ position: 'absolute', top: '230px', right: '32px', width: '60px', height: '60px', background: 'var(--card)', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: 'var(--shadow)', border: '1px solid var(--border)', color: '#00B4D8' }}>
+                  <FileText size={28} />
+                </div>
+                
+                <h3 className="sol-name" style={{ fontSize: '28px', marginBottom: '8px' }}>Docu-Mind</h3>
+                <div className="sol-tagline" style={{ color: 'var(--accent2)', fontWeight: '600', marginBottom: '24px' }}>Intelligent Document Understanding</div>
+                
+                <p className="sol-desc" style={{ marginBottom: '32px' }}>
+                  Stop manually entering data from invoices, forms, and contracts. Docu-Mind reads any complex document, extracts structured JSON data instantly, and pushes it directly to your CRM or ERP.
+                </p>
+                
+                <ul className="sol-feats" style={{ margin: 'auto 0 0 0' }}>
+                  <li>Handwriting & Bad Scan OCR</li>
+                  <li>Table Extraction & Line Items</li>
+                  <li>Zero-shot Custom Form Training</li>
+                  <li>Enterprise API Integration</li>
+                </ul>
+              </div>
             </div>
 
             {/* Product 2: HR Recruiter AI */}
-            <div className="sol-card" style={{ padding: '40px', position: 'relative', overflow: 'hidden' }}>
-              <div style={{ position: 'absolute', top: '-50px', right: '-50px', width: '150px', height: '150px', background: 'radial-gradient(circle, rgba(139,92,246,0.15) 0%, transparent 70%)', borderRadius: '50%' }}></div>
-              
-              <div className="sol-icon" style={{ background: 'rgba(139,92,246,0.1)', color: '#8B5CF6', border: '1px solid rgba(139,92,246,0.2)' }}>
-                <Bot size={28} />
+            <div className="sol-card" style={{ padding: '0', position: 'relative', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
+              <div style={{ width: '100%', height: '260px', position: 'relative', borderBottom: '1px solid var(--border)', background: 'var(--bg)' }}>
+                <Image src="/images/products/hr.png" alt="HireOS HR Recruiter AI Interface" fill style={{ objectFit: 'cover', objectPosition: 'top' }} />
               </div>
-              
-              <h3 className="sol-name" style={{ fontSize: '28px', marginBottom: '8px' }}>HR Recruiter AI</h3>
-              <div className="sol-tagline" style={{ color: '#8B5CF6', fontWeight: '600', marginBottom: '24px' }}>Autonomous Talent Acquisition</div>
-              
-              <p className="sol-desc" style={{ marginBottom: '32px' }}>
-                Scale your hiring without scaling your HR department. Our autonomous agent screens thousands of resumes, conducts initial conversational interviews, and ranks the top talent for your final review.
-              </p>
-              
-              <ul className="sol-feats" style={{ margin: '0' }}>
-                <li>Semantic Resume Parsing</li>
-                <li>Voice/Chat Pre-Screening Agent</li>
-                <li>Bias-Free Candidate Ranking</li>
-                <li>Automated Interview Scheduling</li>
-              </ul>
+              <div style={{ padding: '32px', flex: 1, display: 'flex', flexDirection: 'column' }}>
+                <div style={{ position: 'absolute', top: '230px', right: '32px', width: '60px', height: '60px', background: 'var(--card)', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: 'var(--shadow)', border: '1px solid var(--border)', color: '#8B5CF6' }}>
+                  <Bot size={28} />
+                </div>
+                
+                <h3 className="sol-name" style={{ fontSize: '28px', marginBottom: '8px' }}>HR Recruiter AI</h3>
+                <div className="sol-tagline" style={{ color: '#8B5CF6', fontWeight: '600', marginBottom: '24px' }}>Autonomous Talent Acquisition</div>
+                
+                <p className="sol-desc" style={{ marginBottom: '32px' }}>
+                  Scale your hiring without scaling your HR department. Our autonomous agent screens thousands of resumes, conducts initial conversational interviews, and ranks the top talent for your final review.
+                </p>
+                
+                <ul className="sol-feats" style={{ margin: 'auto 0 0 0' }}>
+                  <li>Semantic Resume Parsing</li>
+                  <li>Voice/Chat Pre-Screening Agent</li>
+                  <li>Bias-Free Candidate Ranking</li>
+                  <li>Automated Interview Scheduling</li>
+                </ul>
+              </div>
             </div>
 
           </div>
