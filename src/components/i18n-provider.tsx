@@ -5,11 +5,11 @@ import React, { createContext, useContext, useState, useEffect } from 'react';
 const TR: Record<string, Record<string, string>> = {
   en: {
     nav_services: "Services",
-    nav_solutions: "Solutions",
-    nav_agents: "Agents",
+    nav_solutions: "Solution Architectures",
+    nav_agents: "AI Agents",
     nav_industries: "Industries",
     nav_process: "Process",
-    nav_contact: "Contact",
+    nav_contact: "Contact Us",
     hero_badge: "MSME Registered · Namakkal, India",
     hero_h1_1: "Custom AI.",
     hero_h1_2: "Real Results.",

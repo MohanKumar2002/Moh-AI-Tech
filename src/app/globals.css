@@ -59,7 +59,7 @@ nav {
   position: fixed; 
   top: 20px; left: 50%; transform: translateX(-50%); z-index: 200;
   height: 64px;
-  width: 92%; max-width: 1200px;
+  width: 95%; max-width: 1400px;
   display: flex; align-items: center; justify-content: space-between;
   padding: 0 24px;
   background: rgba(255,255,255,0.75);

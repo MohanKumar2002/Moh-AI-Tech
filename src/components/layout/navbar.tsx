@@ -28,7 +28,6 @@ export function Navbar() {
         <li><a href="#agents" data-t="nav_agents">{t('nav_agents')}</a></li>
         <li><a href="#industries" data-t="nav_industries">{t('nav_industries')}</a></li>
         <li><a href="#process" data-t="nav_process">{t('nav_process')}</a></li>
-        <li><a href="#contact" data-t="nav_contact">{t('nav_contact')}</a></li>
       </ul>
       <div className="nav-right">
         <div className="lang-select">
