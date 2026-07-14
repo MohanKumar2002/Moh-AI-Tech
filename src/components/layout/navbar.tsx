@@ -25,7 +25,7 @@ export function Navbar() {
       <ul className={`nav-center ${menuOpen ? 'mobile-open' : ''}`} id="nav-links">
           <li><a href="/#services" onClick={() => setMenuOpen(false)} data-t="nav_services">{t('nav_services')}</a></li>
           <li><a href="/#solutions" onClick={() => setMenuOpen(false)} data-t="nav_solutions">{t('nav_solutions')}</a></li>
-          <li><a href="/coming-soon" onClick={() => setMenuOpen(false)}>Coming Soon</a></li>
+          <li><a href="/products" onClick={() => setMenuOpen(false)} data-t="nav_products">{t('nav_products')}</a></li>
         <li><a href="#agents" data-t="nav_agents">{t('nav_agents')}</a></li>
         <li><a href="#industries" data-t="nav_industries">{t('nav_industries')}</a></li>
         <li><a href="#process" data-t="nav_process">{t('nav_process')}</a></li>
