@@ -38,8 +38,8 @@ export default function ERPTasks() {
         </div>
       </div>
 
-      <div style={{ background: 'var(--card)', borderRadius: '16px', border: '1px solid var(--border)', overflow: 'hidden' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: '3fr 2fr 1fr 1fr 1.5fr', padding: '16px 24px', background: 'var(--bg2)', borderBottom: '1px solid var(--border)', fontSize: '13px', fontWeight: '600', color: 'var(--muted)', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+      <div className="erp-card-premium" style={{ padding: 0 }}>
+        <div style={{ display: 'grid', gridTemplateColumns: '3fr 2fr 1fr 1fr 1.5fr', padding: '16px 24px', background: 'rgba(0,0,0,0.02)', borderBottom: '1px solid var(--border)', fontSize: '13px', fontWeight: '600', color: 'var(--muted)', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
           <div>Task Name</div>
           <div>Project</div>
           <div>Status</div>
@@ -51,11 +51,11 @@ export default function ERPTasks() {
           const statusStyle = getStatusColor(task.status);
           const isDone = task.status === 'Done';
           return (
-            <div key={task.id} style={{ display: 'grid', gridTemplateColumns: '3fr 2fr 1fr 1fr 1.5fr', padding: '20px 24px', borderBottom: '1px solid var(--border)', alignItems: 'center', transition: 'background 0.2s', opacity: isDone ? 0.6 : 1 }} className="hover:bg-[var(--bg2)]">
+            <div key={task.id} className="erp-table-row" style={{ gridTemplateColumns: '3fr 2fr 1fr 1fr 1.5fr', opacity: isDone ? 0.6 : 1 }}>
               <div style={{ fontSize: '14px', fontWeight: '600', color: 'var(--text)', textDecoration: isDone ? 'line-through' : 'none' }}>{task.title}</div>
               <div style={{ fontSize: '13px', color: 'var(--muted)' }}>{task.project}</div>
               <div>
-                <span style={{ padding: '6px 12px', borderRadius: '20px', fontSize: '12px', fontWeight: '600', background: statusStyle.bg, color: statusStyle.color }}>
+                <span className="erp-pill-badge" style={{ background: statusStyle.bg, color: statusStyle.color }}>
                   {task.status}
                 </span>
               </div>

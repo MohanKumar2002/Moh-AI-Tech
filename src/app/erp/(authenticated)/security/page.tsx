@@ -33,7 +33,7 @@ export default function SecurityIncidents() {
       </div>
 
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '20px', marginBottom: '32px' }}>
-        <div style={{ background: 'var(--card)', padding: '24px', borderRadius: '16px', border: '1px solid var(--border)' }}>
+        <div className="erp-card-premium">
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
             <div style={{ background: 'rgba(59, 130, 246, 0.1)', padding: '12px', borderRadius: '12px', color: '#3b82f6' }}><MonitorSmartphone size={24} /></div>
             <div>
@@ -44,7 +44,7 @@ export default function SecurityIncidents() {
           <p style={{ fontSize: '13px', color: 'var(--muted2)' }}>System is currently enforcing 1 device per user ID.</p>
         </div>
         
-        <div style={{ background: 'var(--card)', padding: '24px', borderRadius: '16px', border: '1px solid var(--border)' }}>
+        <div className="erp-card-premium">
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
             <div style={{ background: 'rgba(168, 85, 247, 0.1)', padding: '12px', borderRadius: '12px', color: '#a855f7' }}><KeySquare size={24} /></div>
             <div>
@@ -56,8 +56,8 @@ export default function SecurityIncidents() {
         </div>
       </div>
 
-      <div style={{ background: 'var(--card)', borderRadius: '16px', border: '1px solid var(--border)', overflow: 'hidden' }}>
-        <div style={{ padding: '20px 24px', borderBottom: '1px solid var(--border)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: 'var(--bg2)' }}>
+      <div className="erp-card-premium" style={{ padding: 0 }}>
+        <div style={{ padding: '20px 24px', borderBottom: '1px solid var(--border)', display: 'flex', justify-content: 'space-between', alignItems: 'center', background: 'rgba(0,0,0,0.02)' }}>
           <h3 style={{ fontSize: '16px', fontWeight: '600', color: 'var(--text)' }}>Recent Incidents</h3>
           <div style={{ position: 'relative' }}>
             <Search size={16} style={{ position: 'absolute', left: '12px', top: '50%', transform: 'translateY(-50%)', color: 'var(--muted)' }} />
@@ -65,7 +65,7 @@ export default function SecurityIncidents() {
           </div>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.5fr 2fr 1.5fr 1fr 2fr', padding: '16px 24px', background: 'var(--bg2)', borderBottom: '1px solid var(--border)', fontSize: '12px', fontWeight: '600', color: 'var(--muted)', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.5fr 2fr 1.5fr 1fr 2fr', padding: '16px 24px', background: 'rgba(0,0,0,0.02)', borderBottom: '1px solid var(--border)', fontSize: '12px', fontWeight: '600', color: 'var(--muted)', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
           <div>ID</div>
           <div>User ID</div>
           <div>Violation Type</div>
@@ -75,7 +75,7 @@ export default function SecurityIncidents() {
         </div>
 
         {incidents.map(inc => (
-          <div key={inc.id} style={{ display: 'grid', gridTemplateColumns: '1fr 1.5fr 2fr 1.5fr 1fr 2fr', padding: '20px 24px', borderBottom: '1px solid var(--border)', alignItems: 'center', transition: 'background 0.2s', opacity: inc.status === 'Resolved' ? 0.6 : 1 }} className="hover:bg-[var(--bg2)]">
+          <div key={inc.id} className="erp-table-row" style={{ gridTemplateColumns: '1fr 1.5fr 2fr 1.5fr 1fr 2fr', opacity: inc.status === 'Resolved' ? 0.6 : 1 }}>
             <div style={{ fontSize: '13px', fontWeight: '600', color: 'var(--muted)' }}>{inc.id}</div>
             <div style={{ fontSize: '14px', fontWeight: '700', color: 'var(--text)' }}>{inc.user}</div>
             
@@ -90,7 +90,7 @@ export default function SecurityIncidents() {
             </div>
             
             <div>
-              <span style={{ padding: '4px 10px', borderRadius: '20px', fontSize: '11px', fontWeight: '700', textTransform: 'uppercase', 
+              <span className="erp-pill-badge" style={{ 
                 background: inc.status === 'Active' ? 'rgba(239, 68, 68, 0.1)' : inc.status === 'Blocked' ? 'rgba(245, 158, 11, 0.1)' : 'rgba(34, 197, 94, 0.1)', 
                 color: inc.status === 'Active' ? '#ef4444' : inc.status === 'Blocked' ? '#f59e0b' : '#22c55e' }}>
                 {inc.status}

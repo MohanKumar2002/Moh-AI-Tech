@@ -56,8 +56,7 @@ export default function ERPlayout({ children }: { children: React.ReactNode }) {
   ].filter(item => item.roles.includes(role));
 
   return (
-    <div style={{ display: 'flex', minHeight: '100vh', background: 'var(--bg)', position: 'relative' }}>
-      
+    <div className="erp-wrapper">
       {/* Forensic Watermark Overlay */}
       <div style={{
         position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, pointerEvents: 'none', zIndex: 9999,
@@ -91,19 +90,7 @@ export default function ERPlayout({ children }: { children: React.ReactNode }) {
       </div>
 
       {/* Sidebar */}
-      <div className={`erp-sidebar ${isMobileOpen ? 'open' : ''}`} style={{ 
-        width: '280px', 
-        background: 'var(--card)', 
-        borderRight: '1px solid var(--border)', 
-        display: 'flex', 
-        flexDirection: 'column',
-        position: 'fixed',
-        top: 0,
-        bottom: 0,
-        left: 0,
-        zIndex: 40,
-        transition: 'transform 0.3s ease'
-      }}>
+      <div className={`erp-glass-sidebar ${isMobileOpen ? 'open' : ''}`}>
         <div style={{ padding: '24px', display: 'flex', alignItems: 'center', gap: '12px', borderBottom: '1px solid var(--border)' }}>
           <Image src="/logo.png" alt="Logo" width={40} height={40} />
           <div>
@@ -118,13 +105,7 @@ export default function ERPlayout({ children }: { children: React.ReactNode }) {
             const isActive = pathname === item.href;
             const Icon = item.icon;
             return (
-              <Link key={item.name} href={item.href} onClick={() => setIsMobileOpen(false)} style={{ 
-                display: 'flex', alignItems: 'center', gap: '12px', padding: '12px', borderRadius: '8px',
-                background: isActive ? 'var(--bg2)' : 'transparent',
-                color: isActive ? 'var(--accent)' : 'var(--muted)',
-                fontWeight: isActive ? '600' : '500',
-                textDecoration: 'none', transition: 'all 0.2s'
-              }}>
+              <Link key={item.name} href={item.href} onClick={() => setIsMobileOpen(false)} className={`erp-nav-link ${isActive ? 'active' : ''}`}>
                 <Icon size={20} />
                 {item.name}
               </Link>
@@ -142,7 +123,7 @@ export default function ERPlayout({ children }: { children: React.ReactNode }) {
               <div style={{ fontSize: '12px', color: 'var(--muted)' }}>{role === 'admin' ? 'System Administrator' : 'Staff Member'}</div>
             </div>
           </div>
-          <Link href="/erp/login" onClick={() => localStorage.removeItem('erp_role')} style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '12px', borderRadius: '8px', color: '#ff4d4f', textDecoration: 'none', fontWeight: '500' }}>
+          <Link href="/erp/login" onClick={() => localStorage.removeItem('erp_role')} style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '12px 14px', borderRadius: '10px', color: '#ff4d4f', textDecoration: 'none', fontWeight: '500', background: 'rgba(239, 68, 68, 0.05)' }}>
             <LogOut size={20} />
             Sign Out
           </Link>
@@ -156,10 +137,10 @@ export default function ERPlayout({ children }: { children: React.ReactNode }) {
 
       <style jsx global>{`
         @media (max-width: 768px) {
-          .erp-sidebar {
+          .erp-glass-sidebar {
             transform: translateX(-100%);
           }
-          .erp-sidebar.open {
+          .erp-glass-sidebar.open {
             transform: translateX(0);
           }
           .erp-main {
