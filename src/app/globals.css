@@ -94,7 +94,7 @@ nav {
 }
 .nav-center a {
   font-size: 14px; color: var(--muted); text-decoration: none;
-  font-weight: 400; transition: color .18s;
+  font-weight: 400; transition: color .18s; white-space: nowrap;
 }
 .nav-center a:hover { color: var(--text); }
 
@@ -667,7 +667,7 @@ footer {
 .fu.d4 { transition-delay: .32s; }
 
 /* ===== RESPONSIVE ===== */
-@media (max-width: 920px) {
+@media (max-width: 1150px) {
   .nav-center { display: none; }
   .nav-center.mobile-open {
     display: flex;
