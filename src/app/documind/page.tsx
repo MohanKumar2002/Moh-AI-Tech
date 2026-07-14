@@ -538,7 +538,7 @@ export default function DocuMindLanding() {
           <p style={{ fontSize: 13, color: '#606080', marginBottom: '1rem' }}>
             Built by <strong style={{ color: '#a0a0c0' }}>MOH AI TECH</strong> · Namakkal, Tamil Nadu, India · MSME Registered
           </p>
-          <p style={{ fontSize: 13, color: '#606080' }}>info@mohaitech.com · moh-ai-tech.com</p>
+          <p style={{ fontSize: 13, color: '#606080' }}>info@moh-ai-tech.com · moh-ai-tech.com</p>
           <div style={{ marginTop: '1.5rem', display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link href="/" style={{ fontSize: 13, color: '#606080', textDecoration: 'none' }}>← Back to Moh-AI Tech</Link>
             <Link href="/documind/dashboard" style={{ fontSize: 13, color: '#9d5cf6', textDecoration: 'none' }}>Open App →</Link>

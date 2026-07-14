@@ -84,7 +84,7 @@ export default function TermsPage() {
           ta: "கேள்விகள், சந்தேகங்கள் அல்லது சட்ட தொடர்பான விசாரணைகளுக்கு எங்களைத் தொடர்புகொள்ளவும்:"
         })}
       </p>
-      <p className="mt-1">Email: <a href="mailto:info@mohaitech.in" className="text-primary hover:underline">info@mohaitech.in</a></p>
+      <p className="mt-1">Email: <a href="mailto:info@moh-ai-tech.com" className="text-primary hover:underline">info@moh-ai-tech.com</a></p>
     </div>
   );
 }

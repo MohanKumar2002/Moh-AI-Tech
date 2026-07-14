@@ -21,7 +21,7 @@ export const chatbotFaqs = [
   },
   {
     keywords: ['contact', 'support', 'email', 'whatsapp', 'தொடர்பு', 'எண்'],
-    answer: `📨 **Get in Touch:**\n- **Email:** info@mohaitech.in\n- **WhatsApp:** +91 9566852700\n- Or use the Contact form at the bottom of our page!`
+    answer: `📨 **Get in Touch:**\n- **Email:** info@moh-ai-tech.com\n- **WhatsApp:** +91 9566852700\n- Or use the Contact form at the bottom of our page!`
   },
   {
     keywords: ['why', 'trust', 'choose', 'ஏன்'],

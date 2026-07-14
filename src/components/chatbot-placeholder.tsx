@@ -43,7 +43,7 @@ export default function ChatbotPlaceholder() {
         return faq.answer;
       }
     }
-    return "Thanks for reaching out! To discuss your specific needs in detail, please use the 'Contact on WhatsApp' button below or email info@mohaitech.in.";
+    return "Thanks for reaching out! To discuss your specific needs in detail, please use the 'Contact on WhatsApp' button below or email info@moh-ai-tech.com.";
   };
 
   const handleSend = (e?: React.FormEvent, customText?: string) => {

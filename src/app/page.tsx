@@ -3,7 +3,7 @@
 import React, { useEffect } from 'react';
 import Image from 'next/image';
 import { useLanguage } from '@/components/i18n-provider';
-import { ContactForm } from '@/components/ContactForm';
+import { BookingForm } from '@/components/BookingForm';
 
 export default function Home() {
   const { t } = useLanguage();
@@ -60,10 +60,10 @@ export default function Home() {
       <div className="hv-float-2">
         <div className="hv-card">
           <div className="hv-card-title">Capabilities</div>
-          <div className="hv-row"><span className="hv-label">AI / ML</span><span className="hv-badge hv-green">✓ Ready</span></div>
-          <div className="hv-row"><span className="hv-label">PowerBI</span><span className="hv-badge hv-green">✓ Ready</span></div>
+          <div className="hv-row"><span className="hv-label">Web Development</span><span className="hv-badge hv-green">✓ Ready</span></div>
+          <div className="hv-row"><span className="hv-label">AI / ML / DL</span><span className="hv-badge hv-green">✓ Ready</span></div>
+          <div className="hv-row"><span className="hv-label">Computer Vision</span><span className="hv-badge hv-green">✓ Ready</span></div>
           <div className="hv-row"><span className="hv-label">Custom LLM</span><span className="hv-badge hv-blue">✓ Ready</span></div>
-          <div className="hv-row"><span className="hv-label">IoT Edge</span><span className="hv-badge hv-gray">On Request</span></div>
         </div>
       </div>
     </div>
@@ -106,9 +106,9 @@ export default function Home() {
     <div className="trust-label" data-t="trust_label">{t('trust_label')}</div>
     <div className="trust-pills">
       <div className="trust-pill"><span className="trust-pill-icon">🏢</span> MSME Registered</div>
-      <div className="trust-pill"><span className="trust-pill-icon">🤖</span> AI Development</div>
-      <div className="trust-pill"><span className="trust-pill-icon">⚛️</span> React + FastAPI Experts</div>
-      <div className="trust-pill"><span className="trust-pill-icon">🧠</span> Custom AI Solutions</div>
+      <div className="trust-pill"><span className="trust-pill-icon">💻</span> Web Development</div>
+      <div className="trust-pill"><span className="trust-pill-icon">🤖</span> AI, ML & Deep Learning</div>
+      <div className="trust-pill"><span className="trust-pill-icon">👁️</span> Computer Vision</div>
       <div className="trust-pill"><span className="trust-pill-icon">🌐</span> Remote-Friendly</div>
       <div className="trust-pill"><span className="trust-pill-icon">📊</span> Data Intelligence</div>
       <div className="trust-pill"><span className="trust-pill-icon">🔒</span> NDA & IP Protected</div>
@@ -406,6 +406,12 @@ export default function Home() {
       <div className="tech-pill"><span className="tech-dot" style={{'background': '#336791'}}></span>PostgreSQL</div>
       <div className="tech-pill"><span className="tech-dot" style={{'background': '#FFCA28'}}></span>Apache Spark</div>
     </div>
+    <div className="fu d4" style={{ marginTop: '40px', textAlign: 'center' }}>
+      <a href="https://github.com/MohanKumar2002" target="_blank" rel="noopener noreferrer" className="btn-ghost" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
+        <svg height="20" width="20" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
+        Explore our open-source boilerplates and pipeline structures directly on GitHub.
+      </a>
+    </div>
   </div>
 </section>
 
@@ -510,62 +516,7 @@ export default function Home() {
   </div>
 </section>
 
-{/* ===== PRICING ===== */}
-<section id="pricing">
-  <div className="inner">
-    <div className="tag fu" data-t="tag_pricing">{t('tag_pricing')}</div>
-    <h2 className="h2 fu d1" data-t="h2_pricing">{t('h2_pricing')}</h2>
-    <p className="lead fu d2" data-t="lead_pricing">{t('lead_pricing')}</p>
-    <div className="pricing-grid fu d3">
-      <div className="price-card">
-        <div className="price-tier">Starter</div>
-        <div className="price-amount">Custom<span> quote</span></div>
-        <div className="price-sub">Best for small businesses, pilots, and MVPs</div>
-        <ul className="price-feats">
-          <li>1 focused AI model or dashboard</li>
-          <li>Up to 3 data sources</li>
-          <li>3–5 week typical delivery</li>
-          <li>2 revision rounds included</li>
-          <li>30-day post-delivery support</li>
-          <li>Video handover session</li>
-        </ul>
-        <a href="#contact" className="btn-ghost" style={{'width': '100%', 'justifyContent': 'center'}}>Get a Quote</a>
-      </div>
-      <div className="price-card featured">
-        <div className="price-pop">Popular</div>
-        <div className="price-tier">Business</div>
-        <div className="price-amount">Custom<span> quote</span></div>
-        <div className="price-sub">Monthly retainer — ongoing AI development</div>
-        <ul className="price-feats">
-          <li>Dedicated 2-person AI team</li>
-          <li>Multiple parallel workstreams</li>
-          <li>Bi-weekly sprint demos</li>
-          <li>Unlimited revision rounds</li>
-          <li>Priority support response</li>
-          <li>Monthly strategy review</li>
-        </ul>
-        <a href="#contact" className="btn-primary" style={{'width': '100%', 'justifyContent': 'center'}}>Book a Call</a>
-      </div>
-      <div className="price-card">
-        <div className="price-tier">Enterprise</div>
-        <div className="price-amount">Custom<span> quote</span></div>
-        <div className="price-sub">For larger organizations and long-term partnerships</div>
-        <ul className="price-feats">
-          <li>Dedicated extended team</li>
-          <li>Full project management included</li>
-          <li>On-site visits possible (India)</li>
-          <li>SLA-based support agreement</li>
-          <li>Full compliance documentation</li>
-          <li>Training & knowledge transfer</li>
-        </ul>
-        <a href="#contact" className="btn-ghost" style={{'width': '100%', 'justifyContent': 'center'}}>Contact Us</a>
-      </div>
-    </div>
-    <div style={{'textAlign': 'center', 'marginTop': '28px', 'fontSize': '14px', 'color': 'var(--muted)'}}>
-      All prices depend on scope, complexity, and timeline. We'll give you a detailed, honest estimate after the free scoping call.
-    </div>
-  </div>
-</section>
+
 
 {/* ===== CONTACT ===== */}
 <section id="contact">
@@ -579,7 +530,7 @@ export default function Home() {
           <div className="cmethod-icon">📧</div>
           <div>
             <div className="cmethod-lbl">Email</div>
-            <div className="cmethod-val">info@mohaitech.com</div>
+            <div className="cmethod-val">info@moh-ai-tech.com</div>
           </div>
         </div>
         <div className="contact-method">
@@ -609,7 +560,7 @@ export default function Home() {
           <div style={{'marginTop': '16px', 'fontSize': '13px', 'color': 'var(--muted2)'}}>✓ Honest assessment &nbsp; ✓ Technical depth &nbsp; ✓ No commitment required</div>
         </div>
       </div>
-      <ContactForm />
+      <BookingForm />
     </div>
 
     <div className="cta-banner fu">
@@ -617,7 +568,7 @@ export default function Home() {
       <div className="cta-sub" data-t="cta_sub">{t('cta_sub')}</div>
       <div className="cta-btns">
         <a href="#contact" className="btn-primary" data-t="cta_btn1">{t('cta_btn1')}</a>
-        <a href="mailto:info@mohaitech.com" className="btn-ghost" data-t="cta_btn2">{t('cta_btn2')}</a>
+        <a href="mailto:info@moh-ai-tech.com" className="btn-ghost" data-t="cta_btn2">{t('cta_btn2')}</a>
       </div>
     </div>
   </div>
@@ -660,9 +611,9 @@ export default function Home() {
         <ul className="footer-links">
           <li><a href="#industries">Industries</a></li>
           <li><a href="#pricing">Pricing</a></li>
+          <li><a href="/erp/login">Staff / Intern ERP Portal</a></li>
           <li><a href="https://www.linkedin.com/company/107518449/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
           <li><a href="https://www.instagram.com/moh_ai_tech/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-          <li><a href="https://github.com/MohanKumar2002/Moh-AI-Tech" target="_blank" rel="noopener noreferrer">GitHub</a></li>
         </ul>
       </div>
     </div>

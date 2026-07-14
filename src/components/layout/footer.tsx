@@ -55,7 +55,7 @@ export default function Footer() {
               <li><Link href="/#solutions">Solution Architectures</Link></li>
               <li><Link href="/#contact">Contact Us</Link></li>
               <li><Link href="https://wa.me/919566852700" target="_blank" rel="noopener noreferrer">WhatsApp Chat</Link></li>
-              <li><a href="mailto:info@mohaitech.in">Email Support</a></li>
+              <li><a href="mailto:info@moh-ai-tech.com">Email Support</a></li>
             </ul>
           </div>
         </div>
