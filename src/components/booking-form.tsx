@@ -54,7 +54,7 @@ export function BookingForm() {
   };
 
   return (
-    <div className="contact-form-card" style={{ minHeight: '580px', display: 'flex', flexDirection: 'column' }}>
+    <div className="contact-form-card" style={{ minHeight: '580px', display: 'flex', flexDirection: 'column', marginTop: '-16px' }}>
       
       {step > 1 && step < 4 && (
         <button 
