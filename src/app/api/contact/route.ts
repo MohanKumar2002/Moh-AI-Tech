@@ -70,20 +70,24 @@ export async function POST(req: Request) {
         ? `Hi ${name},\n\nThank you for choosing Moh-AI Tech! You have successfully booked a discovery call with us on ${scheduledDate} at ${scheduledTime}.\n\nOur team will connect with you soon.\n\nBest regards,\nMoh-AI Tech Team`
         : `Hi ${name},\n\nThank you for reaching out to Moh-AI Tech! We have successfully received your message and our team will connect with you soon.\n\nBest regards,\nMoh-AI Tech Team`,
       html: `
-        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #eaeaea; border-radius: 10px;">
-          <h2 style="color: #6366f1; margin-bottom: 20px;">Thank You for Choosing Moh-AI Tech!</h2>
-          <p style="font-size: 16px; color: #333;">Hi ${name},</p>
+        <div style="font-family: 'Segoe UI', Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 30px; border: 1px solid #eaeaea; border-radius: 12px; background-color: #ffffff;">
+          <div style="text-align: center; margin-bottom: 25px; border-bottom: 2px solid #f3f4f6; padding-bottom: 20px;">
+            <img src="https://moh-ai-tech.com/logo.png" alt="Moh-AI Tech Logo" style="height: 60px; object-fit: contain;" />
+            <h1 style="color: #1f2937; margin: 15px 0 0 0; font-size: 24px; font-weight: 700;">Moh-AI Tech</h1>
+          </div>
+          <h2 style="color: #6366f1; font-size: 20px; margin-bottom: 20px;">Thank You for Choosing Moh-AI Tech!</h2>
+          <p style="font-size: 16px; color: #4b5563; line-height: 1.6;">Hi ${name},</p>
           ${isCallScheduled 
-            ? `<p style="font-size: 16px; color: #333;">You have successfully booked a discovery call with us.</p>
+            ? `<p style="font-size: 16px; color: #4b5563; line-height: 1.6;">You have successfully booked a discovery call with us.</p>
                <div style="background: #f9fafb; padding: 20px; border-radius: 8px; margin: 20px 0; border: 1px solid #e5e7eb;">
-                 <p style="margin: 0; font-size: 16px;"><strong>Date:</strong> ${scheduledDate}</p>
-                 <p style="margin: 10px 0 0 0; font-size: 16px;"><strong>Time:</strong> ${scheduledTime}</p>
+                 <p style="margin: 0; font-size: 16px; color: #1f2937;"><strong>Date:</strong> ${scheduledDate}</p>
+                 <p style="margin: 10px 0 0 0; font-size: 16px; color: #1f2937;"><strong>Time:</strong> ${scheduledTime}</p>
                </div>
-               <p style="font-size: 16px; color: #333;">Our team will connect with you shortly with the meeting link.</p>`
-            : `<p style="font-size: 16px; color: #333;">We have successfully received your message. Our team is reviewing it and will connect with you very soon.</p>`
+               <p style="font-size: 16px; color: #4b5563; line-height: 1.6;">Our team will connect with you shortly with the meeting link.</p>`
+            : `<p style="font-size: 16px; color: #4b5563; line-height: 1.6;">We have successfully received your message. Our team is reviewing it and will connect with you very soon.</p>`
           }
           <br/>
-          <p style="font-size: 16px; color: #333; margin-top: 20px;">Best regards,<br/><strong>The Moh-AI Tech Team</strong></p>
+          <p style="font-size: 16px; color: #4b5563; margin-top: 20px;">Best regards,<br/><strong style="color: #1f2937;">The Moh-AI Tech Team</strong></p>
         </div>
       `
     };

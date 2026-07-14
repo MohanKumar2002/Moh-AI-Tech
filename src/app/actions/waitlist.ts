@@ -39,13 +39,17 @@ export async function submitWaitlist(email: string) {
       subject: 'Thank You for Your Interest - Moh-AI Tech',
       text: `Hi there,\n\nThank you for your interest in our upcoming products! We have added you to our waitlist.\n\nPlease wait for our launch. We will notify you as soon as we go live!\n\nBest regards,\nMoh-AI Tech Team`,
       html: `
-        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #eaeaea; border-radius: 10px;">
-          <h2 style="color: #6366f1; margin-bottom: 20px;">You're on the Waitlist!</h2>
-          <p style="font-size: 16px; color: #333;">Hi there,</p>
-          <p style="font-size: 16px; color: #333;">Thank you for your interest in our upcoming products! We have successfully added <strong>${email}</strong> to our waitlist.</p>
-          <p style="font-size: 16px; color: #333;">Please wait for our launch. We will notify you with early access as soon as we go live!</p>
+        <div style="font-family: 'Segoe UI', Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 30px; border: 1px solid #eaeaea; border-radius: 12px; background-color: #ffffff;">
+          <div style="text-align: center; margin-bottom: 25px; border-bottom: 2px solid #f3f4f6; padding-bottom: 20px;">
+            <img src="https://moh-ai-tech.com/logo.png" alt="Moh-AI Tech Logo" style="height: 60px; object-fit: contain;" />
+            <h1 style="color: #1f2937; margin: 15px 0 0 0; font-size: 24px; font-weight: 700;">Moh-AI Tech</h1>
+          </div>
+          <h2 style="color: #6366f1; font-size: 20px; margin-bottom: 20px;">You're on the Waitlist!</h2>
+          <p style="font-size: 16px; color: #4b5563; line-height: 1.6;">Hi there,</p>
+          <p style="font-size: 16px; color: #4b5563; line-height: 1.6;">Thank you for your interest in our upcoming products! We have successfully added <strong>${email}</strong> to our waitlist.</p>
+          <p style="font-size: 16px; color: #4b5563; line-height: 1.6;">Please wait for our launch. We will notify you with early access as soon as we go live!</p>
           <br/>
-          <p style="font-size: 16px; color: #333; margin-top: 20px;">Best regards,<br/><strong>The Moh-AI Tech Team</strong></p>
+          <p style="font-size: 16px; color: #4b5563; margin-top: 20px;">Best regards,<br/><strong style="color: #1f2937;">The Moh-AI Tech Team</strong></p>
         </div>
       `
     };
