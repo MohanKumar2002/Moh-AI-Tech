@@ -1,6 +1,7 @@
 import React from 'react';
 import Footer from '@/components/layout/footer';
 import { Bot, FileText } from 'lucide-react';
+import WaitlistForm from '@/components/waitlist-form';
 
 export const metadata = {
   title: 'Coming Soon | Moh-AI Tech Upcoming Products',
@@ -32,14 +33,7 @@ export default function ComingSoonPage() {
         </p>
 
         {/* Waitlist Form */}
-        <div className="fu vis d4" style={{ display: 'flex', gap: '12px', width: '100%', maxWidth: '480px', margin: '0 auto', background: 'var(--card)', padding: '8px', borderRadius: '12px', border: '1px solid var(--border)', boxShadow: 'var(--shadow)', position: 'relative', zIndex: 10 }}>
-          <input 
-            type="email" 
-            placeholder="Enter your business email..." 
-            style={{ flex: 1, background: 'transparent', border: 'none', padding: '12px 16px', outline: 'none', color: 'var(--text)', fontSize: '15px' }}
-          />
-          <button className="btn-primary" style={{ padding: '12px 24px' }}>Join Waitlist</button>
-        </div>
+        <WaitlistForm />
       </section>
 
       {/* Products Showcase */}
