@@ -388,23 +388,42 @@ export default function Home() {
     <div className="tag fu" data-t="tag_tech">{t('tag_tech')}</div>
     <h2 className="h2 fu d1" data-t="h2_tech">{t('h2_tech')}</h2>
     <p className="lead fu d2" data-t="lead_tech">{t('lead_tech')}</p>
-    <div className="tech-grid fu d3">
-      <div className="tech-pill"><span className="tech-dot" style={{'background': '#3572A5'}}></span>Python</div>
-      <div className="tech-pill"><span className="tech-dot" style={{'background': '#EE4C2C'}}></span>PyTorch</div>
-      <div className="tech-pill"><span className="tech-dot" style={{'background': '#FF6F00'}}></span>TensorFlow</div>
-      <div className="tech-pill"><span className="tech-dot" style={{'background': '#5C3EE8'}}></span>OpenCV</div>
-      <div className="tech-pill"><span className="tech-dot" style={{'background': '#FFD21E'}}></span>HuggingFace</div>
-      <div className="tech-pill"><span className="tech-dot" style={{'background': '#9B59B6'}}></span>Scikit-Learn</div>
-      <div className="tech-pill"><span className="tech-dot" style={{'background': '#61DAFB'}}></span>React</div>
-      <div className="tech-pill"><span className="tech-dot" style={{'background': '#009688'}}></span>FastAPI</div>
-      <div className="tech-pill"><span className="tech-dot" style={{'background': '#F2C811'}}></span>PowerBI</div>
-      <div className="tech-pill"><span className="tech-dot" style={{'background': '#34A853'}}></span>LangChain</div>
-      <div className="tech-pill"><span className="tech-dot" style={{'background': '#FF9900'}}></span>AWS</div>
-      <div className="tech-pill"><span className="tech-dot" style={{'background': '#0089D6'}}></span>Azure AI</div>
-      <div className="tech-pill"><span className="tech-dot" style={{'background': '#4285F4'}}></span>Google Cloud</div>
-      <div className="tech-pill"><span className="tech-dot" style={{'background': '#2496ED'}}></span>Docker / K8s</div>
-      <div className="tech-pill"><span className="tech-dot" style={{'background': '#336791'}}></span>PostgreSQL</div>
-      <div className="tech-pill"><span className="tech-dot" style={{'background': '#FFCA28'}}></span>Apache Spark</div>
+    <div className="marquee-container fu d3">
+      <div className="marquee-content">
+        <div className="tech-pill"><span className="tech-dot" style={{'background': '#3572A5'}}></span>Python</div>
+        <div className="tech-pill"><span className="tech-dot" style={{'background': '#EE4C2C'}}></span>PyTorch</div>
+        <div className="tech-pill"><span className="tech-dot" style={{'background': '#FF6F00'}}></span>TensorFlow</div>
+        <div className="tech-pill"><span className="tech-dot" style={{'background': '#5C3EE8'}}></span>OpenCV</div>
+        <div className="tech-pill"><span className="tech-dot" style={{'background': '#FFD21E'}}></span>HuggingFace</div>
+        <div className="tech-pill"><span className="tech-dot" style={{'background': '#9B59B6'}}></span>Scikit-Learn</div>
+        <div className="tech-pill"><span className="tech-dot" style={{'background': '#61DAFB'}}></span>React</div>
+        <div className="tech-pill"><span className="tech-dot" style={{'background': '#009688'}}></span>FastAPI</div>
+        <div className="tech-pill"><span className="tech-dot" style={{'background': '#F2C811'}}></span>PowerBI</div>
+        <div className="tech-pill"><span className="tech-dot" style={{'background': '#34A853'}}></span>LangChain</div>
+        <div className="tech-pill"><span className="tech-dot" style={{'background': '#FF9900'}}></span>AWS</div>
+        <div className="tech-pill"><span className="tech-dot" style={{'background': '#0089D6'}}></span>Azure AI</div>
+        <div className="tech-pill"><span className="tech-dot" style={{'background': '#4285F4'}}></span>Google Cloud</div>
+        <div className="tech-pill"><span className="tech-dot" style={{'background': '#2496ED'}}></span>Docker / K8s</div>
+        <div className="tech-pill"><span className="tech-dot" style={{'background': '#336791'}}></span>PostgreSQL</div>
+        <div className="tech-pill"><span className="tech-dot" style={{'background': '#FFCA28'}}></span>Apache Spark</div>
+        {/* Duplicate for infinite loop */}
+        <div className="tech-pill"><span className="tech-dot" style={{'background': '#3572A5'}}></span>Python</div>
+        <div className="tech-pill"><span className="tech-dot" style={{'background': '#EE4C2C'}}></span>PyTorch</div>
+        <div className="tech-pill"><span className="tech-dot" style={{'background': '#FF6F00'}}></span>TensorFlow</div>
+        <div className="tech-pill"><span className="tech-dot" style={{'background': '#5C3EE8'}}></span>OpenCV</div>
+        <div className="tech-pill"><span className="tech-dot" style={{'background': '#FFD21E'}}></span>HuggingFace</div>
+        <div className="tech-pill"><span className="tech-dot" style={{'background': '#9B59B6'}}></span>Scikit-Learn</div>
+        <div className="tech-pill"><span className="tech-dot" style={{'background': '#61DAFB'}}></span>React</div>
+        <div className="tech-pill"><span className="tech-dot" style={{'background': '#009688'}}></span>FastAPI</div>
+        <div className="tech-pill"><span className="tech-dot" style={{'background': '#F2C811'}}></span>PowerBI</div>
+        <div className="tech-pill"><span className="tech-dot" style={{'background': '#34A853'}}></span>LangChain</div>
+        <div className="tech-pill"><span className="tech-dot" style={{'background': '#FF9900'}}></span>AWS</div>
+        <div className="tech-pill"><span className="tech-dot" style={{'background': '#0089D6'}}></span>Azure AI</div>
+        <div className="tech-pill"><span className="tech-dot" style={{'background': '#4285F4'}}></span>Google Cloud</div>
+        <div className="tech-pill"><span className="tech-dot" style={{'background': '#2496ED'}}></span>Docker / K8s</div>
+        <div className="tech-pill"><span className="tech-dot" style={{'background': '#336791'}}></span>PostgreSQL</div>
+        <div className="tech-pill"><span className="tech-dot" style={{'background': '#FFCA28'}}></span>Apache Spark</div>
+      </div>
     </div>
     <div className="fu d4" style={{ marginTop: '40px', textAlign: 'center' }}>
       <a href="https://github.com/MohanKumar2002" target="_blank" rel="noopener noreferrer" className="btn-ghost" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
