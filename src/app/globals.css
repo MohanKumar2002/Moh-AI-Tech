@@ -618,6 +618,19 @@ section { position: relative; z-index: 1; }
 }
 .cta-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
 
+/* ===== ERP ===== */
+.erp-left {
+  flex: 1.2;
+  background: var(--card);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 80px;
+  border-right: 1px solid var(--border);
+  overflow: hidden;
+}
+
 /* ===== FOOTER ===== */
 footer {
   background: var(--bg2);
@@ -696,6 +709,7 @@ footer {
   .global-grid { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
   .f2col { grid-template-columns: 1fr; }
+  .erp-left { display: none !important; }
 }
 @media (max-width: 768px) {
   nav { top: 12px; width: 95%; padding: 0 16px; height: 56px; }

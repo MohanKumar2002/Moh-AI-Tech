@@ -8,8 +8,8 @@ export function Navbar() {
   const { lang, setLang, t } = useLanguage();  const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
   
-  if (pathname?.startsWith('/documind')) {
-    return null; // Hide main navbar on DocuMind pages
+  if (pathname?.startsWith('/documind') || pathname?.startsWith('/erp')) {
+    return null; // Hide main navbar on DocuMind and ERP pages
   }
 
   const toggleMenu = () => {
