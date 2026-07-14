@@ -13,19 +13,24 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: 'Name and email are required.' }, { status: 400 });
     }
 
-    // 1. Save to Database
-    const newQuery = await prisma.contactQuery.create({
-      data: {
-        name,
-        company: company || null,
-        email,
-        country: country || null,
-        service: service || null,
-        message: message || '',
-        scheduledDate: scheduledDate || null,
-        scheduledTime: scheduledTime || null,
-      },
-    });
+    // 1. Save to Database (Wrapped in try/catch so DB sync issues don't block emails)
+    let newQuery = null;
+    try {
+      newQuery = await prisma.contactQuery.create({
+        data: {
+          name,
+          company: company || null,
+          email,
+          country: country || null,
+          service: service || null,
+          message: message || '',
+          scheduledDate: scheduledDate || null,
+          scheduledTime: scheduledTime || null,
+        },
+      });
+    } catch (dbError) {
+      console.error('Database save error (ignoring to send emails):', dbError);
+    }
 
     // 2. Send Email Notification (using nodemailer)
     // In production, configure these via environment variables
@@ -85,9 +90,15 @@ export async function POST(req: Request) {
       `
     };
 
-    // We don't await this so it doesn't block the response if it fails in dev, or we catch the error
-    transporter.sendMail(mailOptions).catch(err => console.error("Admin Email error:", err));
-    transporter.sendMail(customerMailOptions).catch(err => console.error("Customer Email error:", err));
+    // VERCEL FIX: We MUST await the emails, otherwise Vercel kills the serverless function before they send!
+    try {
+      await Promise.all([
+        transporter.sendMail(mailOptions),
+        transporter.sendMail(customerMailOptions)
+      ]);
+    } catch (emailError) {
+      console.error("Email sending failed (check SMTP credentials):", emailError);
+    }
 
     // 3. Send WhatsApp Notification (Using Free CallMeBot API or Webhook)
     // To get a free CallMeBot API key, message their bot on WhatsApp.
