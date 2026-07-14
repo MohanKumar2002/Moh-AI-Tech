@@ -19,8 +19,8 @@ export function Navbar() {
   return (
     <nav>
       <a href="#" className="logo">
-        <img src="/logo.png" alt="Moh-AI Tech Logo" style={{ height: "42px", width: "auto", display: "block", objectFit: "contain" }} />
-        <span className="grad-text" style={{ marginLeft: "8px", fontWeight: "800", fontSize: "18px", letterSpacing: "1px" }}>MOH-AI TECH</span>
+        <img src="/logo.png" alt="Moh-AI Tech Logo" className="logo-img" style={{ height: "42px", width: "auto", display: "block", objectFit: "contain" }} />
+        <span className="grad-text logo-text" style={{ marginLeft: "8px", fontWeight: "800", fontSize: "18px", letterSpacing: "1px", whiteSpace: "nowrap" }}>MOH-AI TECH</span>
       </a>
       <ul className={`nav-center ${menuOpen ? 'mobile-open' : ''}`} id="nav-links">
         <li><a href="#services" data-t="nav_services">{t('nav_services')}</a></li>
@@ -37,7 +37,7 @@ export function Navbar() {
           <button className={`lang-btn ${lang === 'de' ? 'active' : ''}`} data-lang="de" onClick={() => setLang('de')}>DE</button>
         </div>
         <a href="#contact" className="nav-cta" data-t="nav_contact">{t('nav_contact')}</a>
-        <a href="/erp/login" title="Staff / Intern Portal" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '38px', height: '38px', borderRadius: '50%', background: 'rgba(255,255,255,0.05)', color: 'var(--text)', border: '1px solid rgba(255,255,255,0.1)', marginLeft: '12px' }}>
+        <a href="/erp/login" className="erp-login" title="Staff / Intern Portal" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '38px', height: '38px', borderRadius: '50%', background: 'rgba(255,255,255,0.05)', color: 'var(--text)', border: '1px solid rgba(255,255,255,0.1)', marginLeft: '12px' }}>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
         </a>
         <button className="menu-toggle" onClick={toggleMenu} aria-label="Menu">☰</button>
