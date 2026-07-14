@@ -266,9 +266,10 @@ export function BookingForm() {
                   <CheckCircle2 size={36} />
                 </div>
               </div>
-              <h3 style={{ fontSize: '28px', fontWeight: '800', color: 'var(--text)', marginBottom: '16px' }}>Message Sent!</h3>
-              <p style={{ fontSize: '16px', color: 'var(--muted)', lineHeight: '1.6', marginBottom: '32px' }}>
-                Thanks for reaching out, {formData.name.split(' ')[0]}! We've received your message and will reply within 24 hours.
+              <h3 style={{ fontSize: '32px', fontWeight: '800', color: 'var(--text)', marginBottom: '16px' }}>Thank You!</h3>
+              <p style={{ fontSize: '18px', color: 'var(--muted)', lineHeight: '1.6', marginBottom: '32px' }}>
+                You have successfully sent your message, <strong>{formData.name.split(' ')[0]}</strong>.<br/><br/>
+                Our team is reviewing your request and will connect with you very soon!
               </p>
               <button onClick={() => { setStep(1); setFormData({name:'',company:'',email:'',country:'',service:'',message:''}); }} style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', color: 'var(--text)', padding: '12px 24px', borderRadius: '30px', fontWeight: '600', cursor: 'pointer' }}>Send another</button>
             </motion.div>
@@ -283,12 +284,12 @@ export function BookingForm() {
                   <CheckCircle2 size={36} />
                 </div>
               </div>
-              <h3 style={{ fontSize: '28px', fontWeight: '800', color: 'var(--text)', marginBottom: '16px' }}>Meeting Confirmed!</h3>
-              <p style={{ fontSize: '16px', color: 'var(--muted)', lineHeight: '1.6', marginBottom: '32px' }}>
-                We're excited to speak with you, {formData.name.split(' ')[0]}!<br/>
+              <h3 style={{ fontSize: '32px', fontWeight: '800', color: 'var(--text)', marginBottom: '16px' }}>Successfully Booked!</h3>
+              <p style={{ fontSize: '18px', color: 'var(--muted)', lineHeight: '1.6', marginBottom: '32px' }}>
+                Thank you for choosing us, <strong>{formData.name.split(' ')[0]}</strong>!<br/><br/>
                 Your call is scheduled for <strong>{selectedDate?.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' })}</strong> at <strong>{selectedTime}</strong>. 
                 <br /><br />
-                A calendar invitation with the Google Meet link has been sent to <strong>{formData.email}</strong>.
+                Our team will connect with you soon. A calendar invitation has been sent to <strong>{formData.email}</strong>.
               </p>
               <button onClick={() => { setStep(1); setFormData({name:'',company:'',email:'',country:'',service:'',message:''}); setSelectedDate(undefined); setSelectedTime(''); }} style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', color: 'var(--text)', padding: '12px 24px', borderRadius: '30px', fontWeight: '600', cursor: 'pointer' }}>Done</button>
             </motion.div>

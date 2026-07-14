@@ -59,8 +59,35 @@ export async function POST(req: Request) {
       `,
     };
 
+    const customerMailOptions = {
+      from: '"Moh-AI Tech" <info@moh-ai-tech.com>',
+      to: email,
+      subject: isCallScheduled ? 'Booking Confirmed - Moh-AI Tech' : 'Thank you for contacting Moh-AI Tech',
+      text: isCallScheduled 
+        ? `Hi ${name},\n\nThank you for choosing Moh-AI Tech! You have successfully booked a discovery call with us on ${scheduledDate} at ${scheduledTime}.\n\nOur team will connect with you soon.\n\nBest regards,\nMoh-AI Tech Team`
+        : `Hi ${name},\n\nThank you for reaching out to Moh-AI Tech! We have successfully received your message and our team will connect with you soon.\n\nBest regards,\nMoh-AI Tech Team`,
+      html: `
+        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #eaeaea; border-radius: 10px;">
+          <h2 style="color: #6366f1; margin-bottom: 20px;">Thank You for Choosing Moh-AI Tech!</h2>
+          <p style="font-size: 16px; color: #333;">Hi ${name},</p>
+          ${isCallScheduled 
+            ? `<p style="font-size: 16px; color: #333;">You have successfully booked a discovery call with us.</p>
+               <div style="background: #f9fafb; padding: 20px; border-radius: 8px; margin: 20px 0; border: 1px solid #e5e7eb;">
+                 <p style="margin: 0; font-size: 16px;"><strong>Date:</strong> ${scheduledDate}</p>
+                 <p style="margin: 10px 0 0 0; font-size: 16px;"><strong>Time:</strong> ${scheduledTime}</p>
+               </div>
+               <p style="font-size: 16px; color: #333;">Our team will connect with you shortly with the meeting link.</p>`
+            : `<p style="font-size: 16px; color: #333;">We have successfully received your message. Our team is reviewing it and will connect with you very soon.</p>`
+          }
+          <br/>
+          <p style="font-size: 16px; color: #333; margin-top: 20px;">Best regards,<br/><strong>The Moh-AI Tech Team</strong></p>
+        </div>
+      `
+    };
+
     // We don't await this so it doesn't block the response if it fails in dev, or we catch the error
-    transporter.sendMail(mailOptions).catch(err => console.error("Email error:", err));
+    transporter.sendMail(mailOptions).catch(err => console.error("Admin Email error:", err));
+    transporter.sendMail(customerMailOptions).catch(err => console.error("Customer Email error:", err));
 
     // 3. Send WhatsApp Notification (Using Free CallMeBot API or Webhook)
     // To get a free CallMeBot API key, message their bot on WhatsApp.
