@@ -80,7 +80,7 @@ export default function ERPlayout({ children }: { children: React.ReactNode }) {
       )}
       
       {/* Mobile Header */}
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '16px', background: 'var(--card)', borderBottom: '1px solid var(--border)', position: 'fixed', top: 0, left: 0, right: 0, zIndex: 50 }} className="md:hidden">
+      <div className="erp-mobile-header" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '16px', background: 'var(--card)', borderBottom: '1px solid var(--border)', position: 'fixed', top: 0, left: 0, right: 0, zIndex: 50 }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
           <Image src="/logo.png" alt="Logo" width={32} height={32} />
           <span style={{ fontWeight: '700', fontSize: '16px', color: 'var(--text)' }}>ERP Portal</span>
@@ -112,7 +112,7 @@ export default function ERPlayout({ children }: { children: React.ReactNode }) {
           </div>
         </div>
 
-        <nav style={{ padding: '24px 16px', flex: 1, display: 'flex', flexDirection: 'column', gap: '8px' }}>
+        <div className="erp-nav-container" style={{ padding: '24px 16px', flex: 1, display: 'flex', flexDirection: 'column', gap: '8px' }}>
           <div style={{ fontSize: '11px', fontWeight: '700', color: 'var(--muted2)', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '8px', paddingLeft: '12px' }}>Menu</div>
           {navItems.map((item) => {
             const isActive = pathname === item.href;
@@ -130,7 +130,7 @@ export default function ERPlayout({ children }: { children: React.ReactNode }) {
               </Link>
             );
           })}
-        </nav>
+        </div>
 
         <div style={{ padding: '24px 16px', borderTop: '1px solid var(--border)' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '20px', padding: '0 12px' }}>
@@ -166,6 +166,11 @@ export default function ERPlayout({ children }: { children: React.ReactNode }) {
             margin-left: 0 !important;
             padding: 24px !important;
             margin-top: 60px !important;
+          }
+        }
+        @media (min-width: 769px) {
+          .erp-mobile-header {
+            display: none !important;
           }
         }
       `}</style>
