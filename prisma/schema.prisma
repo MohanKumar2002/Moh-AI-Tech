@@ -28,3 +28,9 @@ model ContactQuery {
   scheduledTime String?
   createdAt     DateTime @default(now())
 }
+
+model Waitlist {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  createdAt DateTime @default(now())
+}

@@ -1,7 +1,7 @@
 import React from 'react';
 import Footer from '@/components/layout/footer';
 import { Bot, FileText } from 'lucide-react';
-import WaitlistForm from '@/components/waitlist-form';
+import { WaitlistForm } from '@/components/waitlist-form';
 
 export const metadata = {
   title: 'Coming Soon | Moh-AI Tech Upcoming Products',
