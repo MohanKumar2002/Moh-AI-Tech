@@ -13,10 +13,11 @@ export async function POST(req: Request) {
     }
 
     // Configure the SMTP transporter
+    const smtpPort = Number(process.env.SMTP_PORT) || 587;
     const transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST || 'smtp.gmail.com',
-      port: Number(process.env.SMTP_PORT) || 587,
-      secure: process.env.SMTP_SECURE === 'true' || false,
+      port: smtpPort,
+      secure: smtpPort === 465, // Automatically true for 465, false for 587
       auth: {
         user: process.env.SMTP_USER,
         pass: process.env.SMTP_PASS,
