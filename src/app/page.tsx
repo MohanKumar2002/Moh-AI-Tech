@@ -38,6 +38,30 @@ export default function Home() {
         <em data-t="hero_h1_2">{t('hero_h1_2')}</em>
       </h1>
       <p className="hero-sub fu d2" data-t="hero_sub">{t('hero_sub')}</p>
+      
+      <div className="hero-tagline fu d2" style={{
+        marginTop: '1.5rem',
+        marginBottom: '1rem',
+        padding: '0.8rem 1.8rem',
+        background: 'linear-gradient(135deg, rgba(99, 102, 241, 0.05), rgba(168, 85, 247, 0.05))',
+        border: '1px solid rgba(99, 102, 241, 0.2)',
+        borderRadius: '999px',
+        display: 'inline-block',
+        boxShadow: '0 4px 20px -2px rgba(99, 102, 241, 0.1)',
+        backdropFilter: 'blur(10px)'
+      }}>
+        <span style={{ 
+          background: 'linear-gradient(90deg, #6366f1, #a855f7)', 
+          WebkitBackgroundClip: 'text', 
+          WebkitTextFillColor: 'transparent', 
+          fontWeight: 700, 
+          letterSpacing: '0.5px',
+          fontSize: '1.15rem'
+        }} data-t="hero_tagline">
+          {t('hero_tagline') || "Peace in mind, Progress through AI, Prosperity in life."}
+        </span>
+      </div>
+
       <div className="hero-btns fu d3">
         <a href="#contact" className="btn-primary" data-t="hero_btn1">{t('hero_btn1')}</a>
         <a href="#services" className="btn-ghost" data-t="hero_btn2">{t('hero_btn2')}</a>
