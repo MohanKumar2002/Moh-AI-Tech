@@ -226,7 +226,7 @@ export default function Home() {
 <section id="solutions">
   <div className="inner">
     <div className="tag fu" data-t="tag_solutions">{t('tag_solutions')}</div>
-    <h2 className="h2 fu d1" data-t="h2_solutions">{t('h2_solutions')}</h2>
+    <h2 className="h2 fu d1">Solution Architectures We Build</h2>
     <p className="lead fu d2" data-t="lead_solutions">{t('lead_solutions')}</p>
     <div className="solutions-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '24px' }}>
       <div className="sol-card fu">
@@ -289,56 +289,65 @@ export default function Home() {
   </div>
 </section>
 
+{/* ===== EMERGING ARCHITECTURES ===== */}
+<section id="emerging" style={{ background: 'var(--card)', padding: '60px 0', borderTop: '1px solid var(--border)' }}>
+  <div className="inner">
+    <div className="tag fu" style={{ background: 'rgba(99, 102, 241, 0.1)', color: 'var(--accent)' }}>Roadmap</div>
+    <h2 className="h2 fu d1">Emerging Architectures</h2>
+    <p className="lead fu d2">These are domains we're actively extending into. Available for early pilot partners who want to help shape the build.</p>
+    <div className="fu d3" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '24px', marginTop: '40px' }}>
+      <div className="sol-card">
+        <div className="sol-icon">👁️</div>
+        <div className="sol-name">Vision Inspection System</div>
+        <div className="sol-tagline">AI-powered quality control & video analytics</div>
+        <div className="sol-desc" style={{ marginBottom: '16px' }}>Computer Vision pipeline for real-time video or image analysis — detecting defects, monitoring safety compliance, or tracking objects in your environment.</div>
+        <div style={{ display: 'inline-block', padding: '6px 12px', background: 'rgba(234, 179, 8, 0.1)', color: '#ca8a04', fontSize: '12px', fontWeight: '600', borderRadius: '4px' }}>In Development — Pilot Partner Wanted</div>
+      </div>
+      <div className="sol-card">
+        <div className="sol-icon">🌾</div>
+        <div className="sol-name">Agriculture AI System</div>
+        <div className="sol-tagline">Precision farming & crop intelligence</div>
+        <div className="sol-desc" style={{ marginBottom: '16px' }}>AI-powered crop monitoring, disease detection, and yield estimation — using satellite imagery, drone data, or field sensor inputs. Designed for Indian farming contexts.</div>
+        <div style={{ display: 'inline-block', padding: '6px 12px', background: 'rgba(234, 179, 8, 0.1)', color: '#ca8a04', fontSize: '12px', fontWeight: '600', borderRadius: '4px' }}>In Development — Pilot Partner Wanted</div>
+      </div>
+      <div className="sol-card">
+        <div className="sol-icon">🏥</div>
+        <div className="sol-name">Medical Imaging AI</div>
+        <div className="sol-tagline">Deep learning for diagnostic image analysis</div>
+        <div className="sol-desc" style={{ marginBottom: '16px' }}>Custom deep learning models for analyzing medical images — X-rays, retinal scans, histopathology — to assist clinicians with pattern detection.</div>
+        <div style={{ display: 'inline-block', padding: '6px 12px', background: 'rgba(234, 179, 8, 0.1)', color: '#ca8a04', fontSize: '12px', fontWeight: '600', borderRadius: '4px' }}>In Development — Pilot Partner Wanted</div>
+      </div>
+    </div>
+    <div className="fu d3" style={{ marginTop: '40px' }}>
+      <a href="#contact" className="btn btn-outline" style={{ display: 'inline-block' }}>Discuss a Pilot →</a>
+    </div>
+  </div>
+</section>
+
 {/* ===== PROJECT SHOWCASE ===== */}
 <section id="projects" style={{ background: 'var(--bg)', padding: '88px 0' }}>
   <div className="inner">
     <div className="tag fu">Recent Work</div>
-    <h2 className="h2 fu d1">Real Projects. Real Results.</h2>
-    <p className="lead fu d2">A glimpse into some of the custom solution architectures we've engineered for our clients.</p>
+    <h2 className="h2 fu d1">Real Projects. Real Progress.</h2>
+    <p className="lead fu d2">A look at the systems we've engineered and are actively building out.</p>
     
     <div className="fu d3" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '32px', marginTop: '48px' }}>
       
-      {/* Docu-Mind AI Pro */}
+      {/* Smart Document Pipeline */}
       <div className="project-card" style={{ background: 'var(--card)', borderRadius: '12px', overflow: 'hidden', border: '1px solid var(--border)' }}>
         <Image src="/images/products/ocr.png" alt="Document OCR Pipeline" width={800} height={600} style={{ width: '100%', height: '220px', objectFit: 'cover', borderBottom: '1px solid var(--border)' }} />
         <div style={{ padding: '32px' }}>
-          <h3 style={{ fontSize: '20px', fontWeight: '800', marginBottom: '8px' }}>Docu-Mind AI Pro (Smart Pipeline)</h3>
-          <p style={{ fontSize: '15px', color: 'var(--muted)', lineHeight: '1.6', marginBottom: '24px' }}><strong>Problem:</strong> Manual data entry from legacy records creating massive operational bottlenecks.</p>
-          <p style={{ fontSize: '15px', color: 'var(--muted)', lineHeight: '1.6', marginBottom: '24px' }}><strong>Solution Built:</strong> High-accuracy OCR extraction pipeline that auto-routes parsed data to client databases.</p>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '24px' }}>
-            <span className="svc-tag" style={{ fontSize: '12px' }}>Python</span>
-            <span className="svc-tag" style={{ fontSize: '12px' }}>FastAPI</span>
-            <span className="svc-tag" style={{ fontSize: '12px' }}>HuggingFace</span>
-          </div>
-          <div style={{ padding: '16px', background: 'rgba(99, 102, 241, 0.05)', borderRadius: '8px', border: '1px solid rgba(99, 102, 241, 0.1)' }}>
-            <strong style={{ color: 'var(--accent)', fontSize: '14px' }}>Outcome:</strong>
-            <p style={{ margin: '4px 0 0', fontSize: '14px', color: 'var(--text)', fontWeight: '600' }}>Up to 30+ Hours Saved/Week per Client</p>
-          </div>
-          <div style={{ marginTop: '24px' }}>
-            <a href="/products" className="sol-link">View Product details →</a>
-          </div>
+          <h3 style={{ fontSize: '20px', fontWeight: '800', marginBottom: '8px' }}>Smart Document Pipeline</h3>
+          <p style={{ fontSize: '15px', color: 'var(--muted)', lineHeight: '1.6', marginBottom: '24px' }}>Built an OCR-based extraction pipeline for automated data capture from legacy records — reads, structures, and routes document data without manual entry.</p>
         </div>
       </div>
 
-      {/* ResumeFilter AI */}
+      {/* Vision Analytics System */}
       <div className="project-card" style={{ background: 'var(--card)', borderRadius: '12px', overflow: 'hidden', border: '1px solid var(--border)' }}>
-        <Image src="/images/products/resume.png" alt="Resume Parser" width={800} height={600} style={{ width: '100%', height: '220px', objectFit: 'cover', borderBottom: '1px solid var(--border)' }} />
+        <Image src="/images/products/video.png" alt="Video Analytics" width={800} height={600} style={{ width: '100%', height: '220px', objectFit: 'cover', borderBottom: '1px solid var(--border)' }} />
         <div style={{ padding: '32px' }}>
-          <h3 style={{ fontSize: '20px', fontWeight: '800', marginBottom: '8px' }}>ResumeFilter AI</h3>
-          <p style={{ fontSize: '15px', color: 'var(--muted)', lineHeight: '1.6', marginBottom: '24px' }}><strong>Problem:</strong> HR teams overwhelmed by a high volume of unqualified CVs.</p>
-          <p style={{ fontSize: '15px', color: 'var(--muted)', lineHeight: '1.6', marginBottom: '24px' }}><strong>Solution Built:</strong> Automated semantic resume parsing and candidate ranking intelligence using TF-IDF scoring.</p>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '24px' }}>
-            <span className="svc-tag" style={{ fontSize: '12px' }}>React</span>
-            <span className="svc-tag" style={{ fontSize: '12px' }}>Python</span>
-            <span className="svc-tag" style={{ fontSize: '12px' }}>Scikit-Learn</span>
-          </div>
-          <div style={{ padding: '16px', background: 'rgba(99, 102, 241, 0.05)', borderRadius: '8px', border: '1px solid rgba(99, 102, 241, 0.1)' }}>
-            <strong style={{ color: 'var(--accent)', fontSize: '14px' }}>Outcome:</strong>
-            <p style={{ margin: '4px 0 0', fontSize: '14px', color: 'var(--text)', fontWeight: '600' }}>Processed 500+ CVs in 4 minutes</p>
-          </div>
-          <div style={{ marginTop: '24px' }}>
-            <a href="/products" className="sol-link">View Product details →</a>
-          </div>
+          <h3 style={{ fontSize: '20px', fontWeight: '800', marginBottom: '8px' }}>Vision Analytics System</h3>
+          <p style={{ fontSize: '15px', color: 'var(--muted)', lineHeight: '1.6', marginBottom: '24px' }}>Computer vision pipeline for real-time defect detection — built with PyTorch and FastAPI, currently in development and available for pilot deployment.</p>
         </div>
       </div>
 
@@ -347,20 +356,23 @@ export default function Home() {
         <Image src="/images/products/chatbot.png" alt="Custom Chatbot" width={800} height={600} style={{ width: '100%', height: '220px', objectFit: 'cover', borderBottom: '1px solid var(--border)' }} />
         <div style={{ padding: '32px' }}>
           <h3 style={{ fontSize: '20px', fontWeight: '800', marginBottom: '8px' }}>RAG Support Agent</h3>
-          <p style={{ fontSize: '15px', color: 'var(--muted)', lineHeight: '1.6', marginBottom: '24px' }}><strong>Problem:</strong> Customer support bottlenecks with highly repetitive queries.</p>
-          <p style={{ fontSize: '15px', color: 'var(--muted)', lineHeight: '1.6', marginBottom: '24px' }}><strong>Solution Built:</strong> Context-aware conversational AI integrated directly into client workflows and knowledge bases.</p>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '24px' }}>
-            <span className="svc-tag" style={{ fontSize: '12px' }}>LangChain</span>
-            <span className="svc-tag" style={{ fontSize: '12px' }}>OpenAI</span>
-            <span className="svc-tag" style={{ fontSize: '12px' }}>PostgreSQL</span>
-          </div>
-          <div style={{ padding: '16px', background: 'rgba(99, 102, 241, 0.05)', borderRadius: '8px', border: '1px solid rgba(99, 102, 241, 0.1)' }}>
-            <strong style={{ color: 'var(--accent)', fontSize: '14px' }}>Outcome:</strong>
-            <p style={{ margin: '4px 0 0', fontSize: '14px', color: 'var(--text)', fontWeight: '600' }}>Dramatically reduced tier-1 support tickets</p>
-          </div>
+          <p style={{ fontSize: '15px', color: 'var(--muted)', lineHeight: '1.6', marginBottom: '24px' }}>Context-aware conversational AI built on retrieval-augmented generation — connects to a knowledge base and answers queries with source-grounded responses.</p>
         </div>
       </div>
 
+      {/* ResumeFilter AI */}
+      <div className="project-card" style={{ background: 'var(--card)', borderRadius: '12px', overflow: 'hidden', border: '1px solid var(--border)' }}>
+        <Image src="/images/products/resume.png" alt="Resume Parser" width={800} height={600} style={{ width: '100%', height: '220px', objectFit: 'cover', borderBottom: '1px solid var(--border)' }} />
+        <div style={{ padding: '32px' }}>
+          <h3 style={{ fontSize: '20px', fontWeight: '800', marginBottom: '8px' }}>ResumeFilter AI — HR Automation</h3>
+          <p style={{ fontSize: '15px', color: 'var(--muted)', lineHeight: '1.6', marginBottom: '24px' }}>Resume screening engine using TF-IDF scoring and PDF parsing — processes batches of resumes and ranks candidates against job criteria in minutes instead of hours.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div className="fu d3" style={{ marginTop: '48px', textAlign: 'center' }}>
+      <a href="#process" className="sol-link" style={{ fontSize: '18px', fontWeight: '600' }}>See how we build →</a>
     </div>
   </div>
 </section>
@@ -403,10 +415,10 @@ export default function Home() {
     <h2 className="h2 fu d1" data-t="h2_industries">{t('h2_industries')}</h2>
     <p className="lead fu d2" data-t="lead_industries">{t('lead_industries')}</p>
     <div className="industry-grid fu d3" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))' }}>
-      <div className="ind-card"><span className="ind-icon">🏦</span><div className="ind-name">Finance</div><div className="ind-desc">Fraud detection, risk modeling, KYC automation</div></div>
-      <div className="ind-card"><span className="ind-icon">🛒</span><div className="ind-name">Retail & E-commerce</div><div className="ind-desc">Recommendations, inventory AI, demand sensing</div></div>
-      <div className="ind-card"><span className="ind-icon">🚚</span><div className="ind-name">Logistics</div><div className="ind-desc">Route optimization, demand forecasting, tracking AI</div></div>
+      <div className="ind-card"><span className="ind-icon">🏥</span><div className="ind-name">Healthcare</div><div className="ind-desc">Diagnostics AI, patient data analytics, hospital operations</div></div>
+      <div className="ind-card"><span className="ind-icon">🧑‍💼</span><div className="ind-name">HR & Recruitment</div><div className="ind-desc">Resume screening, candidate ranking, applicant tracking automation</div></div>
       <div className="ind-card"><span className="ind-icon">🏭</span><div className="ind-name">Manufacturing</div><div className="ind-desc">Quality control, predictive maintenance, production analytics</div></div>
+      <div className="ind-card"><span className="ind-icon">🏦</span><div className="ind-name">Finance & Document Processing</div><div className="ind-desc">Fraud detection, risk modeling, document automation</div></div>
     </div>
   </div>
 </section>

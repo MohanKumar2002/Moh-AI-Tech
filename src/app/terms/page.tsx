@@ -1,101 +1,65 @@
-'use client';
-
-import { useLanguage } from '@/components/i18n-provider';
-
-import { Navbar } from '@/components/layout/navbar';
-import Footer from '@/components/layout/footer';
+import React from 'react';
 
 export default function TermsPage() {
-  const { t } = useLanguage();
-
   return (
-    <>
-      <Navbar />
-      <main style={{ paddingTop: '100px', backgroundColor: 'var(--bg)', color: 'var(--text)', minHeight: '100vh' }}>
-        <div className="max-w-3xl mx-auto p-8 bg-[var(--bg2)] rounded-xl border border-[var(--border)] shadow-sm my-12 text-sm leading-7">
-          <h1 className="text-3xl font-bold mb-8 text-center bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-purple-600 pb-2">
-            {t({
-              en: 'Terms & Conditions',
-              ta: 'விதிமுறைகள் மற்றும் நிபந்தனைகள்'
-            })}
-          </h1>
-
-          <p className="mb-6 text-[var(--muted)]">
-            {t({
-              en: "Welcome to MOH AI TECH. By accessing or using our services, you agree to comply with and be bound by the following terms. Please read them carefully.",
-              ta: "MOH AI TECH-ஐ வரவேற்கிறோம். எங்கள் சேவைகளை அணுகுவதோ அல்லது பயன்படுத்துவதோ மூலம், நீங்கள் பின்வரும் விதிமுறைகளை ஒத்துக்கொள்கிறீர்கள். தயவுசெய்து அவற்றை கவனமாக படிக்கவும்."
-            })}
+    <main className="min-h-screen bg-[var(--bg)] py-24">
+      <div className="inner max-w-3xl mx-auto">
+        <h1 className="h2 mb-8">Terms of Service</h1>
+        <div className="prose prose-invert prose-lg text-[var(--muted)]">
+          <p className="mb-8">
+            These terms govern your use of the Moh-AI Tech website and engagement with our services. By contacting us or engaging our services, you agree to the following.
           </p>
 
-          <h2 className="text-xl font-semibold mt-8 mb-3 text-[var(--accent)] border-b border-[var(--border)] pb-2">{t({ en: '1. Ownership', ta: '1. உரிமை' })}</h2>
+          <h2 className="text-[var(--text)] font-bold text-xl mt-8 mb-4">1. Services</h2>
           <p className="mb-6">
-            {t({
-              en: "MOH AI TECH is a government-registered sole proprietorship under MSME Reg. No. UDYAM-TN-14-0088280. All intellectual property associated with our tools, services, and brand belongs to MOH AI TECH.",
-              ta: "MOH AI TECH என்பது இந்திய அரசால் பதிவு செய்யப்பட்ட தனிநபர் உரிமையுள்ள நிறுவனம் (MSME Reg. No. UDYAM-TN-14-0088280). எங்கள் கருவிகள், சேவைகள் மற்றும் பிராண்டுடன் தொடர்புடைய அனைத்து அறிவுசார் சொத்துகளும் MOH AI TECH-க்கு சொந்தமானவை."
-            })}
+            Moh-AI Tech provides custom AI, machine learning, computer vision, and data intelligence development services. Specific deliverables, timelines, and pricing are defined in individual project agreements/contracts, not on this website.
           </p>
 
-          <h2 className="text-xl font-semibold mt-8 mb-3 text-[var(--accent)] border-b border-[var(--border)] pb-2">{t({ en: '2. Tool Usage', ta: '2. கருவிகளின் பயன்பாடு' })}</h2>
+          <h2 className="text-[var(--text)] font-bold text-xl mt-8 mb-4">2. Quotes & Pricing</h2>
           <p className="mb-6">
-            {t({
-              en: "Our AI tools are provided for educational, personal, research, or professional purposes. Misuse—including illegal, unethical, or harmful activities—is strictly prohibited. We reserve the right to suspend or terminate access for violations.",
-              ta: "எங்கள் AI கருவிகள் கல்வி, தனிப்பட்ட, ஆராய்ச்சி அல்லது தொழில்முறை பயன்பாட்டிற்காக வழங்கப்படுகின்றன. சட்டவிரோதமான, ஒழுக்கமற்ற அல்லது தீங்கான நடவடிக்கைகள் உள்ளிட்ட தவறான பயன்பாடு கண்டிப்பாகத் தடைசெய்யப்படுகிறது. விதிமுறைகளை மீறினால் அணுகலை இடைநிறுத்த அல்லது ரத்துசெய்ய எங்களுக்கு உரிமை உண்டு."
-            })}
+            Pricing shown on this website is illustrative. Actual costs are provided after a scoping call and depend on project scope, complexity, and timeline. Quotes are non-binding until a signed project agreement is in place.
           </p>
 
-          <h2 className="text-xl font-semibold mt-8 mb-3 text-[var(--accent)] border-b border-[var(--border)] pb-2">{t({ en: '3. User Accounts', ta: '3. பயனர் கணக்குகள்' })}</h2>
+          <h2 className="text-[var(--text)] font-bold text-xl mt-8 mb-4">3. Intellectual Property</h2>
           <p className="mb-6">
-            {t({
-              en: "Users are responsible for maintaining the confidentiality of their account credentials. All activity under your account is considered your responsibility. Notify us immediately if you suspect unauthorized access.",
-              ta: "உங்கள் கணக்கின் விபரங்களை இரகசியமாக வைத்திருக்க பயனர் பொறுப்பாளியாக இருக்கிறீர்கள். உங்கள் கணக்கில் நடைபெறும் அனைத்து நடவடிக்கைகளுக்கும் நீங்கள் பொறுப்பாக இருக்கிறீர்கள். அனுமதியின்றி அணுகல் இருந்தால் உடனடியாக எங்களைத் தொடர்புகொள்ளுங்கள்."
-            })}
+            Unless otherwise agreed in writing, IP ownership of custom-built solutions transfers to the client upon full payment. Any pre-existing frameworks, tools, or reusable components developed independently by Moh-AI Tech remain our property and may be reused across engagements.
           </p>
 
-          <h2 className="text-xl font-semibold mt-8 mb-3 text-[var(--accent)] border-b border-[var(--border)] pb-2">{t({ en: '4. Content Ownership & Responsibility', ta: '4. உள்ளடக்க உரிமையும் பொறுப்பும்' })}</h2>
+          <h2 className="text-[var(--text)] font-bold text-xl mt-8 mb-4">4. Confidentiality</h2>
           <p className="mb-6">
-            {t({
-              en: "Content generated through our platform may involve AI output. Users retain rights over their input and any legally permitted usage of generated content. We do not monitor or claim ownership over user-generated content.",
-              ta: "எங்கள் தளத்தின் மூலம் உருவாகும் உள்ளடக்கம் AI வெளியீட்டை உள்ளடக்கியிருக்கலாம். பயனர்கள் தங்கள் உள்ளீடுகளுக்கும், சட்டப்படி அனுமதிக்கப்பட்ட பயன்பாட்டிற்கும் உரிமையைத் தக்கவைத்திருக்கிறார்கள். பயனர் உருவாக்கிய உள்ளடக்கத்திற்கு எங்கள் உரிமை இல்லை அல்லது கண்காணிக்கப்படவில்லை."
-            })}
+            We treat all client data, business information, and project details as confidential. NDAs are available and standard for all engagements upon request.
           </p>
 
-          <h2 className="text-xl font-semibold mt-8 mb-3 text-[var(--accent)] border-b border-[var(--border)] pb-2">{t({ en: '5. Modifications & Termination', ta: '5. மாற்றங்களும் நிறைவேற்றலும்' })}</h2>
+          <h2 className="text-[var(--text)] font-bold text-xl mt-8 mb-4">5. Client Responsibilities</h2>
           <p className="mb-6">
-            {t({
-              en: "We may update these terms at any time without prior notice. It is your responsibility to review them regularly. Continued use of our services after changes implies your acceptance of the revised terms.",
-              ta: "இந்த விதிமுறைகள் எப்போது வேண்டுமானாலும் முன்நறுப்பில்லாமல் புதுப்பிக்கப்படலாம். அவற்றை அடிக்கடி பார்வையிடுவது உங்கள் பொறுப்பு. மாற்றங்களுக்குப் பிறகு எங்கள் சேவைகளை தொடர்ந்து பயன்படுத்துவது, புதுப்பிக்கப்பட்ட விதிகளை ஏற்கின்றீர்கள் என்பதை குறிக்கிறது."
-            })}
+            Clients are responsible for providing accurate data, timely feedback during review cycles, and necessary access/credentials required for integration work.
           </p>
 
-          <h2 className="text-xl font-semibold mt-8 mb-3 text-[var(--accent)] border-b border-[var(--border)] pb-2">{t({ en: '6. Disclaimers & Limitations', ta: '6. பொறுப்புவிலகலும் வரம்புகளும்' })}</h2>
+          <h2 className="text-[var(--text)] font-bold text-xl mt-8 mb-4">6. Limitation of Liability</h2>
           <p className="mb-6">
-            {t({
-              en: "We do not guarantee uninterrupted service, accuracy of AI outputs, or suitability for any particular purpose. Use at your own risk. We are not liable for losses incurred due to platform usage.",
-              ta: "தொடர்ச்சியான சேவை, AI வெளியீடுகளின் துல்லியம், அல்லது குறிப்பிட்ட நோக்கத்திற்கான பொருத்தத்தை நாங்கள் உத்திரவாதமளிக்கவில்லை. உங்கள் சொந்த ஆபத்தில் பயன்படுத்துங்கள். எங்கள் தளத்தின் பயன்பாட்டால் ஏற்படும் இழப்புகளுக்கு நாங்கள் பொறுப்பேற்க முடியாது."
-            })}
+            Moh-AI Tech is not liable for indirect, incidental, or consequential damages arising from use of delivered solutions. Our total liability in any engagement is limited to the fees paid for that engagement.
           </p>
 
-          <h2 className="text-xl font-semibold mt-8 mb-3 text-[var(--accent)] border-b border-[var(--border)] pb-2">{t({ en: '7. Governing Law', ta: '7. சட்ட ஒழுங்குகள்' })}</h2>
+          <h2 className="text-[var(--text)] font-bold text-xl mt-8 mb-4">7. Termination</h2>
           <p className="mb-6">
-            {t({
-              en: "These terms are governed by the laws of India. Any disputes arising shall be subject to jurisdiction in the courts of Tamil Nadu, India.",
-              ta: "இந்த விதிமுறைகள் இந்தியாவின் சட்டங்களுக்கு உட்பட்டவை. ஏற்படும் எந்தவொரு சிக்கலும் தமிழ்நாட்டிலுள்ள நீதிமன்றங்களில் தீர்க்கப்படும்."
-            })}
+            Either party may terminate an engagement per the terms outlined in the signed project agreement. Work completed up to termination is billable.
           </p>
 
-          <h2 className="text-xl font-semibold mt-8 mb-3 text-[var(--accent)] border-b border-[var(--border)] pb-2">{t({ en: '8. Contact Information', ta: '8. தொடர்பு தகவல்' })}</h2>
-          <p className="mb-2">
-            {t({
-              en: "For questions, concerns, or legal inquiries, contact us at:",
-              ta: "கேள்விகள், சந்தேகங்கள் அல்லது சட்ட தொடர்பான விசாரணைகளுக்கு எங்களைத் தொடர்புகொள்ளவும்:"
-            })}
+          <h2 className="text-[var(--text)] font-bold text-xl mt-8 mb-4">8. Changes to These Terms</h2>
+          <p className="mb-6">
+            We may update these terms periodically. Continued use of our website or services after changes constitutes acceptance.
           </p>
-          <p className="font-medium text-base bg-indigo-50/50 p-4 rounded-lg border border-indigo-100 inline-block">
-            Email: <a href="mailto:info@moh-ai-tech.com" className="text-indigo-600 hover:text-indigo-800 transition-colors">info@moh-ai-tech.com</a>
+
+          <h2 className="text-[var(--text)] font-bold text-xl mt-8 mb-4">Contact</h2>
+          <p className="mb-8">
+            Questions about these terms: <a href="mailto:info@mohaitech.com" className="text-[var(--accent)] hover:underline">info@mohaitech.com</a>
+          </p>
+          
+          <p className="text-sm">
+            Last updated: July 2026
           </p>
         </div>
-      </main>
-      <Footer />
-    </>
+      </div>
+    </main>
   );
 }
