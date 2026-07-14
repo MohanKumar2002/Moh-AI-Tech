@@ -90,7 +90,7 @@ nav {
 .logo em { font-style: normal; color: var(--accent); }
 
 .nav-center {
-  display: flex; align-items: center; gap: 28px; list-style: none;
+  display: flex; align-items: center; gap: 20px; list-style: none;
 }
 .nav-center a {
   font-size: 14px; color: var(--muted); text-decoration: none;
