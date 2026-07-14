@@ -23,6 +23,8 @@ model ContactQuery {
   email     String
   country   String?
   service   String?
-  message   String
-  createdAt DateTime @default(now())
+  message       String
+  scheduledDate String?
+  scheduledTime String?
+  createdAt     DateTime @default(now())
 }

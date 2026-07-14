@@ -7,7 +7,7 @@ const prisma = new PrismaClient();
 export async function POST(req: Request) {
   try {
     const body = await req.json();
-    const { name, company, email, country, service, message } = body;
+    const { name, company, email, country, service, message, scheduledDate, scheduledTime } = body;
 
     if (!name || !email) {
       return NextResponse.json({ error: 'Name and email are required.' }, { status: 400 });
@@ -22,6 +22,8 @@ export async function POST(req: Request) {
         country: country || null,
         service: service || null,
         message: message || '',
+        scheduledDate: scheduledDate || null,
+        scheduledTime: scheduledTime || null,
       },
     });
 
@@ -36,10 +38,13 @@ export async function POST(req: Request) {
       },
     });
 
+    const isCallScheduled = scheduledDate && scheduledTime;
+    const subjectTitle = isCallScheduled ? `[CALL SCHEDULED] New Lead: ${name}` : `New Lead: ${name} from ${company || 'Unknown Company'}`;
+
     const mailOptions = {
       from: '"Moh-AI Tech" <noreply@moh-ai-tech.com>',
-      to: process.env.NOTIFICATION_EMAIL || 'admin@moh-ai-tech.com',
-      subject: `New Lead: ${name} from ${company || 'Unknown Company'}`,
+      to: process.env.NOTIFICATION_EMAIL || 'info@moh-ai-tech.com, mohaitechpvt@gmail.com',
+      subject: subjectTitle,
       text: `
         You have a new contact query!
         
@@ -49,8 +54,8 @@ export async function POST(req: Request) {
         Country: ${country || 'N/A'}
         Service of Interest: ${service || 'N/A'}
         
-        Message:
-        ${message}
+        ${isCallScheduled ? `CALL SCHEDULED FOR:\nDate: ${scheduledDate}\nTime: ${scheduledTime}\n\n` : ''}Message:
+        ${message || 'No message provided.'}
       `,
     };
 
@@ -68,7 +73,7 @@ export async function POST(req: Request) {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          text: `*New Lead!* 🚀\nName: ${name}\nEmail: ${email}\nService: ${service || 'N/A'}`,
+          text: `*New Lead!* 🚀\nName: ${name}\nEmail: ${email}\nService: ${service || 'N/A'}\n${scheduledDate ? `*Meeting Scheduled:* ${scheduledDate} @ ${scheduledTime}` : ''}`,
         }),
       }).catch(err => console.error("WhatsApp error:", err));
     }
