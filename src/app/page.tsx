@@ -3,7 +3,7 @@
 import React, { useEffect } from 'react';
 import Image from 'next/image';
 import { useLanguage } from '@/components/i18n-provider';
-import { BookingForm } from '@/components/BookingForm';
+import { BookingForm } from '@/components/booking-form';
 
 export default function Home() {
   const { t } = useLanguage();
