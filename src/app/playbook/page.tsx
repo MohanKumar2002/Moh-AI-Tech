@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import React, { useEffect } from 'react';
 import { Navbar } from '@/components/layout/navbar';
@@ -48,12 +48,12 @@ export default function PlaybookPage() {
             <div style={{ background: 'var(--bg2)', padding: '30px', borderRadius: '12px', border: '1px solid var(--border)', marginBottom: '30px' }}>
               <h3 style={{ fontSize: '1.25rem', color: 'var(--accent)', marginBottom: '10px' }}>The Master Brand Slogan</h3>
               <p style={{ fontSize: '1.1rem', fontWeight: 'bold' }}>"Peace in mind, Progress through AI, Prosperity in life."</p>
-              <p style={{ color: 'var(--muted)', marginTop: '8px' }}>"?????? ?????; ??-???? ????????; ???????? ????????!"</p>
+              <p style={{ color: 'var(--muted)', marginTop: '8px' }}>"மனதில் அமைதி; ஏஐ-யில் வளர்ச்சி; வாழ்வில் உயர்ச்சி!"</p>
             </div>
             <div style={{ background: 'var(--bg2)', padding: '30px', borderRadius: '12px', border: '1px solid var(--border)' }}>
               <h3 style={{ fontSize: '1.25rem', color: 'var(--accent)', marginBottom: '10px' }}>The Service Activation Motto</h3>
               <p style={{ fontSize: '1.1rem', fontWeight: 'bold' }}>"Learn with AI, Earn with AI, Lead with AI."</p>
-              <p style={{ color: 'var(--muted)', marginTop: '8px' }}>"??-???? ???????, ??-???? ?????????, ??-???? ?????????????!"</p>
+              <p style={{ color: 'var(--muted)', marginTop: '8px' }}>"ஏஐ-யோடு கற்போம், ஏஐ-யோடு ஈட்டுவோம், ஏஐ-யோடு வழிநடத்துவோம்!"</p>
             </div>
           </div>
 
@@ -62,13 +62,13 @@ export default function PlaybookPage() {
             <p style={{ marginBottom: '16px' }}>The first phase of the Moh-AI paradigm begins internally with the developer's mind. In standard software development models, engineers are treated as transactional processors converting tickets into code. When an engineer operates under chronic stress, the prefrontal cortex experiences cognitive narrowing, limiting the ability to perceive elegant architectural solutions.</p>
             <p style={{ marginBottom: '16px' }}>Moh-AI Tech actively structures a counter-environment. We assert that a stress-free workplace is the ultimate competitive advantage in the AI space. By intentionally mitigating artificial urgency and toxic management paradigms, we allow our engineers the psychological runway required to investigate edge cases, refine system documentation, and write highly optimized algorithms.</p>
             <div style={{ background: 'rgba(99, 102, 241, 0.05)', padding: '20px', borderRadius: '8px', borderLeft: '4px solid var(--accent)', margin: '20px 0', textAlign: 'center', fontFamily: 'monospace', fontSize: '1.2rem' }}>
-              S = ? (? - s) � dt
+              S = ∫ (ψ − σ) · dt
             </div>
-            <p style={{ fontSize: '0.9rem', color: 'var(--muted)' }}>Where ? represents deep cognitive focus and s represents internal systemic friction. When stress approaches zero, stability optimizes naturally.</p>
+            <p style={{ fontSize: '0.9rem', color: 'var(--muted)' }}>Where ψ represents deep cognitive focus and σ represents internal systemic friction. When stress approaches zero, stability optimizes naturally.</p>
           </div>
 
           <div className="fu" style={{ marginBottom: '60px' }}>
-            <h2 style={{ fontSize: '2rem', borderBottom: '2px solid var(--border)', paddingBottom: '10px', marginBottom: '20px' }}>The Funnel of Growth � Learn, Earn, Lead</h2>
+            <h2 style={{ fontSize: '2rem', borderBottom: '2px solid var(--border)', paddingBottom: '10px', marginBottom: '20px' }}>The Funnel of Growth — Learn, Earn, Lead</h2>
             <p style={{ marginBottom: '24px' }}>To translate our high-level philosophy into practical steps for the end-user, Moh-AI Tech applies a strictly structured user journey funnel. This progression guarantees that no partner enters our ecosystem as a passive customer; they enter as students and leave as industry pioneers.</p>
             
             <div style={{ paddingLeft: '20px', borderLeft: '2px solid var(--border)' }}>
