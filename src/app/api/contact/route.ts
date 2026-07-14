@@ -33,8 +33,9 @@ export async function POST(req: Request) {
     // 2. Send Email Notification (using nodemailer)
     // In production, configure these via environment variables
     const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST || 'smtp.ethereal.email',
-      port: Number(process.env.SMTP_PORT) || 587,
+      host: process.env.SMTP_HOST || 'smtp.titan.email',
+      port: Number(process.env.SMTP_PORT) || 465,
+      secure: Number(process.env.SMTP_PORT) === 465 || !process.env.SMTP_PORT, // true for 465, false for other ports
       auth: {
         user: process.env.SMTP_USER,
         pass: process.env.SMTP_PASS,
