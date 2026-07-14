@@ -169,7 +169,7 @@ export default function Home() {
   <div className="trust-inner">
     <div className="trust-label" data-t="trust_label">{t('trust_label')}</div>
     <div className="trust-pills">
-      <div className="trust-pill"><span className="trust-pill-icon">🏢</span> MSME Registered</div>
+      <div className="trust-pill"><span className="trust-pill-icon">🏢</span> MSME Reg: UDYAM-TN-XXXXXXX</div>
       <div className="trust-pill"><span className="trust-pill-icon">💻</span> Web Development</div>
       <div className="trust-pill"><span className="trust-pill-icon">🤖</span> AI, ML & Deep Learning</div>
       <div className="trust-pill"><span className="trust-pill-icon">👁️</span> Computer Vision</div>
@@ -228,7 +228,7 @@ export default function Home() {
     <div className="tag fu" data-t="tag_solutions">{t('tag_solutions')}</div>
     <h2 className="h2 fu d1" data-t="h2_solutions">{t('h2_solutions')}</h2>
     <p className="lead fu d2" data-t="lead_solutions">{t('lead_solutions')}</p>
-    <div className="solutions-grid">
+    <div className="solutions-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '24px' }}>
       <div className="sol-card fu">
         <div className="sol-icon">🧠</div>
         <div className="sol-name">Enterprise AI Brain</div>
@@ -244,20 +244,6 @@ export default function Home() {
         <div className="sol-note" data-t="sol_concept">{t('sol_concept')}</div>
       </div>
       <div className="sol-card fu d1">
-        <div className="sol-icon">👁️</div>
-        <div className="sol-name">Vision Inspection System</div>
-        <div className="sol-tagline">AI-powered quality control & video analytics</div>
-        <div className="sol-desc">Computer Vision pipeline for real-time video or image analysis — detecting defects, monitoring safety compliance, or tracking objects in your environment.</div>
-        <ul className="sol-feats">
-          <li>Works with existing cameras or sensors</li>
-          <li>Custom-trained for your specific defect types</li>
-          <li>Edge or cloud deployment</li>
-          <li>Alert system with dashboard</li>
-        </ul>
-        <a href="#contact" className="sol-link">Discuss this →</a>
-        <div className="sol-note" data-t="sol_concept">{t('sol_concept')}</div>
-      </div>
-      <div className="sol-card fu d2">
         <div className="sol-icon">📊</div>
         <div className="sol-name">Data Intelligence Suite</div>
         <div className="sol-tagline">From raw data to executive dashboards</div>
@@ -272,34 +258,6 @@ export default function Home() {
         <div className="sol-note" data-t="sol_concept">{t('sol_concept')}</div>
       </div>
       <div className="sol-card fu">
-        <div className="sol-icon">🌾</div>
-        <div className="sol-name">Agriculture AI System</div>
-        <div className="sol-tagline">Precision farming & crop intelligence</div>
-        <div className="sol-desc">AI-powered crop monitoring, disease detection, and yield estimation — using satellite imagery, drone data, or field sensor inputs. Designed for Indian farming contexts.</div>
-        <ul className="sol-feats">
-          <li>Crop disease detection via image AI</li>
-          <li>Weather-adaptive yield estimation</li>
-          <li>Multilingual alerts (Tamil, Hindi, Telugu)</li>
-          <li>WhatsApp or SMS delivery</li>
-        </ul>
-        <a href="#contact" className="sol-link">Discuss this →</a>
-        <div className="sol-note" data-t="sol_concept">{t('sol_concept')}</div>
-      </div>
-      <div className="sol-card fu d1">
-        <div className="sol-icon">🏥</div>
-        <div className="sol-name">Medical Imaging AI</div>
-        <div className="sol-tagline">Deep learning for diagnostic image analysis</div>
-        <div className="sol-desc">Custom deep learning models for analyzing medical images — X-rays, retinal scans, histopathology — to assist clinicians with pattern detection. Developed in consultation with medical professionals.</div>
-        <ul className="sol-feats">
-          <li>Custom-trained for your image modality</li>
-          <li>DICOM-compatible integration</li>
-          <li>Explainable output for clinical review</li>
-          <li>Built with data privacy as a priority</li>
-        </ul>
-        <a href="#contact" className="sol-link">Discuss this →</a>
-        <div className="sol-note" data-t="sol_concept">{t('sol_concept')}</div>
-      </div>
-      <div className="sol-card fu d2">
         <div className="sol-icon">🤖</div>
         <div className="sol-name">AI Customer Service Agent</div>
         <div className="sol-tagline">Multi-channel conversational AI</div>
@@ -309,6 +267,20 @@ export default function Home() {
           <li>Trained on your product/service knowledge</li>
           <li>30+ language support</li>
           <li>Connects to your CRM or helpdesk</li>
+        </ul>
+        <a href="#contact" className="sol-link">Discuss this →</a>
+        <div className="sol-note" data-t="sol_concept">{t('sol_concept')}</div>
+      </div>
+      <div className="sol-card fu d1">
+        <div className="sol-icon">📑</div>
+        <div className="sol-name">HR & Document Automation</div>
+        <div className="sol-tagline">Automated parsing and screening</div>
+        <div className="sol-desc">Intelligent document processing for resumes, contracts, and forms. Includes semantic parsing and TF-IDF based candidate ranking.</div>
+        <ul className="sol-feats">
+          <li>High-accuracy OCR for legacy records</li>
+          <li>Semantic resume parsing & ranking</li>
+          <li>Automated candidate pre-screening</li>
+          <li>Enterprise API integration</li>
         </ul>
         <a href="#contact" className="sol-link">Discuss this →</a>
         <div className="sol-note" data-t="sol_concept">{t('sol_concept')}</div>
@@ -324,50 +296,65 @@ export default function Home() {
     <h2 className="h2 fu d1">Real Projects. Real Results.</h2>
     <p className="lead fu d2">A glimpse into some of the custom solution architectures we've engineered for our clients.</p>
     
-    <div className="metrics-bar fu d3" style={{ display: 'flex', flexWrap: 'wrap', gap: '24px', margin: '40px 0', background: 'var(--card)', border: '1px solid var(--border)', borderRadius: '12px', padding: '32px', justifyContent: 'space-around' }}>
-      <div style={{ textAlign: 'center' }}>
-        <div style={{ fontSize: '32px', fontWeight: '800', color: '#000' }}>500+</div>
-        <div style={{ fontSize: '14px', color: 'var(--muted)', marginTop: '8px' }}>CVs Processed in 4 Mins</div>
+    <div className="fu d3" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '32px', marginTop: '48px' }}>
+      
+      {/* Docu-Mind AI Pro */}
+      <div className="project-card" style={{ background: 'var(--card)', borderRadius: '12px', overflow: 'hidden', border: '1px solid var(--border)' }}>
+        <Image src="/images/products/ocr.png" alt="Document OCR Pipeline" width={800} height={600} style={{ width: '100%', height: '220px', objectFit: 'cover', borderBottom: '1px solid var(--border)' }} />
+        <div style={{ padding: '32px' }}>
+          <h3 style={{ fontSize: '20px', fontWeight: '800', marginBottom: '8px' }}>Docu-Mind AI Pro (Smart Pipeline)</h3>
+          <p style={{ fontSize: '15px', color: 'var(--muted)', lineHeight: '1.6', marginBottom: '24px' }}><strong>Problem:</strong> Manual data entry from legacy records creating massive operational bottlenecks.</p>
+          <p style={{ fontSize: '15px', color: 'var(--muted)', lineHeight: '1.6', marginBottom: '24px' }}><strong>Solution Built:</strong> High-accuracy OCR extraction pipeline that auto-routes parsed data to client databases.</p>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '24px' }}>
+            <span className="svc-tag" style={{ fontSize: '12px' }}>Python</span>
+            <span className="svc-tag" style={{ fontSize: '12px' }}>FastAPI</span>
+            <span className="svc-tag" style={{ fontSize: '12px' }}>HuggingFace</span>
+          </div>
+          <div style={{ padding: '16px', background: 'rgba(99, 102, 241, 0.05)', borderRadius: '8px', border: '1px solid rgba(99, 102, 241, 0.1)' }}>
+            <strong style={{ color: 'var(--accent)', fontSize: '14px' }}>Outcome:</strong>
+            <p style={{ margin: '4px 0 0', fontSize: '14px', color: 'var(--text)', fontWeight: '600' }}>Up to 30+ Hours Saved/Week per Client</p>
+          </div>
+        </div>
       </div>
-      <div style={{ textAlign: 'center' }}>
-        <div style={{ fontSize: '32px', fontWeight: '800', color: '#000' }}>98%</div>
-        <div style={{ fontSize: '14px', color: 'var(--muted)', marginTop: '8px' }}>Vision Defect Accuracy</div>
-      </div>
-      <div style={{ textAlign: 'center' }}>
-        <div style={{ fontSize: '32px', fontWeight: '800', color: '#000' }}>30+</div>
-        <div style={{ fontSize: '14px', color: 'var(--muted)', marginTop: '8px' }}>Hours Saved/Week per Client</div>
-      </div>
-    </div>
 
-    <div className="fu d3" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px' }}>
+      {/* ResumeFilter AI */}
       <div className="project-card" style={{ background: 'var(--card)', borderRadius: '12px', overflow: 'hidden', border: '1px solid var(--border)' }}>
-        <Image src="/images/products/ocr.png" alt="Document OCR Pipeline" width={800} height={600} style={{ width: '100%', height: '200px', objectFit: 'cover', borderBottom: '1px solid var(--border)' }} />
-        <div style={{ padding: '20px' }}>
-          <h3 style={{ fontSize: '16px', fontWeight: '700', marginBottom: '8px' }}>Smart Document Pipeline</h3>
-          <p style={{ fontSize: '14px', color: 'var(--muted)', lineHeight: '1.5' }}>High-accuracy OCR for automated data extraction from legacy records.</p>
+        <Image src="/images/products/resume.png" alt="Resume Parser" width={800} height={600} style={{ width: '100%', height: '220px', objectFit: 'cover', borderBottom: '1px solid var(--border)' }} />
+        <div style={{ padding: '32px' }}>
+          <h3 style={{ fontSize: '20px', fontWeight: '800', marginBottom: '8px' }}>ResumeFilter AI</h3>
+          <p style={{ fontSize: '15px', color: 'var(--muted)', lineHeight: '1.6', marginBottom: '24px' }}><strong>Problem:</strong> HR teams overwhelmed by a high volume of unqualified CVs.</p>
+          <p style={{ fontSize: '15px', color: 'var(--muted)', lineHeight: '1.6', marginBottom: '24px' }}><strong>Solution Built:</strong> Automated semantic resume parsing and candidate ranking intelligence using TF-IDF scoring.</p>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '24px' }}>
+            <span className="svc-tag" style={{ fontSize: '12px' }}>React</span>
+            <span className="svc-tag" style={{ fontSize: '12px' }}>Python</span>
+            <span className="svc-tag" style={{ fontSize: '12px' }}>Scikit-Learn</span>
+          </div>
+          <div style={{ padding: '16px', background: 'rgba(99, 102, 241, 0.05)', borderRadius: '8px', border: '1px solid rgba(99, 102, 241, 0.1)' }}>
+            <strong style={{ color: 'var(--accent)', fontSize: '14px' }}>Outcome:</strong>
+            <p style={{ margin: '4px 0 0', fontSize: '14px', color: 'var(--text)', fontWeight: '600' }}>Processed 500+ CVs in 4 minutes</p>
+          </div>
         </div>
       </div>
+
+      {/* RAG Support Agent */}
       <div className="project-card" style={{ background: 'var(--card)', borderRadius: '12px', overflow: 'hidden', border: '1px solid var(--border)' }}>
-        <Image src="/images/products/video.png" alt="Video Analytics" width={800} height={600} style={{ width: '100%', height: '200px', objectFit: 'cover', borderBottom: '1px solid var(--border)' }} />
-        <div style={{ padding: '20px' }}>
-          <h3 style={{ fontSize: '16px', fontWeight: '700', marginBottom: '8px' }}>Vision Analytics System</h3>
-          <p style={{ fontSize: '14px', color: 'var(--muted)', lineHeight: '1.5' }}>Real-time computer vision pipeline for automated defect detection.</p>
+        <Image src="/images/products/chatbot.png" alt="Custom Chatbot" width={800} height={600} style={{ width: '100%', height: '220px', objectFit: 'cover', borderBottom: '1px solid var(--border)' }} />
+        <div style={{ padding: '32px' }}>
+          <h3 style={{ fontSize: '20px', fontWeight: '800', marginBottom: '8px' }}>RAG Support Agent</h3>
+          <p style={{ fontSize: '15px', color: 'var(--muted)', lineHeight: '1.6', marginBottom: '24px' }}><strong>Problem:</strong> Customer support bottlenecks with highly repetitive queries.</p>
+          <p style={{ fontSize: '15px', color: 'var(--muted)', lineHeight: '1.6', marginBottom: '24px' }}><strong>Solution Built:</strong> Context-aware conversational AI integrated directly into client workflows and knowledge bases.</p>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '24px' }}>
+            <span className="svc-tag" style={{ fontSize: '12px' }}>LangChain</span>
+            <span className="svc-tag" style={{ fontSize: '12px' }}>OpenAI</span>
+            <span className="svc-tag" style={{ fontSize: '12px' }}>PostgreSQL</span>
+          </div>
+          <div style={{ padding: '16px', background: 'rgba(99, 102, 241, 0.05)', borderRadius: '8px', border: '1px solid rgba(99, 102, 241, 0.1)' }}>
+            <strong style={{ color: 'var(--accent)', fontSize: '14px' }}>Outcome:</strong>
+            <p style={{ margin: '4px 0 0', fontSize: '14px', color: 'var(--text)', fontWeight: '600' }}>Dramatically reduced tier-1 support tickets</p>
+          </div>
         </div>
       </div>
-      <div className="project-card" style={{ background: 'var(--card)', borderRadius: '12px', overflow: 'hidden', border: '1px solid var(--border)' }}>
-        <Image src="/images/products/chatbot.png" alt="Custom Chatbot" width={800} height={600} style={{ width: '100%', height: '200px', objectFit: 'cover', borderBottom: '1px solid var(--border)' }} />
-        <div style={{ padding: '20px' }}>
-          <h3 style={{ fontSize: '16px', fontWeight: '700', marginBottom: '8px' }}>RAG Support Agent</h3>
-          <p style={{ fontSize: '14px', color: 'var(--muted)', lineHeight: '1.5' }}>Context-aware conversational AI integrated directly into client workflows.</p>
-        </div>
-      </div>
-      <div className="project-card" style={{ background: 'var(--card)', borderRadius: '12px', overflow: 'hidden', border: '1px solid var(--border)' }}>
-        <Image src="/images/products/resume.png" alt="Resume Parser" width={800} height={600} style={{ width: '100%', height: '200px', objectFit: 'cover', borderBottom: '1px solid var(--border)' }} />
-        <div style={{ padding: '20px' }}>
-          <h3 style={{ fontSize: '16px', fontWeight: '700', marginBottom: '8px' }}>HR Automation</h3>
-          <p style={{ fontSize: '14px', color: 'var(--muted)', lineHeight: '1.5' }}>Automated resume parsing and candidate ranking intelligence.</p>
-        </div>
-      </div>
+
     </div>
   </div>
 </section>
@@ -399,26 +386,6 @@ export default function Home() {
         <div className="agent-name">HR Assistant Agent</div>
         <div className="agent-desc">Screens resumes against your job criteria, schedules interviews, and answers HR policy questions — freeing your HR team for high-value work.</div>
       </div>
-      <div className="agent-card fu">
-        <div className="agent-status"><span className="agent-dot"></span><span data-t="agent_available">{t('agent_available')}</span></div>
-        <div className="agent-name">Tender Scout</div>
-        <div className="agent-desc">Scans procurement portals daily, identifies matching tenders by your criteria, and delivers concise summaries to your inbox or WhatsApp.</div>
-      </div>
-      <div className="agent-card fu d1">
-        <div className="agent-status"><span className="agent-dot"></span><span data-t="agent_available">{t('agent_available')}</span></div>
-        <div className="agent-name">Sales Intelligence Agent</div>
-        <div className="agent-desc">Monitors your CRM, predicts deal probability, identifies at-risk accounts, and surfaces next-best-action suggestions to your sales team.</div>
-      </div>
-      <div className="agent-card fu d2">
-        <div className="agent-status"><span className="agent-dot"></span><span data-t="agent_available">{t('agent_available')}</span></div>
-        <div className="agent-name">Inventory Optimizer</div>
-        <div className="agent-desc">Predicts stock requirements, raises purchase orders automatically, and alerts you before stockouts happen — based on historical and seasonal patterns.</div>
-      </div>
-      <div className="agent-card fu d3">
-        <div className="agent-status"><span className="agent-dot"></span><span data-t="agent_available">{t('agent_available')}</span></div>
-        <div className="agent-name">Document Intelligence Agent</div>
-        <div className="agent-desc">Reads, classifies, extracts, and routes documents — contracts, forms, certificates — into your systems with structured data output.</div>
-      </div>
     </div>
   </div>
 </section>
@@ -429,17 +396,11 @@ export default function Home() {
     <div className="tag fu" data-t="tag_industries">{t('tag_industries')}</div>
     <h2 className="h2 fu d1" data-t="h2_industries">{t('h2_industries')}</h2>
     <p className="lead fu d2" data-t="lead_industries">{t('lead_industries')}</p>
-    <div className="industry-grid fu d3">
-      <div className="ind-card"><span className="ind-icon">🏥</span><div className="ind-name">Healthcare</div><div className="ind-desc">Diagnostics AI, patient data analytics, hospital operations</div></div>
-      <div className="ind-card"><span className="ind-icon">🌾</span><div className="ind-name">Agriculture</div><div className="ind-desc">Crop monitoring, disease detection, precision farming</div></div>
-      <div className="ind-card"><span className="ind-icon">🏭</span><div className="ind-name">Manufacturing</div><div className="ind-desc">Quality control, predictive maintenance, production analytics</div></div>
+    <div className="industry-grid fu d3" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))' }}>
       <div className="ind-card"><span className="ind-icon">🏦</span><div className="ind-name">Finance</div><div className="ind-desc">Fraud detection, risk modeling, KYC automation</div></div>
-      <div className="ind-card"><span className="ind-icon">🎓</span><div className="ind-name">Education</div><div className="ind-desc">Adaptive learning, assessment AI, student analytics</div></div>
-      <div className="ind-card"><span className="ind-icon">🚚</span><div className="ind-name">Logistics</div><div className="ind-desc">Route optimization, demand forecasting, tracking AI</div></div>
       <div className="ind-card"><span className="ind-icon">🛒</span><div className="ind-name">Retail & E-commerce</div><div className="ind-desc">Recommendations, inventory AI, demand sensing</div></div>
-      <div className="ind-card"><span className="ind-icon">⚡</span><div className="ind-name">Energy</div><div className="ind-desc">Consumption prediction, fault detection, smart metering</div></div>
-      <div className="ind-card"><span className="ind-icon">🏗️</span><div className="ind-name">Construction</div><div className="ind-desc">Safety monitoring, project analytics, cost forecasting</div></div>
-      <div className="ind-card"><span className="ind-icon">🏛️</span><div className="ind-name">Public Sector Solutions</div><div className="ind-desc">Traffic, waste management, public service AI — future focus</div></div>
+      <div className="ind-card"><span className="ind-icon">🚚</span><div className="ind-name">Logistics</div><div className="ind-desc">Route optimization, demand forecasting, tracking AI</div></div>
+      <div className="ind-card"><span className="ind-icon">🏭</span><div className="ind-name">Manufacturing</div><div className="ind-desc">Quality control, predictive maintenance, production analytics</div></div>
     </div>
   </div>
 </section>

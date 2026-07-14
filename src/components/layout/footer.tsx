@@ -61,7 +61,7 @@ export default function Footer() {
 
         <div className="footer-bottom mt-12 pt-8 border-t border-[var(--border2)] flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="footer-copy text-sm text-[var(--muted)]">
-            © {new Date().getFullYear()} Moh-AI Tech. <strong>MSME Registered Enterprise</strong>. Vasanthapuram, Namakkal, Tamil Nadu, India.
+            © {new Date().getFullYear()} Moh-AI Tech. <strong>MSME Registered (UDYAM-TN-XXXXXXX)</strong>. Vasanthapuram, Namakkal, Tamil Nadu, India.
           </div>
           <div className="footer-legal flex gap-6 text-sm text-[var(--muted)]">
             <Link href="/privacy" className="hover:text-[var(--text)] transition-colors">Privacy Policy</Link>
