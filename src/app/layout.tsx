@@ -6,25 +6,28 @@ import ChatbotPlaceholder from '@/components/chatbot-placeholder';
 import { LanguageProvider } from '@/components/i18n-provider';
 
 export const metadata: Metadata = {
-  title: 'Moh-AI Tech | Custom AI Solutions & Intelligent Automation',
-  description: 'Enterprise AI automation company in India. We specialize in custom RAG chatbots, computer vision pipelines, and intelligent web platforms for businesses globally.',
-  keywords: 'hire RAG developer India, computer vision company India, custom AI automation company, enterprise NLP developer, custom AI solutions, AI agency India',
+  title: 'Moh-AI Tech | Artificial Intelligence & IT Company in Namakkal',
+  description: 'Moh-AI Tech is a leading Artificial Intelligence and IT company in Namakkal, India. We build custom AI automation, RAG chatbots, and enterprise AI solutions.',
+  keywords: 'moh ai tech, artificial intelligence, IT company in namakkal, AI development company, custom AI solutions, machine learning, computer vision, AI agency India, software development namakkal',
   openGraph: {
-    title: 'Moh-AI Tech | Custom AI Solutions',
-    description: 'Enterprise AI automation company in India.',
-    url: 'https://moh-ai-tech.vercel.app',
+    title: 'Moh-AI Tech | Artificial Intelligence & IT Company in Namakkal',
+    description: 'Moh-AI Tech is a leading Artificial Intelligence and IT company in Namakkal, India. We build custom AI automation, RAG chatbots, and enterprise AI solutions.',
+    url: 'https://moh-ai-tech.com',
     siteName: 'Moh-AI Tech',
     locale: 'en_US',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Moh-AI Tech | Custom AI Solutions',
-    description: 'MSME Registered AI development company in Namakkal, India.',
+    title: 'Moh-AI Tech | Artificial Intelligence & IT Company in Namakkal',
+    description: 'Top Artificial Intelligence & IT company in Namakkal, India. Custom AI solutions and automation.',
   },
   robots: {
     index: true,
     follow: true,
+  },
+  alternates: {
+    canonical: 'https://moh-ai-tech.com',
   }
 };
 
