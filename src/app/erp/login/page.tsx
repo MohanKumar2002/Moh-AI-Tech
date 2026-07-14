@@ -7,15 +7,27 @@ export default function ERPLogin() {
   const [username, setUsername] = useState('');
   const [userId, setUserId] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState('');
   const router = useRouter();
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
-    // Simulate auth delay for mockup
+    setError('');
+    
     setTimeout(() => {
       setIsLoading(false);
-      router.push('/erp/dashboard');
+      if (username === 'admin' && userId === 'admin123') {
+        localStorage.setItem('erp_role', 'admin');
+        localStorage.setItem('erp_user', 'Mohan Kumar');
+        router.push('/erp/dashboard');
+      } else if (username === 'user' && userId === 'user123') {
+        localStorage.setItem('erp_role', 'employee');
+        localStorage.setItem('erp_user', 'Intern Developer');
+        router.push('/erp/dashboard');
+      } else {
+        setError('Invalid Username or User ID. Please try again.');
+      }
     }, 800);
   };
 
@@ -69,9 +81,16 @@ export default function ERPLogin() {
           <div style={{ marginBottom: '44px' }}>
             <h2 style={{ fontFamily: 'var(--syne)', fontSize: '32px', fontWeight: '800', color: 'var(--text)', marginBottom: '10px', letterSpacing: '-0.5px' }}>Staff Login</h2>
             <p style={{ fontSize: '16px', color: 'var(--muted)' }}>Enter your designated Username and User ID to access the dashboard.</p>
+            
+            <div style={{ marginTop: '16px', padding: '12px', background: 'rgba(59, 130, 246, 0.1)', border: '1px solid rgba(59, 130, 246, 0.2)', borderRadius: '8px', fontSize: '13px', color: 'var(--text)' }}>
+              <strong>Demo Credentials:</strong><br/>
+              Admin: <code>admin</code> / <code>admin123</code><br/>
+              Employee: <code>user</code> / <code>user123</code>
+            </div>
           </div>
 
           <form onSubmit={handleLogin} style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+            {error && <div style={{ color: '#ef4444', fontSize: '14px', fontWeight: '600', padding: '12px', background: 'rgba(239,68,68,0.1)', borderRadius: '8px' }}>{error}</div>}
             <div>
               <label style={{ display: 'block', fontSize: '14px', fontWeight: '600', color: 'var(--text)', marginBottom: '10px' }}>Username</label>
               <input 

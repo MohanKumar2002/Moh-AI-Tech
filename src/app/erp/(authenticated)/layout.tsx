@@ -9,11 +9,15 @@ export default function ERPlayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [isBlurred, setIsBlurred] = useState(false);
-
-  // Role for mockup (would come from auth context in real app)
-  const role = 'admin'; 
+  const [role, setRole] = useState('employee');
+  const [userName, setUserName] = useState('Employee');
 
   useEffect(() => {
+    // Read mock auth from localStorage
+    const savedRole = localStorage.getItem('erp_role') || 'employee';
+    const savedUser = localStorage.getItem('erp_user') || 'Intern Developer';
+    setRole(savedRole);
+    setUserName(savedUser);
     const handleBlur = () => setIsBlurred(true);
     const handleFocus = () => setIsBlurred(false);
     
@@ -44,12 +48,12 @@ export default function ERPlayout({ children }: { children: React.ReactNode }) {
   }, []);
 
   const navItems = [
-    { name: 'Overview', href: '/erp/dashboard', icon: LayoutDashboard },
-    { name: 'Tasks & Projects', href: '/erp/tasks', icon: CheckSquare },
-    { name: 'Security Incidents', href: '/erp/security', icon: ShieldAlert },
-    { name: 'HR & Onboarding', href: '/erp/hr', icon: Users },
-    { name: 'Knowledge Base', href: '/erp/knowledge', icon: BookOpen },
-  ];
+    { name: 'Overview', href: '/erp/dashboard', icon: LayoutDashboard, roles: ['admin', 'employee'] },
+    { name: 'Tasks & Projects', href: '/erp/tasks', icon: CheckSquare, roles: ['admin', 'employee'] },
+    { name: 'Security Incidents', href: '/erp/security', icon: ShieldAlert, roles: ['admin'] },
+    { name: 'HR & Onboarding', href: '/erp/hr', icon: Users, roles: ['admin'] },
+    { name: 'Knowledge Base', href: '/erp/knowledge', icon: BookOpen, roles: ['admin', 'employee'] },
+  ].filter(item => item.roles.includes(role));
 
   return (
     <div style={{ display: 'flex', minHeight: '100vh', background: 'var(--bg)', position: 'relative' }}>
@@ -104,7 +108,7 @@ export default function ERPlayout({ children }: { children: React.ReactNode }) {
           <Image src="/logo.png" alt="Logo" width={40} height={40} />
           <div>
             <div style={{ fontWeight: '800', fontSize: '16px', color: 'var(--text)', letterSpacing: '0.5px' }}>MOH-AI TECH</div>
-            <div style={{ fontSize: '12px', color: 'var(--accent)' }}>Admin Portal</div>
+            <div style={{ fontSize: '12px', color: 'var(--accent)' }}>{role === 'admin' ? 'Admin Portal' : 'Staff Portal'}</div>
           </div>
         </div>
 
@@ -131,14 +135,14 @@ export default function ERPlayout({ children }: { children: React.ReactNode }) {
         <div style={{ padding: '24px 16px', borderTop: '1px solid var(--border)' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '20px', padding: '0 12px' }}>
             <div style={{ width: '40px', height: '40px', borderRadius: '50%', background: 'linear-gradient(135deg, var(--accent), #5C3EE8)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontWeight: 'bold' }}>
-              M
+              {userName.charAt(0)}
             </div>
             <div>
-              <div style={{ fontSize: '14px', fontWeight: '600', color: 'var(--text)' }}>Mohan Kumar</div>
-              <div style={{ fontSize: '12px', color: 'var(--muted)' }}>System Administrator</div>
+              <div style={{ fontSize: '14px', fontWeight: '600', color: 'var(--text)' }}>{userName}</div>
+              <div style={{ fontSize: '12px', color: 'var(--muted)' }}>{role === 'admin' ? 'System Administrator' : 'Staff Member'}</div>
             </div>
           </div>
-          <Link href="/erp/login" style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '12px', borderRadius: '8px', color: '#ff4d4f', textDecoration: 'none', fontWeight: '500' }}>
+          <Link href="/erp/login" onClick={() => localStorage.removeItem('erp_role')} style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '12px', borderRadius: '8px', color: '#ff4d4f', textDecoration: 'none', fontWeight: '500' }}>
             <LogOut size={20} />
             Sign Out
           </Link>
