@@ -48,7 +48,7 @@ export async function POST(req: Request) {
     const subjectTitle = isCallScheduled ? `[CALL SCHEDULED] New Lead: ${name}` : `New Lead: ${name} from ${company || 'Unknown Company'}`;
 
     const mailOptions = {
-      from: '"Moh-AI Tech" <noreply@moh-ai-tech.com>',
+      from: `"Moh-AI Tech" <${process.env.SMTP_USER}>`,
       to: process.env.NOTIFICATION_EMAIL || 'info@moh-ai-tech.com, mohaitechpvt@gmail.com',
       subject: subjectTitle,
       text: `
@@ -66,7 +66,7 @@ export async function POST(req: Request) {
     };
 
     const customerMailOptions = {
-      from: '"Moh-AI Tech" <info@moh-ai-tech.com>',
+      from: `"Moh-AI Tech" <${process.env.SMTP_USER}>`,
       to: email,
       subject: isCallScheduled ? 'Booking Confirmed - Moh-AI Tech' : 'Thank you for contacting Moh-AI Tech',
       text: isCallScheduled 
