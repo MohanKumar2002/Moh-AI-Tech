@@ -314,6 +314,9 @@ export default function Home() {
             <strong style={{ color: 'var(--accent)', fontSize: '14px' }}>Outcome:</strong>
             <p style={{ margin: '4px 0 0', fontSize: '14px', color: 'var(--text)', fontWeight: '600' }}>Up to 30+ Hours Saved/Week per Client</p>
           </div>
+          <div style={{ marginTop: '24px' }}>
+            <a href="/products" className="sol-link">View Product details →</a>
+          </div>
         </div>
       </div>
 
@@ -332,6 +335,9 @@ export default function Home() {
           <div style={{ padding: '16px', background: 'rgba(99, 102, 241, 0.05)', borderRadius: '8px', border: '1px solid rgba(99, 102, 241, 0.1)' }}>
             <strong style={{ color: 'var(--accent)', fontSize: '14px' }}>Outcome:</strong>
             <p style={{ margin: '4px 0 0', fontSize: '14px', color: 'var(--text)', fontWeight: '600' }}>Processed 500+ CVs in 4 minutes</p>
+          </div>
+          <div style={{ marginTop: '24px' }}>
+            <a href="/products" className="sol-link">View Product details →</a>
           </div>
         </div>
       </div>
