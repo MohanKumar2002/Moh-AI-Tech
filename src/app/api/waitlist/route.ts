@@ -24,7 +24,7 @@ export async function POST(req: Request) {
     });
 
     const mailOptions = {
-      from: process.env.SMTP_FROM_EMAIL || '"Moh-AI Tech" <noreply@moh-ai-tech.com>',
+      from: process.env.SMTP_FROM_EMAIL || process.env.SMTP_USER,
       to: email,
       subject: 'Welcome to the Moh-AI Tech Waitlist!',
       html: `
@@ -46,7 +46,6 @@ export async function POST(req: Request) {
       `,
     };
 
-    // Attempt to send the email (if SMTP config is missing it will likely throw an error here, but we will catch it)
     await transporter.sendMail(mailOptions);
 
     return NextResponse.json(
@@ -56,17 +55,10 @@ export async function POST(req: Request) {
   } catch (error: any) {
     console.error('Waitlist Email Error:', error);
     
-    // If it's an auth error because SMTP is not configured, we'll still send a 200 just for the sake of the UI demo,
-    // or we can return a 500 so the user knows they need to configure it.
-    // For now, let's return a 500 with a specific message if SMTP is missing.
-    if (!process.env.SMTP_USER || !process.env.SMTP_PASS) {
-      console.warn("SMTP credentials missing. Email was not sent.");
-      // Note: Uncomment this if you want the form to fail gracefully without SMTP:
-      // return NextResponse.json({ message: 'Saved (Email not sent due to missing SMTP config)' }, { status: 200 });
-    }
-
+    const errorMessage = error.message || 'Unknown error occurred while sending email.';
+    
     return NextResponse.json(
-      { message: 'Failed to join the waitlist. Please ensure SMTP is configured correctly.' },
+      { message: `Email failed to send. Error: ${errorMessage}` },
       { status: 500 }
     );
   }
