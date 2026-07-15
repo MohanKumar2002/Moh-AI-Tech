@@ -126,6 +126,74 @@ export default function Home() {
   </div>
 </section>
 
+{/* ===== VISION & MISSION ===== */}
+<section id="vision-mission" style={{ background: 'var(--bg)', padding: '80px 0' }}>
+  <div className="inner">
+    <div className="global-grid fu d1" style={{ gap: '48px' }}>
+      <div className="card">
+        <div className="tag" style={{ marginBottom: '16px' }}>Our Vision</div>
+        <h2 className="h2" style={{ marginBottom: '24px', fontSize: '28px' }}>AI shouldn't be a luxury only big companies can afford</h2>
+        <p className="lead" style={{ fontSize: '16px', color: 'var(--muted)', lineHeight: '1.6' }}>
+          Most businesses — especially in India and emerging markets — watch AI transform their bigger competitors while staying priced out themselves. We exist to close that gap: practical, honestly-built AI that any serious business can actually afford and actually use.
+        </p>
+      </div>
+      <div className="card">
+        <div className="tag" style={{ marginBottom: '16px' }}>Our Mission</div>
+        <h2 className="h2" style={{ marginBottom: '24px', fontSize: '28px' }}>Solving one real problem at a time</h2>
+        <p className="lead" style={{ fontSize: '16px', color: 'var(--muted)', lineHeight: '1.6' }}>
+          We build AI systems that solve one real problem at a time — no bloated platforms, no fake dashboards, no "AI-washing." Every system we ship is something we'd deploy in our own business first. If it doesn't save real time or real money, we don't build it.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{/* ===== THE PROBLEMS WE SOLVE ===== */}
+<section id="problems" style={{ background: 'var(--bg2)', padding: '80px 0', borderTop: '1px solid var(--border)' }}>
+  <div className="inner">
+    <div className="tag fu">The Problems We Solve</div>
+    <h2 className="h2 fu d1">If any of this sounds familiar, we should talk</h2>
+    
+    <div className="fu d2" style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '24px', marginTop: '48px', maxWidth: '900px' }}>
+      
+      <div className="card" style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+        <h3 style={{ fontSize: '18px', fontWeight: '700', color: 'var(--text)' }}>😫 "Our team spends hours screening resumes/documents manually"</h3>
+        <p style={{ fontSize: '15px', color: 'var(--muted)' }}>→ We build automated screening & document intelligence that ranks, extracts, and routes in minutes — see ResumeFilter AI below.</p>
+      </div>
+
+      <div className="card" style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+        <h3 style={{ fontSize: '18px', fontWeight: '700', color: 'var(--text)' }}>🔍 "We have years of data but no way to actually query it"</h3>
+        <p style={{ fontSize: '15px', color: 'var(--muted)' }}>→ We build an Enterprise AI Brain that connects to your existing documents, databases, and emails — ask questions in plain language, get real answers.</p>
+      </div>
+
+      <div className="card" style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+        <h3 style={{ fontSize: '18px', fontWeight: '700', color: 'var(--text)' }}>💬 "Customer support is either too slow or too expensive to scale"</h3>
+        <p style={{ fontSize: '15px', color: 'var(--muted)' }}>→ We build multi-channel AI agents trained on your own knowledge base — WhatsApp, email, and web, with human escalation built in.</p>
+      </div>
+
+      <div className="card" style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+        <h3 style={{ fontSize: '18px', fontWeight: '700', color: 'var(--text)' }}>📊 "Reporting takes days and still doesn't answer the real question"</h3>
+        <p style={{ fontSize: '15px', color: 'var(--muted)' }}>→ We build automated data pipelines and PowerBI dashboards with AI-generated insight summaries — no more manual spreadsheet stitching.</p>
+      </div>
+
+      <div className="card" style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+        <h3 style={{ fontSize: '18px', fontWeight: '700', color: 'var(--text)' }}>💰 "Invoice and expense processing eats up finance team hours every week"</h3>
+        <p style={{ fontSize: '15px', color: 'var(--muted)' }}>→ We build automated invoice extraction pipelines that read, validate, and push structured data straight into your accounting or ERP system.</p>
+      </div>
+
+      <div className="card" style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+        <h3 style={{ fontSize: '18px', fontWeight: '700', color: 'var(--text)' }}>🏭 "Quality control is manual and inconsistent across our production line"</h3>
+        <p style={{ fontSize: '15px', color: 'var(--muted)' }}>→ We build custom-trained computer vision pipelines that catch defects your team misses, in real time. <span style={{ display: 'inline-block', padding: '2px 8px', background: 'rgba(234, 179, 8, 0.1)', color: '#ca8a04', fontSize: '12px', fontWeight: '600', borderRadius: '4px', marginLeft: '8px' }}>In Development</span></p>
+      </div>
+
+    </div>
+
+    <div className="fu d3" style={{ marginTop: '48px' }}>
+      <a href="#contact" className="btn btn-primary" style={{ display: 'inline-block' }}>Tell us your problem →</a>
+    </div>
+  </div>
+</section>
+
 {/* ===== TRUST BAND ===== */}
 <section id="trust">
   <div className="trust-inner">
