@@ -200,7 +200,7 @@ export default function Home() {
   <div className="trust-inner">
     <div className="trust-label" data-t="trust_label">{t('trust_label')}</div>
     <div className="trust-pills">
-      <div className="trust-pill"><span className="trust-pill-icon">🏢</span> MSME Registered Company</div>
+      <div className="trust-pill"><span className="trust-pill-icon">🏢</span> MSME Reg: UDYAM-TN-14-0088280</div>
       <div className="trust-pill"><span className="trust-pill-icon">💻</span> Web Development</div>
       <div className="trust-pill"><span className="trust-pill-icon">🤖</span> AI, ML & Deep Learning</div>
       <div className="trust-pill"><span className="trust-pill-icon">👁️</span> Computer Vision</div>
