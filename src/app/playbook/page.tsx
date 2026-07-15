@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useEffect } from 'react';
+import Link from 'next/link';
 import { Navbar } from '@/components/layout/navbar';
 import Footer from '@/components/layout/footer';
 
@@ -71,15 +72,36 @@ export default function PlaybookPage() {
             <h2 style={{ fontSize: '2rem', borderBottom: '2px solid var(--border)', paddingBottom: '10px', marginBottom: '20px' }}>The Funnel of Growth — Learn, Earn, Lead</h2>
             <p style={{ marginBottom: '24px' }}>To translate our high-level philosophy into practical steps for the end-user, Moh-AI Tech applies a strictly structured user journey funnel. This progression guarantees that no partner enters our ecosystem as a passive customer; they enter as students and leave as industry pioneers.</p>
             
-            <div style={{ paddingLeft: '20px', borderLeft: '2px solid var(--border)' }}>
-              <h3 style={{ fontSize: '1.5rem', color: 'var(--accent)', marginBottom: '10px' }}>Phase 1: Learn with AI</h3>
-              <p style={{ marginBottom: '24px' }}>The journey begins with comprehensive demystification. Before a client can effectively deploy an algorithmic tool, they must comprehend its operational parameters. We embed educational mentor modules directly into our platforms, stripping away fear and replacing it with technical confidence.</p>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '20px', marginTop: '30px' }}>
+              <Link href="/playbook/learn" style={{ textDecoration: 'none' }}>
+                <div style={{ background: 'var(--bg2)', padding: '24px', borderRadius: '12px', border: '1px solid var(--border)', transition: 'all 0.2s ease', cursor: 'pointer', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }} className="sol-card">
+                  <div>
+                    <h3 style={{ fontSize: '1.5rem', color: 'var(--accent)', marginBottom: '8px' }}>Phase 1: Learn with AI</h3>
+                    <p style={{ color: 'var(--muted)', margin: 0 }}>Discover how to embed educational mentor modules directly into your platforms.</p>
+                  </div>
+                  <span style={{ color: 'var(--accent)', fontSize: '24px' }}>→</span>
+                </div>
+              </Link>
               
-              <h3 style={{ fontSize: '1.5rem', color: 'var(--accent)', marginBottom: '10px' }}>Phase 2: Earn with AI</h3>
-              <p style={{ marginBottom: '24px' }}>With technical comprehension comes direct commercial application. In this phase, the client leverages our robust, stress-free software to streamline operations, reduce operational friction, and introduce automated high-margin service offerings for immediate financial return.</p>
+              <Link href="/playbook/earn" style={{ textDecoration: 'none' }}>
+                <div style={{ background: 'var(--bg2)', padding: '24px', borderRadius: '12px', border: '1px solid var(--border)', transition: 'all 0.2s ease', cursor: 'pointer', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }} className="sol-card">
+                  <div>
+                    <h3 style={{ fontSize: '1.5rem', color: 'var(--accent)', marginBottom: '8px' }}>Phase 2: Earn with AI</h3>
+                    <p style={{ color: 'var(--muted)', margin: 0 }}>Leverage our robust, stress-free software to streamline operations and increase margins.</p>
+                  </div>
+                  <span style={{ color: 'var(--accent)', fontSize: '24px' }}>→</span>
+                </div>
+              </Link>
               
-              <h3 style={{ fontSize: '1.5rem', color: 'var(--accent)', marginBottom: '10px' }}>Phase 3: Lead with AI</h3>
-              <p>The final evolutionary state occurs when the user transitions from an adaptive consumer to a clear industry leader. Armed with continuous automated insights, Moh-AI Tech clients set new industry benchmarks, out-pacing competitors who rely on legacy paradigms.</p>
+              <Link href="/playbook/lead" style={{ textDecoration: 'none' }}>
+                <div style={{ background: 'var(--bg2)', padding: '24px', borderRadius: '12px', border: '1px solid var(--border)', transition: 'all 0.2s ease', cursor: 'pointer', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }} className="sol-card">
+                  <div>
+                    <h3 style={{ fontSize: '1.5rem', color: 'var(--accent)', marginBottom: '8px' }}>Phase 3: Lead with AI</h3>
+                    <p style={{ color: 'var(--muted)', margin: 0 }}>Set new industry benchmarks by acting on continuous automated insights.</p>
+                  </div>
+                  <span style={{ color: 'var(--accent)', fontSize: '24px' }}>→</span>
+                </div>
+              </Link>
             </div>
           </div>
 
