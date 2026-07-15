@@ -30,9 +30,9 @@ export default function AboutPage() {
         </div>
 
         <div className="card mb-12">
-          <h2 className="text-[var(--text)] font-bold text-2xl mb-6">Where we're headed</h2>
+          <h2 className="text-[var(--text)] font-bold text-2xl mb-6">Our Vision</h2>
           <p className="text-[var(--muted)] text-lg leading-relaxed mb-8">
-            We're building toward a small set of proven, repeatable AI architectures that any business — regardless of size or location — can adopt with confidence. Practical first. Scale later.
+            At Moh-AI Tech, we don't measure success by how many hours someone sits in front of a laptop. We measure success by the value they create. We believe people should build meaningful technology, keep learning, and still have time for their family, health, and personal life. We are building a company where growth belongs to both the business and the people behind it.
           </p>
           <div className="mt-8 text-center border-t border-[var(--border)] pt-8">
             <Link href="/#contact" className="btn btn-primary inline-block">
