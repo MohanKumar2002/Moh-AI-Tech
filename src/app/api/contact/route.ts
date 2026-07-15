@@ -3,8 +3,8 @@ import { prisma } from '@/lib/prisma';
 import { Resend } from 'resend';
 import { Client as HubSpotClient } from '@hubspot/api-client';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-const hubspotClient = new HubSpotClient({ accessToken: process.env.HUBSPOT_ACCESS_TOKEN });
+const resend = new Resend(process.env.RESEND_API_KEY || 're_dummy');
+const hubspotClient = new HubSpotClient({ accessToken: process.env.HUBSPOT_ACCESS_TOKEN || 'dummy' });
 
 export async function POST(req: Request) {
   try {
