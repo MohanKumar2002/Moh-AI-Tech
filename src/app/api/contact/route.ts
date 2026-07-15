@@ -1,6 +1,10 @@
 import { NextResponse } from 'next/server';
-import nodemailer from 'nodemailer';
 import { prisma } from '@/lib/prisma';
+import { Resend } from 'resend';
+import { Client as HubSpotClient } from '@hubspot/api-client';
+
+const resend = new Resend(process.env.RESEND_API_KEY);
+const hubspotClient = new HubSpotClient({ accessToken: process.env.HUBSPOT_ACCESS_TOKEN });
 
 export async function POST(req: Request) {
   try {
@@ -27,89 +31,90 @@ export async function POST(req: Request) {
         },
       });
     } catch (dbError) {
-      console.error('Database save error (ignoring to send emails):', dbError);
+      console.error('Database save error:', dbError);
     }
 
-    // 2. Send Email Notification (using nodemailer)
-    // In production, configure these via environment variables
-    const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST || 'smtp.titan.email',
-      port: Number(process.env.SMTP_PORT) || 465,
-      secure: Number(process.env.SMTP_PORT) === 465 || !process.env.SMTP_PORT, // true for 465, false for other ports
-      auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASS,
-      },
-    });
+    // 2. Save to HubSpot CRM
+    if (process.env.HUBSPOT_ACCESS_TOKEN) {
+      try {
+        await hubspotClient.crm.contacts.basicApi.create({
+          properties: {
+            email: email,
+            firstname: name.split(' ')[0],
+            lastname: name.split(' ').slice(1).join(' '),
+            company: company || '',
+            country: country || '',
+            message: message || '',
+            job_function: service || '',
+          }
+        });
+      } catch (hubspotError) {
+        console.error('HubSpot save error:', hubspotError);
+      }
+    }
 
+    // 3. Send Emails via Resend
     const isCallScheduled = scheduledDate && scheduledTime;
     const subjectTitle = isCallScheduled ? `[CALL SCHEDULED] New Lead: ${name}` : `New Lead: ${name} from ${company || 'Unknown Company'}`;
 
-    const mailOptions = {
-      from: `"Moh-AI Tech" <${process.env.SMTP_USER}>`,
-      to: process.env.NOTIFICATION_EMAIL || 'info@moh-ai-tech.com, mohaitechpvt@gmail.com',
-      subject: subjectTitle,
-      text: `
-        You have a new contact query!
-        
-        Name: ${name}
-        Email: ${email}
-        Company: ${company || 'N/A'}
-        Country: ${country || 'N/A'}
-        Service of Interest: ${service || 'N/A'}
-        
-        ${isCallScheduled ? `CALL SCHEDULED FOR:\nDate: ${scheduledDate}\nTime: ${scheduledTime}\n\n` : ''}Message:
-        ${message || 'No message provided.'}
-      `,
-    };
-
-    const customerMailOptions = {
-      from: `"Moh-AI Tech" <${process.env.SMTP_USER}>`,
-      to: email,
-      subject: isCallScheduled ? 'Booking Confirmed - Moh-AI Tech' : 'Thank you for contacting Moh-AI Tech',
-      text: isCallScheduled 
-        ? `Hi ${name},\n\nThank you for choosing Moh-AI Tech! You have successfully booked a discovery call with us on ${scheduledDate} at ${scheduledTime}.\n\nOur team will connect with you soon.\n\nBest regards,\nMoh-AI Tech Team`
-        : `Hi ${name},\n\nThank you for reaching out to Moh-AI Tech! We have successfully received your message and our team will connect with you soon.\n\nBest regards,\nMoh-AI Tech Team`,
-      html: `
-        <div style="font-family: 'Segoe UI', Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 30px; border: 1px solid #eaeaea; border-radius: 12px; background-color: #ffffff;">
-          <div style="text-align: center; margin-bottom: 25px; border-bottom: 2px solid #f3f4f6; padding-bottom: 20px;">
-            <img src="https://moh-ai-tech.com/logo.png" alt="Moh-AI Tech Logo" style="height: 60px; object-fit: contain;" />
-            <h1 style="color: #1f2937; margin: 15px 0 0 0; font-size: 24px; font-weight: 700;">Moh-AI Tech</h1>
-          </div>
-          <h2 style="color: #6366f1; font-size: 20px; margin-bottom: 20px;">Thank You for Choosing Moh-AI Tech!</h2>
-          <p style="font-size: 16px; color: #4b5563; line-height: 1.6;">Hi ${name},</p>
-          ${isCallScheduled 
-            ? `<p style="font-size: 16px; color: #4b5563; line-height: 1.6;">You have successfully booked a discovery call with us.</p>
-               <div style="background: #f9fafb; padding: 20px; border-radius: 8px; margin: 20px 0; border: 1px solid #e5e7eb;">
-                 <p style="margin: 0; font-size: 16px; color: #1f2937;"><strong>Date:</strong> ${scheduledDate}</p>
-                 <p style="margin: 10px 0 0 0; font-size: 16px; color: #1f2937;"><strong>Time:</strong> ${scheduledTime}</p>
-               </div>
-               <p style="font-size: 16px; color: #4b5563; line-height: 1.6;">Our team will connect with you shortly with the meeting link.</p>`
-            : `<p style="font-size: 16px; color: #4b5563; line-height: 1.6;">We have successfully received your message. Our team is reviewing it and will connect with you very soon.</p>`
-          }
-          <br/>
-          <p style="font-size: 16px; color: #4b5563; margin-top: 20px;">Best regards,<br/><strong style="color: #1f2937;">The Moh-AI Tech Team</strong></p>
-        </div>
-      `
-    };
-
-    // VERCEL FIX: We MUST await the emails, otherwise Vercel kills the serverless function before they send!
-    try {
-      await Promise.all([
-        transporter.sendMail(mailOptions),
-        transporter.sendMail(customerMailOptions)
-      ]);
-    } catch (emailError) {
-      console.error("Email sending failed (check SMTP credentials):", emailError);
+    if (process.env.RESEND_API_KEY) {
+      try {
+        await Promise.all([
+          // Notification to Admin
+          resend.emails.send({
+            from: 'Moh-AI Tech <noreply@moh-ai-tech.com>', // Ensure domain is verified in Resend
+            to: process.env.NOTIFICATION_EMAIL ? process.env.NOTIFICATION_EMAIL.split(',').map(e => e.trim()) : ['info@moh-ai-tech.com'],
+            subject: subjectTitle,
+            text: `
+              You have a new contact query!
+              
+              Name: ${name}
+              Email: ${email}
+              Company: ${company || 'N/A'}
+              Country: ${country || 'N/A'}
+              Service of Interest: ${service || 'N/A'}
+              
+              ${isCallScheduled ? `CALL SCHEDULED FOR:\nDate: ${scheduledDate}\nTime: ${scheduledTime}\n\n` : ''}Message:
+              ${message || 'No message provided.'}
+            `,
+          }),
+          // Confirmation to Customer
+          resend.emails.send({
+            from: 'Moh-AI Tech <info@moh-ai-tech.com>', // Ensure domain is verified in Resend
+            to: [email],
+            subject: isCallScheduled ? 'Booking Confirmed - Moh-AI Tech' : 'Thank you for contacting Moh-AI Tech',
+            html: `
+              <div style="font-family: 'Segoe UI', Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 30px; border: 1px solid #eaeaea; border-radius: 12px; background-color: #ffffff;">
+                <div style="text-align: center; margin-bottom: 25px; border-bottom: 2px solid #f3f4f6; padding-bottom: 20px;">
+                  <h1 style="color: #1f2937; margin: 15px 0 0 0; font-size: 24px; font-weight: 700;">Moh-AI Tech</h1>
+                </div>
+                <h2 style="color: #6366f1; font-size: 20px; margin-bottom: 20px;">Thank You for Choosing Moh-AI Tech!</h2>
+                <p style="font-size: 16px; color: #4b5563; line-height: 1.6;">Hi ${name},</p>
+                ${isCallScheduled 
+                  ? `<p style="font-size: 16px; color: #4b5563; line-height: 1.6;">You have successfully booked a discovery call with us.</p>
+                     <div style="background: #f9fafb; padding: 20px; border-radius: 8px; margin: 20px 0; border: 1px solid #e5e7eb;">
+                       <p style="margin: 0; font-size: 16px; color: #1f2937;"><strong>Date:</strong> ${scheduledDate}</p>
+                       <p style="margin: 10px 0 0 0; font-size: 16px; color: #1f2937;"><strong>Time:</strong> ${scheduledTime}</p>
+                     </div>
+                     <p style="font-size: 16px; color: #4b5563; line-height: 1.6;">Our team will connect with you shortly with the meeting link.</p>`
+                  : `<p style="font-size: 16px; color: #4b5563; line-height: 1.6;">We have successfully received your message. Our team is reviewing it and will connect with you very soon.</p>`
+                }
+                <br/>
+                <p style="font-size: 16px; color: #4b5563; margin-top: 20px;">Best regards,<br/><strong style="color: #1f2937;">The Moh-AI Tech Team</strong></p>
+              </div>
+            `
+          })
+        ]);
+      } catch (emailError) {
+        console.error("Resend Email error:", emailError);
+      }
+    } else {
+      console.warn("RESEND_API_KEY is not set. Emails were not sent.");
     }
 
-    // 3. Send WhatsApp Notification (Using Free CallMeBot API or Webhook)
-    // To get a free CallMeBot API key, message their bot on WhatsApp.
-    // Set WHATSAPP_WEBHOOK_URL="https://api.callmebot.com/whatsapp.php?phone=[YOUR_NUMBER]&text=[MESSAGE]&apikey=[YOUR_API_KEY]"
+    // 4. Send WhatsApp Notification (Using Free CallMeBot API or Webhook)
     const whatsappWebhookUrl = process.env.WHATSAPP_WEBHOOK_URL;
     if (whatsappWebhookUrl) {
-      // We replace [MESSAGE] in the URL with URL-encoded text if using CallMeBot directly via GET
-      // Or if it's a generic POST webhook, we keep this structure.
       fetch(whatsappWebhookUrl, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
