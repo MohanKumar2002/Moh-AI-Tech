@@ -4,6 +4,7 @@ import React, { useEffect } from 'react';
 import Image from 'next/image';
 import { useLanguage } from '@/components/i18n-provider';
 import { BookingForm } from '@/components/booking-form';
+import Footer from '@/components/layout/footer';
 
 export default function Home() {
   const { t } = useLanguage();
@@ -141,7 +142,7 @@ export default function Home() {
         <div className="tag" style={{ marginBottom: '16px' }}>Our Mission</div>
         <h2 className="h2" style={{ marginBottom: '24px', fontSize: '28px' }}>Solving one real problem at a time</h2>
         <p className="lead" style={{ fontSize: '16px', color: 'var(--muted)', lineHeight: '1.6' }}>
-          We build AI systems that solve one real problem at a time — no bloated platforms, no fake dashboards, no "AI-washing." Every system we ship is something we'd deploy in our own business first. If it doesn't save real time or real money, we don't build it.
+          We build AI systems that solve one real problem at a time — no bloated platforms, no "AI-washing." Every system we ship is something we'd deploy in our own business first. If it doesn't save real time or real money, we don't build it.
         </p>
       </div>
     </div>
@@ -157,32 +158,32 @@ export default function Home() {
     <div className="fu d2" style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '24px', marginTop: '48px', maxWidth: '900px' }}>
       
       <div className="card" style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-        <h3 style={{ fontSize: '18px', fontWeight: '700', color: 'var(--text)' }}>😫 "Our team spends hours screening resumes/documents manually"</h3>
+        <h3 style={{ fontSize: '18px', fontWeight: '700', color: 'var(--text)' }}>"Our team spends hours screening resumes/documents manually"</h3>
         <p style={{ fontSize: '15px', color: 'var(--muted)' }}>→ We build automated screening & document intelligence that ranks, extracts, and routes in minutes — see ResumeFilter AI below.</p>
       </div>
 
       <div className="card" style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-        <h3 style={{ fontSize: '18px', fontWeight: '700', color: 'var(--text)' }}>🔍 "We have years of data but no way to actually query it"</h3>
+        <h3 style={{ fontSize: '18px', fontWeight: '700', color: 'var(--text)' }}>"We have years of data but no way to actually query it"</h3>
         <p style={{ fontSize: '15px', color: 'var(--muted)' }}>→ We build an Enterprise AI Brain that connects to your existing documents, databases, and emails — ask questions in plain language, get real answers.</p>
       </div>
 
       <div className="card" style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-        <h3 style={{ fontSize: '18px', fontWeight: '700', color: 'var(--text)' }}>💬 "Customer support is either too slow or too expensive to scale"</h3>
+        <h3 style={{ fontSize: '18px', fontWeight: '700', color: 'var(--text)' }}>"Customer support is either too slow or too expensive to scale"</h3>
         <p style={{ fontSize: '15px', color: 'var(--muted)' }}>→ We build multi-channel AI agents trained on your own knowledge base — WhatsApp, email, and web, with human escalation built in.</p>
       </div>
 
       <div className="card" style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-        <h3 style={{ fontSize: '18px', fontWeight: '700', color: 'var(--text)' }}>📊 "Reporting takes days and still doesn't answer the real question"</h3>
+        <h3 style={{ fontSize: '18px', fontWeight: '700', color: 'var(--text)' }}>"Reporting takes days and still doesn't answer the real question"</h3>
         <p style={{ fontSize: '15px', color: 'var(--muted)' }}>→ We build automated data pipelines and PowerBI dashboards with AI-generated insight summaries — no more manual spreadsheet stitching.</p>
       </div>
 
       <div className="card" style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-        <h3 style={{ fontSize: '18px', fontWeight: '700', color: 'var(--text)' }}>💰 "Invoice and expense processing eats up finance team hours every week"</h3>
+        <h3 style={{ fontSize: '18px', fontWeight: '700', color: 'var(--text)' }}>"Invoice and expense processing eats up finance team hours every week"</h3>
         <p style={{ fontSize: '15px', color: 'var(--muted)' }}>→ We build automated invoice extraction pipelines that read, validate, and push structured data straight into your accounting or ERP system.</p>
       </div>
 
       <div className="card" style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-        <h3 style={{ fontSize: '18px', fontWeight: '700', color: 'var(--text)' }}>🏭 "Quality control is manual and inconsistent across our production line"</h3>
+        <h3 style={{ fontSize: '18px', fontWeight: '700', color: 'var(--text)' }}>"Quality control is manual and inconsistent across our production line"</h3>
         <p style={{ fontSize: '15px', color: 'var(--muted)' }}>→ We build custom-trained computer vision pipelines that catch defects your team misses, in real time. <span style={{ display: 'inline-block', padding: '2px 8px', background: 'rgba(234, 179, 8, 0.1)', color: '#ca8a04', fontSize: '12px', fontWeight: '600', borderRadius: '4px', marginLeft: '8px' }}>In Development</span></p>
       </div>
 
@@ -199,7 +200,7 @@ export default function Home() {
   <div className="trust-inner">
     <div className="trust-label" data-t="trust_label">{t('trust_label')}</div>
     <div className="trust-pills">
-      <div className="trust-pill"><span className="trust-pill-icon">🏢</span> MSME Reg: UDYAM-TN-XXXXXXX</div>
+      <div className="trust-pill"><span className="trust-pill-icon">🏢</span> MSME Registered Company</div>
       <div className="trust-pill"><span className="trust-pill-icon">💻</span> Web Development</div>
       <div className="trust-pill"><span className="trust-pill-icon">🤖</span> AI, ML & Deep Learning</div>
       <div className="trust-pill"><span className="trust-pill-icon">👁️</span> Computer Vision</div>
@@ -358,7 +359,7 @@ export default function Home() {
 <section id="projects" style={{ background: 'var(--bg)', padding: '88px 0' }}>
   <div className="inner">
     <div className="tag fu">Recent Work</div>
-    <h2 className="h2 fu d1">Real Projects. Real Progress.</h2>
+    <h2 className="h2 fu d1">Our Engineering Roadmap & Recent Work</h2>
     <p className="lead fu d2">A look at the systems we've engineered and are actively building out.</p>
     
     <div className="fu d3" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '32px', marginTop: '48px' }}>
@@ -499,9 +500,8 @@ export default function Home() {
       </div>
     </div>
     <div className="fu d4" style={{ marginTop: '40px', textAlign: 'center' }}>
-      <a href="https://github.com/MohanKumar2002" target="_blank" rel="noopener noreferrer" className="btn-ghost" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
-        <svg height="20" width="20" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
-        Explore our open-source boilerplates and pipeline structures directly on GitHub.
+      <a href="/products" className="btn-ghost" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
+        See our upcoming products →
       </a>
     </div>
   </div>
@@ -598,7 +598,7 @@ export default function Home() {
         <div className="engage-row"><div className="engage-label">Dedicated AI Team</div><div className="engage-val">On Request</div></div>
         <div className="engage-row"><div className="engage-label">Consulting / Advisory</div><div className="engage-val">Hourly / Daily</div></div>
         <div className="engage-note">
-          💡 Every project starts with a free scoping call. We'll give you an honest estimate — no pressure to proceed.
+          💡 Every project starts with a free scoping call. We'll give you a realistic estimate — no pressure to proceed.
         </div>
         <div style={{'marginTop': '22px'}}>
           <a href="#contact" className="btn-primary" style={{'width': '100%', 'justifyContent': 'center'}} data-t="hero_btn1">{t('hero_btn1')}</a>
@@ -648,8 +648,8 @@ export default function Home() {
         </div>
         <div style={{'marginTop': '28px', 'padding': '24px', 'background': 'var(--card)', 'border': '1px solid var(--border)', 'borderRadius': '14px', 'boxShadow': 'var(--shadow)'}}>
           <div style={{'fontFamily': 'var(--syne)', 'fontSize': '16px', 'fontWeight': '700', 'color': 'var(--text)', 'marginBottom': '10px'}}>Free 30-min Discovery Call</div>
-          <div style={{'fontSize': '14px', 'color': 'var(--muted)', 'lineHeight': '1.6'}}>We'll review your business challenge, suggest the right AI approach, and give you an honest scope estimate. No sales pressure, no generic pitch.</div>
-          <div style={{'marginTop': '16px', 'fontSize': '13px', 'color': 'var(--muted2)'}}>✓ Honest assessment &nbsp; ✓ Technical depth &nbsp; ✓ No commitment required</div>
+          <div style={{'fontSize': '14px', 'color': 'var(--muted)', 'lineHeight': '1.6'}}>We'll review your business challenge, suggest the right AI approach, and give you a realistic scope estimate. No sales pressure, no generic pitch.</div>
+          <div style={{'marginTop': '16px', 'fontSize': '13px', 'color': 'var(--muted2)'}}>✓ Objective assessment &nbsp; ✓ Technical depth &nbsp; ✓ No commitment required</div>
         </div>
       </div>
       <BookingForm />
@@ -666,57 +666,7 @@ export default function Home() {
   </div>
 </section>
 
-<footer>
-  <div className="footer-inner">
-    <div className="footer-grid">
-      <div>
-        <a href="#" className="logo">
-          <Image src="/logo.png" alt="Moh-AI Tech Logo" width={100} height={42} style={{ height: "42px", width: "auto", display: "block", objectFit: "contain" }} />
-          <span className="grad-text" style={{ marginLeft: "8px", fontWeight: "800", fontSize: "18px", letterSpacing: "1px" }}>MOH-AI TECH</span>
-          </a>
-        <div className="footer-tagline">Custom AI, ML, and Data Intelligence solutions built honestly — for businesses and institutions worldwide. Based in Namakkal, India.</div>
-      </div>
-      <div>
-        <div className="footer-col-title">Services</div>
-        <ul className="footer-links">
-          <li><a href="#services">AI Agents</a></li>
-          <li><a href="#services">Machine Learning</a></li>
-          <li><a href="#services">Computer Vision</a></li>
-          <li><a href="#services">PowerBI / BI</a></li>
-          <li><a href="#services">NLP & Language AI</a></li>
-          <li><a href="#services">Consulting</a></li>
-        </ul>
-      </div>
-      <div>
-        <div className="footer-col-title">Solution Architectures</div>
-        <ul className="footer-links">
-          <li><a href="#solutions">Enterprise AI Brain</a></li>
-          <li><a href="#solutions">Vision Inspection</a></li>
-          <li><a href="#solutions">Data Intelligence Suite</a></li>
-          <li><a href="#solutions">Agriculture AI</a></li>
-          <li><a href="#solutions">Medical Imaging AI</a></li>
-          <li><a href="#solutions">Customer Service AI</a></li>
-        </ul>
-      </div>
-      <div>
-        <div className="footer-col-title">Company & Connect</div>
-        <ul className="footer-links">
-          <li><a href="#industries">Industries</a></li>
-          <li><a href="/products">Upcoming Products</a></li>
-          <li><a href="https://www.linkedin.com/company/107518449/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-          <li><a href="https://www.instagram.com/moh_ai_tech/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-        </ul>
-      </div>
-    </div>
-    <div className="footer-bottom">
-      <div className="footer-copy">© {new Date().getFullYear()} Moh-AI Tech. MSME Registered. Namakkal, Tamil Nadu, India.</div>
-      <div className="footer-legal">
-        <a href="/privacy">Privacy Policy</a>
-        <a href="/terms">Terms of Service</a>
-      </div>
-    </div>
-  </div>
-</footer>
+<Footer />
     </>
   );
 }

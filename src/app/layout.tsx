@@ -9,7 +9,6 @@ import { LanguageProvider } from '@/components/i18n-provider';
 export const metadata: Metadata = {
   title: 'Moh-AI Tech | Artificial Intelligence & IT Company in Namakkal',
   description: 'Moh-AI Tech is a leading Artificial Intelligence and IT company in Namakkal, India. We build custom AI automation, RAG chatbots, and enterprise AI solutions.',
-  keywords: 'moh ai tech, artificial intelligence, IT company in namakkal, AI development company, custom AI solutions, machine learning, computer vision, AI agency India, software development namakkal',
   openGraph: {
     title: 'Moh-AI Tech | Artificial Intelligence & IT Company in Namakkal',
     description: 'Moh-AI Tech is a leading Artificial Intelligence and IT company in Namakkal, India. We build custom AI automation, RAG chatbots, and enterprise AI solutions.',

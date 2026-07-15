@@ -1,5 +1,10 @@
 import React from 'react';
 
+export const metadata = {
+  title: 'Privacy Policy | Moh-AI Tech',
+  description: 'Learn how Moh-AI Tech collects, uses, and protects your information when you visit our website or engage our AI services.',
+};
+
 export default function PrivacyPage() {
   return (
     <main className="min-h-screen bg-[var(--bg)] py-24">
@@ -28,9 +33,19 @@ export default function PrivacyPage() {
             Client project data is handled under NDA and industry-standard security practices. We do not use client data to train third-party AI models without explicit consent.
           </p>
 
+          <h2 className="text-[var(--text)] font-bold text-xl mt-8 mb-4">Cookies & Analytics</h2>
+          <p className="mb-6">
+            We use Google Analytics (GA4) to understand how visitors interact with our website. This involves the use of basic cookies. By continuing to use our site, you consent to this basic telemetry. You can disable cookies in your browser settings if preferred.
+          </p>
+
+          <h2 className="text-[var(--text)] font-bold text-xl mt-8 mb-4">Governing Law & Compliance</h2>
+          <p className="mb-6">
+            This policy is governed by the laws of India, specifically in compliance with the Information Technology Act, 2000 and the Digital Personal Data Protection (DPDP) Act, 2023. Any disputes shall be subject to the exclusive jurisdiction of the courts in Namakkal, Tamil Nadu.
+          </p>
+
           <h2 className="text-[var(--text)] font-bold text-xl mt-8 mb-4">Contact</h2>
           <p className="mb-8">
-            Questions about this policy: <a href="mailto:info@mohaitech.com" className="text-[var(--accent)] hover:underline">info@mohaitech.com</a>
+            Questions about this policy: <a href="mailto:info@moh-ai-tech.com" className="text-[var(--accent)] hover:underline">info@moh-ai-tech.com</a>
           </p>
           
           <p className="text-sm">

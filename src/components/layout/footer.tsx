@@ -20,7 +20,7 @@ export default function Footer() {
               />
             </Link>
             <p className="footer-tagline">
-              Custom AI applications, intelligent automation, AI agents, and business platforms. Built honestly for businesses and institutions worldwide. <br/><br/>Based in Vasanthapuram, Namakkal, Tamil Nadu, India.
+              Custom AI applications, intelligent automation, AI agents, and business platforms. Built honestly for businesses and institutions worldwide. <br/><br/>Based in Namakkal, Tamil Nadu, India.
             </p>
           </div>
 
@@ -40,19 +40,17 @@ export default function Footer() {
             <div className="footer-col-title">Company Overview</div>
             <ul className="footer-links">
               <li><Link href="/about">About Us</Link></li>
-              <li><Link href="/#industries">Industries</Link></li>
+              <li><Link href="/playbook">The Playbook</Link></li>
+              <li><Link href="/blog">Engineering Blog</Link></li>
+              <li><Link href="/products">Our Products</Link></li>
               <li><Link href="/#process">Development Process</Link></li>
-              <li><Link href="/#tech">Technology Stack</Link></li>
-              <li><Link href="/#featured">Featured Projects</Link></li>
-              <li><Link href="/#public-sector">Public Sector Solutions</Link></li>
+              <li><Link href="/#industries">Industries</Link></li>
             </ul>
           </div>
 
           <div>
             <div className="footer-col-title">Quick Links</div>
             <ul className="footer-links">
-              <li><Link href="/#founder">About the Founder</Link></li>
-              <li><Link href="/#solutions">Solution Architectures</Link></li>
               <li><Link href="/#contact">Contact Us</Link></li>
               <li><Link href="https://wa.me/919566852700" target="_blank" rel="noopener noreferrer">WhatsApp Chat</Link></li>
               <li><a href="mailto:info@moh-ai-tech.com">Email Support</a></li>
@@ -62,7 +60,7 @@ export default function Footer() {
 
         <div className="footer-bottom mt-12 pt-8 border-t border-[var(--border2)] flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="footer-copy text-sm text-[var(--muted)]">
-            © {new Date().getFullYear()} Moh-AI Tech. <strong>MSME Registered (UDYAM-TN-XXXXXXX)</strong>. Vasanthapuram, Namakkal, Tamil Nadu, India.
+            © {new Date().getFullYear()} Moh-AI Tech. Namakkal, Tamil Nadu, India.
           </div>
           <div className="footer-legal flex gap-6 text-sm text-[var(--muted)]">
             <Link href="/privacy" className="hover:text-[var(--text)] transition-colors">Privacy Policy</Link>

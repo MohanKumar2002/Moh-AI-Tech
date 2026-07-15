@@ -1,5 +1,10 @@
 import React from 'react';
 
+export const metadata = {
+  title: 'Terms of Service | Moh-AI Tech',
+  description: 'Terms of service governing the use of Moh-AI Tech website and engagement with our custom AI development services.',
+};
+
 export default function TermsPage() {
   return (
     <main className="min-h-screen bg-[var(--bg)] py-24">
@@ -50,9 +55,14 @@ export default function TermsPage() {
             We may update these terms periodically. Continued use of our website or services after changes constitutes acceptance.
           </p>
 
+          <h2 className="text-[var(--text)] font-bold text-xl mt-8 mb-4">9. Governing Law & Jurisdiction</h2>
+          <p className="mb-6">
+            These terms shall be governed by and construed in accordance with the laws of India, including the Information Technology Act, 2000. Any disputes arising out of or in connection with these terms shall be subject to the exclusive jurisdiction of the competent courts in Namakkal, Tamil Nadu, India.
+          </p>
+
           <h2 className="text-[var(--text)] font-bold text-xl mt-8 mb-4">Contact</h2>
           <p className="mb-8">
-            Questions about these terms: <a href="mailto:info@mohaitech.com" className="text-[var(--accent)] hover:underline">info@mohaitech.com</a>
+            Questions about these terms: <a href="mailto:info@moh-ai-tech.com" className="text-[var(--accent)] hover:underline">info@moh-ai-tech.com</a>
           </p>
           
           <p className="text-sm">
