@@ -73,7 +73,7 @@ export default function ComingSoonPage() {
             <div className="sol-card" style={{ padding: '0', position: 'relative', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
               <div style={{ width: '100%', height: '260px', position: 'relative', borderBottom: '1px solid var(--border)', background: 'var(--bg)', overflow: 'hidden' }}>
                 <video 
-                  src="/videos/hr-demo.mp4" 
+                  src="/videos/hr-demo.webm" 
                   autoPlay 
                   loop 
                   muted 
