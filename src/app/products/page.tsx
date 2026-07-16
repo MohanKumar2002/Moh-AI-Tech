@@ -57,7 +57,7 @@ export default function ComingSoonPage() {
                 <div className="sol-tagline" style={{ color: 'var(--accent2)', fontWeight: '600', marginBottom: '24px' }}>Intelligent Document Understanding</div>
                 
                 <p className="sol-desc" style={{ marginBottom: '32px' }}>
-                  <strong style={{ display: 'block', marginBottom: '12px', color: 'var(--text)' }}>⏱️ Targets a 90% reduction in manual data entry timelines.</strong>
+                  <strong className="text-emerald-600 dark:text-emerald-500" style={{ display: 'block', marginBottom: '12px', fontSize: '18px', fontWeight: '800' }}>⏱️ Targets a 90% reduction in manual data entry timelines.</strong>
                   Stop manually entering data from invoices, forms, and contracts. Docu-Mind reads any complex document, extracts structured JSON data instantly, and pushes it directly to your CRM or ERP. Outputs clean, schemas-validated structured JSON matrices ready for direct API consumption.
                 </p>
                 
@@ -91,7 +91,7 @@ export default function ComingSoonPage() {
                 <div className="sol-tagline" style={{ color: '#8B5CF6', fontWeight: '600', marginBottom: '24px' }}>Autonomous Talent Acquisition</div>
                 
                 <p className="sol-desc" style={{ marginBottom: '32px' }}>
-                  <strong style={{ display: 'block', marginBottom: '12px', color: 'var(--text)' }}>⏱️ Deployed to compress time-to-interview metrics by 75%.</strong>
+                  <strong className="text-sky-600 dark:text-sky-400" style={{ display: 'block', marginBottom: '12px', fontSize: '18px', fontWeight: '800' }}>⏱️ Deployed to compress time-to-interview metrics by 75%.</strong>
                   Scale your hiring without scaling your HR department. Our autonomous agent screens thousands of resumes, conducts initial conversational interviews, and ranks the top talent for your final review.
                 </p>
                 

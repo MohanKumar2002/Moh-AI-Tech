@@ -348,42 +348,41 @@ export default function Home() {
   <div className="inner">
     <h2 className="h2 fu d1" style={{ marginBottom: '32px' }}>Technical Capabilities Blueprint</h2>
     <div className="fu d2" style={{ overflowX: 'auto' }}>
-      <table style={{ width: '100%', minWidth: '800px', borderCollapse: 'collapse', textAlign: 'left', background: 'var(--card)', border: '1px solid var(--border)', borderRadius: '12px', overflow: 'hidden' }}>
-        <thead style={{ background: 'var(--bg2)', borderBottom: '2px solid var(--border)' }}>
-          <tr>
-            <th style={{ padding: '16px', fontWeight: '700', color: 'var(--text)' }}>Engine Domain</th>
-            <th style={{ padding: '16px', fontWeight: '700', color: 'var(--text)' }}>Verified Readiness</th>
-            <th style={{ padding: '16px', fontWeight: '700', color: 'var(--text)' }}>Core Production Stack</th>
-            <th style={{ padding: '16px', fontWeight: '700', color: 'var(--text)' }}>Deployed Output</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr style={{ borderBottom: '1px solid var(--border)' }}>
-            <td style={{ padding: '16px', fontWeight: '600', color: 'var(--text)' }}>Autonomous AI Agents</td>
-            <td style={{ padding: '16px', color: '#10b981' }}>✓ Enterprise Ready</td>
-            <td style={{ padding: '16px', color: 'var(--muted)' }}>LangChain + FastAPI</td>
-            <td style={{ padding: '16px', color: 'var(--muted)' }}>System-wide automated report & invoice workers</td>
-          </tr>
-          <tr style={{ borderBottom: '1px solid var(--border)' }}>
-            <td style={{ padding: '16px', fontWeight: '600', color: 'var(--text)' }}>Computer Vision</td>
-            <td style={{ padding: '16px', color: '#10b981' }}>✓ Enterprise Ready</td>
-            <td style={{ padding: '16px', color: 'var(--muted)' }}>PyTorch + OpenCV</td>
-            <td style={{ padding: '16px', color: 'var(--muted)' }}>Real-time industrial defect & line monitoring</td>
-          </tr>
-          <tr style={{ borderBottom: '1px solid var(--border)' }}>
-            <td style={{ padding: '16px', fontWeight: '600', color: 'var(--text)' }}>Intelligent Web Platforms</td>
-            <td style={{ padding: '16px', color: '#10b981' }}>✓ Enterprise Ready</td>
-            <td style={{ padding: '16px', color: 'var(--muted)' }}>React.js + TailwindCSS</td>
-            <td style={{ padding: '16px', color: 'var(--muted)' }}>Fast, responsive frontends housing complex ML logic</td>
-          </tr>
-          <tr>
-            <td style={{ padding: '16px', fontWeight: '600', color: 'var(--text)' }}>Custom Retrieval (RAG)</td>
-            <td style={{ padding: '16px', color: '#10b981' }}>✓ Enterprise Ready</td>
-            <td style={{ padding: '16px', color: 'var(--muted)' }}>PostgreSQL (pgvector) / Vector DBs</td>
-            <td style={{ padding: '16px', color: 'var(--muted)' }}>Secure enterprise brains querying private corporate data</td>
-          </tr>
-        </tbody>
-      </table>
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+        
+        {/* Card 1 */}
+        <div className="card" style={{ padding: '24px', background: 'var(--card)', border: '1px solid var(--border)', borderRadius: '12px' }}>
+          <h3 style={{ fontSize: '18px', fontWeight: '700', marginBottom: '8px', color: 'var(--text)' }}>Autonomous AI Agents</h3>
+          <div style={{ color: '#10b981', fontWeight: '600', fontSize: '14px', marginBottom: '16px' }}>✓ Enterprise Ready</div>
+          <div style={{ fontSize: '14px', color: 'var(--muted)', marginBottom: '8px' }}><strong style={{ color: 'var(--text)' }}>Core Stack:</strong> LangChain + FastAPI</div>
+          <div style={{ fontSize: '14px', color: 'var(--muted)' }}><strong style={{ color: 'var(--text)' }}>Deployed Output:</strong> System-wide automated report & invoice workers</div>
+        </div>
+
+        {/* Card 2 */}
+        <div className="card" style={{ padding: '24px', background: 'var(--card)', border: '1px solid var(--border)', borderRadius: '12px' }}>
+          <h3 style={{ fontSize: '18px', fontWeight: '700', marginBottom: '8px', color: 'var(--text)' }}>Computer Vision</h3>
+          <div style={{ color: '#10b981', fontWeight: '600', fontSize: '14px', marginBottom: '16px' }}>✓ Enterprise Ready</div>
+          <div style={{ fontSize: '14px', color: 'var(--muted)', marginBottom: '8px' }}><strong style={{ color: 'var(--text)' }}>Core Stack:</strong> PyTorch + OpenCV</div>
+          <div style={{ fontSize: '14px', color: 'var(--muted)' }}><strong style={{ color: 'var(--text)' }}>Deployed Output:</strong> Real-time industrial defect & line monitoring</div>
+        </div>
+
+        {/* Card 3 */}
+        <div className="card" style={{ padding: '24px', background: 'var(--card)', border: '1px solid var(--border)', borderRadius: '12px' }}>
+          <h3 style={{ fontSize: '18px', fontWeight: '700', marginBottom: '8px', color: 'var(--text)' }}>Intelligent Web Platforms</h3>
+          <div style={{ color: '#10b981', fontWeight: '600', fontSize: '14px', marginBottom: '16px' }}>✓ Enterprise Ready</div>
+          <div style={{ fontSize: '14px', color: 'var(--muted)', marginBottom: '8px' }}><strong style={{ color: 'var(--text)' }}>Core Stack:</strong> React.js + TailwindCSS</div>
+          <div style={{ fontSize: '14px', color: 'var(--muted)' }}><strong style={{ color: 'var(--text)' }}>Deployed Output:</strong> Fast, responsive frontends housing complex ML logic</div>
+        </div>
+
+        {/* Card 4 */}
+        <div className="card" style={{ padding: '24px', background: 'var(--card)', border: '1px solid var(--border)', borderRadius: '12px' }}>
+          <h3 style={{ fontSize: '18px', fontWeight: '700', marginBottom: '8px', color: 'var(--text)' }}>Custom Retrieval (RAG)</h3>
+          <div style={{ color: '#10b981', fontWeight: '600', fontSize: '14px', marginBottom: '16px' }}>✓ Enterprise Ready</div>
+          <div style={{ fontSize: '14px', color: 'var(--muted)', marginBottom: '8px' }}><strong style={{ color: 'var(--text)' }}>Core Stack:</strong> PostgreSQL (pgvector) / Vector DBs</div>
+          <div style={{ fontSize: '14px', color: 'var(--muted)' }}><strong style={{ color: 'var(--text)' }}>Deployed Output:</strong> Secure enterprise brains querying private corporate data</div>
+        </div>
+
+      </div>
     </div>
   </div>
 </section>
@@ -666,38 +665,34 @@ export default function Home() {
         <div style={{ padding: '24px', borderBottom: '1px solid var(--border)' }}>
           <h3 style={{ fontSize: '20px', fontWeight: '700' }}>Flexible Engagement Options</h3>
         </div>
-        <div style={{ overflowX: 'auto' }}>
-          <table style={{ width: '100%', minWidth: '600px', borderCollapse: 'collapse', textAlign: 'left' }}>
-            <thead style={{ background: 'var(--bg2)', borderBottom: '2px solid var(--border)' }}>
-              <tr>
-                <th style={{ padding: '16px 24px', fontWeight: '700', color: 'var(--text)' }}>Model</th>
-                <th style={{ padding: '16px 24px', fontWeight: '700', color: 'var(--text)' }}>Pricing Strategy</th>
-                <th style={{ padding: '16px 24px', fontWeight: '700', color: 'var(--text)' }}>Best For</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr style={{ borderBottom: '1px solid var(--border)' }}>
-                <td style={{ padding: '16px 24px', fontWeight: '600', color: 'var(--text)' }}>Fixed-Price Project</td>
-                <td style={{ padding: '16px 24px', color: 'var(--muted)' }}>Milestone-Based Quote</td>
-                <td style={{ padding: '16px 24px', color: 'var(--muted)' }}>Clearly defined MVPs, chatbots, and web launches.</td>
-              </tr>
-              <tr style={{ borderBottom: '1px solid var(--border)' }}>
-                <td style={{ padding: '16px 24px', fontWeight: '600', color: 'var(--text)' }}>Monthly Retainer</td>
-                <td style={{ padding: '16px 24px', color: 'var(--muted)' }}>Predictable Flat Fee</td>
-                <td style={{ padding: '16px 24px', color: 'var(--muted)' }}>Continuous AI optimization, scaling, and ongoing support.</td>
-              </tr>
-              <tr style={{ borderBottom: '1px solid var(--border)' }}>
-                <td style={{ padding: '16px 24px', fontWeight: '600', color: 'var(--text)' }}>Dedicated AI Team</td>
-                <td style={{ padding: '16px 24px', color: 'var(--muted)' }}>On-Demand Product Squad</td>
-                <td style={{ padding: '16px 24px', color: 'var(--muted)' }}>Full-scale custom AI product development and integration.</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '16px 24px', fontWeight: '600', color: 'var(--text)' }}>Consulting & Advisory</td>
-                <td style={{ padding: '16px 24px', color: 'var(--muted)' }}>Hourly / Daily Rates</td>
-                <td style={{ padding: '16px 24px', color: 'var(--muted)' }}>Architecture design, AI feasibility studies, and tech roadmaps.</td>
-              </tr>
-            </tbody>
-          </table>
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 p-6 bg-[var(--bg)]">
+          {/* Card 1 */}
+          <div style={{ background: 'var(--bg2)', padding: '24px', borderRadius: '8px', border: '1px solid var(--border)' }}>
+            <h4 style={{ fontSize: '18px', fontWeight: '700', color: 'var(--text)', marginBottom: '4px' }}>Fixed-Price Project</h4>
+            <div style={{ fontSize: '13px', color: 'var(--accent)', fontWeight: '600', marginBottom: '12px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Milestone-Based Quote</div>
+            <p style={{ fontSize: '14px', color: 'var(--muted)', lineHeight: '1.6' }}>Clearly defined MVPs, chatbots, and web launches.</p>
+          </div>
+          
+          {/* Card 2 */}
+          <div style={{ background: 'var(--bg2)', padding: '24px', borderRadius: '8px', border: '1px solid var(--border)' }}>
+            <h4 style={{ fontSize: '18px', fontWeight: '700', color: 'var(--text)', marginBottom: '4px' }}>Monthly Retainer</h4>
+            <div style={{ fontSize: '13px', color: 'var(--accent)', fontWeight: '600', marginBottom: '12px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Predictable Flat Fee</div>
+            <p style={{ fontSize: '14px', color: 'var(--muted)', lineHeight: '1.6' }}>Continuous AI optimization, scaling, and ongoing support.</p>
+          </div>
+          
+          {/* Card 3 */}
+          <div style={{ background: 'var(--bg2)', padding: '24px', borderRadius: '8px', border: '1px solid var(--border)' }}>
+            <h4 style={{ fontSize: '18px', fontWeight: '700', color: 'var(--text)', marginBottom: '4px' }}>Dedicated AI Team</h4>
+            <div style={{ fontSize: '13px', color: 'var(--accent)', fontWeight: '600', marginBottom: '12px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>On-Demand Product Squad</div>
+            <p style={{ fontSize: '14px', color: 'var(--muted)', lineHeight: '1.6' }}>Full-scale custom AI product development and integration.</p>
+          </div>
+          
+          {/* Card 4 */}
+          <div style={{ background: 'var(--bg2)', padding: '24px', borderRadius: '8px', border: '1px solid var(--border)' }}>
+            <h4 style={{ fontSize: '18px', fontWeight: '700', color: 'var(--text)', marginBottom: '4px' }}>Consulting & Advisory</h4>
+            <div style={{ fontSize: '13px', color: 'var(--accent)', fontWeight: '600', marginBottom: '12px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Hourly / Daily Rates</div>
+            <p style={{ fontSize: '14px', color: 'var(--muted)', lineHeight: '1.6' }}>Architecture design, AI feasibility studies, and tech roadmaps.</p>
+          </div>
         </div>
         <div style={{ padding: '20px 24px', background: 'var(--bg2)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '16px', flexWrap: 'wrap' }}>
           <div style={{ color: 'var(--muted)', fontSize: '14px' }}>

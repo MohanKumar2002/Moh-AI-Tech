@@ -9,7 +9,7 @@ const hubspotClient = new HubSpotClient({ accessToken: process.env.HUBSPOT_ACCES
 export async function POST(req: Request) {
   try {
     const body = await req.json();
-    const { name, company, email, country, service, message, scheduledDate, scheduledTime } = body;
+    const { name, company, email, country, service, infrastructure, message, scheduledDate, scheduledTime } = body;
 
     if (!name || !email) {
       return NextResponse.json({ error: 'Name and email are required.' }, { status: 400 });
@@ -73,6 +73,7 @@ export async function POST(req: Request) {
               Company: ${company || 'N/A'}
               Country: ${country || 'N/A'}
               Service of Interest: ${service || 'N/A'}
+              Infrastructure/Data Source: ${infrastructure || 'N/A'}
               
               ${isCallScheduled ? `CALL SCHEDULED FOR:\nDate: ${scheduledDate}\nTime: ${scheduledTime}\n\n` : ''}Message:
               ${message || 'No message provided.'}
