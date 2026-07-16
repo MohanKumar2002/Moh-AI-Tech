@@ -587,8 +587,9 @@ export default function Home() {
           <li>Invoicing in INR, USD, AED, GBP, or EUR</li>
         </ul>
         <div style={{'marginTop': '24px', 'fontSize': '13px', 'color': 'var(--muted)', 'background': 'var(--bg3)', 'border': '1px solid var(--border)', 'borderRadius': '8px', 'padding': '14px', 'lineHeight': '1.6'}}>
-          <strong style={{'color': 'var(--text)'}}>Languages spoken:</strong> English · Tamil · Hindi<br />
-          <strong style={{'color': 'var(--text)'}}>Open to clients from:</strong> India, UAE, Saudi Arabia, UK, US, Singapore, Germany, Australia, and more — anywhere with a good internet connection.
+          <strong style={{'color': 'var(--text)'}}>Languages spoken:</strong> English · Tamil<br />
+          <strong style={{'color': 'var(--text)'}}>Open to clients from:</strong> Worldwide
+
         </div>
       </div>
       <div className="engage-card">
