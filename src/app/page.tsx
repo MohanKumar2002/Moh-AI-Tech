@@ -660,7 +660,6 @@ export default function Home() {
 
         </div>
       </div>
-      </div>
       
       {/* Table spans full width below */}
       <div className="card" style={{ gridColumn: '1 / -1', marginTop: '16px', padding: '0', overflow: 'hidden' }}>
