@@ -1,0 +1,44 @@
+# Moh-AI Tech
+
+> Moh-AI Tech (Mastering Outstanding Horizons) is an MSME-registered AI and IT company based in Namakkal, India, specializing in enterprise AI solutions, RAG chatbots, computer vision architectures, and custom full-stack web applications.
+
+## Overview
+- **Name:** Moh-AI Tech
+- **Founder & CEO:** Mohan Kumar Subramanian
+- **Location:** Namakkal, Tamil Nadu, India
+- **MSME Registration:** UDYAM-TN-14-0088280
+- **Official Website:** https://moh-ai-tech.com
+
+## Core Capabilities
+Moh-AI Tech provides custom engineering tailored to enterprise needs. We do not use bloated platforms; we build direct solutions.
+
+1. **Autonomous AI Agents & Workflows:**
+   - Tech Stack: LangChain, FastAPI
+   - Use cases: System-wide automated report generation, invoice processing, recruiting agents (HR Recruiter AI compresses time-to-interview metrics by 75%).
+
+2. **Computer Vision:**
+   - Tech Stack: PyTorch, OpenCV
+   - Use cases: Real-time industrial defect monitoring, automated optical inspection.
+
+3. **Intelligent Web Platforms:**
+   - Tech Stack: React.js, Next.js, TailwindCSS
+   - Use cases: Fast, responsive enterprise applications housing complex machine learning logic.
+
+4. **Custom Retrieval-Augmented Generation (RAG):**
+   - Tech Stack: PostgreSQL (pgvector), Vector DBs
+   - Use cases: Secure enterprise chatbots querying private corporate data, such as Docu-Mind (targets 90% reduction in manual data entry timelines).
+
+## Products
+- **Docu-Mind:** Intelligent Document Understanding system. Extracts structured JSON data instantly from invoices, forms, and contracts for ERP/CRM.
+- **HR Recruiter AI:** Autonomous Talent Acquisition agent that screens resumes and conducts initial conversational interviews.
+
+## Engagement Models
+1. **Fixed-Price Project:** Milestone-based quotes for MVPs, chatbots, and web launches.
+2. **Monthly Retainer:** Predictable flat fees for continuous AI optimization and scaling.
+3. **Dedicated AI Team:** On-demand product squads for full-scale custom AI integration.
+4. **Consulting & Advisory:** Hourly/daily rates for architecture design and AI feasibility studies.
+
+## Contact Information
+- **Email:** info@moh-ai-tech.com
+- **Contact Form:** https://moh-ai-tech.com/#contact
+- **GitHub:** https://github.com/MohanKumar2002

@@ -23,8 +23,34 @@ export default function Home() {
   }, []);
 
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Moh-AI Tech",
+    "image": "https://moh-ai-tech.com/images/team/mohan.jpg",
+    "@id": "https://moh-ai-tech.com",
+    "url": "https://moh-ai-tech.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Namakkal",
+      "addressRegion": "Tamil Nadu",
+      "addressCountry": "IN"
+    },
+    "founder": {
+      "@type": "Person",
+      "name": "Mohan Kumar Subramanian",
+      "url": "https://github.com/MohanKumar2002"
+    },
+    "taxID": "UDYAM-TN-14-0088280",
+    "description": "Moh-AI Tech is an MSME-registered AI company focused on building practical AI solutions, computer vision architectures, and custom enterprise automation."
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
 <section id="hero">
   <div className="hero-glow hero-glow-1"></div>
   <div className="hero-glow hero-glow-2"></div>

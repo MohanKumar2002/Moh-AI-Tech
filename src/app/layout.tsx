@@ -28,6 +28,11 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: 'https://moh-ai-tech.com',
+    languages: {
+      'en-US': 'https://moh-ai-tech.com/en',
+      'ta-IN': 'https://moh-ai-tech.com/ta',
+      'de-DE': 'https://moh-ai-tech.com/de',
+    },
   }
 };
 

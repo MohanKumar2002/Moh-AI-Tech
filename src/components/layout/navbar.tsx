@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { useLanguage } from '@/components/i18n-provider';
 import { usePathname } from 'next/navigation';
+import Image from 'next/image';
 
 export function Navbar() {
   const { lang, setLang, t } = useLanguage();  const [menuOpen, setMenuOpen] = useState(false);
@@ -19,7 +20,7 @@ export function Navbar() {
   return (
     <nav>
       <a href="/" className="logo">
-        <img src="/logo.png" alt="Moh-AI Tech Logo" className="logo-img" style={{ height: "42px", width: "auto", display: "block", objectFit: "contain" }} />
+        <Image src="/logo.png" alt="Moh-AI Tech Logo" width={42} height={42} className="logo-img" style={{ height: "42px", width: "auto", display: "block", objectFit: "contain" }} priority />
         <span className="grad-text logo-text" style={{ marginLeft: "8px", fontWeight: "800", fontSize: "18px", letterSpacing: "1px", whiteSpace: "nowrap" }}>MOH-AI TECH</span>
       </a>
       <ul className={`nav-center ${menuOpen ? 'mobile-open' : ''}`} id="nav-links">
