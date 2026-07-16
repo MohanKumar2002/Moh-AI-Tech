@@ -12,6 +12,7 @@ const contactSchema = z.object({
   email: z.string().email('Valid email is required'),
   country: z.string().optional(),
   service: z.string().optional(),
+  infrastructure: z.string().optional(),
   message: z.string().min(10, 'Please provide more details about your project'),
 });
 
@@ -131,17 +132,25 @@ export function ContactForm() {
           <label>What are you looking to build?</label>
           <select {...register('service')}>
             <option value="">Select a service</option>
-            <option>AI Agents & Automation</option>
-            <option>Machine Learning Model</option>
-            <option>Computer Vision System</option>
-            <option>PowerBI / Data Dashboard</option>
-            <option>NLP / Language AI</option>
-            <option>Deep Learning Solution</option>
-            <option>IoT + Edge AI</option>
-            <option>AI Consulting / Strategy</option>
+            <option>Autonomous AI Agents / Workflows</option>
+            <option>Custom LLM / Computer Vision Architecture</option>
+            <option>AI Feasibility Audit & Solution Design</option>
+            <option>Full-Stack Web Application (React/FastAPI)</option>
             <option>Not sure — need advice</option>
           </select>
         </div>
+
+        <div className="frow">
+          <label>Current Infrastructure / Data Source (Optional)</label>
+          <select {...register('infrastructure')}>
+            <option value="">Select infrastructure</option>
+            <option>Cloud (AWS/Azure/GCP)</option>
+            <option>On-Premise Servers</option>
+            <option>Hybrid / Legacy Databases</option>
+            <option>None / Starting from scratch</option>
+          </select>
+        </div>
+
         
         <div className="frow">
           <label>Tell us about your project *</label>

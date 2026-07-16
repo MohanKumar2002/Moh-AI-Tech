@@ -7,7 +7,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 export function BookingForm() {
   const [step, setStep] = useState(1);
-  const [formData, setFormData] = useState({ name: '', company: '', email: '', country: '', service: '', message: '' });
+  const [formData, setFormData] = useState({ name: '', company: '', email: '', country: '', service: '', infrastructure: '', message: '' });
   const [selectedDate, setSelectedDate] = useState<Date | undefined>(undefined);
   const [selectedTime, setSelectedTime] = useState<string>('');
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -115,10 +115,22 @@ export function BookingForm() {
                 <label>What are you looking to build?</label>
                 <select name="service" value={formData.service} onChange={handleInputChange}>
                   <option value="">Select a service</option>
-                  <option>AI Agents</option>
-                  <option>Machine Learning</option>
-                  <option>Consulting</option>
-                  <option>Other</option>
+                  <option>Autonomous AI Agents / Workflows</option>
+                  <option>Custom LLM / Computer Vision Architecture</option>
+                  <option>AI Feasibility Audit & Solution Design</option>
+                  <option>Full-Stack Web Application (React/FastAPI)</option>
+                  <option>Not sure — need advice</option>
+                </select>
+              </div>
+
+              <div className="frow">
+                <label>Current Infrastructure / Data Source (Optional)</label>
+                <select name="infrastructure" value={formData.infrastructure} onChange={handleInputChange}>
+                  <option value="">Select infrastructure</option>
+                  <option>Cloud (AWS/Azure/GCP)</option>
+                  <option>On-Premise Servers</option>
+                  <option>Hybrid / Legacy Databases</option>
+                  <option>None / Starting from scratch</option>
                 </select>
               </div>
               

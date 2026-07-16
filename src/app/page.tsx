@@ -35,10 +35,12 @@ export default function Home() {
         <span data-t="hero_badge">{t('hero_badge')}</span>
       </div>
       <h1 className="hero-h1 fu d1">
-        <span data-t="hero_h1_1">{t('hero_h1_1')}</span><br />
-        <em data-t="hero_h1_2">{t('hero_h1_2')}</em>
+        MOH-AI TECH
       </h1>
-      <p className="hero-sub fu d2" data-t="hero_sub">{t('hero_sub')}</p>
+      <p className="hero-sub fu d2">
+        <em>Mastering Outstanding Horizons through Focused Engineering.</em><br/><br/>
+        We design and build AI, Machine Learning, Computer Vision, and Data Intelligence solutions for businesses and institutions worldwide. No fake claims — just honest, production-grade engineering.
+      </p>
       
       <div className="hero-tagline fu d2" style={{
         marginTop: '1.5rem',
@@ -320,6 +322,72 @@ export default function Home() {
   </div>
 </section>
 
+{/* ===== ENTERPRISE SECURITY ===== */}
+<section id="security" style={{ background: 'var(--bg2)', padding: '60px 0', borderTop: '1px solid var(--border)' }}>
+  <div className="inner">
+    <div className="tag fu" style={{ background: 'rgba(16, 185, 129, 0.1)', color: '#10b981' }}>🔒 Enterprise Data Sovereignty</div>
+    <div className="fu d2" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '24px', marginTop: '32px' }}>
+      <div className="card">
+        <h3 style={{ fontSize: '18px', fontWeight: '700', marginBottom: '12px' }}>Zero Public Training</h3>
+        <p style={{ fontSize: '15px', color: 'var(--muted)', lineHeight: '1.6' }}>We design systems where your proprietary company data, documents, and emails are never used to train public LLMs. Your data stays yours.</p>
+      </div>
+      <div className="card">
+        <h3 style={{ fontSize: '18px', fontWeight: '700', marginBottom: '12px' }}>Flexible Deployment</h3>
+        <p style={{ fontSize: '15px', color: 'var(--muted)', lineHeight: '1.6' }}>We host architectures wherever you need them—whether that's a fully isolated secure private cloud or on-premise hardware.</p>
+      </div>
+      <div className="card">
+        <h3 style={{ fontSize: '18px', fontWeight: '700', marginBottom: '12px' }}>IP & Code Ownership</h3>
+        <p style={{ fontSize: '15px', color: 'var(--muted)', lineHeight: '1.6' }}>Complete handover. You own 100% of the custom codebase, documentation, and operational weights we engineer.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{/* ===== TECHNICAL CAPABILITIES ===== */}
+<section id="capabilities" style={{ background: 'var(--bg)', padding: '80px 0', borderTop: '1px solid var(--border)' }}>
+  <div className="inner">
+    <h2 className="h2 fu d1" style={{ marginBottom: '32px' }}>Technical Capabilities Blueprint</h2>
+    <div className="fu d2" style={{ overflowX: 'auto' }}>
+      <table style={{ width: '100%', minWidth: '800px', borderCollapse: 'collapse', textAlign: 'left', background: 'var(--card)', border: '1px solid var(--border)', borderRadius: '12px', overflow: 'hidden' }}>
+        <thead style={{ background: 'var(--bg2)', borderBottom: '2px solid var(--border)' }}>
+          <tr>
+            <th style={{ padding: '16px', fontWeight: '700', color: 'var(--text)' }}>Engine Domain</th>
+            <th style={{ padding: '16px', fontWeight: '700', color: 'var(--text)' }}>Verified Readiness</th>
+            <th style={{ padding: '16px', fontWeight: '700', color: 'var(--text)' }}>Core Production Stack</th>
+            <th style={{ padding: '16px', fontWeight: '700', color: 'var(--text)' }}>Deployed Output</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style={{ borderBottom: '1px solid var(--border)' }}>
+            <td style={{ padding: '16px', fontWeight: '600', color: 'var(--text)' }}>Autonomous AI Agents</td>
+            <td style={{ padding: '16px', color: '#10b981' }}>✓ Enterprise Ready</td>
+            <td style={{ padding: '16px', color: 'var(--muted)' }}>LangChain + FastAPI</td>
+            <td style={{ padding: '16px', color: 'var(--muted)' }}>System-wide automated report & invoice workers</td>
+          </tr>
+          <tr style={{ borderBottom: '1px solid var(--border)' }}>
+            <td style={{ padding: '16px', fontWeight: '600', color: 'var(--text)' }}>Computer Vision</td>
+            <td style={{ padding: '16px', color: '#10b981' }}>✓ Enterprise Ready</td>
+            <td style={{ padding: '16px', color: 'var(--muted)' }}>PyTorch + OpenCV</td>
+            <td style={{ padding: '16px', color: 'var(--muted)' }}>Real-time industrial defect & line monitoring</td>
+          </tr>
+          <tr style={{ borderBottom: '1px solid var(--border)' }}>
+            <td style={{ padding: '16px', fontWeight: '600', color: 'var(--text)' }}>Intelligent Web Platforms</td>
+            <td style={{ padding: '16px', color: '#10b981' }}>✓ Enterprise Ready</td>
+            <td style={{ padding: '16px', color: 'var(--muted)' }}>React.js + TailwindCSS</td>
+            <td style={{ padding: '16px', color: 'var(--muted)' }}>Fast, responsive frontends housing complex ML logic</td>
+          </tr>
+          <tr>
+            <td style={{ padding: '16px', fontWeight: '600', color: 'var(--text)' }}>Custom Retrieval (RAG)</td>
+            <td style={{ padding: '16px', color: '#10b981' }}>✓ Enterprise Ready</td>
+            <td style={{ padding: '16px', color: 'var(--muted)' }}>PostgreSQL (pgvector) / Vector DBs</td>
+            <td style={{ padding: '16px', color: 'var(--muted)' }}>Secure enterprise brains querying private corporate data</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
 {/* ===== EMERGING ARCHITECTURES ===== */}
 <section id="emerging" style={{ background: 'var(--card)', padding: '60px 0', borderTop: '1px solid var(--border)' }}>
   <div className="inner">
@@ -592,17 +660,51 @@ export default function Home() {
 
         </div>
       </div>
-      <div className="engage-card">
-        <div className="engage-title">Engagement Options</div>
-        <div className="engage-row"><div className="engage-label">Fixed-Price Project</div><div className="engage-val">Custom Quote</div></div>
-        <div className="engage-row"><div className="engage-label">Monthly Retainer</div><div className="engage-val">Custom Quote</div></div>
-        <div className="engage-row"><div className="engage-label">Dedicated AI Team</div><div className="engage-val">On Request</div></div>
-        <div className="engage-row"><div className="engage-label">Consulting / Advisory</div><div className="engage-val">Hourly / Daily</div></div>
-        <div className="engage-note">
-          💡 Every project starts with a free scoping call. We'll give you a realistic estimate — no pressure to proceed.
+      </div>
+      
+      {/* Table spans full width below */}
+      <div className="card" style={{ gridColumn: '1 / -1', marginTop: '16px', padding: '0', overflow: 'hidden' }}>
+        <div style={{ padding: '24px', borderBottom: '1px solid var(--border)' }}>
+          <h3 style={{ fontSize: '20px', fontWeight: '700' }}>Flexible Engagement Options</h3>
         </div>
-        <div style={{'marginTop': '22px'}}>
-          <a href="#contact" className="btn-primary" style={{'width': '100%', 'justifyContent': 'center'}} data-t="hero_btn1">{t('hero_btn1')}</a>
+        <div style={{ overflowX: 'auto' }}>
+          <table style={{ width: '100%', minWidth: '600px', borderCollapse: 'collapse', textAlign: 'left' }}>
+            <thead style={{ background: 'var(--bg2)', borderBottom: '2px solid var(--border)' }}>
+              <tr>
+                <th style={{ padding: '16px 24px', fontWeight: '700', color: 'var(--text)' }}>Model</th>
+                <th style={{ padding: '16px 24px', fontWeight: '700', color: 'var(--text)' }}>Pricing Strategy</th>
+                <th style={{ padding: '16px 24px', fontWeight: '700', color: 'var(--text)' }}>Best For</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style={{ borderBottom: '1px solid var(--border)' }}>
+                <td style={{ padding: '16px 24px', fontWeight: '600', color: 'var(--text)' }}>Fixed-Price Project</td>
+                <td style={{ padding: '16px 24px', color: 'var(--muted)' }}>Milestone-Based Quote</td>
+                <td style={{ padding: '16px 24px', color: 'var(--muted)' }}>Clearly defined MVPs, chatbots, and web launches.</td>
+              </tr>
+              <tr style={{ borderBottom: '1px solid var(--border)' }}>
+                <td style={{ padding: '16px 24px', fontWeight: '600', color: 'var(--text)' }}>Monthly Retainer</td>
+                <td style={{ padding: '16px 24px', color: 'var(--muted)' }}>Predictable Flat Fee</td>
+                <td style={{ padding: '16px 24px', color: 'var(--muted)' }}>Continuous AI optimization, scaling, and ongoing support.</td>
+              </tr>
+              <tr style={{ borderBottom: '1px solid var(--border)' }}>
+                <td style={{ padding: '16px 24px', fontWeight: '600', color: 'var(--text)' }}>Dedicated AI Team</td>
+                <td style={{ padding: '16px 24px', color: 'var(--muted)' }}>On-Demand Product Squad</td>
+                <td style={{ padding: '16px 24px', color: 'var(--muted)' }}>Full-scale custom AI product development and integration.</td>
+              </tr>
+              <tr>
+                <td style={{ padding: '16px 24px', fontWeight: '600', color: 'var(--text)' }}>Consulting & Advisory</td>
+                <td style={{ padding: '16px 24px', color: 'var(--muted)' }}>Hourly / Daily Rates</td>
+                <td style={{ padding: '16px 24px', color: 'var(--muted)' }}>Architecture design, AI feasibility studies, and tech roadmaps.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div style={{ padding: '20px 24px', background: 'var(--bg2)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '16px', flexWrap: 'wrap' }}>
+          <div style={{ color: 'var(--muted)', fontSize: '14px' }}>
+            💡 Every engagement begins with a free, comprehensive scoping call. We provide a realistic, transparent estimate with zero obligation to proceed.
+          </div>
+          <a href="#contact" className="btn-primary" style={{ whiteSpace: 'nowrap' }}>Book a Free Strategy Call →</a>
         </div>
       </div>
     </div>
