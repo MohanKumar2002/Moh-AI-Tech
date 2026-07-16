@@ -18,7 +18,7 @@ export default function AboutPage() {
             AI is changing what businesses can do — but right now, that change is mostly reaching companies who can already afford large engineering teams and enterprise software budgets. Everyone else is left reading about AI, not using it.
           </p>
           <p className="text-[var(--muted)] text-lg leading-relaxed">
-            Moh-AI Tech was founded to close that gap. We're a Namakkal-based, MSME-registered AI company built on one principle: every system we ship should genuinely save time or money for the people using it — not just look impressive in a pitch deck.
+            Moh-AI Tech (Mastering Outstanding Horizons) was founded to close that gap. We're a Namakkal-based, MSME-registered AI company built on one principle: every system we ship should genuinely save time or money for the people using it — not just look impressive in a pitch deck.
           </p>
         </div>
 

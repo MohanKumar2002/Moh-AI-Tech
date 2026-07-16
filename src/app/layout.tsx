@@ -8,10 +8,10 @@ import { LanguageProvider } from '@/components/i18n-provider';
 
 export const metadata: Metadata = {
   title: 'Moh-AI Tech | Artificial Intelligence & IT Company in Namakkal',
-  description: 'Moh-AI Tech is a leading Artificial Intelligence and IT company in Namakkal, India. We build custom AI automation, RAG chatbots, and enterprise AI solutions.',
+  description: 'Moh-AI Tech (Mastering Outstanding Horizons) is a leading Artificial Intelligence and IT company in Namakkal, India. We build custom AI automation, RAG chatbots, and enterprise AI solutions.',
   openGraph: {
     title: 'Moh-AI Tech | Artificial Intelligence & IT Company in Namakkal',
-    description: 'Moh-AI Tech is a leading Artificial Intelligence and IT company in Namakkal, India. We build custom AI automation, RAG chatbots, and enterprise AI solutions.',
+    description: 'Moh-AI Tech (Mastering Outstanding Horizons) is a leading Artificial Intelligence and IT company in Namakkal, India. We build custom AI automation, RAG chatbots, and enterprise AI solutions.',
     url: 'https://moh-ai-tech.com',
     siteName: 'Moh-AI Tech',
     locale: 'en_US',
