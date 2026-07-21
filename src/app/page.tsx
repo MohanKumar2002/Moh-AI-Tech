@@ -25,24 +25,91 @@ export default function Home() {
 
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Moh-AI Tech",
-    "image": "https://moh-ai-tech.com/images/team/mohan.jpg",
-    "@id": "https://moh-ai-tech.com",
-    "url": "https://moh-ai-tech.com",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Namakkal",
-      "addressRegion": "Tamil Nadu",
-      "addressCountry": "IN"
-    },
-    "founder": {
-      "@type": "Person",
-      "name": "Mohan Kumar Subramanian",
-      "url": "https://github.com/MohanKumar2002"
-    },
-    "taxID": "UDYAM-TN-14-0088280",
-    "description": "Moh-AI Tech is an MSME-registered AI company focused on building practical AI solutions, computer vision architectures, and custom enterprise automation."
+    "@graph": [
+      {
+        "@type": ["Organization", "LocalBusiness"],
+        "@id": "https://moh-ai-tech.com/#organization",
+        "name": "Moh-AI Tech",
+        "legalName": "MOH AI TECH",
+        "alternateName": [
+          "Moh-AI Tech Namakkal",
+          "Moh-AI Tech India",
+          "MOH AI TECH Product Startup",
+          "Mastering Outstanding Horizons AI Tech"
+        ],
+        "url": "https://moh-ai-tech.com",
+        "logo": "https://moh-ai-tech.com/logo.png",
+        "image": "https://moh-ai-tech.com/images/team/mohan.jpg",
+        "description": "MOH AI TECH (Mastering Outstanding Horizons) is an MSME-registered Indian AI product & software engineering startup based in Namakkal, Tamil Nadu, India (Reg: UDYAM-TN-14-0088280). Founded by Mohan Kumar Subramanian, the company designs and builds enterprise AI agents (Docu-Mind AI, HR Recruiter AI, AeroAudit AI), computer vision inspection systems, and custom software automation for global businesses.",
+        "taxID": "UDYAM-TN-14-0088280",
+        "email": "info@moh-ai-tech.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Namakkal",
+          "addressRegion": "Tamil Nadu",
+          "addressCountry": "IN"
+        },
+        "founder": {
+          "@type": "Person",
+          "@id": "https://moh-ai-tech.com/#founder",
+          "name": "Mohan Kumar Subramanian",
+          "jobTitle": "Founder & CEO",
+          "sameAs": [
+            "https://www.linkedin.com/in/mohan-kumar-subramanian/",
+            "https://github.com/MohanKumar2002"
+          ]
+        },
+        "sameAs": [
+          "https://in.linkedin.com/company/moh-ai-tech",
+          "https://www.linkedin.com/in/mohan-kumar-subramanian/",
+          "https://github.com/MohanKumar2002",
+          "https://www.instagram.com/mohaitech/"
+        ],
+        "knowsAbout": [
+          "Enterprise Artificial Intelligence",
+          "Computer Vision Inspection",
+          "Autonomous AI Agents",
+          "Docu-Mind AI",
+          "HR Recruiter AI",
+          "AeroAudit AI",
+          "Retrieval-Augmented Generation (RAG)",
+          "B2B Automation Systems"
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "MOH AI TECH Flagship AI Products & B2B Solutions",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "SoftwareApplication",
+                "name": "Docu-Mind AI",
+                "applicationCategory": "BusinessApplication",
+                "description": "Intelligent Document Understanding AI system that reads complex invoices, forms, and contracts, extracting structured JSON data with 90% timeline reduction."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "SoftwareApplication",
+                "name": "HR Recruiter AI",
+                "applicationCategory": "BusinessApplication",
+                "description": "Autonomous Talent Acquisition AI agent that screens resumes, conducts conversational pre-screening, and ranks candidates to compress time-to-interview metrics by 75%."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "SoftwareApplication",
+                "name": "AeroAudit AI",
+                "applicationCategory": "BusinessApplication",
+                "description": "Private, on-premise AI auditing and intelligence system for logistics, supply chain, and financial operations."
+              }
+            }
+          ]
+        }
+      }
+    ]
   };
 
   return (

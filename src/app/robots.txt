@@ -1,4 +1,0 @@
-User-Agent: *
-Allow: /
-
-Sitemap: https://moh-ai-tech.com/sitemap.xml

@@ -5,8 +5,8 @@ import { Bot, FileText } from 'lucide-react';
 import { WaitlistForm } from '@/components/waitlist-form';
 
 export const metadata = {
-  title: 'Coming Soon | Moh-AI Tech Upcoming Products',
-  description: 'Join the waitlist for our next generation AI products: Docu-Mind and HR Recruiter AI.',
+  title: 'Enterprise AI Products | AeroAudit AI, Docu-Mind & HR Recruiter AI — Moh-AI Tech',
+  description: 'Discover enterprise AI products built by Moh-AI Tech (Namakkal, India): AeroAudit AI (Logistics Auditing), Docu-Mind (Intelligent Document Processing), and HR Recruiter AI (Autonomous Recruiting).',
 };
 
 export default function ComingSoonPage() {
@@ -100,6 +100,37 @@ export default function ComingSoonPage() {
                   <li>Voice/Chat Pre-Screening Agent</li>
                   <li>Bias-Free Candidate Ranking</li>
                   <li>Automated Interview Scheduling</li>
+                </ul>
+              </div>
+            </div>
+            
+            {/* Product 3: AeroAudit AI */}
+            <div className="sol-card" style={{ padding: '0', position: 'relative', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
+              <div style={{ width: '100%', height: '260px', position: 'relative', borderBottom: '1px solid var(--border)', background: 'var(--bg)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <div style={{ padding: '32px', textAlign: 'center' }}>
+                  <div style={{ fontSize: '48px', marginBottom: '8px' }}>✈️ 🔍</div>
+                  <div style={{ fontSize: '20px', fontWeight: '800', color: 'var(--text)' }}>AeroAudit AI</div>
+                  <div style={{ fontSize: '13px', color: 'var(--muted)' }}>Private On-Premise Audit System</div>
+                </div>
+              </div>
+              <div style={{ padding: '32px', flex: 1, display: 'flex', flexDirection: 'column' }}>
+                <div style={{ position: 'absolute', top: '230px', right: '32px', width: '60px', height: '60px', background: 'var(--card)', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: 'var(--shadow)', border: '1px solid var(--border)', color: '#10B981' }}>
+                  <Bot size={28} />
+                </div>
+                
+                <h3 className="sol-name" style={{ fontSize: '28px', marginBottom: '8px' }}>AeroAudit AI</h3>
+                <div className="sol-tagline" style={{ color: '#10B981', fontWeight: '600', marginBottom: '24px' }}>Supply Chain & Logistics Auditing</div>
+                
+                <p className="sol-desc" style={{ marginBottom: '32px' }}>
+                  <strong className="text-emerald-600 dark:text-emerald-400" style={{ display: 'block', marginBottom: '12px', fontSize: '18px', fontWeight: '800' }}>⏱️ Designed for zero-data-leakage enterprise auditing.</strong>
+                  Private, on-premise AI pipeline built for supply chain, logistics, and financial compliance auditing. Processes sensitive enterprise manifests and ledgers without sending data to third-party cloud APIs.
+                </p>
+                
+                <ul className="sol-feats" style={{ margin: 'auto 0 0 0' }}>
+                  <li>100% On-Premise Data Sovereignty</li>
+                  <li>Manifest & Waybill Reconciliation</li>
+                  <li>Automated Discrepancy Detection</li>
+                  <li>Custom ERP Audit Connectors</li>
                 </ul>
               </div>
             </div>

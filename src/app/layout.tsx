@@ -7,11 +7,11 @@ import ChatbotPlaceholder from '@/components/chatbot-placeholder';
 import { LanguageProvider } from '@/components/i18n-provider';
 
 export const metadata: Metadata = {
-  title: 'Moh-AI Tech | Artificial Intelligence & IT Company in Namakkal',
-  description: 'Moh-AI Tech (Mastering Outstanding Horizons) is a leading Artificial Intelligence and IT company in Namakkal, India. We build custom AI automation, RAG chatbots, and enterprise AI solutions.',
+  title: 'Moh-AI Tech | Enterprise AI Automation & Software Studio — Namakkal, India',
+  description: 'MOH AI TECH (Mastering Outstanding Horizons) is an MSME-registered AI product startup in Namakkal, India (Reg: UDYAM-TN-14-0088280). We build enterprise AI agents (Docu-Mind AI, HR Recruiter AI, AeroAudit AI), computer vision, and custom software.',
   openGraph: {
-    title: 'Moh-AI Tech | Artificial Intelligence & IT Company in Namakkal',
-    description: 'Moh-AI Tech (Mastering Outstanding Horizons) is a leading Artificial Intelligence and IT company in Namakkal, India. We build custom AI automation, RAG chatbots, and enterprise AI solutions.',
+    title: 'Moh-AI Tech | Enterprise AI Automation & Software Studio — Namakkal, India',
+    description: 'MOH AI TECH (Mastering Outstanding Horizons) is an MSME-registered AI product startup in Namakkal, India. We build enterprise AI agents (Docu-Mind AI, HR Recruiter AI, AeroAudit AI), computer vision, and custom software.',
     url: 'https://moh-ai-tech.com',
     siteName: 'Moh-AI Tech',
     locale: 'en_US',
@@ -19,8 +19,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Moh-AI Tech | Artificial Intelligence & IT Company in Namakkal',
-    description: 'Top Artificial Intelligence & IT company in Namakkal, India. Custom AI solutions and automation.',
+    title: 'Moh-AI Tech | Enterprise AI Automation & Software Studio — Namakkal, India',
+    description: 'MOH AI TECH (Mastering Outstanding Horizons) is an MSME-registered AI product startup in Namakkal, India. We build enterprise AI agents, computer vision, and custom software.',
   },
   robots: {
     index: true,
