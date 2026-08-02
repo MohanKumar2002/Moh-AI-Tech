@@ -42,7 +42,7 @@ export async function submitWaitlist(email: string) {
       html: `
         <div style="font-family: 'Segoe UI', Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 30px; border: 1px solid #eaeaea; border-radius: 12px; background-color: #ffffff;">
           <div style="text-align: center; margin-bottom: 25px; border-bottom: 2px solid #f3f4f6; padding-bottom: 20px;">
-            <img src="https://moh-ai-tech.com/logo.png" alt="Moh-AI Tech Logo" style="height: 60px; object-fit: contain;" />
+            <img src="https://moh-ai-tech.com/logo.png" alt="Moh-AI Tech Logo" width="200" height="60" style="height: 60px; object-fit: contain;" />
             <h1 style="color: #1f2937; margin: 15px 0 0 0; font-size: 24px; font-weight: 700;">Moh-AI Tech</h1>
           </div>
           <h2 style="color: #6366f1; font-size: 20px; margin-bottom: 20px;">You're on the Waitlist!</h2>

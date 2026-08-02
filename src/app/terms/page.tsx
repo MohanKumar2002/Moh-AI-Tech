@@ -3,6 +3,9 @@ import React from 'react';
 export const metadata = {
   title: 'Terms of Service | Moh-AI Tech',
   description: 'Terms of service governing the use of Moh-AI Tech website and engagement with our custom AI development services.',
+  alternates: {
+    canonical: '/terms',
+  },
 };
 
 export default function TermsPage() {

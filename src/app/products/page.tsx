@@ -7,6 +7,9 @@ import { WaitlistForm } from '@/components/waitlist-form';
 export const metadata = {
   title: 'Enterprise AI Products | AeroAudit AI, Docu-Mind & HR Recruiter AI — Moh-AI Tech',
   description: 'Discover enterprise AI products built by Moh-AI Tech (Namakkal, India): AeroAudit AI (Logistics Auditing), Docu-Mind (Intelligent Document Processing), and HR Recruiter AI (Autonomous Recruiting).',
+  alternates: {
+    canonical: '/products',
+  },
 };
 
 export default function ComingSoonPage() {
@@ -46,7 +49,7 @@ export default function ComingSoonPage() {
             {/* Product 1: Docu-Mind */}
             <div className="sol-card" style={{ padding: '0', position: 'relative', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
               <div style={{ width: '100%', height: '260px', position: 'relative', borderBottom: '1px solid var(--border)', background: 'var(--bg)' }}>
-                <Image src="/images/products/documind.png" alt="DocuMind AI Interface" fill style={{ objectFit: 'cover', objectPosition: 'top' }} />
+                <Image src="/images/products/documind.webp" alt="DocuMind AI Interface" fill style={{ objectFit: 'cover', objectPosition: 'top' }} />
               </div>
               <div style={{ padding: '32px', flex: 1, display: 'flex', flexDirection: 'column' }}>
                 <div style={{ position: 'absolute', top: '230px', right: '32px', width: '60px', height: '60px', background: 'var(--card)', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: 'var(--shadow)', border: '1px solid var(--border)', color: '#00B4D8' }}>

@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
+import type { Metadata } from 'next';
 
 // Mock database for now. In a real app, this would be fetched from MDX files or a CMS.
 const POSTS: Record<string, any> = {
@@ -43,6 +44,19 @@ const POSTS: Record<string, any> = {
     `
   }
 };
+
+export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
+  const post = POSTS[params.slug];
+  if (!post) return {};
+  const cleanDescription = post.content.replace(/<[^>]*>/g, '').slice(0, 150) + '...';
+  return {
+    title: `${post.title} | Moh-AI Tech Blog`,
+    description: cleanDescription,
+    alternates: {
+      canonical: `/blog/${params.slug}`,
+    },
+  };
+}
 
 export default function BlogPostPage({ params }: { params: { slug: string } }) {
   const post = POSTS[params.slug];

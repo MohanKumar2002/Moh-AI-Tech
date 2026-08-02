@@ -39,7 +39,7 @@ export default function Home() {
         ],
         "url": "https://moh-ai-tech.com",
         "logo": "https://moh-ai-tech.com/logo.png",
-        "image": "https://moh-ai-tech.com/images/team/mohan.jpg",
+        "image": "https://moh-ai-tech.com/images/team/mohan.webp",
         "description": "MOH AI TECH (Mastering Outstanding Horizons) is an MSME-registered Indian AI product & software engineering startup based in Namakkal, Tamil Nadu, India (Reg: UDYAM-TN-14-0088280). Founded by Mohan Kumar Subramanian, the company designs and builds enterprise AI agents (Docu-Mind AI, HR Recruiter AI, AeroAudit AI), computer vision inspection systems, and custom software automation for global businesses.",
         "taxID": "UDYAM-TN-14-0088280",
         "email": "info@moh-ai-tech.com",
@@ -208,7 +208,7 @@ export default function Home() {
       </div>
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
         <Image 
-          src="/images/team/mohan.jpg" 
+          src="/images/team/mohan.webp" 
           alt="Mohan Kumar S" 
           width={220}
           height={220}
@@ -526,7 +526,7 @@ export default function Home() {
       
       {/* Smart Document Pipeline */}
       <div className="project-card" style={{ background: 'var(--card)', borderRadius: '12px', overflow: 'hidden', border: '1px solid var(--border)' }}>
-        <Image src="/images/products/ocr.png" alt="Document OCR Pipeline" width={800} height={600} style={{ width: '100%', height: '220px', objectFit: 'cover', borderBottom: '1px solid var(--border)' }} />
+        <Image src="/images/products/ocr.webp" alt="Document OCR Pipeline" width={800} height={600} style={{ width: '100%', height: '220px', objectFit: 'cover', borderBottom: '1px solid var(--border)' }} />
         <div style={{ padding: '32px' }}>
           <h3 style={{ fontSize: '20px', fontWeight: '800', marginBottom: '8px' }}>Smart Document Pipeline</h3>
           <p style={{ fontSize: '15px', color: 'var(--muted)', lineHeight: '1.6', marginBottom: '24px' }}>Built an OCR-based extraction pipeline for automated data capture from legacy records — reads, structures, and routes document data without manual entry.</p>
@@ -535,7 +535,7 @@ export default function Home() {
 
       {/* Vision Analytics System */}
       <div className="project-card" style={{ background: 'var(--card)', borderRadius: '12px', overflow: 'hidden', border: '1px solid var(--border)' }}>
-        <Image src="/images/products/video.png" alt="Video Analytics" width={800} height={600} style={{ width: '100%', height: '220px', objectFit: 'cover', borderBottom: '1px solid var(--border)' }} />
+        <Image src="/images/products/video.webp" alt="Video Analytics" width={800} height={600} style={{ width: '100%', height: '220px', objectFit: 'cover', borderBottom: '1px solid var(--border)' }} />
         <div style={{ padding: '32px' }}>
           <h3 style={{ fontSize: '20px', fontWeight: '800', marginBottom: '8px' }}>Vision Analytics System</h3>
           <p style={{ fontSize: '15px', color: 'var(--muted)', lineHeight: '1.6', marginBottom: '24px' }}>Computer vision pipeline for real-time defect detection — built with PyTorch and FastAPI, currently in development and available for pilot deployment.</p>
@@ -544,7 +544,7 @@ export default function Home() {
 
       {/* RAG Support Agent */}
       <div className="project-card" style={{ background: 'var(--card)', borderRadius: '12px', overflow: 'hidden', border: '1px solid var(--border)' }}>
-        <Image src="/images/products/chatbot.png" alt="Custom Chatbot" width={800} height={600} style={{ width: '100%', height: '220px', objectFit: 'cover', borderBottom: '1px solid var(--border)' }} />
+        <Image src="/images/products/chatbot.webp" alt="Custom Chatbot" width={800} height={600} style={{ width: '100%', height: '220px', objectFit: 'cover', borderBottom: '1px solid var(--border)' }} />
         <div style={{ padding: '32px' }}>
           <h3 style={{ fontSize: '20px', fontWeight: '800', marginBottom: '8px' }}>RAG Support Agent</h3>
           <p style={{ fontSize: '15px', color: 'var(--muted)', lineHeight: '1.6', marginBottom: '24px' }}>Context-aware conversational AI built on retrieval-augmented generation — connects to a knowledge base and answers queries with source-grounded responses.</p>
@@ -553,7 +553,7 @@ export default function Home() {
 
       {/* ResumeFilter AI */}
       <div className="project-card" style={{ background: 'var(--card)', borderRadius: '12px', overflow: 'hidden', border: '1px solid var(--border)' }}>
-        <Image src="/images/products/resume.png" alt="Resume Parser" width={800} height={600} style={{ width: '100%', height: '220px', objectFit: 'cover', borderBottom: '1px solid var(--border)' }} />
+        <Image src="/images/products/resume.webp" alt="Resume Parser" width={800} height={600} style={{ width: '100%', height: '220px', objectFit: 'cover', borderBottom: '1px solid var(--border)' }} />
         <div style={{ padding: '32px' }}>
           <h3 style={{ fontSize: '20px', fontWeight: '800', marginBottom: '8px' }}>ResumeFilter AI — HR Automation</h3>
           <p style={{ fontSize: '15px', color: 'var(--muted)', lineHeight: '1.6', marginBottom: '24px' }}>Resume screening engine using TF-IDF scoring and PDF parsing — processes batches of resumes and ranks candidates against job criteria in minutes instead of hours.</p>

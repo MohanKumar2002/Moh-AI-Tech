@@ -4,6 +4,9 @@ import Link from 'next/link';
 export const metadata = {
   title: 'About - Moh-AI Tech',
   description: 'Why we exist and how we build AI systems that solve real problems.',
+  alternates: {
+    canonical: '/about',
+  },
 };
 
 export default function AboutPage() {

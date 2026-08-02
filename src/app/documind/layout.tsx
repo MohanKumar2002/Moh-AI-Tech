@@ -4,6 +4,9 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'DocuMind AI — Chat with your documents',
   description: 'Upload any document and chat with it instantly. Summarize, extract insights, generate quizzes. For students and companies worldwide.',
+  alternates: {
+    canonical: '/documind',
+  },
 };
 
 export default function DocuMindLayout({

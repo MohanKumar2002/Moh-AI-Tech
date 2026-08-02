@@ -4,6 +4,9 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'Engineering Blog | Moh-AI Tech',
   description: 'Technical teardowns, AI architectures, and insights on building enterprise AI solutions by the Moh-AI Tech engineering team.',
+  alternates: {
+    canonical: '/blog',
+  },
 };
 
 const POSTS = [

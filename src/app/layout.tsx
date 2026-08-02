@@ -7,11 +7,12 @@ import ChatbotPlaceholder from '@/components/chatbot-placeholder';
 import { LanguageProvider } from '@/components/i18n-provider';
 
 export const metadata: Metadata = {
-  title: 'Moh-AI Tech | Enterprise AI Automation & Software Studio — Namakkal, India',
-  description: 'MOH AI TECH (Mastering Outstanding Horizons) is an MSME-registered AI product startup in Namakkal, India (Reg: UDYAM-TN-14-0088280). We build enterprise AI agents (Docu-Mind AI, HR Recruiter AI, AeroAudit AI), computer vision, and custom software.',
+  metadataBase: new URL('https://moh-ai-tech.com'),
+  title: 'Moh-AI Tech | Enterprise AI Automation & Software Studio',
+  description: 'Enterprise AI agents, computer vision, and custom software studio in Namakkal, India. Building Docu-Mind AI, HR Recruiter AI, and AeroAudit AI.',
   openGraph: {
-    title: 'Moh-AI Tech | Enterprise AI Automation & Software Studio — Namakkal, India',
-    description: 'MOH AI TECH (Mastering Outstanding Horizons) is an MSME-registered AI product startup in Namakkal, India. We build enterprise AI agents (Docu-Mind AI, HR Recruiter AI, AeroAudit AI), computer vision, and custom software.',
+    title: 'Moh-AI Tech | Enterprise AI Automation & Software Studio',
+    description: 'Enterprise AI agents, computer vision, and custom software studio in Namakkal, India. Building Docu-Mind AI, HR Recruiter AI, and AeroAudit AI.',
     url: 'https://moh-ai-tech.com',
     siteName: 'Moh-AI Tech',
     locale: 'en_US',
@@ -19,20 +20,15 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Moh-AI Tech | Enterprise AI Automation & Software Studio — Namakkal, India',
-    description: 'MOH AI TECH (Mastering Outstanding Horizons) is an MSME-registered AI product startup in Namakkal, India. We build enterprise AI agents, computer vision, and custom software.',
+    title: 'Moh-AI Tech | Enterprise AI Automation & Software Studio',
+    description: 'Enterprise AI agents, computer vision, and custom software studio in Namakkal, India.',
   },
   robots: {
     index: true,
     follow: true,
   },
   alternates: {
-    canonical: 'https://moh-ai-tech.com',
-    languages: {
-      'en-US': 'https://moh-ai-tech.com/en',
-      'ta-IN': 'https://moh-ai-tech.com/ta',
-      'de-DE': 'https://moh-ai-tech.com/de',
-    },
+    canonical: '/',
   }
 };
 
