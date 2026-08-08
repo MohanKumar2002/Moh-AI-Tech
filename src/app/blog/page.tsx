@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
@@ -11,12 +12,22 @@ export const metadata: Metadata = {
 
 const POSTS = [
   {
+    slug: 'spinguard-v01-ai-vibration-monitoring',
+    title: 'SpinGuard V0.1: AI-Powered Vibration Monitoring for Industrial Spinning Machines',
+    excerpt: 'How we turned raw bearing vibration data into explainable maintenance insights — validated on the HUST Bearing Dataset with 99.1% Macro F1 on anomaly detection.',
+    date: 'Aug 08, 2026',
+    category: 'Industrial AI',
+    readTime: '9 min read',
+    cover: '/images/blog/spinguard-hero.png'
+  },
+  {
     slug: 'building-hr-agent-resume-screening',
     title: 'How We Built an HR Agent that Screens 500 Resumes in 4 Minutes',
     excerpt: 'A technical deep-dive into the RAG architecture and TF-IDF scoring pipeline behind our automated HR Recruiter AI.',
     date: 'Jul 15, 2026',
     category: 'Engineering',
-    readTime: '6 min read'
+    readTime: '6 min read',
+    cover: null
   },
   {
     slug: 'why-msmes-need-custom-ai',
@@ -24,7 +35,8 @@ const POSTS = [
     excerpt: 'The hidden costs of per-seat SaaS licensing, and how custom data pipelines give mid-market companies an unfair advantage.',
     date: 'Jul 02, 2026',
     category: 'Strategy',
-    readTime: '4 min read'
+    readTime: '4 min read',
+    cover: null
   }
 ];
 
@@ -53,22 +65,31 @@ export default function BlogPage() {
                     display: 'flex', 
                     flexDirection: 'column',
                     transition: 'transform 0.2s ease, border-color 0.2s ease',
-                    cursor: 'pointer'
+                    cursor: 'pointer',
+                    padding: '0',
+                    overflow: 'hidden'
                   }}
                 >
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px', fontSize: '12px', color: 'var(--text-muted)', fontFamily: 'Space Grotesk, sans-serif' }}>
-                    <span style={{ background: 'var(--border)', padding: '4px 8px', borderRadius: '4px', color: 'var(--text)' }}>
-                      {post.category}
-                    </span>
-                    <span>{post.readTime}</span>
-                  </div>
-                  <h3 className="h3" style={{ fontSize: '20px', marginBottom: '16px' }}>{post.title}</h3>
-                  <p className="p" style={{ fontSize: '15px', color: 'var(--text-muted)', marginBottom: '24px', flexGrow: 1 }}>
-                    {post.excerpt}
-                  </p>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '14px', color: 'var(--text-muted)' }}>
-                    <span>{post.date}</span>
-                    <span style={{ color: 'var(--accent)', fontWeight: 'bold' }}>Read Article →</span>
+                  {post.cover && (
+                    <div style={{ width: '100%', height: '200px', overflow: 'hidden', position: 'relative' }}>
+                      <Image src={post.cover} alt={post.title} fill style={{ objectFit: 'cover' }} />
+                    </div>
+                  )}
+                  <div style={{ padding: '24px', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px', fontSize: '12px', color: 'var(--text-muted)', fontFamily: 'Space Grotesk, sans-serif' }}>
+                      <span style={{ background: 'var(--border)', padding: '4px 8px', borderRadius: '4px', color: 'var(--text)' }}>
+                        {post.category}
+                      </span>
+                      <span>{post.readTime}</span>
+                    </div>
+                    <h3 className="h3" style={{ fontSize: '20px', marginBottom: '16px' }}>{post.title}</h3>
+                    <p className="p" style={{ fontSize: '15px', color: 'var(--text-muted)', marginBottom: '24px', flexGrow: 1 }}>
+                      {post.excerpt}
+                    </p>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '14px', color: 'var(--text-muted)' }}>
+                      <span>{post.date}</span>
+                      <span style={{ color: 'var(--accent)', fontWeight: 'bold' }}>Read Article →</span>
+                    </div>
                   </div>
                 </div>
               </Link>

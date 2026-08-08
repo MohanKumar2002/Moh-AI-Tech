@@ -1,9 +1,89 @@
 import { notFound } from 'next/navigation';
+import Image from 'next/image';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
 // Mock database for now. In a real app, this would be fetched from MDX files or a CMS.
 const POSTS: Record<string, any> = {
+  'spinguard-v01-ai-vibration-monitoring': {
+    title: 'SpinGuard V0.1: AI-Powered Vibration Monitoring for Industrial Spinning Machines',
+    date: 'Aug 08, 2026',
+    category: 'Industrial AI',
+    readTime: '9 min read',
+    heroImage: '/images/blog/spinguard-hero.png',
+    content: `
+      <p>Modern spinning mills depend on rotating machinery running continuously and reliably. Bearings are among the most critical components — and abnormal vibration is often the first sign that something needs attention. The problem is that most maintenance teams have no way to detect this change before it becomes a breakdown.</p>
+      <p><strong>MOH-AI SpinGuard V0.1</strong> is our first step toward changing that — an AI-assisted vibration analysis platform built to help maintenance teams detect abnormal bearing vibration, investigate fault patterns, and establish machine-specific baselines.</p>
+      <p>Rather than claiming to predict exact failure times, SpinGuard focuses on a more honest and practical question:</p>
+      <blockquote style="border-left: 3px solid var(--accent); padding: 16px 24px; margin: 32px 0; background: var(--card-bg); border-radius: 0 8px 8px 0; font-style: italic; font-size: 20px;">"Is this machine behaving differently from its normal operating condition?"</blockquote>
+
+      <h2>From Laboratory Data to Industrial Validation</h2>
+      <p>SpinGuard V0.1 was developed and evaluated using the <strong>HUST Bearing Dataset</strong> — a publicly available benchmark containing 99 recordings across multiple bearing types, loads, and fault conditions.</p>
+      <img src="/images/blog/spinguard-testbench.png" alt="Industrial spinning machine showing accelerometer and bearing housing placement" style="width:100%; border-radius: 10px; margin: 24px 0; border: 1px solid var(--border);" />
+      <p style="text-align:center; font-size:13px; color: var(--text-muted); margin-top:-16px; margin-bottom:24px;">A typical setup: accelerometer mounted at the bearing housing to capture vibration signals.</p>
+      <p>The laboratory pipeline processes high-frequency vibration signals through a structured sequence:</p>
+      <div style="background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; padding: 24px; margin: 24px 0; font-family: 'Space Grotesk', monospace; font-size: 14px; line-height: 2; text-align: center;">
+        Raw Vibration → Segmentation → Feature Extraction → Anomaly Detection → Fault Analysis → Maintenance Insight
+      </div>
+      <p>The system extracts both statistical and frequency-domain characteristics from each vibration segment:</p>
+      <ul>
+        <li><strong>RMS vibration, Kurtosis, Peak & Crest factor</strong> — statistical time-domain indicators</li>
+        <li><strong>Spectral centroid, bandwidth & total energy</strong> — frequency composition of the signal</li>
+        <li><strong>BPFI, BPFO, BSF, FTF</strong> — bearing defect frequency indicators tied to geometry</li>
+      </ul>
+
+      <h2>What the Model Validation Actually Showed</h2>
+      <p>During development, we evaluated both binary anomaly detection and multi-class fault diagnosis. The results revealed an important engineering insight that shaped the entire product philosophy.</p>
+      <img src="/images/blog/spinguard-defects.png" alt="Vibration frequency analysis dashboard showing multi-axis data" style="width:100%; border-radius: 10px; margin: 24px 0; border: 1px solid var(--border);" />
+      <p style="text-align:center; font-size:13px; color: var(--text-muted); margin-top:-16px; margin-bottom:24px;">Vibration analysis across multiple axes (X, Y, Z) showing FFT frequency data at ~1497 RPM.</p>
+      <p><strong>Detecting "normal vs abnormal" vibration is substantially more transferable than identifying the exact fault type on an unseen bearing design.</strong></p>
+      <p>Our cross-bearing validation showed:</p>
+      <ul>
+        <li>The simple RMS-based anomaly detector achieved a <strong>99.1% Macro F1</strong> across previously unseen bearing sizes in the HUST benchmark.</li>
+        <li>The multi-class XGBoost fault classifier achieved approximately <strong>41% Macro F1</strong> when asked to identify specific fault types on completely unseen bearing models.</li>
+      </ul>
+      <p>Instead of hiding this limitation, we incorporated it into the product architecture. When SpinGuard encounters an unsupported bearing, it does not invent a fault classification. It reports:</p>
+      <blockquote style="border-left: 3px solid #f59e0b; padding: 16px 24px; margin: 32px 0; background: var(--card-bg); border-radius: 0 8px 8px 0; font-style: italic;">"Abnormal vibration detected — specific fault not confirmed."</blockquote>
+      <p>This makes SpinGuard far more suitable for responsible industrial deployment than black-box solutions that confidently report fake fault types.</p>
+
+      <h2>Machine-Specific Baseline Calibration</h2>
+      <p>Laboratory datasets are useful for developing algorithms, but real factories introduce additional variables: machine-to-machine differences, sensor mounting, speed variations, load changes, structural vibration, and ambient industrial noise.</p>
+      <p>Therefore, SpinGuard V0.1 includes a <strong>Machine-Specific Baseline Calibration System</strong>. Instead of assuming every machine has the same vibration level, SpinGuard learns what <em>normal</em> looks like for each individual machine.</p>
+      <div style="background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; padding: 24px; margin: 24px 0;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 16px; text-align: center;">
+          <div><div style="font-size: 28px;">📦</div><strong>Collect</strong><p style="font-size:13px; color:var(--text-muted);">Normal recordings during stable operation</p></div>
+          <div><div style="font-size: 28px;">📊</div><strong>Build</strong><p style="font-size:13px; color:var(--text-muted);">Calculate statistical distribution of normal</p></div>
+          <div><div style="font-size: 28px;">⚙️</div><strong>Calibrate</strong><p style="font-size:13px; color:var(--text-muted);">Set thresholds from baseline deviation</p></div>
+          <div><div style="font-size: 28px;">📡</div><strong>Monitor</strong><p style="font-size:13px; color:var(--text-muted);">Compare new readings to baseline</p></div>
+          <div><div style="font-size: 28px;">🚨</div><strong>Detect</strong><p style="font-size:13px; color:var(--text-muted);">Flag significant deviations as elevated risk</p></div>
+        </div>
+      </div>
+
+      <h2>Risk Levels: Plain Language for Maintenance Teams</h2>
+      <p>SpinGuard classifies each measurement into one of three operational states using Z-score statistical comparison against the established baseline:</p>
+      <div style="display: grid; gap: 16px; margin: 24px 0;">
+        <div style="background: var(--card-bg); border: 1px solid #22c55e; border-radius: 8px; padding: 16px; display: flex; gap: 16px; align-items: center;"><span style="font-size: 24px;">🟢</span><div><strong>LOW</strong><p style="margin:0; color:var(--text-muted); font-size:14px;">No significant deviation detected from the calibrated baseline.</p></div></div>
+        <div style="background: var(--card-bg); border: 1px solid #f97316; border-radius: 8px; padding: 16px; display: flex; gap: 16px; align-items: center;"><span style="font-size: 24px;">🟠</span><div><strong>ELEVATED</strong><p style="margin:0; color:var(--text-muted); font-size:14px;">One or more vibration indicators have significantly deviated from the baseline. Inspection recommended.</p></div></div>
+        <div style="background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; padding: 16px; display: flex; gap: 16px; align-items: center;"><span style="font-size: 24px;">⚪</span><div><strong>UNKNOWN</strong><p style="margin:0; color:var(--text-muted); font-size:14px;">A reliable baseline has not yet been established. SpinGuard will not present false certainty.</p></div></div>
+      </div>
+
+      <h2>The SpinGuard Architecture</h2>
+      <p>At the engineering level, SpinGuard combines a modular, production-ready stack:</p>
+      <div style="background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; padding: 24px; margin: 24px 0; font-family: 'Space Grotesk', monospace; font-size: 14px; line-height: 2.2; text-align: center;">
+        Signal Processing → Feature Extraction → Statistical Anomaly Detection → Machine-Specific Baseline → AI Fault Classification → Diagnostic Evidence → Maintenance Recommendation
+      </div>
+      <p>The system supports <strong>MAT, CSV, and Excel (.xlsx/.xls)</strong> data formats, making it compatible with most industrial data acquisition systems immediately. Users can configure the vibration column, sampling frequency, and RPM — and SpinGuard dynamically calculates shaft frequency to adapt to different machine operating speeds.</p>
+
+      <h2>Designed With Scientific Honesty</h2>
+      <p>One of the core principles behind SpinGuard is simple: <strong>if the model does not have enough evidence, it should say so.</strong></p>
+      <p>SpinGuard V0.1 does <strong>not</strong> claim exact bearing remaining life, "failure in 24–72 hours," guaranteed downtime reduction, or universal diagnosis across every bearing. It separates anomaly detection from fault diagnosis and explicitly identifies unsupported conditions.</p>
+      <p>The objective is to <strong>assist maintenance teams</strong>, not replace engineering judgment.</p>
+
+      <h2>What Comes Next?</h2>
+      <p>The next stage is no longer about benchmark scores. It is about <strong>real-world validation</strong> with real spinning machine data from industrial environments. The pilot process will answer the questions that laboratory datasets cannot: how stable is the baseline over time? How does machine load affect vibration? Which fault patterns can be reliably diagnosed across different machines?</p>
+      <p>MOH-AI Tech is actively seeking <strong>textile mill and industrial equipment partners</strong> who want to participate in the SpinGuard industrial pilot program. If your facility has spinning machines and an interest in data-driven maintenance, we would love to talk.</p>
+    `
+  },
   'building-hr-agent-resume-screening': {
     title: 'How We Built an HR Agent that Screens 500 Resumes in 4 Minutes',
     date: 'Jul 15, 2026',
@@ -82,7 +162,13 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
             <span>{post.readTime}</span>
           </div>
           
-          <h1 className="h1" style={{ marginBottom: '40px', fontSize: '40px', lineHeight: '1.2' }}>{post.title}</h1>
+          <h1 className="h1" style={{ marginBottom: '32px', fontSize: '40px', lineHeight: '1.2' }}>{post.title}</h1>
+          
+          {post.heroImage && (
+            <div style={{ width: '100%', height: '400px', position: 'relative', borderRadius: '12px', overflow: 'hidden', marginBottom: '48px', border: '1px solid var(--border)' }}>
+              <Image src={post.heroImage} alt={post.title} fill style={{ objectFit: 'cover' }} priority />
+            </div>
+          )}
           
           {/* Article Content */}
           <div 
@@ -108,6 +194,8 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
         .article-content ul { margin-bottom: 24px; padding-left: 24px; }
         .article-content li { margin-bottom: 12px; color: var(--text-muted); }
         .article-content strong { color: var(--text); }
+        .article-content blockquote { font-size: 18px; }
+        .article-content img { max-width: 100%; }
       `}} />
     </>
   );
