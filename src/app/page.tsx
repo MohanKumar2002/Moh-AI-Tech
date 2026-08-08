@@ -26,21 +26,35 @@ export default function Home() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
+      // ── Organization Entity ──────────────────────────────────────────────
       {
-        "@type": ["Organization", "LocalBusiness"],
+        "@type": ["Organization", "LocalBusiness", "Brand"],
         "@id": "https://moh-ai-tech.com/#organization",
         "name": "Moh-AI Tech",
         "legalName": "MOH AI TECH",
+        "brand": {
+          "@type": "Brand",
+          "name": "Moh-AI Tech",
+          "alternateName": "MOH AI Tech",
+          "description": "MOH stands for Mastering Outstanding Horizons — not Ministry of Health. Moh-AI Tech is an Indian AI technology company."
+        },
+        "disambiguatingDescription": "Moh-AI Tech is a private AI software engineering company based in Namakkal, Tamil Nadu, India. MOH is an acronym for Mastering Outstanding Horizons — unrelated to the Ministry of Health (MOH) government agency. Moh-AI Tech builds enterprise AI agents, computer vision systems, and custom automation software.",
         "alternateName": [
+          "MOH AI TECH",
           "Moh-AI Tech Namakkal",
           "Moh-AI Tech India",
-          "MOH AI TECH Product Startup",
-          "Mastering Outstanding Horizons AI Tech"
+          "Mastering Outstanding Horizons AI Tech",
+          "Mastering Outstanding Horizons with AI Technology",
+          "MOH AI Technology"
         ],
+        "description": "Moh-AI Tech (MOH = Mastering Outstanding Horizons) is an MSME-registered Indian AI product & software engineering startup based in Namakkal, Tamil Nadu, India (Reg: UDYAM-TN-14-0088280). Founded by Mohan Kumar Subramanian, the company designs and builds enterprise AI agents (Docu-Mind AI, HR Recruiter AI, AeroAudit AI), computer vision inspection systems, and custom software automation for global businesses. MOH-AI Tech is a technology company, not a government health body.",
         "url": "https://moh-ai-tech.com",
-        "logo": "https://moh-ai-tech.com/logo.png",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://moh-ai-tech.com/logo.png",
+          "caption": "Moh-AI Tech Logo — Mastering Outstanding Horizons"
+        },
         "image": "https://moh-ai-tech.com/images/team/mohan.webp",
-        "description": "MOH AI TECH (Mastering Outstanding Horizons) is an MSME-registered Indian AI product & software engineering startup based in Namakkal, Tamil Nadu, India (Reg: UDYAM-TN-14-0088280). Founded by Mohan Kumar Subramanian, the company designs and builds enterprise AI agents (Docu-Mind AI, HR Recruiter AI, AeroAudit AI), computer vision inspection systems, and custom software automation for global businesses.",
         "taxID": "UDYAM-TN-14-0088280",
         "email": "info@moh-ai-tech.com",
         "address": {
@@ -54,6 +68,7 @@ export default function Home() {
           "@id": "https://moh-ai-tech.com/#founder",
           "name": "Mohan Kumar Subramanian",
           "jobTitle": "Founder & CEO",
+          "description": "Founder of Moh-AI Tech (Mastering Outstanding Horizons), an AI software engineering company in Namakkal, India.",
           "sameAs": [
             "https://www.linkedin.com/in/mohan-kumar-subramanian/",
             "https://github.com/MohanKumar2002"
@@ -108,6 +123,59 @@ export default function Home() {
             }
           ]
         }
+      },
+      // ── WebSite Entity ───────────────────────────────────────────────────
+      {
+        "@type": "WebSite",
+        "@id": "https://moh-ai-tech.com/#website",
+        "url": "https://moh-ai-tech.com",
+        "name": "Moh-AI Tech — Mastering Outstanding Horizons",
+        "description": "Official website of Moh-AI Tech (Mastering Outstanding Horizons with AI Technology), an AI software engineering company in Namakkal, India.",
+        "publisher": { "@id": "https://moh-ai-tech.com/#organization" },
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://moh-ai-tech.com/?s={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      },
+      // ── FAQ: Disambiguates MOH from Ministry of Health ───────────────────
+      {
+        "@type": "FAQPage",
+        "@id": "https://moh-ai-tech.com/#faq-brand",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What does MOH stand for in Moh-AI Tech?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "In Moh-AI Tech, MOH stands for Mastering Outstanding Horizons with AI Technology. It is a private AI software engineering company based in Namakkal, Tamil Nadu, India — not affiliated with any Ministry of Health."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is Moh-AI Tech related to the Ministry of Health?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Moh-AI Tech (MOH = Mastering Outstanding Horizons) is a private AI technology and software engineering company. It has no connection to any government Ministry of Health (MOH) body."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Where is Moh-AI Tech located?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Moh-AI Tech is headquartered in Namakkal, Tamil Nadu, India. It is an MSME-registered AI product startup (Reg: UDYAM-TN-14-0088280)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What does Moh-AI Tech build?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Moh-AI Tech builds enterprise AI agents, computer vision inspection systems, and custom automation software. Key products include Docu-Mind AI (document intelligence), HR Recruiter AI (autonomous hiring), and AeroAudit AI (logistics auditing)."
+            }
+          }
+        ]
       }
     ]
   };

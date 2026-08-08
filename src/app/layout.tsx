@@ -8,20 +8,46 @@ import { LanguageProvider } from '@/components/i18n-provider';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://moh-ai-tech.com'),
-  title: 'Moh-AI Tech | Enterprise AI Automation & Software Studio',
-  description: 'Enterprise AI agents, computer vision, and custom software studio in Namakkal, India. Building Docu-Mind AI, HR Recruiter AI, and AeroAudit AI.',
+  title: {
+    default: 'Moh-AI Tech (Mastering Outstanding Horizons) | Enterprise AI Studio — Namakkal, India',
+    template: '%s | Moh-AI Tech',
+  },
+  description: 'Moh-AI Tech — MOH stands for Mastering Outstanding Horizons with AI Technology. We build enterprise AI agents, computer vision, and custom automation in Namakkal, India. Not affiliated with Ministry of Health.',
+  keywords: [
+    'Moh-AI Tech',
+    'MOH AI Tech',
+    'Mastering Outstanding Horizons',
+    'Mastering Outstanding Horizons AI',
+    'enterprise AI India',
+    'AI automation Namakkal',
+    'AI agents India',
+    'custom AI software India',
+    'Docu-Mind AI',
+    'HR Recruiter AI',
+    'AeroAudit AI',
+    'computer vision India',
+  ],
   openGraph: {
-    title: 'Moh-AI Tech | Enterprise AI Automation & Software Studio',
-    description: 'Enterprise AI agents, computer vision, and custom software studio in Namakkal, India. Building Docu-Mind AI, HR Recruiter AI, and AeroAudit AI.',
+    title: 'Moh-AI Tech (Mastering Outstanding Horizons) | Enterprise AI Studio',
+    description: 'MOH = Mastering Outstanding Horizons with AI Technology. Enterprise AI agents, computer vision, and custom automation — built in Namakkal, Tamil Nadu, India.',
     url: 'https://moh-ai-tech.com',
     siteName: 'Moh-AI Tech',
     locale: 'en_US',
     type: 'website',
+    images: [
+      {
+        url: 'https://moh-ai-tech.com/images/team/mohan.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Moh-AI Tech — Mastering Outstanding Horizons AI Technology',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Moh-AI Tech | Enterprise AI Automation & Software Studio',
-    description: 'Enterprise AI agents, computer vision, and custom software studio in Namakkal, India.',
+    title: 'Moh-AI Tech (Mastering Outstanding Horizons) | Enterprise AI Studio',
+    description: 'MOH = Mastering Outstanding Horizons with AI Technology. Enterprise AI agents, computer vision, and automation — Namakkal, India.',
+    images: ['https://moh-ai-tech.com/images/team/mohan.webp'],
   },
   robots: {
     index: true,
