@@ -10,7 +10,7 @@ const POSTS: Record<string, any> = {
     date: 'Aug 08, 2026',
     category: 'Industrial AI',
     readTime: '9 min read',
-    heroImage: '/images/blog/spinguard-hero.png',
+    heroImage: '/images/blog/spinguard-hero.webp',
     content: `
       <p>Modern spinning mills depend on rotating machinery running continuously and reliably. Bearings are among the most critical components — and abnormal vibration is often the first sign that something needs attention. The problem is that most maintenance teams have no way to detect this change before it becomes a breakdown.</p>
       <p><strong>MOH-AI SpinGuard V0.1</strong> is our first step toward changing that — an AI-assisted vibration analysis platform built to help maintenance teams detect abnormal bearing vibration, investigate fault patterns, and establish machine-specific baselines.</p>
@@ -19,7 +19,7 @@ const POSTS: Record<string, any> = {
 
       <h2>From Laboratory Data to Industrial Validation</h2>
       <p>SpinGuard V0.1 was developed and evaluated using the <strong>HUST Bearing Dataset</strong> — a publicly available benchmark containing 99 recordings across multiple bearing types, loads, and fault conditions.</p>
-      <img src="/images/blog/spinguard-testbench.png" alt="Industrial spinning machine showing accelerometer and bearing housing placement" style="width:100%; border-radius: 10px; margin: 24px 0; border: 1px solid var(--border);" />
+      <img src="/images/blog/spinguard-testbench.webp" alt="Industrial spinning machine showing accelerometer and bearing housing placement" style="width:100%; border-radius: 10px; margin: 24px 0; border: 1px solid var(--border);" />
       <p style="text-align:center; font-size:13px; color: var(--text-muted); margin-top:-16px; margin-bottom:24px;">A typical setup: accelerometer mounted at the bearing housing to capture vibration signals.</p>
       <p>The laboratory pipeline processes high-frequency vibration signals through a structured sequence:</p>
       <div style="background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; padding: 24px; margin: 24px 0; font-family: 'Space Grotesk', monospace; font-size: 14px; line-height: 2; text-align: center;">
@@ -34,7 +34,7 @@ const POSTS: Record<string, any> = {
 
       <h2>What the Model Validation Actually Showed</h2>
       <p>During development, we evaluated both binary anomaly detection and multi-class fault diagnosis. The results revealed an important engineering insight that shaped the entire product philosophy.</p>
-      <img src="/images/blog/spinguard-defects.png" alt="Vibration frequency analysis dashboard showing multi-axis data" style="width:100%; border-radius: 10px; margin: 24px 0; border: 1px solid var(--border);" />
+      <img src="/images/blog/spinguard-defects.webp" alt="Vibration frequency analysis dashboard showing multi-axis data" style="width:100%; border-radius: 10px; margin: 24px 0; border: 1px solid var(--border);" />
       <p style="text-align:center; font-size:13px; color: var(--text-muted); margin-top:-16px; margin-bottom:24px;">Vibration analysis across multiple axes (X, Y, Z) showing FFT frequency data at ~1497 RPM.</p>
       <p><strong>Detecting "normal vs abnormal" vibration is substantially more transferable than identifying the exact fault type on an unseen bearing design.</strong></p>
       <p>Our cross-bearing validation showed:</p>
@@ -128,12 +128,37 @@ const POSTS: Record<string, any> = {
 export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
   const post = POSTS[params.slug];
   if (!post) return {};
-  const cleanDescription = post.content.replace(/<[^>]*>/g, '').slice(0, 150) + '...';
+  const cleanDescription = post.content.replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim().slice(0, 160) + '...';
+  const ogImage = post.heroImage
+    ? `https://moh-ai-tech.com${post.heroImage}`
+    : 'https://moh-ai-tech.com/images/blog/spinguard-hero.webp';
   return {
     title: `${post.title} | Moh-AI Tech Blog`,
     description: cleanDescription,
     alternates: {
       canonical: `/blog/${params.slug}`,
+    },
+    openGraph: {
+      title: `${post.title} | Moh-AI Tech Blog`,
+      description: cleanDescription,
+      url: `https://moh-ai-tech.com/blog/${params.slug}`,
+      siteName: 'Moh-AI Tech',
+      type: 'article',
+      locale: 'en_US',
+      images: [
+        {
+          url: ogImage,
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${post.title} | Moh-AI Tech Blog`,
+      description: cleanDescription,
+      images: [ogImage],
     },
   };
 }

@@ -2,10 +2,32 @@ import React from 'react';
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'About - Moh-AI Tech',
-  description: 'Why we exist and how we build AI systems that solve real problems.',
+  title: 'About Moh-AI Tech | AI Software Studio in Namakkal, India',
+  description: 'Moh-AI Tech (Mastering Outstanding Horizons) is an MSME-registered AI company in Namakkal, India. We build enterprise AI agents, computer vision systems, and custom automation for global businesses.',
   alternates: {
     canonical: '/about',
+  },
+  openGraph: {
+    title: 'About Moh-AI Tech | AI Software Studio in Namakkal, India',
+    description: 'Enterprise AI agents, computer vision, and custom software studio founded by Mohan Kumar Subramanian in Namakkal, Tamil Nadu, India.',
+    url: 'https://moh-ai-tech.com/about',
+    siteName: 'Moh-AI Tech',
+    type: 'website' as const,
+    locale: 'en_US',
+    images: [
+      {
+        url: 'https://moh-ai-tech.com/images/team/mohan.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Mohan Kumar Subramanian — Founder of Moh-AI Tech',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image' as const,
+    title: 'About Moh-AI Tech | AI Software Studio in Namakkal, India',
+    description: 'Enterprise AI agents, computer vision, and custom software — built by Moh-AI Tech, Namakkal, Tamil Nadu, India.',
+    images: ['https://moh-ai-tech.com/images/team/mohan.webp'],
   },
 };
 

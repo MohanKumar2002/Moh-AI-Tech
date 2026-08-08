@@ -3,10 +3,32 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Engineering Blog | Moh-AI Tech',
-  description: 'Technical teardowns, AI architectures, and insights on building enterprise AI solutions by the Moh-AI Tech engineering team.',
+  title: 'Engineering Blog | Moh-AI Tech — AI Insights from Namakkal, India',
+  description: 'Technical teardowns, AI architectures, and pragmatic strategies for deploying enterprise AI — by the Moh-AI Tech engineering team in Namakkal, India.',
   alternates: {
     canonical: '/blog',
+  },
+  openGraph: {
+    title: 'Engineering Blog | Moh-AI Tech',
+    description: 'Technical teardowns, AI architectures, and insights on building enterprise AI solutions.',
+    url: 'https://moh-ai-tech.com/blog',
+    siteName: 'Moh-AI Tech',
+    type: 'website',
+    locale: 'en_US',
+    images: [
+      {
+        url: 'https://moh-ai-tech.com/images/blog/spinguard-hero.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Moh-AI Tech Engineering Blog',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Engineering Blog | Moh-AI Tech',
+    description: 'Technical teardowns, AI architectures, and insights on building enterprise AI solutions.',
+    images: ['https://moh-ai-tech.com/images/blog/spinguard-hero.webp'],
   },
 };
 
@@ -18,7 +40,7 @@ const POSTS = [
     date: 'Aug 08, 2026',
     category: 'Industrial AI',
     readTime: '9 min read',
-    cover: '/images/blog/spinguard-hero.png'
+    cover: '/images/blog/spinguard-hero.webp'
   },
   {
     slug: 'building-hr-agent-resume-screening',
