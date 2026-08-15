@@ -5,6 +5,7 @@ import { Toaster } from '@/components/ui/toaster';
 import { Navbar } from '@/components/layout/navbar';
 import ChatbotPlaceholder from '@/components/chatbot-placeholder';
 import { LanguageProvider } from '@/components/i18n-provider';
+import { IndependenceDayNotification } from '@/components/independence-day-notification';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://moh-ai-tech.com'),
@@ -75,6 +76,7 @@ export default function RootLayout({
       <body suppressHydrationWarning>
         
           <LanguageProvider>
+            <IndependenceDayNotification />
             <Navbar />
             <main>
               {children}

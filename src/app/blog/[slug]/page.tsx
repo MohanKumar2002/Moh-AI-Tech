@@ -5,6 +5,62 @@ import type { Metadata } from 'next';
 
 // Mock database for now. In a real app, this would be fetched from MDX files or a CMS.
 const POSTS: Record<string, any> = {
+  'happy-independence-day-2026': {
+    title: 'Happy 79th Independence Day: Innovate, Automate & Elevate for India 🇮🇳',
+    date: 'Aug 15, 2026',
+    category: 'Announcements',
+    readTime: '3 min read',
+    heroImage: '/images/independence-day-2026.png',
+    content: `
+      <div style="background: linear-gradient(135deg, rgba(255,153,51,0.1), rgba(255,255,255,0.05), rgba(19,136,8,0.1)); border: 1px solid rgba(255,153,51,0.3); border-radius: 12px; padding: 24px; margin-bottom: 32px; text-align: center;">
+        <span style="font-size: 24px; display: block; margin-bottom: 8px;">🇮🇳 15TH AUGUST 🇮🇳</span>
+        <h2 style="margin: 0 0 12px; color: #FF9933; font-weight: 800;">INNOVATE • AUTOMATE • ELEVATE</h2>
+        <p style="font-size: 18px; line-height: 1.6; margin: 0; color: var(--text);">
+          "Celebrating the freedom that inspires innovation, fuels creativity, and empowers us to build a smarter, stronger, and better India."
+        </p>
+      </div>
+
+      <img src="/images/independence-day-2026.png" alt="Happy Independence Day Moh-AI Tech Poster" style="width:100%; border-radius: 12px; margin: 24px 0; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.4);" />
+
+      <h2>Proud to be Indian. Proud to Build for India.</h2>
+      <p>On this 79th Independence Day, the team at <strong>Moh-AI Tech (Mastering Outstanding Horizons)</strong> re-dedicates itself to advancing technology, sovereignty, and self-reliance in artificial intelligence and automation.</p>
+
+      <p>From enterprise AI agents to industrial computer vision systems, we are committed to building world-class technology right here in Namakkal, Tamil Nadu, India — serving businesses across the nation and empowering local innovation worldwide.</p>
+
+      <h2>Our Core Pillars of Innovation</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin: 24px 0;">
+        <div style="background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; padding: 20px;">
+          <div style="font-size: 28px; margin-bottom: 8px;">🧠</div>
+          <strong style="color: #FF9933;">AI SOLUTIONS</strong>
+          <p style="font-size: 14px; color: var(--text-muted); margin-top: 8px;">Intelligent solutions for a smarter future.</p>
+        </div>
+        <div style="background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; padding: 20px;">
+          <div style="font-size: 28px; margin-bottom: 8px;">⚙️</div>
+          <strong style="color: #60a5fa;">AUTOMATION</strong>
+          <p style="font-size: 14px; color: var(--text-muted); margin-top: 8px;">Streamline processes and boost productivity.</p>
+        </div>
+        <div style="background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; padding: 20px;">
+          <div style="font-size: 28px; margin-bottom: 8px;">💻</div>
+          <strong style="color: #c084fc;">CUSTOM SOFTWARE</strong>
+          <p style="font-size: 14px; color: var(--text-muted); margin-top: 8px;">Built to solve your unique challenges.</p>
+        </div>
+        <div style="background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; padding: 20px;">
+          <div style="font-size: 28px; margin-bottom: 8px;">☁️</div>
+          <strong style="color: #4ade80;">SAAS PRODUCTS</strong>
+          <p style="font-size: 14px; color: var(--text-muted); margin-top: 8px;">Powerful products that drive real impact.</p>
+        </div>
+        <div style="background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; padding: 20px;">
+          <div style="font-size: 28px; margin-bottom: 8px;">🤝</div>
+          <strong style="color: #facc15;">TECH CONSULTING</strong>
+          <p style="font-size: 14px; color: var(--text-muted); margin-top: 8px;">Strategy. Innovation. Growth.</p>
+        </div>
+      </div>
+
+      <blockquote style="border-left: 4px solid #FF9933; padding: 20px 24px; margin: 32px 0; background: var(--card-bg); border-radius: 0 12px 12px 0; font-size: 20px; font-weight: 600;">
+        "Let's continue to innovate for a stronger, smarter & self-reliant India. JAI HIND! 🇮🇳"
+      </blockquote>
+    `
+  },
   'spinguard-v01-ai-vibration-monitoring': {
     title: 'SpinGuard V0.1: AI-Powered Vibration Monitoring for Industrial Spinning Machines',
     date: 'Aug 08, 2026',

@@ -34,6 +34,15 @@ export const metadata: Metadata = {
 
 const POSTS = [
   {
+    slug: 'happy-independence-day-2026',
+    title: 'Happy 79th Independence Day: Innovate, Automate & Elevate for India 🇮🇳',
+    excerpt: 'Celebrating the freedom that inspires innovation, fuels creativity, and empowers us to build a smarter, stronger, and better India. Proud to be Indian. Proud to build for India.',
+    date: 'Aug 15, 2026',
+    category: 'Announcements',
+    readTime: '3 min read',
+    cover: '/images/independence-day-2026.png'
+  },
+  {
     slug: 'spinguard-v01-ai-vibration-monitoring',
     title: 'SpinGuard V0.1: AI-Powered Vibration Monitoring for Industrial Spinning Machines',
     excerpt: 'How we turned raw bearing vibration data into explainable maintenance insights — validated on the HUST Bearing Dataset with 99.1% Macro F1 on anomaly detection.',
