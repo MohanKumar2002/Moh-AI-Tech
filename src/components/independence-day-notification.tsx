@@ -11,14 +11,26 @@ export function IndependenceDayNotification() {
 
   useEffect(() => {
     setMounted(true);
-    // Open modal on page load unless user dismissed it in this session
-    const dismissed = sessionStorage.getItem('moh_independence_day_popup_dismissed_2026');
-    if (!dismissed) {
-      // Small timeout for smooth entrance after page hydration
-      const timer = setTimeout(() => {
-        setIsOpen(true);
-      }, 400);
-      return () => clearTimeout(timer);
+    const today = new Date();
+    // Month is 0-indexed: 7 = August. Check if today is August 15
+    const isAug15 = today.getMonth() === 7 && today.getDate() === 15;
+
+    if (isAug15) {
+      // Activate global Independence Day tricolor theme across all pages
+      document.documentElement.classList.add('independence-day-active');
+
+      // Open modal popup on page load unless user dismissed it in this session
+      const dismissed = sessionStorage.getItem('moh_independence_day_popup_dismissed_2026');
+      if (!dismissed) {
+        const timer = setTimeout(() => {
+          setIsOpen(true);
+        }, 400);
+        return () => clearTimeout(timer);
+      }
+    } else {
+      // Automatically revert to normal theme on any other date
+      document.documentElement.classList.remove('independence-day-active');
+      setIsOpen(false);
     }
   }, []);
 

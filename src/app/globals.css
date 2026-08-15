@@ -795,3 +795,44 @@ footer {
 
 /* chip dot */
 .chip-dot { background: var(--accent); }
+
+/* ===== 🇮🇳 INDEPENDENCE DAY TRICOLOR THEME (Active Aug 15 Only) ===== */
+.independence-day-active nav {
+  border: 1.5px solid transparent !important;
+  background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)) padding-box,
+              linear-gradient(90deg, #FF9933 0%, #000080 50%, #138808 100%) border-box !important;
+  box-shadow: 0 10px 30px rgba(255, 153, 51, 0.2), 0 0 20px rgba(19, 136, 8, 0.15) !important;
+}
+
+[data-theme="dark"] .independence-day-active nav,
+html.independence-day-active[data-theme="dark"] nav {
+  background: linear-gradient(rgba(12,11,30,0.85), rgba(12,11,30,0.85)) padding-box,
+              linear-gradient(90deg, #FF9933 0%, #000080 50%, #138808 100%) border-box !important;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.6), 0 0 25px rgba(255, 153, 51, 0.25) !important;
+}
+
+.independence-day-active .nav-cta,
+.independence-day-active .btn-primary {
+  background: linear-gradient(135deg, #FF9933 0%, #e67e22 50%, #138808 100%) !important;
+  border: none !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 18px rgba(255, 153, 51, 0.4) !important;
+}
+
+.independence-day-active .mono-badge {
+  background: linear-gradient(90deg, rgba(255, 153, 51, 0.15), rgba(19, 136, 8, 0.15)) !important;
+  border: 1px solid rgba(255, 153, 51, 0.45) !important;
+  color: #FF9933 !important;
+}
+
+.independence-day-active .grad-text {
+  background: linear-gradient(90deg, #FF9933 0%, #2563eb 50%, #138808 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+.independence-day-active .sol-card:hover,
+.independence-day-active .svc-card:hover {
+  border-color: rgba(255, 153, 51, 0.5) !important;
+  box-shadow: 0 0 25px rgba(255, 153, 51, 0.25), 0 0 15px rgba(19, 136, 8, 0.2) !important;
+}
