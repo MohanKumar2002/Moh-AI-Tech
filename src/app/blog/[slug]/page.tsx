@@ -6,58 +6,60 @@ import type { Metadata } from 'next';
 // Mock database for now. In a real app, this would be fetched from MDX files or a CMS.
 const POSTS: Record<string, any> = {
   'happy-independence-day-2026': {
-    title: 'Happy 79th Independence Day: Innovate, Automate & Elevate for India 🇮🇳',
+    title: 'Happy 80th Independence Day: Innovate, Automate & Elevate for India 🇮🇳',
     date: 'Aug 15, 2026',
     category: 'Announcements',
     readTime: '3 min read',
-    heroImage: '/images/independence-day-2026.png',
+    heroImage: null,
     content: `
-      <div style="background: linear-gradient(135deg, rgba(255,153,51,0.1), rgba(255,255,255,0.05), rgba(19,136,8,0.1)); border: 1px solid rgba(255,153,51,0.3); border-radius: 12px; padding: 24px; margin-bottom: 32px; text-align: center;">
-        <span style="font-size: 24px; display: block; margin-bottom: 8px;">🇮🇳 15TH AUGUST 🇮🇳</span>
-        <h2 style="margin: 0 0 12px; color: #FF9933; font-weight: 800;">INNOVATE • AUTOMATE • ELEVATE</h2>
-        <p style="font-size: 18px; line-height: 1.6; margin: 0; color: var(--text);">
-          "Celebrating the freedom that inspires innovation, fuels creativity, and empowers us to build a smarter, stronger, and better India."
+      <div style="background: linear-gradient(135deg, rgba(255,153,51,0.12), rgba(255,255,255,0.05), rgba(19,136,8,0.12)); border: 1px solid rgba(255,153,51,0.35); border-radius: 16px; padding: 28px; margin-bottom: 36px; text-align: center; backdrop-filter: blur(10px);">
+        <span style="font-size: 24px; display: inline-block; margin-bottom: 10px; font-family: 'Segoe UI Emoji', 'Apple Color Emoji', 'Noto Color Emoji', sans-serif;">🇮🇳 &nbsp; 15TH AUGUST &nbsp; 🇮🇳</span>
+        <h2 style="margin: 0 0 14px; color: #FF9933; font-weight: 800; font-family: 'Syne', sans-serif; letter-spacing: 1.5px; text-transform: uppercase;">INNOVATE • AUTOMATE • ELEVATE</h2>
+        <p style="font-size: 19px; line-height: 1.6; margin: 0; color: var(--text); font-weight: 500;">
+          &ldquo;Celebrating the freedom that inspires innovation, fuels creativity, and empowers us to build a smarter, stronger, and better India.&rdquo;
         </p>
       </div>
 
-      <img src="/images/independence-day-2026.png" alt="Happy Independence Day Moh-AI Tech Poster" style="width:100%; border-radius: 12px; margin: 24px 0; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.4);" />
+      <div style="width: 100%; border-radius: 16px; overflow: hidden; margin: 32px 0; border: 1px solid rgba(255, 153, 51, 0.3); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 153, 51, 0.15);">
+        <img src="/images/independence-day-2026.png" alt="Happy 80th Independence Day Moh-AI Tech Poster" style="width: 100%; height: auto; display: block; object-fit: contain;" />
+      </div>
 
-      <h2>Proud to be Indian. Proud to Build for India.</h2>
-      <p>On this 79th Independence Day, the team at <strong>Moh-AI Tech (Mastering Outstanding Horizons)</strong> re-dedicates itself to advancing technology, sovereignty, and self-reliance in artificial intelligence and automation.</p>
+      <h2 style="margin-top: 40px;">Proud to be Indian. Proud to Build for India.</h2>
+      <p>On this <strong>80th Independence Day</strong>, the team at <strong>Moh-AI Tech (Mastering Outstanding Horizons)</strong> re-dedicates itself to advancing technology, sovereignty, and self-reliance in artificial intelligence and automation.</p>
 
       <p>From enterprise AI agents to industrial computer vision systems, we are committed to building world-class technology right here in Namakkal, Tamil Nadu, India — serving businesses across the nation and empowering local innovation worldwide.</p>
 
       <h2>Our Core Pillars of Innovation</h2>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin: 24px 0;">
-        <div style="background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; padding: 20px;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin: 28px 0;">
+        <div style="background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 20px;">
           <div style="font-size: 28px; margin-bottom: 8px;">🧠</div>
-          <strong style="color: #FF9933;">AI SOLUTIONS</strong>
-          <p style="font-size: 14px; color: var(--text-muted); margin-top: 8px;">Intelligent solutions for a smarter future.</p>
+          <strong style="color: #FF9933; font-size: 15px;">AI SOLUTIONS</strong>
+          <p style="font-size: 14px; color: var(--text-muted); margin-top: 8px; line-height: 1.5;">Intelligent solutions for a smarter future.</p>
         </div>
-        <div style="background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; padding: 20px;">
+        <div style="background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 20px;">
           <div style="font-size: 28px; margin-bottom: 8px;">⚙️</div>
-          <strong style="color: #60a5fa;">AUTOMATION</strong>
-          <p style="font-size: 14px; color: var(--text-muted); margin-top: 8px;">Streamline processes and boost productivity.</p>
+          <strong style="color: #60a5fa; font-size: 15px;">AUTOMATION</strong>
+          <p style="font-size: 14px; color: var(--text-muted); margin-top: 8px; line-height: 1.5;">Streamline processes and boost productivity.</p>
         </div>
-        <div style="background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; padding: 20px;">
+        <div style="background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 20px;">
           <div style="font-size: 28px; margin-bottom: 8px;">💻</div>
-          <strong style="color: #c084fc;">CUSTOM SOFTWARE</strong>
-          <p style="font-size: 14px; color: var(--text-muted); margin-top: 8px;">Built to solve your unique challenges.</p>
+          <strong style="color: #c084fc; font-size: 15px;">CUSTOM SOFTWARE</strong>
+          <p style="font-size: 14px; color: var(--text-muted); margin-top: 8px; line-height: 1.5;">Built to solve your unique challenges.</p>
         </div>
-        <div style="background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; padding: 20px;">
+        <div style="background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 20px;">
           <div style="font-size: 28px; margin-bottom: 8px;">☁️</div>
-          <strong style="color: #4ade80;">SAAS PRODUCTS</strong>
-          <p style="font-size: 14px; color: var(--text-muted); margin-top: 8px;">Powerful products that drive real impact.</p>
+          <strong style="color: #4ade80; font-size: 15px;">SAAS PRODUCTS</strong>
+          <p style="font-size: 14px; color: var(--text-muted); margin-top: 8px; line-height: 1.5;">Powerful products that drive real impact.</p>
         </div>
-        <div style="background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; padding: 20px;">
+        <div style="background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 20px;">
           <div style="font-size: 28px; margin-bottom: 8px;">🤝</div>
-          <strong style="color: #facc15;">TECH CONSULTING</strong>
-          <p style="font-size: 14px; color: var(--text-muted); margin-top: 8px;">Strategy. Innovation. Growth.</p>
+          <strong style="color: #facc15; font-size: 15px;">TECH CONSULTING</strong>
+          <p style="font-size: 14px; color: var(--text-muted); margin-top: 8px; line-height: 1.5;">Strategy. Innovation. Growth.</p>
         </div>
       </div>
 
-      <blockquote style="border-left: 4px solid #FF9933; padding: 20px 24px; margin: 32px 0; background: var(--card-bg); border-radius: 0 12px 12px 0; font-size: 20px; font-weight: 600;">
-        "Let's continue to innovate for a stronger, smarter & self-reliant India. JAI HIND! 🇮🇳"
+      <blockquote style="border-left: 4px solid #FF9933; padding: 20px 24px; margin: 36px 0; background: var(--card-bg); border-radius: 0 12px 12px 0; font-size: 20px; font-weight: 600; line-height: 1.6;">
+        &ldquo;Let's continue to innovate for a stronger, smarter &amp; self-reliant India. JAI HIND! <span style="font-family: 'Segoe UI Emoji', 'Apple Color Emoji', 'Noto Color Emoji', sans-serif;">🇮🇳</span>&rdquo;
       </blockquote>
     `
   },

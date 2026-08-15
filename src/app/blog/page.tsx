@@ -35,7 +35,7 @@ export const metadata: Metadata = {
 const POSTS = [
   {
     slug: 'happy-independence-day-2026',
-    title: 'Happy 79th Independence Day: Innovate, Automate & Elevate for India 🇮🇳',
+    title: 'Happy 80th Independence Day: Innovate, Automate & Elevate for India 🇮🇳',
     excerpt: 'Celebrating the freedom that inspires innovation, fuels creativity, and empowers us to build a smarter, stronger, and better India. Proud to be Indian. Proud to build for India.',
     date: 'Aug 15, 2026',
     category: 'Announcements',

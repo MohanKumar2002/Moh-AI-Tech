@@ -127,7 +127,7 @@ export function IndependenceDayNotification() {
                 🇮🇳 SPECIAL ANNOUNCEMENT
               </span>
               <span style={{ fontWeight: 500, color: '#f3f4f6' }}>
-                <strong>Happy 79th Independence Day!</strong> Celebrating Innovation, Freedom &amp; Building for India.
+                <strong>Happy 80th Independence Day!</strong> Celebrating Innovation, Freedom &amp; Building for India.
               </span>
             </div>
 
