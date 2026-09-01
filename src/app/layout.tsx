@@ -74,17 +74,16 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />
       </head>
       <body suppressHydrationWarning>
-        
-          <LanguageProvider>
-            <IndependenceDayNotification />
-            <Navbar />
-            <main>
-              {children}
-            </main>
-            <ChatbotPlaceholder />
-            <Toaster />
-          </LanguageProvider>
-          {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID} />}
+        <LanguageProvider>
+          <IndependenceDayNotification />
+          <Navbar />
+          <main>
+            {children}
+          </main>
+          <ChatbotPlaceholder />
+          <Toaster />
+        </LanguageProvider>
+        {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID} />}
       </body>
     </html>
   );

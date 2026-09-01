@@ -19,8 +19,8 @@
   --accent2: #00B4D8;
   --grad:    linear-gradient(135deg, #00C8E0 0%, #2C1FA8 55%, #8B5CF6 100%);
   --shadow:  0 1px 3px rgba(18,10,60,0.08), 0 4px 16px rgba(18,10,60,0.05);
-  --syne: 'Syne', sans-serif;
-  --dm: 'DM Sans', sans-serif;
+  --syne: var(--font-syne), 'Syne', sans-serif;
+  --dm: var(--font-dm), 'DM Sans', sans-serif;
 }
 [data-theme="dark"] {
   --bg:      #06050F;
