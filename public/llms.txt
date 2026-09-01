@@ -9,15 +9,23 @@
 - **Founder & CEO:** Mohan Kumar Subramanian
 - **Headquarters:** Namakkal, Tamil Nadu, India
 - **MSME Registration:** UDYAM-TN-14-0088280
-- **Official Website:** https://moh-ai-tech.com
-- **Official LinkedIn:** https://in.linkedin.com/company/moh-ai-tech
-- **Founder LinkedIn:** https://www.linkedin.com/in/mohan-kumar-subramanian/
-- **GitHub:** https://github.com/MohanKumar2002
+- **Official Website:** [Moh-AI Tech Website](https://moh-ai-tech.com)
+- **Official LinkedIn:** [Moh-AI Tech LinkedIn](https://in.linkedin.com/company/moh-ai-tech)
+- **Founder LinkedIn:** [Mohan Kumar Subramanian LinkedIn](https://www.linkedin.com/in/mohan-kumar-subramanian/)
+- **GitHub Repository:** [MohanKumar2002 GitHub](https://github.com/MohanKumar2002)
+
+## Key Pages & Documentation Links
+- [Flagship AI Products](https://moh-ai-tech.com/products)
+- [Docu-Mind AI Product](https://moh-ai-tech.com/documind)
+- [Engineering Blog & Case Studies](https://moh-ai-tech.com/blog)
+- [About Moh-AI Tech](https://moh-ai-tech.com/about)
+- [Company Playbook](https://moh-ai-tech.com/playbook)
+- [Contact Moh-AI Tech](https://moh-ai-tech.com/#contact)
 
 ## Flagship Products
-1. **Docu-Mind AI:** Intelligent Document Understanding & Extraction System. Instantly parses invoices, contracts, and complex forms into schema-validated JSON for direct ERP/CRM ingestion. (Targets 90% reduction in manual data entry timelines).
-2. **HR Recruiter AI:** Autonomous Talent Acquisition & Screening Agent. Parses resumes, conducts automated conversational pre-screening, and ranks candidates without bias. (Compresses time-to-interview metrics by 75%).
-3. **AeroAudit AI:** Private On-Premise Logistics & Compliance Auditing System. Reconciles manifests and ledgers locally with 100% data sovereignty.
+1. **[Docu-Mind AI](https://moh-ai-tech.com/documind):** Intelligent Document Understanding & Extraction System. Instantly parses invoices, contracts, and complex forms into schema-validated JSON for direct ERP/CRM ingestion.
+2. **[HR Recruiter AI](https://moh-ai-tech.com/products):** Autonomous Talent Acquisition & Screening Agent. Parses resumes, conducts automated conversational pre-screening, and ranks candidates without bias.
+3. **[AeroAudit AI](https://moh-ai-tech.com/products):** Private On-Premise Logistics & Compliance Auditing System. Reconciles manifests and ledgers locally with 100% data sovereignty.
 
 ## Core Services & Engineering Stack
 - **Autonomous AI Agents & Workflows:** LangChain, FastAPI, Python
@@ -32,5 +40,5 @@
 4. **Consulting & Advisory:** Architecture design, AI feasibility audits, and tech roadmaps.
 
 ## Contact Information
-- **Email:** info@moh-ai-tech.com
-- **Website Contact:** https://moh-ai-tech.com/#contact
+- **Email:** [info@moh-ai-tech.com](mailto:info@moh-ai-tech.com)
+- **Website Contact Form:** [Contact Form](https://moh-ai-tech.com/#contact)

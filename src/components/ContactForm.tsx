@@ -84,8 +84,10 @@ export function ContactForm() {
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="f2col">
           <div className="frow">
-            <label>Your name *</label>
+            <label htmlFor="contact-name">Your name *</label>
             <input 
+              id="contact-name"
+              aria-label="Your name"
               type="text" 
               placeholder="Your name" 
               {...register('name')} 
@@ -94,15 +96,17 @@ export function ContactForm() {
             {errors.name && <span style={{ color: '#ef4444', fontSize: '12px', marginTop: '4px' }}>{errors.name.message}</span>}
           </div>
           <div className="frow">
-            <label>Company</label>
-            <input type="text" placeholder="Company name (optional)" {...register('company')} />
+            <label htmlFor="contact-company">Company</label>
+            <input id="contact-company" aria-label="Company name" type="text" placeholder="Company name (optional)" {...register('company')} />
           </div>
         </div>
         
         <div className="f2col">
           <div className="frow">
-            <label>Email *</label>
+            <label htmlFor="contact-email">Email *</label>
             <input 
+              id="contact-email"
+              aria-label="Email address"
               type="email" 
               placeholder="your@email.com" 
               {...register('email')} 
@@ -111,8 +115,8 @@ export function ContactForm() {
             {errors.email && <span style={{ color: '#ef4444', fontSize: '12px', marginTop: '4px' }}>{errors.email.message}</span>}
           </div>
           <div className="frow">
-            <label>Country</label>
-            <select {...register('country')}>
+            <label htmlFor="contact-country">Country</label>
+            <select id="contact-country" aria-label="Country" {...register('country')}>
               <option value="">Select country</option>
               <option>India</option>
               <option>UAE</option>
@@ -129,8 +133,8 @@ export function ContactForm() {
         </div>
         
         <div className="frow">
-          <label>What are you looking to build?</label>
-          <select {...register('service')}>
+          <label htmlFor="contact-service">What are you looking to build?</label>
+          <select id="contact-service" aria-label="Select a service" {...register('service')}>
             <option value="">Select a service</option>
             <option>Autonomous AI Agents / Workflows</option>
             <option>Custom LLM / Computer Vision Architecture</option>
@@ -141,8 +145,8 @@ export function ContactForm() {
         </div>
 
         <div className="frow">
-          <label>Current Infrastructure / Data Source (Optional)</label>
-          <select {...register('infrastructure')}>
+          <label htmlFor="contact-infrastructure">Current Infrastructure / Data Source (Optional)</label>
+          <select id="contact-infrastructure" aria-label="Select infrastructure" {...register('infrastructure')}>
             <option value="">Select infrastructure</option>
             <option>Cloud (AWS/Azure/GCP)</option>
             <option>On-Premise Servers</option>
@@ -153,8 +157,10 @@ export function ContactForm() {
 
         
         <div className="frow">
-          <label>Tell us about your project *</label>
+          <label htmlFor="contact-message">Tell us about your project *</label>
           <textarea 
+            id="contact-message"
+            aria-label="Tell us about your project"
             placeholder="What problem are you trying to solve? What data do you have? What outcome are you aiming for?"
             {...register('message')}
             style={{ borderColor: errors.message ? '#ef4444' : undefined }}
