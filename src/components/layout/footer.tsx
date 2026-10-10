@@ -11,56 +11,56 @@ export default function Footer() {
           <div>
             <Link href="/" className="logo mb-4 inline-block" style={{ gap: 0 }}>
               <Image
-                src="/images/general/logo.png"
+                src="/logo.png"
                 alt="Moh-AI Tech Logo"
-                width={130}
-                height={40}
+                width={42}
+                height={42}
                 className="h-auto w-auto"
                 priority
               />
+              <span className="grad-text logo-text" style={{ marginLeft: "8px", fontWeight: "800", fontSize: "18px", letterSpacing: "1px", whiteSpace: "nowrap" }}>MOH-AI TECH</span>
             </Link>
             <p className="footer-tagline">
-              Custom AI applications, intelligent automation, AI agents, and business platforms. Built honestly for businesses and institutions worldwide. <br/><br/>Based in Namakkal, Tamil Nadu, India.
+              Building practical AI systems from Tamil Nadu for businesses globally.
+              <br/><br/>
+              Based in Namakkal, Tamil Nadu, India.
+              <br/>
+              MSME Reg: UDYAM-TN-14-0088280.
             </p>
           </div>
 
           <div>
-            <div className="footer-col-title">Services</div>
+            <div className="footer-col-title">Pathways</div>
             <ul className="footer-links">
-              <li><Link href="/#services">AI Chatbot Development</Link></li>
-              <li><Link href="/#agents">AI Agent Development</Link></li>
-              <li><Link href="/#services">Custom AI Applications</Link></li>
-              <li><Link href="/#services">Web App Development</Link></li>
-              <li><Link href="/#services">Business Process Automation</Link></li>
-              <li><Link href="/#services">Data Dashboards</Link></li>
+              <li><Link href="/industrial-ai">Industrial AI Solutions</Link></li>
+              <li><Link href="/ai-product-engineering">AI Product Engineering</Link></li>
+              <li><Link href="/industries">Target Industries</Link></li>
             </ul>
           </div>
 
           <div>
-            <div className="footer-col-title">Company Overview</div>
+            <div className="footer-col-title">Company</div>
             <ul className="footer-links">
               <li><Link href="/about">About Us</Link></li>
-              <li><Link href="/playbook">The Playbook</Link></li>
-              <li><Link href="/blog">Engineering Blog</Link></li>
-              <li><Link href="/products">Our Products</Link></li>
-              <li><Link href="/#process">Development Process</Link></li>
-              <li><Link href="/#industries">Industries</Link></li>
+              <li><Link href="/technology">Technology Stack</Link></li>
+              <li><Link href="/research">Research & Labs</Link></li>
+              <li><Link href="/contact">Request Assessment</Link></li>
             </ul>
           </div>
 
           <div>
-            <div className="footer-col-title">Quick Links</div>
+            <div className="footer-col-title">Connect</div>
             <ul className="footer-links">
-              <li><Link href="/#contact">Contact Us</Link></li>
-              <li><Link href="https://wa.me/919566852700" target="_blank" rel="noopener noreferrer">WhatsApp Chat</Link></li>
-              <li><a href="mailto:info@moh-ai-tech.com">Email Support</a></li>
+              <li><Link href="https://wa.me/919566852700" target="_blank" rel="noopener noreferrer">WhatsApp Support</Link></li>
+              <li><a href="mailto:info@moh-ai-tech.com">info@moh-ai-tech.com</a></li>
+              <li><a href="https://www.linkedin.com/in/mohan-kumar-subramanian/" target="_blank" rel="noopener noreferrer">Founder LinkedIn</a></li>
             </ul>
           </div>
         </div>
 
         <div className="footer-bottom mt-12 pt-8 border-t border-[var(--border2)] flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="footer-copy text-sm text-[var(--muted)]">
-            © {new Date().getFullYear()} Moh-AI Tech. MSME Reg: UDYAM-TN-14-0088280. Namakkal, Tamil Nadu, India.
+            © {new Date().getFullYear()} Moh-AI Tech. All rights reserved.
           </div>
           <div className="footer-legal flex gap-6 text-sm text-[var(--muted)]">
             <Link href="/privacy" className="hover:text-[var(--text)] transition-colors">Privacy Policy</Link>

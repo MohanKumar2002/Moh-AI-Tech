@@ -84,23 +84,23 @@ export function BookingForm() {
 
               <div className="f2col">
                 <div className="frow">
-                  <label htmlFor="booking-name">Your name *</label>
-                  <input id="booking-name" name="name" aria-label="Your name" value={formData.name} onChange={handleInputChange} type="text" placeholder="Your name" />
+                  <label>Your name *</label>
+                  <input name="name" value={formData.name} onChange={handleInputChange} type="text" placeholder="Your name" />
                 </div>
                 <div className="frow">
-                  <label htmlFor="booking-company">Company</label>
-                  <input id="booking-company" name="company" aria-label="Company name" value={formData.company} onChange={handleInputChange} type="text" placeholder="Company name (optional)" />
+                  <label>Company</label>
+                  <input name="company" value={formData.company} onChange={handleInputChange} type="text" placeholder="Company name (optional)" />
                 </div>
               </div>
               
               <div className="f2col">
                 <div className="frow">
-                  <label htmlFor="booking-email">Email *</label>
-                  <input id="booking-email" name="email" aria-label="Email address" value={formData.email} onChange={handleInputChange} type="email" placeholder="your@email.com" />
+                  <label>Email *</label>
+                  <input name="email" value={formData.email} onChange={handleInputChange} type="email" placeholder="your@email.com" />
                 </div>
                 <div className="frow">
-                  <label htmlFor="booking-country">Country</label>
-                  <select id="booking-country" name="country" aria-label="Country" value={formData.country} onChange={handleInputChange}>
+                  <label>Country</label>
+                  <select name="country" value={formData.country} onChange={handleInputChange}>
                     <option value="">Select country</option>
                     <option>India</option>
                     <option>United States</option>
@@ -112,8 +112,8 @@ export function BookingForm() {
               </div>
               
               <div className="frow">
-                <label htmlFor="booking-service">What are you looking to build?</label>
-                <select id="booking-service" name="service" aria-label="Select a service" value={formData.service} onChange={handleInputChange}>
+                <label>What are you looking to build?</label>
+                <select name="service" value={formData.service} onChange={handleInputChange}>
                   <option value="">Select a service</option>
                   <option>Autonomous AI Agents / Workflows</option>
                   <option>Custom LLM / Computer Vision Architecture</option>
@@ -124,8 +124,8 @@ export function BookingForm() {
               </div>
 
               <div className="frow">
-                <label htmlFor="booking-infrastructure">Current Infrastructure / Data Source (Optional)</label>
-                <select id="booking-infrastructure" name="infrastructure" aria-label="Select infrastructure" value={formData.infrastructure} onChange={handleInputChange}>
+                <label>Current Infrastructure / Data Source (Optional)</label>
+                <select name="infrastructure" value={formData.infrastructure} onChange={handleInputChange}>
                   <option value="">Select infrastructure</option>
                   <option>Cloud (AWS/Azure/GCP)</option>
                   <option>On-Premise Servers</option>
@@ -135,8 +135,8 @@ export function BookingForm() {
               </div>
               
               <div className="frow">
-                <label htmlFor="booking-message">Tell us about your project *</label>
-                <textarea id="booking-message" name="message" aria-label="Tell us about your project" value={formData.message} onChange={handleInputChange} rows={3} placeholder="What problem are you trying to solve?"></textarea>
+                <label>Tell us about your project *</label>
+                <textarea name="message" value={formData.message} onChange={handleInputChange} rows={3} placeholder="What problem are you trying to solve?"></textarea>
               </div>
 
               <div style={{ display: 'flex', gap: '16px', marginTop: '8px' }}>
@@ -216,7 +216,7 @@ export function BookingForm() {
                 You have successfully sent your message, <strong>{formData.name.split(' ')[0]}</strong>.<br/><br/>
                 Our team is reviewing your request and will connect with you very soon!
               </p>
-              <button onClick={() => { setStep(1); setFormData({name:'',company:'',email:'',country:'',service:'',message:''}); }} className="btn-ghost" style={{ border: '1px solid var(--border)' }}>Send another</button>
+              <button onClick={() => { setStep(1); setFormData({name:'',company:'',email:'',country:'',service:'',infrastructure:'',message:''}); }} className="btn-ghost" style={{ border: '1px solid var(--border)' }}>Send another</button>
             </motion.div>
           )}
 
@@ -233,7 +233,7 @@ export function BookingForm() {
                 <br /><br />
                 A calendar invitation has been sent to <strong>{formData.email}</strong>.
               </p>
-              <button onClick={() => { setStep(1); setFormData({name:'',company:'',email:'',country:'',service:'',message:''}); setSelectedDate(undefined); setSelectedTime(''); }} className="btn-ghost" style={{ border: '1px solid var(--border)' }}>Done</button>
+              <button onClick={() => { setStep(1); setFormData({name:'',company:'',email:'',country:'',service:'',infrastructure:'',message:''}); setSelectedDate(undefined); setSelectedTime(''); }} className="btn-ghost" style={{ border: '1px solid var(--border)' }}>Done</button>
             </motion.div>
           )}
 

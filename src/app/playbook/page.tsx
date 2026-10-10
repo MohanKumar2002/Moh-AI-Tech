@@ -2,6 +2,7 @@
 
 import React, { useEffect } from 'react';
 import Link from 'next/link';
+import { Navbar } from '@/components/layout/navbar';
 import Footer from '@/components/layout/footer';
 
 export default function PlaybookPage() {
@@ -17,6 +18,7 @@ export default function PlaybookPage() {
 
   return (
     <>
+      <Navbar />
       
       <main style={{ paddingTop: '100px', backgroundColor: 'var(--bg)', color: 'var(--text)' }}>
         {/* HERO SECTION */}

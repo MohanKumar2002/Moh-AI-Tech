@@ -1,14 +1,5 @@
 import React from 'react';
 import Link from 'next/link';
-import type { Metadata } from 'next';
-
-export const metadata: Metadata = {
-  title: 'Terms of Service - DocuMind AI',
-  description: 'Terms and Conditions governing the use of the DocuMind AI document intelligence platform.',
-  alternates: {
-    canonical: '/documind/terms',
-  },
-};
 
 export default function DocuMindTerms() {
   return (

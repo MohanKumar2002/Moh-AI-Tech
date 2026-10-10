@@ -2,9 +2,11 @@
 
 import React, { useEffect } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useLanguage } from '@/components/i18n-provider';
-import { BookingForm } from '@/components/booking-form';
+import { ContactForm } from '@/components/ContactForm';
 import Footer from '@/components/layout/footer';
+import { Check, ArrowRight, Shield, Layers, HelpCircle, User, Cpu, BarChart3, Settings, Factory, Bot, Zap, Briefcase, FileText } from 'lucide-react';
 
 export default function Home() {
   const { t } = useLanguage();
@@ -14,917 +16,673 @@ export default function Home() {
       entries.forEach(e => {
         if (e.isIntersecting) e.target.classList.add('vis');
       });
-    }, { threshold: 0.08 });
+    }, { threshold: 0.05 });
     
     document.querySelectorAll('.fu').forEach(el => obs.observe(el));
     setTimeout(() => {
       document.querySelectorAll('.hero-content .fu').forEach(el => el.classList.add('vis'));
-    }, 120);
+    }, 100);
   }, []);
-
-
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@graph": [
-      // ── Organization Entity ──────────────────────────────────────────────
-      {
-        "@type": ["Organization", "LocalBusiness", "Brand"],
-        "@id": "https://moh-ai-tech.com/#organization",
-        "name": "Moh-AI Tech",
-        "legalName": "MOH AI TECH",
-        "brand": {
-          "@type": "Brand",
-          "name": "Moh-AI Tech",
-          "alternateName": "MOH AI Tech",
-          "description": "MOH stands for Mastering Outstanding Horizons — not Ministry of Health. Moh-AI Tech is an Indian AI technology company."
-        },
-        "disambiguatingDescription": "Moh-AI Tech is a private AI software engineering company based in Namakkal, Tamil Nadu, India. MOH is an acronym for Mastering Outstanding Horizons — unrelated to the Ministry of Health (MOH) government agency. Moh-AI Tech builds enterprise AI agents, computer vision systems, and custom automation software.",
-        "alternateName": [
-          "MOH AI TECH",
-          "Moh-AI Tech Namakkal",
-          "Moh-AI Tech India",
-          "Mastering Outstanding Horizons AI Tech",
-          "Mastering Outstanding Horizons with AI Technology",
-          "MOH AI Technology"
-        ],
-        "description": "Moh-AI Tech (MOH = Mastering Outstanding Horizons) is an MSME-registered Indian AI product & software engineering startup based in Namakkal, Tamil Nadu, India (Reg: UDYAM-TN-14-0088280). Founded by Mohan Kumar Subramanian, the company designs and builds enterprise AI agents (Docu-Mind AI, HR Recruiter AI, AeroAudit AI), computer vision inspection systems, and custom software automation for global businesses. MOH-AI Tech is a technology company, not a government health body.",
-        "url": "https://moh-ai-tech.com",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://moh-ai-tech.com/logo.png",
-          "caption": "Moh-AI Tech Logo — Mastering Outstanding Horizons"
-        },
-        "image": "https://moh-ai-tech.com/images/team/mohan.webp",
-        "taxID": "UDYAM-TN-14-0088280",
-        "email": "info@moh-ai-tech.com",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Namakkal",
-          "addressRegion": "Tamil Nadu",
-          "addressCountry": "IN"
-        },
-        "founder": {
-          "@type": "Person",
-          "@id": "https://moh-ai-tech.com/#founder",
-          "name": "Mohan Kumar Subramanian",
-          "jobTitle": "Founder & CEO",
-          "description": "Founder of Moh-AI Tech (Mastering Outstanding Horizons), an AI software engineering company in Namakkal, India.",
-          "sameAs": [
-            "https://www.linkedin.com/in/mohan-kumar-subramanian/",
-            "https://github.com/MohanKumar2002"
-          ]
-        },
-        "sameAs": [
-          "https://in.linkedin.com/company/moh-ai-tech",
-          "https://www.linkedin.com/in/mohan-kumar-subramanian/",
-          "https://github.com/MohanKumar2002",
-          "https://www.instagram.com/mohaitech/"
-        ],
-        "knowsAbout": [
-          "Enterprise Artificial Intelligence",
-          "Computer Vision Inspection",
-          "Autonomous AI Agents",
-          "Docu-Mind AI",
-          "HR Recruiter AI",
-          "AeroAudit AI",
-          "Retrieval-Augmented Generation (RAG)",
-          "B2B Automation Systems"
-        ],
-        "hasOfferCatalog": {
-          "@type": "OfferCatalog",
-          "name": "MOH AI TECH Flagship AI Products & B2B Solutions",
-          "itemListElement": [
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "SoftwareApplication",
-                "name": "Docu-Mind AI",
-                "applicationCategory": "BusinessApplication",
-                "description": "Intelligent Document Understanding AI system that reads complex invoices, forms, and contracts, extracting structured JSON data with 90% timeline reduction."
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "SoftwareApplication",
-                "name": "HR Recruiter AI",
-                "applicationCategory": "BusinessApplication",
-                "description": "Autonomous Talent Acquisition AI agent that screens resumes, conducts conversational pre-screening, and ranks candidates to compress time-to-interview metrics by 75%."
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "SoftwareApplication",
-                "name": "AeroAudit AI",
-                "applicationCategory": "BusinessApplication",
-                "description": "Private, on-premise AI auditing and intelligence system for logistics, supply chain, and financial operations."
-              }
-            }
-          ]
-        }
-      },
-      // ── WebSite Entity ───────────────────────────────────────────────────
-      {
-        "@type": "WebSite",
-        "@id": "https://moh-ai-tech.com/#website",
-        "url": "https://moh-ai-tech.com",
-        "name": "Moh-AI Tech — Mastering Outstanding Horizons",
-        "description": "Official website of Moh-AI Tech (Mastering Outstanding Horizons with AI Technology), an AI software engineering company in Namakkal, India.",
-        "publisher": { "@id": "https://moh-ai-tech.com/#organization" },
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": "https://moh-ai-tech.com/?s={search_term_string}",
-          "query-input": "required name=search_term_string"
-        }
-      },
-      // ── FAQ: Disambiguates MOH from Ministry of Health ───────────────────
-      {
-        "@type": "FAQPage",
-        "@id": "https://moh-ai-tech.com/#faq-brand",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "What does MOH stand for in Moh-AI Tech?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "In Moh-AI Tech, MOH stands for Mastering Outstanding Horizons with AI Technology. It is a private AI software engineering company based in Namakkal, Tamil Nadu, India — not affiliated with any Ministry of Health."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Is Moh-AI Tech related to the Ministry of Health?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "No. Moh-AI Tech (MOH = Mastering Outstanding Horizons) is a private AI technology and software engineering company. It has no connection to any government Ministry of Health (MOH) body."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Where is Moh-AI Tech located?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Moh-AI Tech is headquartered in Namakkal, Tamil Nadu, India. It is an MSME-registered AI product startup (Reg: UDYAM-TN-14-0088280)."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What does Moh-AI Tech build?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Moh-AI Tech builds enterprise AI agents, computer vision inspection systems, and custom automation software. Key products include Docu-Mind AI (document intelligence), HR Recruiter AI (autonomous hiring), and AeroAudit AI (logistics auditing)."
-            }
-          }
-        ]
-      }
-    ]
-  };
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-<section id="hero">
-  <div className="hero-glow hero-glow-1"></div>
-  <div className="hero-glow hero-glow-2"></div>
-  <div className="hero-inner">
-    <div className="hero-content">
-      <div className="hero-badge fu">
-        <span className="badge-pulse"></span>
-        <span data-t="hero_badge">{t('hero_badge')}</span>
-      </div>
-      <h1 className="hero-h1 fu d1">
-        MOH-AI TECH
-      </h1>
-      <p className="hero-sub fu d2">
-        <em>Mastering Outstanding Horizons through Focused Engineering.</em><br/><br/>
-        We design and build AI, Machine Learning, Computer Vision, and Data Intelligence solutions for businesses and institutions worldwide. No fake claims — just honest, production-grade engineering.
-      </p>
-      
-      <div className="hero-tagline fu d2" style={{
-        marginTop: '1.5rem',
-        marginBottom: '1rem',
-        padding: '0.8rem 1.8rem',
-        background: 'linear-gradient(135deg, rgba(99, 102, 241, 0.05), rgba(168, 85, 247, 0.05))',
-        border: '1px solid rgba(99, 102, 241, 0.2)',
-        borderRadius: '999px',
-        display: 'inline-block',
-        boxShadow: '0 4px 20px -2px rgba(99, 102, 241, 0.1)',
-        backdropFilter: 'blur(10px)'
-      }}>
-        <span style={{ 
-          background: 'linear-gradient(90deg, #6366f1, #a855f7)', 
-          WebkitBackgroundClip: 'text', 
-          WebkitTextFillColor: 'transparent', 
-          fontWeight: 700, 
-          letterSpacing: '0.5px',
-          fontSize: '1.15rem'
-        }} data-t="hero_tagline">
-          {t('hero_tagline') || "Peace in mind, Progress through AI, Prosperity in life."}
-        </span>
-      </div>
+      {/* ===== HERO SECTION ===== */}
+      <section id="hero" style={{ background: 'var(--bg)', minHeight: '90vh', display: 'flex', alignItems: 'center', paddingTop: '120px', paddingBottom: '60px', overflow: 'hidden' }}>
+        <div className="hero-glow hero-glow-1"></div>
+        <div className="hero-glow hero-glow-2"></div>
+        <div className="hero-inner" style={{ maxWidth: '1400px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1.2fr 1fr', gap: '48px', alignItems: 'center', padding: '0 5%' }}>
+          <div className="hero-content">
+            <div className="hero-badge fu" style={{ background: 'rgba(0, 102, 204, 0.08)', border: '1px solid rgba(0, 102, 204, 0.15)', padding: '6px 14px', borderRadius: '50px', fontSize: '13px', color: 'var(--accent-l)', display: 'inline-flex', alignItems: 'center', gap: '8px', marginBottom: '24px', fontWeight: '600' }}>
+              <span className="badge-pulse" style={{ width: '7px', height: '7px', background: '#0066CC', borderRadius: '50%', display: 'inline-block' }}></span>
+              <span>{t('hero_badge')}</span>
+            </div>
+            <h1 className="hero-h1 fu d1" style={{ fontFamily: 'var(--syne)', fontSize: 'clamp(36px, 4.5vw, 52px)', fontWeight: '800', lineHeight: '1.15', color: 'var(--text)', marginBottom: '24px', letterSpacing: '-1.5px' }}>
+              {t('hero_h1')}
+            </h1>
+            <p className="hero-sub fu d2" style={{ fontSize: '17px', color: 'var(--muted)', lineHeight: '1.65', marginBottom: '32px', maxWidth: '620px' }}>
+              {t('hero_sub')}
+            </p>
+            
+            <div className="hero-btns fu d3" style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', marginBottom: '32px' }}>
+              <Link href="/contact" className="btn-primary" style={{ background: 'var(--grad)', color: '#fff', padding: '14px 28px', borderRadius: '8px', textDecoration: 'none', fontWeight: '600', fontSize: '15px', display: 'inline-flex', alignItems: 'center', gap: '8px', transition: 'all 0.2s', boxShadow: '0 4px 12px rgba(0, 102, 204, 0.15)' }}>
+                {t('hero_cta1')} <ArrowRight size={16} />
+              </Link>
+              <Link href="/technology" className="btn-ghost" style={{ border: '1px solid var(--border2)', color: 'var(--text)', padding: '14px 28px', borderRadius: '8px', textDecoration: 'none', fontWeight: '500', fontSize: '15px', display: 'inline-flex', alignItems: 'center', transition: 'all 0.2s' }}>
+                {t('hero_cta2')}
+              </Link>
+            </div>
 
-      <div className="hero-btns fu d3">
-        <a href="#contact" className="btn-primary" data-t="hero_btn1">{t('hero_btn1')}</a>
-        <a href="#services" className="btn-ghost" data-t="hero_btn2">{t('hero_btn2')}</a>
-      </div>
-      <div className="hero-chips fu d4">
-        <div className="chip"><span className="chip-dot"></span><span data-t="chip1">{t('chip1')}</span></div>
-        <div className="chip"><span className="chip-dot"></span><span data-t="chip2">{t('chip2')}</span></div>
-        <div className="chip"><span className="chip-dot"></span><span data-t="chip3">{t('chip3')}</span></div>
-      </div>
-    </div>
-    <div className="hero-visual">
-      <div className="hv-float-1">
-        <div className="hv-card" style={{'marginBottom': '16px'}}>
-          <div className="hv-card-title">Active Project</div>
-          <div className="hv-row"><span className="hv-label">Type</span><span className="hv-val">Computer Vision</span></div>
-          <div className="hv-row"><span className="hv-label">Stack</span><span className="hv-val">PyTorch + FastAPI</span></div>
-          <div className="hv-row"><span className="hv-label">Status</span><span className="hv-badge hv-green">In Development</span></div>
-        </div>
-      </div>
-      <div className="hv-float-2">
-        <div className="hv-card">
-          <div className="hv-card-title">Capabilities</div>
-          <div className="hv-row"><span className="hv-label">Web Development</span><span className="hv-badge hv-green">✓ Ready</span></div>
-          <div className="hv-row"><span className="hv-label">AI / ML / DL</span><span className="hv-badge hv-green">✓ Ready</span></div>
-          <div className="hv-row"><span className="hv-label">Computer Vision</span><span className="hv-badge hv-green">✓ Ready</span></div>
-          <div className="hv-row"><span className="hv-label">Custom LLM</span><span className="hv-badge hv-blue">✓ Ready</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
-{/* ===== FOUNDER ===== */}
-<section id="founder" style={{ background: 'var(--bg2)', padding: '60px 0' }}>
-  <div className="inner">
-    <div className="global-grid fu d1" style={{ alignItems: 'center' }}>
-      <div>
-        <div className="tag" style={{ marginBottom: '16px' }}>Leadership</div>
-        <h2 className="h2" style={{ marginBottom: '24px' }}>Founder-Led Engineering</h2>
-        <p className="lead" style={{ fontSize: '18px', color: 'var(--text)', lineHeight: '1.7', marginBottom: '24px' }}>
-          Founded by <strong>Mohan Kumar S</strong>, Moh-AI Tech is an MSME-registered AI company focused on building practical AI solutions that solve real business problems.
-        </p>
-        <p style={{ fontSize: '16px', color: 'var(--muted)', lineHeight: '1.6' }}>
-          We don't just sell software; we engineer custom architectures. From deep learning and computer vision to intelligent web platforms, we build systems that automate work and scale operations for businesses worldwide.
-        </p>
-      </div>
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
-        <Image 
-          src="/images/team/mohan.webp" 
-          alt="Mohan Kumar S" 
-          width={220}
-          height={220}
-          priority
-          style={{ width: '220px', height: '220px', borderRadius: '50%', objectFit: 'cover', border: '4px solid var(--border)', boxShadow: 'var(--shadow)' }} 
-        />
-        <div style={{ marginTop: '16px', fontWeight: '700', fontSize: '18px', color: 'var(--text)', textAlign: 'center', width: '100%' }}>Mohan Kumar S</div>
-        <div style={{ fontSize: '14px', color: 'var(--accent)', textAlign: 'center', width: '100%' }}>Founder & CEO</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-{/* ===== VISION & MISSION ===== */}
-<section id="vision-mission" style={{ background: 'var(--bg)', padding: '80px 0' }}>
-  <div className="inner">
-    <div className="global-grid fu d1" style={{ gap: '48px' }}>
-      <div className="card">
-        <div className="tag" style={{ marginBottom: '16px' }}>Our Vision</div>
-        <h2 className="h2" style={{ marginBottom: '24px', fontSize: '28px' }}>AI shouldn't be a luxury only big companies can afford</h2>
-        <p className="lead" style={{ fontSize: '16px', color: 'var(--muted)', lineHeight: '1.6' }}>
-          Most businesses — especially in India and emerging markets — watch AI transform their bigger competitors while staying priced out themselves. We exist to close that gap: practical, honestly-built AI that any serious business can actually afford and actually use.
-        </p>
-      </div>
-      <div className="card">
-        <div className="tag" style={{ marginBottom: '16px' }}>Our Mission</div>
-        <h2 className="h2" style={{ marginBottom: '24px', fontSize: '28px' }}>Solving one real problem at a time</h2>
-        <p className="lead" style={{ fontSize: '16px', color: 'var(--muted)', lineHeight: '1.6' }}>
-          We build AI systems that solve one real problem at a time — no bloated platforms, no "AI-washing." Every system we ship is something we'd deploy in our own business first. If it doesn't save real time or real money, we don't build it.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-{/* ===== THE PROBLEMS WE SOLVE ===== */}
-<section id="problems" style={{ background: 'var(--bg2)', padding: '80px 0', borderTop: '1px solid var(--border)' }}>
-  <div className="inner">
-    <div className="tag fu">The Problems We Solve</div>
-    <h2 className="h2 fu d1">If any of this sounds familiar, we should talk</h2>
-    
-    <div className="fu d2" style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '24px', marginTop: '48px', maxWidth: '900px' }}>
-      
-      <div className="card" style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-        <h3 style={{ fontSize: '18px', fontWeight: '700', color: 'var(--text)' }}>"Our team spends hours screening resumes/documents manually"</h3>
-        <p style={{ fontSize: '15px', color: 'var(--muted)' }}>→ We build automated screening & document intelligence that ranks, extracts, and routes in minutes — see ResumeFilter AI below.</p>
-      </div>
-
-      <div className="card" style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-        <h3 style={{ fontSize: '18px', fontWeight: '700', color: 'var(--text)' }}>"We have years of data but no way to actually query it"</h3>
-        <p style={{ fontSize: '15px', color: 'var(--muted)' }}>→ We build an Enterprise AI Brain that connects to your existing documents, databases, and emails — ask questions in plain language, get real answers.</p>
-      </div>
-
-      <div className="card" style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-        <h3 style={{ fontSize: '18px', fontWeight: '700', color: 'var(--text)' }}>"Customer support is either too slow or too expensive to scale"</h3>
-        <p style={{ fontSize: '15px', color: 'var(--muted)' }}>→ We build multi-channel AI agents trained on your own knowledge base — WhatsApp, email, and web, with human escalation built in.</p>
-      </div>
-
-      <div className="card" style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-        <h3 style={{ fontSize: '18px', fontWeight: '700', color: 'var(--text)' }}>"Reporting takes days and still doesn't answer the real question"</h3>
-        <p style={{ fontSize: '15px', color: 'var(--muted)' }}>→ We build automated data pipelines and PowerBI dashboards with AI-generated insight summaries — no more manual spreadsheet stitching.</p>
-      </div>
-
-      <div className="card" style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-        <h3 style={{ fontSize: '18px', fontWeight: '700', color: 'var(--text)' }}>"Invoice and expense processing eats up finance team hours every week"</h3>
-        <p style={{ fontSize: '15px', color: 'var(--muted)' }}>→ We build automated invoice extraction pipelines that read, validate, and push structured data straight into your accounting or ERP system.</p>
-      </div>
-
-      <div className="card" style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-        <h3 style={{ fontSize: '18px', fontWeight: '700', color: 'var(--text)' }}>"Quality control is manual and inconsistent across our production line"</h3>
-        <p style={{ fontSize: '15px', color: 'var(--muted)' }}>→ We build custom-trained computer vision pipelines that catch defects your team misses, in real time. <span style={{ display: 'inline-block', padding: '2px 8px', background: 'rgba(234, 179, 8, 0.1)', color: '#ca8a04', fontSize: '12px', fontWeight: '600', borderRadius: '4px', marginLeft: '8px' }}>In Development</span></p>
-      </div>
-
-    </div>
-
-    <div className="fu d3" style={{ marginTop: '48px' }}>
-      <a href="#contact" className="btn btn-primary" style={{ display: 'inline-block' }}>Tell us your problem →</a>
-    </div>
-  </div>
-</section>
-
-{/* ===== TRUST BAND ===== */}
-<section id="trust">
-  <div className="trust-inner">
-    <div className="trust-label" data-t="trust_label">{t('trust_label')}</div>
-    <div className="trust-pills">
-      <div className="trust-pill"><span className="trust-pill-icon">🏢</span> MSME Reg: UDYAM-TN-14-0088280</div>
-      <div className="trust-pill"><span className="trust-pill-icon">💻</span> Web Development</div>
-      <div className="trust-pill"><span className="trust-pill-icon">🤖</span> AI, ML & Deep Learning</div>
-      <div className="trust-pill"><span className="trust-pill-icon">👁️</span> Computer Vision</div>
-      <div className="trust-pill"><span className="trust-pill-icon">🌐</span> Remote-Friendly</div>
-      <div className="trust-pill"><span className="trust-pill-icon">📊</span> Data Intelligence</div>
-      <div className="trust-pill"><span className="trust-pill-icon">🔒</span> NDA & IP Protected</div>
-      <div className="trust-pill"><span className="trust-pill-icon">📍</span> Based in Namakkal, India</div>
-    </div>
-  </div>
-</section>
-
-{/* ===== SERVICES ===== */}
-<section id="services">
-  <div className="inner">
-    <div className="tag fu" data-t="tag_services">{t('tag_services')}</div>
-    <h2 className="h2 fu d1" data-t="h2_services">{t('h2_services')}</h2>
-    <p className="lead fu d2" data-t="lead_services">{t('lead_services')}</p>
-    <div className="services-grid fu d3" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '24px' }}>
-      <div className="svc-card">
-        <div className="svc-icon">🧠</div>
-        <div className="svc-title">Custom AI Applications</div>
-        <div className="svc-desc">Intelligent, conversational, and generative systems built specifically for your business data and logic.</div>
-        <div className="svc-tags">
-          <span className="svc-tag">Chatbots</span>
-          <span className="svc-tag">AI Agents</span>
-          <span className="svc-tag">RAG Systems</span>
-        </div>
-      </div>
-      <div className="svc-card">
-        <div className="svc-icon">⚙️</div>
-        <div className="svc-title">Business Automation</div>
-        <div className="svc-desc">We replace manual data entry and repetitive tasks with AI pipelines that extract, process, and route information.</div>
-        <div className="svc-tags">
-          <span className="svc-tag">Workflows</span>
-          <span className="svc-tag">Dashboards</span>
-          <span className="svc-tag">Document Processing</span>
-        </div>
-      </div>
-      <div className="svc-card">
-        <div className="svc-icon">💻</div>
-        <div className="svc-title">Intelligent Web Platforms</div>
-        <div className="svc-desc">High-performance, modern web applications designed to house complex AI logic and deliver seamless user experiences.</div>
-        <div className="svc-tags">
-          <span className="svc-tag">React.js</span>
-          <span className="svc-tag">FastAPI</span>
-          <span className="svc-tag">Full-Stack Systems</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-{/* ===== SOLUTIONS ===== */}
-<section id="solutions">
-  <div className="inner">
-    <div className="tag fu" data-t="tag_solutions">{t('tag_solutions')}</div>
-    <h2 className="h2 fu d1">Solution Architectures We Build</h2>
-    <p className="lead fu d2" data-t="lead_solutions">{t('lead_solutions')}</p>
-    <div className="solutions-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '24px' }}>
-      <div className="sol-card fu">
-        <div className="sol-icon">🧠</div>
-        <div className="sol-name">Enterprise AI Brain</div>
-        <div className="sol-tagline">Private AI assistant trained on your company data</div>
-        <div className="sol-desc">A custom AI system that connects to your internal data — documents, databases, emails — and gives your team a conversational interface to query it securely.</div>
-        <ul className="sol-feats">
-          <li>Private LLM setup (on-premise or cloud)</li>
-          <li>Connects to your existing data sources</li>
-          <li>Role-based access control</li>
-          <li>Full data privacy — no third-party training</li>
-        </ul>
-        <a href="#contact" className="sol-link">Discuss this →</a>
-        <div className="sol-note" data-t="sol_concept">{t('sol_concept')}</div>
-      </div>
-      <div className="sol-card fu d1">
-        <div className="sol-icon">📊</div>
-        <div className="sol-name">Data Intelligence Suite</div>
-        <div className="sol-tagline">From raw data to executive dashboards</div>
-        <div className="sol-desc">We set up your complete data pipeline — ingestion, transformation, modeling — and deliver PowerBI dashboards with AI-assisted insight generation.</div>
-        <ul className="sol-feats">
-          <li>Automated data pipeline setup</li>
-          <li>Industry-specific dashboard templates</li>
-          <li>Predictive trend overlays</li>
-          <li>Scheduled email / WhatsApp reports</li>
-        </ul>
-        <a href="#contact" className="sol-link">Discuss this →</a>
-        <div className="sol-note" data-t="sol_concept">{t('sol_concept')}</div>
-      </div>
-      <div className="sol-card fu">
-        <div className="sol-icon">🤖</div>
-        <div className="sol-name">AI Customer Service Agent</div>
-        <div className="sol-tagline">Multi-channel conversational AI</div>
-        <div className="sol-desc">A custom-built AI agent that handles customer inquiries across WhatsApp, email, and web chat. Learns from your knowledge base and escalates when needed.</div>
-        <ul className="sol-feats">
-          <li>WhatsApp, email, web integration</li>
-          <li>Trained on your product/service knowledge</li>
-          <li>30+ language support</li>
-          <li>Connects to your CRM or helpdesk</li>
-        </ul>
-        <a href="#contact" className="sol-link">Discuss this →</a>
-        <div className="sol-note" data-t="sol_concept">{t('sol_concept')}</div>
-      </div>
-      <div className="sol-card fu d1">
-        <div className="sol-icon">📑</div>
-        <div className="sol-name">HR & Document Automation</div>
-        <div className="sol-tagline">Automated parsing and screening</div>
-        <div className="sol-desc">Intelligent document processing for resumes, contracts, and forms. Includes semantic parsing and TF-IDF based candidate ranking.</div>
-        <ul className="sol-feats">
-          <li>High-accuracy OCR for legacy records</li>
-          <li>Semantic resume parsing & ranking</li>
-          <li>Automated candidate pre-screening</li>
-          <li>Enterprise API integration</li>
-        </ul>
-        <a href="#contact" className="sol-link">Discuss this →</a>
-        <div className="sol-note" data-t="sol_concept">{t('sol_concept')}</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-{/* ===== ENTERPRISE SECURITY ===== */}
-<section id="security" style={{ background: 'var(--bg2)', padding: '60px 0', borderTop: '1px solid var(--border)' }}>
-  <div className="inner">
-    <div className="tag fu" style={{ background: 'rgba(16, 185, 129, 0.1)', color: '#10b981' }}>🔒 Enterprise Data Sovereignty</div>
-    <div className="fu d2" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '24px', marginTop: '32px' }}>
-      <div className="card">
-        <h3 style={{ fontSize: '18px', fontWeight: '700', marginBottom: '12px' }}>Zero Public Training</h3>
-        <p style={{ fontSize: '15px', color: 'var(--muted)', lineHeight: '1.6' }}>We design systems where your proprietary company data, documents, and emails are never used to train public LLMs. Your data stays yours.</p>
-      </div>
-      <div className="card">
-        <h3 style={{ fontSize: '18px', fontWeight: '700', marginBottom: '12px' }}>Flexible Deployment</h3>
-        <p style={{ fontSize: '15px', color: 'var(--muted)', lineHeight: '1.6' }}>We host architectures wherever you need them—whether that's a fully isolated secure private cloud or on-premise hardware.</p>
-      </div>
-      <div className="card">
-        <h3 style={{ fontSize: '18px', fontWeight: '700', marginBottom: '12px' }}>IP & Code Ownership</h3>
-        <p style={{ fontSize: '15px', color: 'var(--muted)', lineHeight: '1.6' }}>Complete handover. You own 100% of the custom codebase, documentation, and operational weights we engineer.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-{/* ===== TECHNICAL CAPABILITIES ===== */}
-<section id="capabilities" style={{ background: 'var(--bg)', padding: '80px 0', borderTop: '1px solid var(--border)' }}>
-  <div className="inner">
-    <h2 className="h2 fu d1" style={{ marginBottom: '32px' }}>Technical Capabilities Blueprint</h2>
-    <div className="fu d2" style={{ overflowX: 'auto' }}>
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
-        
-        {/* Card 1 */}
-        <div className="card" style={{ padding: '24px', background: 'var(--card)', border: '1px solid var(--border)', borderRadius: '12px' }}>
-          <h3 style={{ fontSize: '18px', fontWeight: '700', marginBottom: '8px', color: 'var(--text)' }}>Autonomous AI Agents</h3>
-          <div style={{ color: '#10b981', fontWeight: '600', fontSize: '14px', marginBottom: '16px' }}>✓ Enterprise Ready</div>
-          <div style={{ fontSize: '14px', color: 'var(--muted)', marginBottom: '8px' }}><strong style={{ color: 'var(--text)' }}>Core Stack:</strong> LangChain + FastAPI</div>
-          <div style={{ fontSize: '14px', color: 'var(--muted)' }}><strong style={{ color: 'var(--text)' }}>Deployed Output:</strong> System-wide automated report & invoice workers</div>
-        </div>
-
-        {/* Card 2 */}
-        <div className="card" style={{ padding: '24px', background: 'var(--card)', border: '1px solid var(--border)', borderRadius: '12px' }}>
-          <h3 style={{ fontSize: '18px', fontWeight: '700', marginBottom: '8px', color: 'var(--text)' }}>Computer Vision</h3>
-          <div style={{ color: '#10b981', fontWeight: '600', fontSize: '14px', marginBottom: '16px' }}>✓ Enterprise Ready</div>
-          <div style={{ fontSize: '14px', color: 'var(--muted)', marginBottom: '8px' }}><strong style={{ color: 'var(--text)' }}>Core Stack:</strong> PyTorch + OpenCV</div>
-          <div style={{ fontSize: '14px', color: 'var(--muted)' }}><strong style={{ color: 'var(--text)' }}>Deployed Output:</strong> Real-time industrial defect & line monitoring</div>
-        </div>
-
-        {/* Card 3 */}
-        <div className="card" style={{ padding: '24px', background: 'var(--card)', border: '1px solid var(--border)', borderRadius: '12px' }}>
-          <h3 style={{ fontSize: '18px', fontWeight: '700', marginBottom: '8px', color: 'var(--text)' }}>Intelligent Web Platforms</h3>
-          <div style={{ color: '#10b981', fontWeight: '600', fontSize: '14px', marginBottom: '16px' }}>✓ Enterprise Ready</div>
-          <div style={{ fontSize: '14px', color: 'var(--muted)', marginBottom: '8px' }}><strong style={{ color: 'var(--text)' }}>Core Stack:</strong> React.js + TailwindCSS</div>
-          <div style={{ fontSize: '14px', color: 'var(--muted)' }}><strong style={{ color: 'var(--text)' }}>Deployed Output:</strong> Fast, responsive frontends housing complex ML logic</div>
-        </div>
-
-        {/* Card 4 */}
-        <div className="card" style={{ padding: '24px', background: 'var(--card)', border: '1px solid var(--border)', borderRadius: '12px' }}>
-          <h3 style={{ fontSize: '18px', fontWeight: '700', marginBottom: '8px', color: 'var(--text)' }}>Custom Retrieval (RAG)</h3>
-          <div style={{ color: '#10b981', fontWeight: '600', fontSize: '14px', marginBottom: '16px' }}>✓ Enterprise Ready</div>
-          <div style={{ fontSize: '14px', color: 'var(--muted)', marginBottom: '8px' }}><strong style={{ color: 'var(--text)' }}>Core Stack:</strong> PostgreSQL (pgvector) / Vector DBs</div>
-          <div style={{ fontSize: '14px', color: 'var(--muted)' }}><strong style={{ color: 'var(--text)' }}>Deployed Output:</strong> Secure enterprise brains querying private corporate data</div>
-        </div>
-
-      </div>
-    </div>
-  </div>
-</section>
-
-{/* ===== EMERGING ARCHITECTURES ===== */}
-<section id="emerging" style={{ background: 'var(--card)', padding: '60px 0', borderTop: '1px solid var(--border)' }}>
-  <div className="inner">
-    <div className="tag fu" style={{ background: 'rgba(99, 102, 241, 0.1)', color: 'var(--accent)' }}>Roadmap</div>
-    <h2 className="h2 fu d1">Emerging Architectures</h2>
-    <p className="lead fu d2">These are domains we're actively extending into. Available for early pilot partners who want to help shape the build.</p>
-    <div className="fu d3" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '24px', marginTop: '40px' }}>
-      <div className="sol-card">
-        <div className="sol-icon">👁️</div>
-        <div className="sol-name">Vision Inspection System</div>
-        <div className="sol-tagline">AI-powered quality control & video analytics</div>
-        <div className="sol-desc" style={{ marginBottom: '16px' }}>Computer Vision pipeline for real-time video or image analysis — detecting defects, monitoring safety compliance, or tracking objects in your environment.</div>
-        <div style={{ display: 'inline-block', padding: '6px 12px', background: 'rgba(234, 179, 8, 0.1)', color: '#ca8a04', fontSize: '12px', fontWeight: '600', borderRadius: '4px' }}>In Development — Pilot Partner Wanted</div>
-      </div>
-      <div className="sol-card">
-        <div className="sol-icon">🌾</div>
-        <div className="sol-name">Agriculture AI System</div>
-        <div className="sol-tagline">Precision farming & crop intelligence</div>
-        <div className="sol-desc" style={{ marginBottom: '16px' }}>AI-powered crop monitoring, disease detection, and yield estimation — using satellite imagery, drone data, or field sensor inputs. Designed for Indian farming contexts.</div>
-        <div style={{ display: 'inline-block', padding: '6px 12px', background: 'rgba(234, 179, 8, 0.1)', color: '#ca8a04', fontSize: '12px', fontWeight: '600', borderRadius: '4px' }}>In Development — Pilot Partner Wanted</div>
-      </div>
-      <div className="sol-card">
-        <div className="sol-icon">🏥</div>
-        <div className="sol-name">Medical Imaging AI</div>
-        <div className="sol-tagline">Deep learning for diagnostic image analysis</div>
-        <div className="sol-desc" style={{ marginBottom: '16px' }}>Custom deep learning models for analyzing medical images — X-rays, retinal scans, histopathology — to assist clinicians with pattern detection.</div>
-        <div style={{ display: 'inline-block', padding: '6px 12px', background: 'rgba(234, 179, 8, 0.1)', color: '#ca8a04', fontSize: '12px', fontWeight: '600', borderRadius: '4px' }}>In Development — Pilot Partner Wanted</div>
-      </div>
-    </div>
-    <div className="fu d3" style={{ marginTop: '40px' }}>
-      <a href="#contact" className="btn btn-outline" style={{ display: 'inline-block' }}>Discuss a Pilot →</a>
-    </div>
-  </div>
-</section>
-
-{/* ===== PROJECT SHOWCASE ===== */}
-<section id="projects" style={{ background: 'var(--bg)', padding: '88px 0' }}>
-  <div className="inner">
-    <div className="tag fu">Recent Work</div>
-    <h2 className="h2 fu d1">Our Engineering Roadmap & Recent Work</h2>
-    <p className="lead fu d2">A look at the systems we've engineered and are actively building out.</p>
-    
-    <div className="fu d3" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '32px', marginTop: '48px' }}>
-      
-      {/* Smart Document Pipeline */}
-      <div className="project-card" style={{ background: 'var(--card)', borderRadius: '12px', overflow: 'hidden', border: '1px solid var(--border)' }}>
-        <Image src="/images/products/ocr.webp" alt="Document OCR Pipeline" width={800} height={600} style={{ width: '100%', height: '220px', objectFit: 'cover', borderBottom: '1px solid var(--border)' }} />
-        <div style={{ padding: '32px' }}>
-          <h3 style={{ fontSize: '20px', fontWeight: '800', marginBottom: '8px' }}>Smart Document Pipeline</h3>
-          <p style={{ fontSize: '15px', color: 'var(--muted)', lineHeight: '1.6', marginBottom: '24px' }}>Built an OCR-based extraction pipeline for automated data capture from legacy records — reads, structures, and routes document data without manual entry.</p>
-        </div>
-      </div>
-
-      {/* Vision Analytics System */}
-      <div className="project-card" style={{ background: 'var(--card)', borderRadius: '12px', overflow: 'hidden', border: '1px solid var(--border)' }}>
-        <Image src="/images/products/video.webp" alt="Video Analytics" width={800} height={600} style={{ width: '100%', height: '220px', objectFit: 'cover', borderBottom: '1px solid var(--border)' }} />
-        <div style={{ padding: '32px' }}>
-          <h3 style={{ fontSize: '20px', fontWeight: '800', marginBottom: '8px' }}>Vision Analytics System</h3>
-          <p style={{ fontSize: '15px', color: 'var(--muted)', lineHeight: '1.6', marginBottom: '24px' }}>Computer vision pipeline for real-time defect detection — built with PyTorch and FastAPI, currently in development and available for pilot deployment.</p>
-        </div>
-      </div>
-
-      {/* RAG Support Agent */}
-      <div className="project-card" style={{ background: 'var(--card)', borderRadius: '12px', overflow: 'hidden', border: '1px solid var(--border)' }}>
-        <Image src="/images/products/chatbot.webp" alt="Custom Chatbot" width={800} height={600} style={{ width: '100%', height: '220px', objectFit: 'cover', borderBottom: '1px solid var(--border)' }} />
-        <div style={{ padding: '32px' }}>
-          <h3 style={{ fontSize: '20px', fontWeight: '800', marginBottom: '8px' }}>RAG Support Agent</h3>
-          <p style={{ fontSize: '15px', color: 'var(--muted)', lineHeight: '1.6', marginBottom: '24px' }}>Context-aware conversational AI built on retrieval-augmented generation — connects to a knowledge base and answers queries with source-grounded responses.</p>
-        </div>
-      </div>
-
-      {/* ResumeFilter AI */}
-      <div className="project-card" style={{ background: 'var(--card)', borderRadius: '12px', overflow: 'hidden', border: '1px solid var(--border)' }}>
-        <Image src="/images/products/resume.webp" alt="Resume Parser" width={800} height={600} style={{ width: '100%', height: '220px', objectFit: 'cover', borderBottom: '1px solid var(--border)' }} />
-        <div style={{ padding: '32px' }}>
-          <h3 style={{ fontSize: '20px', fontWeight: '800', marginBottom: '8px' }}>ResumeFilter AI — HR Automation</h3>
-          <p style={{ fontSize: '15px', color: 'var(--muted)', lineHeight: '1.6', marginBottom: '24px' }}>Resume screening engine using TF-IDF scoring and PDF parsing — processes batches of resumes and ranks candidates against job criteria in minutes instead of hours.</p>
-        </div>
-      </div>
-
-    </div>
-
-    <div className="fu d3" style={{ marginTop: '48px', textAlign: 'center' }}>
-      <a href="#process" className="sol-link" style={{ fontSize: '18px', fontWeight: '600' }}>See how we build →</a>
-    </div>
-  </div>
-</section>
-
-{/* ===== AI AGENTS ===== */}
-<section id="agents">
-  <div className="inner">
-    <div className="tag fu" data-t="tag_agents">{t('tag_agents')}</div>
-    <h2 className="h2 fu d1" data-t="h2_agents">{t('h2_agents')}</h2>
-    <p className="lead fu d2" data-t="lead_agents">{t('lead_agents')}</p>
-    <div className="agents-grid">
-      <div className="agent-card fu">
-        <div className="agent-status"><span className="agent-dot"></span><span data-t="agent_available">{t('agent_available')}</span></div>
-        <div className="agent-name">Report Agent</div>
-        <div className="agent-desc">Collects data from your sources, generates formatted PDF or Excel reports, and sends them on a schedule. Zero manual effort.</div>
-      </div>
-      <div className="agent-card fu d1">
-        <div className="agent-status"><span className="agent-dot"></span><span data-t="agent_available">{t('agent_available')}</span></div>
-        <div className="agent-name">Invoice Processor</div>
-        <div className="agent-desc">Reads invoices from email or PDF, extracts structured data, validates entries, and pushes to your accounting or ERP system.</div>
-      </div>
-      <div className="agent-card fu d2">
-        <div className="agent-status"><span className="agent-dot"></span><span data-t="agent_available">{t('agent_available')}</span></div>
-        <div className="agent-name">Support Agent</div>
-        <div className="agent-desc">Handles customer queries across channels using your knowledge base. Escalates to a human when it can't confidently answer.</div>
-      </div>
-      <div className="agent-card fu d3">
-        <div className="agent-status"><span className="agent-dot"></span><span data-t="agent_available">{t('agent_available')}</span></div>
-        <div className="agent-name">HR Assistant Agent</div>
-        <div className="agent-desc">Screens resumes against your job criteria, schedules interviews, and answers HR policy questions — freeing your HR team for high-value work.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-{/* ===== INDUSTRIES ===== */}
-<section id="industries">
-  <div className="inner">
-    <div className="tag fu" data-t="tag_industries">{t('tag_industries')}</div>
-    <h2 className="h2 fu d1" data-t="h2_industries">{t('h2_industries')}</h2>
-    <p className="lead fu d2" data-t="lead_industries">{t('lead_industries')}</p>
-    <div className="industry-grid fu d3" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))' }}>
-      <div className="ind-card"><span className="ind-icon">🏥</span><div className="ind-name">Healthcare</div><div className="ind-desc">Diagnostics AI, patient data analytics, hospital operations</div></div>
-      <div className="ind-card"><span className="ind-icon">🧑‍💼</span><div className="ind-name">HR & Recruitment</div><div className="ind-desc">Resume screening, candidate ranking, applicant tracking automation</div></div>
-      <div className="ind-card"><span className="ind-icon">🏭</span><div className="ind-name">Manufacturing</div><div className="ind-desc">Quality control, predictive maintenance, production analytics</div></div>
-      <div className="ind-card"><span className="ind-icon">🏦</span><div className="ind-name">Finance & Document Processing</div><div className="ind-desc">Fraud detection, risk modeling, document automation</div></div>
-    </div>
-  </div>
-</section>
-
-
-
-{/* ===== TECH STACK ===== */}
-<section id="tech">
-  <div className="inner">
-    <div className="tag fu" data-t="tag_tech">{t('tag_tech')}</div>
-    <h2 className="h2 fu d1" data-t="h2_tech">{t('h2_tech')}</h2>
-    <p className="lead fu d2" data-t="lead_tech">{t('lead_tech')}</p>
-    <div className="marquee-container fu d3">
-      <div className="marquee-content">
-        <div className="tech-pill"><span className="tech-dot" style={{'background': '#3572A5'}}></span>Python</div>
-        <div className="tech-pill"><span className="tech-dot" style={{'background': '#EE4C2C'}}></span>PyTorch</div>
-        <div className="tech-pill"><span className="tech-dot" style={{'background': '#FF6F00'}}></span>TensorFlow</div>
-        <div className="tech-pill"><span className="tech-dot" style={{'background': '#5C3EE8'}}></span>OpenCV</div>
-        <div className="tech-pill"><span className="tech-dot" style={{'background': '#FFD21E'}}></span>HuggingFace</div>
-        <div className="tech-pill"><span className="tech-dot" style={{'background': '#9B59B6'}}></span>Scikit-Learn</div>
-        <div className="tech-pill"><span className="tech-dot" style={{'background': '#61DAFB'}}></span>React</div>
-        <div className="tech-pill"><span className="tech-dot" style={{'background': '#009688'}}></span>FastAPI</div>
-        <div className="tech-pill"><span className="tech-dot" style={{'background': '#F2C811'}}></span>PowerBI</div>
-        <div className="tech-pill"><span className="tech-dot" style={{'background': '#34A853'}}></span>LangChain</div>
-        <div className="tech-pill"><span className="tech-dot" style={{'background': '#FF9900'}}></span>AWS</div>
-        <div className="tech-pill"><span className="tech-dot" style={{'background': '#0089D6'}}></span>Azure AI</div>
-        <div className="tech-pill"><span className="tech-dot" style={{'background': '#4285F4'}}></span>Google Cloud</div>
-        <div className="tech-pill"><span className="tech-dot" style={{'background': '#2496ED'}}></span>Docker / K8s</div>
-        <div className="tech-pill"><span className="tech-dot" style={{'background': '#336791'}}></span>PostgreSQL</div>
-        <div className="tech-pill"><span className="tech-dot" style={{'background': '#FFCA28'}}></span>Apache Spark</div>
-        {/* Duplicate for infinite loop */}
-        <div className="tech-pill"><span className="tech-dot" style={{'background': '#3572A5'}}></span>Python</div>
-        <div className="tech-pill"><span className="tech-dot" style={{'background': '#EE4C2C'}}></span>PyTorch</div>
-        <div className="tech-pill"><span className="tech-dot" style={{'background': '#FF6F00'}}></span>TensorFlow</div>
-        <div className="tech-pill"><span className="tech-dot" style={{'background': '#5C3EE8'}}></span>OpenCV</div>
-        <div className="tech-pill"><span className="tech-dot" style={{'background': '#FFD21E'}}></span>HuggingFace</div>
-        <div className="tech-pill"><span className="tech-dot" style={{'background': '#9B59B6'}}></span>Scikit-Learn</div>
-        <div className="tech-pill"><span className="tech-dot" style={{'background': '#61DAFB'}}></span>React</div>
-        <div className="tech-pill"><span className="tech-dot" style={{'background': '#009688'}}></span>FastAPI</div>
-        <div className="tech-pill"><span className="tech-dot" style={{'background': '#F2C811'}}></span>PowerBI</div>
-        <div className="tech-pill"><span className="tech-dot" style={{'background': '#34A853'}}></span>LangChain</div>
-        <div className="tech-pill"><span className="tech-dot" style={{'background': '#FF9900'}}></span>AWS</div>
-        <div className="tech-pill"><span className="tech-dot" style={{'background': '#0089D6'}}></span>Azure AI</div>
-        <div className="tech-pill"><span className="tech-dot" style={{'background': '#4285F4'}}></span>Google Cloud</div>
-        <div className="tech-pill"><span className="tech-dot" style={{'background': '#2496ED'}}></span>Docker / K8s</div>
-        <div className="tech-pill"><span className="tech-dot" style={{'background': '#336791'}}></span>PostgreSQL</div>
-        <div className="tech-pill"><span className="tech-dot" style={{'background': '#FFCA28'}}></span>Apache Spark</div>
-      </div>
-    </div>
-    <div className="fu d4" style={{ marginTop: '40px', textAlign: 'center' }}>
-      <a href="/products" className="btn-ghost" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
-        See our upcoming products →
-      </a>
-    </div>
-  </div>
-</section>
-
-{/* ===== WHY US ===== */}
-<section id="why-us" style={{ background: 'var(--bg2)', padding: '40px 0 60px' }}>
-  <div className="inner">
-    <div className="tag fu">Why Moh-AI Tech?</div>
-    <h2 className="h2 fu d1">Built for Trust & Reliability</h2>
-    <div className="fu d2" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px', marginTop: '32px' }}>
-      <div style={{ background: 'var(--card)', padding: '32px', borderRadius: '12px', border: '1px solid var(--border)', boxShadow: 'var(--shadow)' }}>
-        <div style={{ fontSize: '32px', marginBottom: '16px' }}>🎯</div>
-        <h3 style={{ fontFamily: 'var(--syne)', fontSize: '18px', fontWeight: '700', marginBottom: '12px' }}>Practical AI</h3>
-        <p style={{ fontSize: '14px', color: 'var(--muted)', lineHeight: '1.6' }}>No hype. No unnecessary features. We build solutions focused strictly on measurable business outcomes and real-world utility.</p>
-      </div>
-      <div style={{ background: 'var(--card)', padding: '32px', borderRadius: '12px', border: '1px solid var(--border)', boxShadow: 'var(--shadow)' }}>
-        <div style={{ fontSize: '32px', marginBottom: '16px' }}>🤝</div>
-        <h3 style={{ fontFamily: 'var(--syne)', fontSize: '18px', fontWeight: '700', marginBottom: '12px' }}>Founder-Led Delivery</h3>
-        <p style={{ fontSize: '14px', color: 'var(--muted)', lineHeight: '1.6' }}>Direct communication with the engineer building your solution. No account managers, no lost context.</p>
-      </div>
-      <div style={{ background: 'var(--card)', padding: '32px', borderRadius: '12px', border: '1px solid var(--border)', boxShadow: 'var(--shadow)' }}>
-        <div style={{ fontSize: '32px', marginBottom: '16px' }}>🛡️</div>
-        <h3 style={{ fontFamily: 'var(--syne)', fontSize: '18px', fontWeight: '700', marginBottom: '12px' }}>Long-Term Partnership</h3>
-        <p style={{ fontSize: '14px', color: 'var(--muted)', lineHeight: '1.6' }}>We provide full documentation, transparent code handovers, and reliable support long after your project is deployed.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-{/* ===== PROCESS ===== */}
-<section id="process">
-  <div className="inner">
-    <div className="tag fu" data-t="tag_process">{t('tag_process')}</div>
-    <h2 className="h2 fu d1" data-t="h2_process">{t('h2_process')}</h2>
-    <p className="lead fu d2" data-t="lead_process">{t('lead_process')}</p>
-    <div className="steps fu d3">
-      <div className="step">
-        <div className="step-num-row"><span className="step-circle">1</span> Discover</div>
-        <div className="step-title">Strategy & Scoping</div>
-        <div className="step-desc">Free call to understand your goals, existing data, and the right AI approach. We produce a clear project blueprint before any money changes hands.</div>
-      </div>
-      <div className="step">
-        <div className="step-num-row"><span className="step-circle">2</span> Design</div>
-        <div className="step-title">Architecture & Data</div>
-        <div className="step-desc">We design the system architecture, assess your data quality, and set up pipelines. You review and approve before development starts.</div>
-      </div>
-      <div className="step">
-        <div className="step-num-row"><span className="step-circle">3</span> Build</div>
-        <div className="step-title">Agile Development</div>
-        <div className="step-desc">2-week sprint cycles. Every sprint ends with a live demo and written progress update. No surprises, no black boxes.</div>
-      </div>
-      <div className="step">
-        <div className="step-num-row"><span className="step-circle">4</span> Deploy</div>
-        <div className="step-title">Launch & Integration</div>
-        <div className="step-desc">We deploy to your environment, integrate with existing systems, and run a handover session with your team. Full documentation included.</div>
-      </div>
-      <div className="step">
-        <div className="step-num-row"><span className="step-circle">5</span> Support</div>
-        <div className="step-title">Monitor & Maintain</div>
-        <div className="step-desc">Ongoing monitoring, performance checks, and model updates as your data evolves. Support plans available post-delivery.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-{/* ===== GLOBAL REACH ===== */}
-<section id="global">
-  <div className="inner">
-    <div className="tag fu" data-t="tag_global">{t('tag_global')}</div>
-    <h2 className="h2 fu d1" data-t="h2_global">{t('h2_global')}</h2>
-    <p className="lead fu d2" data-t="lead_global">{t('lead_global')}</p>
-    <div className="global-grid fu d3">
-      <div className="global-text">
-        <h3 style={{'fontFamily': 'var(--syne)', 'fontSize': '22px', 'fontWeight': '700', 'color': 'var(--text)', 'marginBottom': '14px', 'letterSpacing': '-.4px'}}>Why work with an <em style={{'color': 'var(--accent)', 'fontStyle': 'normal'}}>India-based AI team?</em></h3>
-        <p style={{'fontSize': '15px', 'color': 'var(--muted)', 'lineHeight': '1.65', 'marginBottom': '22px'}}>India has one of the world's largest pools of AI and software engineering talent. Working with an India-based team means access to that talent at a meaningful cost advantage — without compromising on quality or communication.</p>
-        <ul className="why-list">
-          <li>Significant cost advantage vs US / UK / European firms for equivalent skill</li>
-          <li>English-fluent team — no communication barriers</li>
-          <li>Flexible working hours to overlap with your timezone</li>
-          <li>NDA, IP ownership, and contract-based engagement</li>
-          <li>Weekly video calls, Slack updates, Jira tracking — full visibility</li>
-          <li>Invoicing in INR, USD, AED, GBP, or EUR</li>
-        </ul>
-        <div style={{'marginTop': '24px', 'fontSize': '13px', 'color': 'var(--muted)', 'background': 'var(--bg3)', 'border': '1px solid var(--border)', 'borderRadius': '8px', 'padding': '14px', 'lineHeight': '1.6'}}>
-          <strong style={{'color': 'var(--text)'}}>Languages spoken:</strong> English · Tamil<br />
-          <strong style={{'color': 'var(--text)'}}>Open to clients from:</strong> Worldwide
-
-        </div>
-      </div>
-      
-      {/* Table spans full width below */}
-      <div className="card" style={{ gridColumn: '1 / -1', marginTop: '16px', padding: '0', overflow: 'hidden' }}>
-        <div style={{ padding: '24px', borderBottom: '1px solid var(--border)' }}>
-          <h3 style={{ fontSize: '20px', fontWeight: '700' }}>Flexible Engagement Options</h3>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 p-6 bg-[var(--bg)]">
-          {/* Card 1 */}
-          <div style={{ background: 'var(--bg2)', padding: '24px', borderRadius: '8px', border: '1px solid var(--border)' }}>
-            <h4 style={{ fontSize: '18px', fontWeight: '700', color: 'var(--text)', marginBottom: '4px' }}>Fixed-Price Project</h4>
-            <div style={{ fontSize: '13px', color: 'var(--accent)', fontWeight: '600', marginBottom: '12px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Milestone-Based Quote</div>
-            <p style={{ fontSize: '14px', color: 'var(--muted)', lineHeight: '1.6' }}>Clearly defined MVPs, chatbots, and web launches.</p>
+            {/* Trust Signals */}
+            <div className="hero-chips fu d4" style={{ display: 'flex', gap: '20px', flexWrap: 'wrap', borderTop: '1px solid var(--border)', paddingTop: '24px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: 'var(--muted)', fontWeight: '500' }}>
+                <Check size={14} className="text-blue-600" style={{ color: 'var(--accent-l)' }} />
+                <span>{t('trust_msme')}</span>
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: 'var(--muted)', fontWeight: '500' }}>
+                <Check size={14} className="text-blue-600" style={{ color: 'var(--accent-l)' }} />
+                <span>{t('trust_founder')}</span>
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: 'var(--muted)', fontWeight: '500' }}>
+                <Check size={14} className="text-blue-600" style={{ color: 'var(--accent-l)' }} />
+                <span>{t('trust_stack')}</span>
+              </div>
+            </div>
           </div>
           
-          {/* Card 2 */}
-          <div style={{ background: 'var(--bg2)', padding: '24px', borderRadius: '8px', border: '1px solid var(--border)' }}>
-            <h4 style={{ fontSize: '18px', fontWeight: '700', color: 'var(--text)', marginBottom: '4px' }}>Monthly Retainer</h4>
-            <div style={{ fontSize: '13px', color: 'var(--accent)', fontWeight: '600', marginBottom: '12px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Predictable Flat Fee</div>
-            <p style={{ fontSize: '14px', color: 'var(--muted)', lineHeight: '1.6' }}>Continuous AI optimization, scaling, and ongoing support.</p>
-          </div>
-          
-          {/* Card 3 */}
-          <div style={{ background: 'var(--bg2)', padding: '24px', borderRadius: '8px', border: '1px solid var(--border)' }}>
-            <h4 style={{ fontSize: '18px', fontWeight: '700', color: 'var(--text)', marginBottom: '4px' }}>Dedicated AI Team</h4>
-            <div style={{ fontSize: '13px', color: 'var(--accent)', fontWeight: '600', marginBottom: '12px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>On-Demand Product Squad</div>
-            <p style={{ fontSize: '14px', color: 'var(--muted)', lineHeight: '1.6' }}>Full-scale custom AI product development and integration.</p>
-          </div>
-          
-          {/* Card 4 */}
-          <div style={{ background: 'var(--bg2)', padding: '24px', borderRadius: '8px', border: '1px solid var(--border)' }}>
-            <h4 style={{ fontSize: '18px', fontWeight: '700', color: 'var(--text)', marginBottom: '4px' }}>Consulting & Advisory</h4>
-            <div style={{ fontSize: '13px', color: 'var(--accent)', fontWeight: '600', marginBottom: '12px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Hourly / Daily Rates</div>
-            <p style={{ fontSize: '14px', color: 'var(--muted)', lineHeight: '1.6' }}>Architecture design, AI feasibility studies, and tech roadmaps.</p>
+          <div className="hero-visual fu d2" style={{ display: 'flex', justifyContent: 'center', position: 'relative' }}>
+            <div style={{ background: 'var(--bg2)', border: '1px solid var(--border2)', borderRadius: '16px', padding: '12px', boxShadow: 'var(--shadow)', width: '100%', overflow: 'hidden' }}>
+              <Image 
+                src="/images/general/industrial_hero.png" 
+                alt="Smart Factory Industrial AI Dashboard" 
+                width={700} 
+                height={400} 
+                style={{ width: '100%', height: 'auto', borderRadius: '8px', display: 'block', objectFit: 'cover' }}
+                priority 
+              />
+            </div>
           </div>
         </div>
-        <div style={{ padding: '20px 24px', background: 'var(--bg2)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '16px', flexWrap: 'wrap' }}>
-          <div style={{ color: 'var(--muted)', fontSize: '14px' }}>
-            💡 Every engagement begins with a free, comprehensive scoping call. We provide a realistic, transparent estimate with zero obligation to proceed.
-          </div>
-          <a href="#contact" className="btn-primary" style={{ whiteSpace: 'nowrap' }}>Book a Free Strategy Call →</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+      </section>
 
+      {/* ===== TWO PATHWAYS SECTION ===== */}
+      <section id="pathways" style={{ background: 'var(--bg2)', padding: '80px 0', borderTop: '1px solid var(--border)' }}>
+        <div className="inner" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 5%' }}>
+          <div style={{ textAlign: 'center', marginBottom: '56px' }}>
+            <span className="tag">{t('solutions_title')}</span>
+            <h2 className="h2" style={{ fontFamily: 'var(--syne)', fontWeight: '700', letterSpacing: '-1px', color: 'var(--text)' }}>
+              {t('solutions_subtitle')}
+            </h2>
+          </div>
 
+          <div style={{ display: 'grid', gridTemplateColumns: '1.1fr 0.9fr', gap: '32px', alignItems: 'stretch' }}>
+            {/* Pathway 1: Industrial AI (Primary Focus - visually dominant) */}
+            <div className="card fu" style={{ background: 'var(--card)', border: '2px solid var(--accent-l)', borderRadius: '16px', padding: '40px', boxShadow: '0 8px 30px rgba(0, 102, 204, 0.06)', display: 'flex', flexDirection: 'column', position: 'relative' }}>
+              <div style={{ position: 'absolute', top: '20px', right: '20px', background: 'var(--accent-l)', color: '#FFFFFF', fontSize: '11px', fontWeight: '800', padding: '4px 10px', borderRadius: '4px', letterSpacing: '1px' }}>
+                PRIMARY FOCUS
+              </div>
+              <div style={{ background: 'rgba(0, 102, 204, 0.06)', width: '64px', height: '64px', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '24px' }}>
+                <Factory size={32} className="text-blue-600" style={{ color: 'var(--accent-l)' }} />
+              </div>
+              <h3 style={{ fontSize: '24px', fontWeight: '800', fontFamily: 'var(--syne)', marginBottom: '12px' }}>Industrial AI Solutions</h3>
+              <p style={{ color: 'var(--muted)', fontSize: '15px', lineHeight: '1.6', marginBottom: '24px' }}>
+                AI-powered systems helping manufacturing companies detect product defects, predict equipment wear, and make smarter telemetry-driven operational decisions.
+              </p>
+              
+              <div style={{ borderTop: '1px solid var(--border)', paddingTop: '20px', marginBottom: '32px', flexGrow: 1 }}>
+                <h4 style={{ fontSize: '14px', fontWeight: '700', textTransform: 'uppercase', color: 'var(--text)', marginBottom: '12px', letterSpacing: '0.5px' }}>Core Capabilities:</h4>
+                <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                  <li style={{ fontSize: '14px', display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--text)' }}>
+                    <Check size={14} style={{ color: 'var(--accent-l)' }} /> <span>AI Vision Systems (Quality Control Defect Checking)</span>
+                  </li>
+                  <li style={{ fontSize: '14px', display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--text)' }}>
+                    <Check size={14} style={{ color: 'var(--accent-l)' }} /> <span>Predictive Maintenance (Sensor telemetry forecasting)</span>
+                  </li>
+                  <li style={{ fontSize: '14px', display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--text)' }}>
+                    <Check size={14} style={{ color: 'var(--accent-l)' }} /> <span>Factory Knowledge Retrieval (Private SOP local LLMs)</span>
+                  </li>
+                </ul>
+              </div>
 
-{/* ===== CONTACT ===== */}
-<section id="contact">
-  <div className="inner">
-    <div className="tag fu" data-t="tag_contact">{t('tag_contact')}</div>
-    <h2 className="h2 fu d1" data-t="h2_contact">{t('h2_contact')}</h2>
-    <p className="lead fu d2" data-t="lead_contact">{t('lead_contact')}</p>
-    <div className="contact-grid fu d3">
-      <div>
-        <div className="contact-method">
-          <div className="cmethod-icon">📧</div>
-          <div>
-            <div className="cmethod-lbl">Email</div>
-            <div className="cmethod-val">info@moh-ai-tech.com</div>
+              <Link href="/industrial-ai" className="btn-primary" style={{ background: 'var(--grad)', color: '#fff', padding: '14px', borderRadius: '8px', textDecoration: 'none', fontWeight: '600', fontSize: '15px', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
+                Explore Industrial AI <ArrowRight size={16} />
+              </Link>
+            </div>
+
+            {/* Pathway 2: AI Product Engineering (Secondary Focus) */}
+            <div className="card fu" style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: '16px', padding: '40px', boxShadow: 'var(--shadow)', display: 'flex', flexDirection: 'column', position: 'relative' }}>
+              <div style={{ position: 'absolute', top: '20px', right: '20px', background: 'var(--bg3)', color: 'var(--text)', fontSize: '11px', fontWeight: '700', padding: '4px 10px', borderRadius: '4px', letterSpacing: '0.5px' }}>
+                AI DEVELOPMENT SERVICES
+              </div>
+              <div style={{ background: 'var(--bg2)', width: '64px', height: '64px', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '24px' }}>
+                <Bot size={32} style={{ color: 'var(--text)' }} />
+              </div>
+              <h3 style={{ fontSize: '24px', fontWeight: '800', fontFamily: 'var(--syne)', marginBottom: '12px' }}>AI Product Engineering</h3>
+              <p style={{ color: 'var(--muted)', fontSize: '15px', lineHeight: '1.6', marginBottom: '24px' }}>
+                Design and development of secure, production-ready custom AI software, agents, and local language models to accelerate business workflows.
+              </p>
+
+              <div style={{ borderTop: '1px solid var(--border)', paddingTop: '20px', marginBottom: '32px', flexGrow: 1 }}>
+                <h4 style={{ fontSize: '14px', fontWeight: '700', textTransform: 'uppercase', color: 'var(--text)', marginBottom: '12px', letterSpacing: '0.5px' }}>Capabilities Blueprints:</h4>
+                <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                  <li style={{ fontSize: '14px', display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--text)' }}>
+                    <Check size={14} style={{ color: 'var(--accent-l)' }} /> <span>AI Agents & Multi-Agent systems</span>
+                  </li>
+                  <li style={{ fontSize: '14px', display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--text)' }}>
+                    <Check size={14} style={{ color: 'var(--accent-l)' }} /> <span>Retrieval-Augmented Generation (RAG)</span>
+                  </li>
+                  <li style={{ fontSize: '14px', display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--text)' }}>
+                    <Check size={14} style={{ color: 'var(--accent-l)' }} /> <span>Custom Computer Vision & OCR</span>
+                  </li>
+                </ul>
+              </div>
+
+              <Link href="/ai-product-engineering" className="btn-ghost" style={{ border: '1px solid var(--border2)', color: 'var(--text)', padding: '14px', borderRadius: '8px', textDecoration: 'none', fontWeight: '600', fontSize: '15px', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
+                Explore AI Engineering <ArrowRight size={16} />
+              </Link>
+            </div>
           </div>
         </div>
-        <div className="contact-method">
-          <div className="cmethod-icon">📱</div>
-          <div>
-            <div className="cmethod-lbl">WhatsApp / Phone</div>
-            <div className="cmethod-val">+91 9566852700</div>
-          </div>
-        </div>
-        <div className="contact-method">
-          <div className="cmethod-icon">📍</div>
-          <div>
-            <div className="cmethod-lbl">Location</div>
-            <div className="cmethod-val">Namakkal, Tamil Nadu, India</div>
-          </div>
-        </div>
-        <div className="contact-method">
-          <div className="cmethod-icon">🌐</div>
-          <div>
-            <div className="cmethod-lbl">Availability</div>
-            <div className="cmethod-val">Remote-first · Flexible timezones</div>
-          </div>
-        </div>
-        <div style={{'marginTop': '28px', 'padding': '24px', 'background': 'var(--card)', 'border': '1px solid var(--border)', 'borderRadius': '14px', 'boxShadow': 'var(--shadow)'}}>
-          <div style={{'fontFamily': 'var(--syne)', 'fontSize': '16px', 'fontWeight': '700', 'color': 'var(--text)', 'marginBottom': '10px'}}>Free 30-min Discovery Call</div>
-          <div style={{'fontSize': '14px', 'color': 'var(--muted)', 'lineHeight': '1.6'}}>We'll review your business challenge, suggest the right AI approach, and give you a realistic scope estimate. No sales pressure, no generic pitch.</div>
-          <div style={{'marginTop': '16px', 'fontSize': '13px', 'color': 'var(--muted2)'}}>✓ Objective assessment &nbsp; ✓ Technical depth &nbsp; ✓ No commitment required</div>
-        </div>
-      </div>
-      <BookingForm />
-    </div>
+      </section>
 
-    <div className="cta-banner fu">
-      <div className="cta-h" data-t="cta_h">{t('cta_h')}</div>
-      <div className="cta-sub" data-t="cta_sub">{t('cta_sub')}</div>
-      <div className="cta-btns">
-        <a href="#contact" className="btn-primary" data-t="cta_btn1">{t('cta_btn1')}</a>
-        <a href="mailto:info@moh-ai-tech.com" className="btn-ghost" data-t="cta_btn2">{t('cta_btn2')}</a>
-      </div>
-    </div>
-  </div>
-</section>
+      {/* ===== WHY START WITH INDUSTRIAL AI SECTION ===== */}
+      <section id="why-industrial-ai" style={{ background: 'var(--bg)', padding: '80px 0', borderTop: '1px solid var(--border)' }}>
+        <div className="inner" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 5%' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '48px', alignItems: 'center' }}>
+            <div className="fu">
+              <span className="tag">Strategic Rationale</span>
+              <h2 className="h2" style={{ fontFamily: 'var(--syne)', fontWeight: '700', letterSpacing: '-1px', color: 'var(--text)', marginBottom: '16px' }}>
+                Why Industrial AI?
+              </h2>
+              <p style={{ fontSize: '16px', color: 'var(--muted)', lineHeight: '1.7', marginBottom: '24px' }}>
+                Manufacturing is one of the largest opportunities for practical AI adoption. Unlike purely transactional software sectors, factories already run physical, data-rich processes that are prime for optimization.
+              </p>
+              <div style={{ background: 'var(--bg2)', border: '1px solid var(--border)', borderRadius: '12px', padding: '24px' }}>
+                <h4 style={{ fontWeight: '700', marginBottom: '8px' }}>The Opportunity</h4>
+                <p style={{ fontSize: '14px', color: 'var(--muted)' }}>
+                  By applying targeted computer vision and time-series model architectures to existing shop-floor infrastructure, factories can achieve immediate, measurable cost drops without requiring large-scale hardware replacement.
+                </p>
+              </div>
+            </div>
 
-<Footer />
+            <div className="fu d1" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
+              {[
+                { title: 'Machines', icon: <Settings size={20} />, text: 'Existing automated units produce rich telemetry feeds.' },
+                { title: 'Production Data', icon: <BarChart3 size={20} />, text: 'Factories collect sensory and inspection logs already.' },
+                { title: 'Quality Processes', icon: <Shield size={20} />, text: 'SOP specifications define precise check boundaries.' },
+                { title: 'Repetitive Tasks', icon: <Cpu size={20} />, text: 'Highly repetitive inspection points benefit from visual AI.' }
+              ].map((item, idx) => (
+                <div key={idx} style={{ padding: '24px', background: 'var(--bg2)', border: '1px solid var(--border)', borderRadius: '12px' }}>
+                  <div style={{ color: 'var(--accent-l)', marginBottom: '12px' }}>{item.icon}</div>
+                  <h4 style={{ fontSize: '15px', fontWeight: '700', color: 'var(--text)', marginBottom: '6px' }}>{item.title}</h4>
+                  <p style={{ fontSize: '13px', color: 'var(--muted)', lineHeight: '1.5' }}>{item.text}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== WHO WE WORK WITH COMPARISON ===== */}
+      <section id="who-we-work-with" style={{ background: 'var(--bg2)', padding: '80px 0', borderTop: '1px solid var(--border)' }}>
+        <div className="inner" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 5%' }}>
+          <div style={{ textAlign: 'center', marginBottom: '48px' }}>
+            <span className="tag">{t('who_we_help_title')}</span>
+            <h2 className="h2" style={{ fontFamily: 'var(--syne)', fontWeight: '700', letterSpacing: '-1px', color: 'var(--text)', margin: 0 }}>
+              Tailored Customer Journeys
+            </h2>
+            <p className="lead" style={{ margin: '8px auto 0', color: 'var(--muted)' }}>
+              {t('who_we_help_subtitle')}
+            </p>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '32px' }}>
+            {/* Target A: Industrial AI */}
+            <div className="card fu" style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: '16px', padding: '36px', boxShadow: 'var(--shadow)' }}>
+              <h3 style={{ fontSize: '20px', fontWeight: '800', color: 'var(--text)', borderBottom: '1px solid var(--border)', paddingBottom: '16px', marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <Factory size={20} className="text-blue-600" style={{ color: 'var(--accent-l)' }} /> For Industrial Sectors
+              </h3>
+              <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                <li style={{ display: 'flex', gap: '12px' }}>
+                  <span style={{ fontSize: '14px', background: 'var(--bg2)', width: '28px', height: '28px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: '700', flexShrink: 0 }}>✓</span>
+                  <div>
+                    <h4 style={{ fontWeight: '700', fontSize: '15px' }}>B2B Manufacturers & SME Factories</h4>
+                    <p style={{ fontSize: '13px', color: 'var(--muted)', marginTop: '2px' }}>Companies looking to reduce inspection scrap rates and automate defect checks.</p>
+                  </div>
+                </li>
+                <li style={{ display: 'flex', gap: '12px' }}>
+                  <span style={{ fontSize: '14px', background: 'var(--bg2)', width: '28px', height: '28px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: '700', flexShrink: 0 }}>✓</span>
+                  <div>
+                    <h4 style={{ fontWeight: '700', fontSize: '15px' }}>CNC Machining & Component Suppliers</h4>
+                    <p style={{ fontSize: '13px', color: 'var(--muted)', marginTop: '2px' }}>Automating structural inspections and dimensional validation loops.</p>
+                  </div>
+                </li>
+                <li style={{ display: 'flex', gap: '12px' }}>
+                  <span style={{ fontSize: '14px', background: 'var(--bg2)', width: '28px', height: '28px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: '700', flexShrink: 0 }}>✓</span>
+                  <div>
+                    <h4 style={{ fontWeight: '700', fontSize: '15px' }}>Automotive Component Manufacturers</h4>
+                    <p style={{ fontSize: '13px', color: 'var(--muted)', marginTop: '2px' }}>Running visual pass/fail check models inline to meet strict tier-1 specs.</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            {/* Target B: AI Product Engineering */}
+            <div className="card fu" style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: '16px', padding: '36px', boxShadow: 'var(--shadow)' }}>
+              <h3 style={{ fontSize: '20px', fontWeight: '800', color: 'var(--text)', borderBottom: '1px solid var(--border)', paddingBottom: '16px', marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <Bot size={20} style={{ color: 'var(--text)' }} /> For Business & Tech Teams
+              </h3>
+              <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                <li style={{ display: 'flex', gap: '12px' }}>
+                  <span style={{ fontSize: '14px', background: 'var(--bg2)', width: '28px', height: '28px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: '700', flexShrink: 0 }}>✓</span>
+                  <div>
+                    <h4 style={{ fontWeight: '700', fontSize: '15px' }}>Startups & Software Ventures</h4>
+                    <p style={{ fontSize: '13px', color: 'var(--muted)', marginTop: '2px' }}>Teams requiring high-performance RAG indexing, custom OCR pipelines, or AI Agents.</p>
+                  </div>
+                </li>
+                <li style={{ display: 'flex', gap: '12px' }}>
+                  <span style={{ fontSize: '14px', background: 'var(--bg2)', width: '28px', height: '28px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: '700', flexShrink: 0 }}>✓</span>
+                  <div>
+                    <h4 style={{ fontWeight: '700', fontSize: '15px' }}>Private Enterprise & Institutions</h4>
+                    <p style={{ fontSize: '13px', color: 'var(--muted)', marginTop: '2px' }}>Sovereign organisations looking to train private localized model databases on-premises.</p>
+                  </div>
+                </li>
+                <li style={{ display: 'flex', gap: '12px' }}>
+                  <span style={{ fontSize: '14px', background: 'var(--bg2)', width: '28px', height: '28px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: '700', flexShrink: 0 }}>✓</span>
+                  <div>
+                    <h4 style={{ fontWeight: '700', fontSize: '15px' }}>R&D Teams & Labs</h4>
+                    <p style={{ fontSize: '13px', color: 'var(--muted)', marginTop: '2px' }}>Building specialized computer vision algorithms and offline prompt engineering systems.</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== PROBLEMS WE SOLVE ===== */}
+      <section id="problems" style={{ background: 'var(--bg)', padding: '80px 0', borderTop: '1px solid var(--border)' }}>
+        <div className="inner" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 5%' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.2fr', gap: '48px', alignItems: 'center' }}>
+            <div className="fu">
+              <span className="tag">Factory Friction</span>
+              <h2 className="h2" style={{ fontFamily: 'var(--syne)', fontWeight: '700', letterSpacing: '-1px', color: 'var(--text)' }}>
+                {t('problems_title')}
+              </h2>
+              <p className="lead" style={{ color: 'var(--muted)', marginBottom: '32px', fontSize: '16px' }}>
+                {t('problems_subtitle')}
+              </p>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                <div style={{ display: 'flex', gap: '12px' }}>
+                  <div style={{ width: '24px', height: '24px', borderRadius: '50%', background: 'rgba(0, 102, 204, 0.1)', color: 'var(--accent-l)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, fontWeight: '700' }}>!</div>
+                  <div>
+                    <h4 style={{ fontWeight: '700', color: 'var(--text)' }}>Quality Control Inspection Gaps</h4>
+                    <p style={{ fontSize: '14px', color: 'var(--muted)' }}>Manual optical testing misses minor anomalies, driving up factory scrap rates.</p>
+                  </div>
+                </div>
+                <div style={{ display: 'flex', gap: '12px' }}>
+                  <div style={{ width: '24px', height: '24px', borderRadius: '50%', background: 'rgba(0, 102, 204, 0.1)', color: 'var(--accent-l)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, fontWeight: '700' }}>!</div>
+                  <div>
+                    <h4 style={{ fontWeight: '700', color: 'var(--text)' }}>Reactive Machine Downtime</h4>
+                    <p style={{ fontSize: '14px', color: 'var(--muted)' }}>Waiting for components to fail results in costly production stalls.</p>
+                  </div>
+                </div>
+                <div style={{ display: 'flex', gap: '12px' }}>
+                  <div style={{ width: '24px', height: '24px', borderRadius: '50%', background: 'rgba(0, 102, 204, 0.1)', color: 'var(--accent-l)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, fontWeight: '700' }}>!</div>
+                  <div>
+                    <h4 style={{ fontWeight: '700', color: 'var(--text)' }}>Unused Operational Data</h4>
+                    <p style={{ fontSize: '14px', color: 'var(--muted)' }}>Machinery log files and sensor telemetry remain archived without adding value.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="fu d1" style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+              {[
+                { label: 'Optical Sorting Defects', text: 'Quality sorting relies on slow manual oversight.', solution: 'Moh-AI Vision inspection checks defects in under 80ms.' },
+                { label: 'Unplanned Telemetry Stalls', text: 'Wear is undetected until machinery breaks.', solution: 'Moh-AI Predict outputs early alerts from time-series models.' },
+                { label: 'Manual PDF Manual Queries', text: 'Operators waste hours searching manuals during failures.', solution: 'Moh-AI Factory Intelligence RAG extracts answers instantly.' }
+              ].map((item, idx) => (
+                <div key={idx} style={{ background: 'var(--bg2)', padding: '24px', borderRadius: '12px', border: '1px solid var(--border)', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                  <span style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--muted)', fontWeight: '600' }}>{item.label}</span>
+                  <p style={{ fontSize: '15px', color: 'var(--text)', fontWeight: '500' }}>{item.text}</p>
+                  <div style={{ fontSize: '14px', color: 'var(--accent-l)', fontWeight: '600', display: 'flex', alignItems: 'center', gap: '6px', borderTop: '1px solid var(--border)', paddingTop: '10px', marginTop: '4px' }}>
+                    <span>✓</span> <span>{item.solution}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== BUSINESS OUTCOMES SECTION ===== */}
+      <section id="outcomes" style={{ background: 'var(--bg2)', padding: '80px 0', borderTop: '1px solid var(--border)' }}>
+        <div className="inner" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 5%' }}>
+          <div style={{ textAlign: 'center', marginBottom: '56px' }}>
+            <span className="tag">Business Impact</span>
+            <h2 className="h2" style={{ fontFamily: 'var(--syne)', fontWeight: '700', letterSpacing: '-1px', color: 'var(--text)' }}>
+              Business Outcomes
+            </h2>
+            <p className="lead" style={{ margin: '8px auto 0', color: 'var(--muted)' }}>
+              We design software to drive tangible metrics for your operations.
+            </p>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '32px', marginBottom: '56px' }}>
+            {[
+              {
+                title: 'Reduce Quality Inspection Time',
+                desc: 'AI vision systems automatically check components and products on assembly conveyors, sorting pass/fail defects instantly.',
+                icon: <Check size={24} style={{ color: 'var(--accent-l)' }} />
+              },
+              {
+                title: 'Reduce Machine Downtime',
+                desc: 'Time-series sensor telemetry models identify early mechanical abnormalities, scheduling maintenance before failure stops assembly.',
+                icon: <Zap size={24} style={{ color: 'var(--accent-l)' }} />
+              },
+              {
+                title: 'Improve Operational Decisions',
+                desc: 'Consolidate shop-floor sensor readings and manual logs into secure databases to locate performance bottlenecks automatically.',
+                icon: <BarChart3 size={24} style={{ color: 'var(--accent-l)' }} />
+              }
+            ].map((outcome, idx) => (
+              <div key={idx} className="card fu" style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: '12px', padding: '36px', boxShadow: 'var(--shadow)', display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                <div style={{ background: 'var(--bg2)', width: '48px', height: '48px', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  {outcome.icon}
+                </div>
+                <h3 style={{ fontSize: '18px', fontWeight: '800', color: 'var(--text)' }}>{outcome.title}</h3>
+                <p style={{ fontSize: '14px', color: 'var(--muted)', lineHeight: '1.6' }}>{outcome.desc}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Potential Impact Areas Checklist */}
+          <div className="fu" style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: '16px', padding: '36px' }}>
+            <h4 style={{ fontSize: '16px', fontWeight: '800', color: 'var(--text)', marginBottom: '24px', textAlign: 'center' }}>Potential Impact Areas:</h4>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '20px' }}>
+              {[
+                'Less manual inspection effort',
+                'Faster defect identification',
+                'Better maintenance planning',
+                'Reduced operational delays'
+              ].map((area, idx) => (
+                <div key={idx} style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '14px', fontWeight: '600', color: 'var(--text)' }}>
+                  <span style={{ color: 'var(--accent-l)', fontSize: '18px' }}>✓</span> <span>{area}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== PILOT PROGRAM SECTION ===== */}
+      <section id="pilot" style={{ background: 'var(--bg)', padding: '80px 0', borderTop: '1px solid var(--border)' }}>
+        <div className="inner" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 5%' }}>
+          <div style={{ background: 'var(--card)', border: '1px solid var(--border2)', borderRadius: '20px', padding: '48px', textAlign: 'center', boxShadow: 'var(--shadow)', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '20px' }} className="fu">
+            <span className="tag" style={{ background: 'rgba(0, 102, 204, 0.08)', color: 'var(--accent-l)' }}>Co-Innovation</span>
+            <h2 className="h2" style={{ fontFamily: 'var(--syne)', fontWeight: '700', letterSpacing: '-1px', color: 'var(--text)', margin: 0 }}>
+              {t('pilot_program_title')}
+            </h2>
+            <p className="lead" style={{ maxWidth: '720px', margin: 0, color: 'var(--muted)', fontSize: '15px' }}>
+              We partner with selected manufacturing companies to solve one real operational problem using custom AI. Develop, test, and measure ROI before deployment.
+            </p>
+            
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '16px', width: '100%', margin: '24px 0' }}>
+              {[
+                { title: '1. Factory Assessment', text: 'Identify inspection or telemetry bottlenecks.' },
+                { title: '2. Data Evaluation', text: 'Evaluate image files or sensor logs.' },
+                { title: '3. AI Prototype', text: 'Train specialized custom models.' },
+                { title: '4. Pilot Deployment', text: 'Test offline on your factory floor.' },
+                { title: '5. ROI Performance', text: 'Analyze defect sorting and downtime drop.' }
+              ].map((step, idx) => (
+                <div key={idx} style={{ padding: '16px', border: '1px solid var(--border)', borderRadius: '8px', background: 'var(--bg2)' }}>
+                  <h4 style={{ fontWeight: '700', fontSize: '14px', color: 'var(--text)' }}>{step.title}</h4>
+                  <p style={{ fontSize: '12px', color: 'var(--muted)', marginTop: '4px', lineHeight: '1.4' }}>{step.text}</p>
+                </div>
+              ))}
+            </div>
+
+            <Link href="/contact?path=industrial" className="btn-primary" style={{ background: 'var(--grad)', color: '#fff', padding: '14px 28px', borderRadius: '8px', textDecoration: 'none', fontWeight: '600', fontSize: '15px' }}>
+              Apply for Industrial AI Pilot
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== ENGINEERING DEMONSTRATIONS SECTION ===== */}
+      <section id="demos" style={{ background: 'var(--bg2)', padding: '80px 0', borderTop: '1px solid var(--border)' }}>
+        <div className="inner" style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 5%' }}>
+          <div style={{ textAlign: 'center', marginBottom: '48px' }}>
+            <span className="tag">Proof Before Claims</span>
+            <h2 className="h2" style={{ fontFamily: 'var(--syne)', fontWeight: '700', letterSpacing: '-1px', color: 'var(--text)' }}>
+              {t('demos_title')}
+            </h2>
+            <p className="lead" style={{ margin: '0 auto', color: 'var(--muted)' }}>
+              {t('demos_subtitle')}
+            </p>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '32px', marginBottom: '48px' }}>
+            {[
+              {
+                title: 'Computer Vision Inspection',
+                status: 'Prototype',
+                tech: 'PyTorch · OpenCV · FastAPI',
+                desc: 'Defect checking system checking pass/fail optical samples. Processes frames and flags anomalies in under 80ms.'
+              },
+              {
+                title: 'Document Intelligence',
+                status: 'Research Prototype',
+                tech: 'Python · OCR · NLP',
+                desc: 'Automates tabular data extraction from printouts and scanned operational logs into structured database entries.'
+              },
+              {
+                title: 'Industrial RAG Assistant',
+                status: 'Prototype',
+                tech: 'RAG · pgvector · FastAPI',
+                desc: 'Allows line operators to search local manuals and machinery SOP manuals via voice queries without internet access.'
+              }
+            ].map((demo, idx) => (
+              <div key={idx} className="card fu" style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: '12px', padding: '28px', boxShadow: 'var(--shadow)' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
+                  <h4 style={{ fontWeight: '800', fontSize: '18px', color: 'var(--text)' }}>{demo.title}</h4>
+                  <span style={{ fontSize: '11px', background: 'var(--bg2)', padding: '3px 8px', borderRadius: '4px', border: '1px solid var(--border2)', fontWeight: '600', color: 'var(--muted)' }}>{demo.status}</span>
+                </div>
+                <p style={{ fontSize: '14px', color: 'var(--muted)', lineHeight: '1.6', marginBottom: '20px' }}>{demo.desc}</p>
+                <div style={{ fontSize: '12px', color: 'var(--accent-l)', fontWeight: '600' }}>Tech: {demo.tech}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ===== WHY MOH-AI TECH SECTION ===== */}
+      <section id="why-us" style={{ background: 'var(--bg)', padding: '80px 0', borderTop: '1px solid var(--border)' }}>
+        <div className="inner" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 5%' }}>
+          <div style={{ textAlign: 'center', marginBottom: '56px' }}>
+            <span className="tag">Strategic Engineering</span>
+            <h2 className="h2" style={{ fontFamily: 'var(--syne)', fontWeight: '700', letterSpacing: '-1px', color: 'var(--text)' }}>
+              Why Moh-AI Tech?
+            </h2>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '24px' }}>
+            {[
+              {
+                title: 'Founder-Led Advantage',
+                desc: 'Direct architectural design and execution without communication layers, sales overhead, or project managers.',
+                icon: <User size={24} className="text-blue-600" />
+              },
+              {
+                title: 'Practical AI Focus',
+                desc: 'We reject abstract AI hype. We focus on physical telemetry systems, custom RAG integrations, and local vision loops.',
+                icon: <Settings size={24} className="text-blue-600" />
+              },
+              {
+                title: 'Custom Architectures',
+                desc: 'We do not wrap expensive third-party tools. We engineer private, local model stacks from OpenCV to database schemas.',
+                icon: <Cpu size={24} className="text-blue-600" />
+              },
+              {
+                title: 'Secure Air-Gapped Deployments',
+                desc: 'Designed for on-premises hosting. Your proprietary data and machinery manuals never leave your physical facility.',
+                icon: <Shield size={24} className="text-blue-600" />
+              }
+            ].map((why, idx) => (
+              <div key={idx} className="card fu" style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: '12px', padding: '32px', boxShadow: 'var(--shadow)', display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                <div style={{ background: 'var(--bg2)', width: '48px', height: '48px', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  {why.icon}
+                </div>
+                <h3 style={{ fontSize: '18px', fontWeight: '800', color: 'var(--text)' }}>{why.title}</h3>
+                <p style={{ fontSize: '14px', color: 'var(--muted)', lineHeight: '1.6' }}>{why.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ===== TECHNOLOGY SECTION ===== */}
+      <section id="technology" style={{ background: 'var(--bg2)', padding: '80px 0', borderTop: '1px solid var(--border)' }}>
+        <div className="inner" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 5%' }}>
+          <div style={{ textAlign: 'center', marginBottom: '48px' }}>
+            <span className="tag">{t('tech_title')}</span>
+            <h2 className="h2" style={{ fontFamily: 'var(--syne)', fontWeight: '700', letterSpacing: '-1px', color: 'var(--text)' }}>
+              {t('tech_subtitle')}
+            </h2>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: '16px', textAlign: 'center' }}>
+            {[
+              { name: 'Python', role: 'Data Core' },
+              { name: 'PyTorch', role: 'Model Training' },
+              { name: 'OpenCV', role: 'Computer Vision' },
+              { name: 'FastAPI', role: 'APIs' },
+              { name: 'React / Next.js', role: 'UIs' },
+              { name: 'PostgreSQL', role: 'Databases' },
+              { name: 'pgvector', role: 'Vector Search' },
+              { name: 'Docker', role: 'Deployments' }
+            ].map((tech, idx) => (
+              <div key={idx} style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: '10px', padding: '20px', boxShadow: 'var(--shadow)' }}>
+                <div style={{ fontWeight: '700', fontSize: '16px', color: 'var(--text)' }}>{tech.name}</div>
+                <div style={{ fontSize: '12px', color: 'var(--muted)', marginTop: '4px' }}>{tech.role}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ===== TAMIL NADU IDENTITY SECTION ===== */}
+      <section id="tamil-nadu-identity" style={{ background: 'var(--bg)', padding: '80px 0', borderTop: '1px solid var(--border)' }}>
+        <div className="inner" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 5%' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: '48px', alignItems: 'center' }}>
+            <div className="fu">
+              <span className="tag">Global Delivery</span>
+              <h2 className="h2" style={{ fontFamily: 'var(--syne)', fontWeight: '700', letterSpacing: '-1px', color: 'var(--text)', marginBottom: '16px' }}>
+                Built in Tamil Nadu.<br/>Designed for Global Industry.
+              </h2>
+              <p style={{ fontSize: '16px', color: 'var(--muted)', lineHeight: '1.7', marginBottom: '24px' }}>
+                We combine the rigorous engineering talent pool of Tamil Nadu with cost-effective, secure product delivery structures to support factories and startups globally.
+              </p>
+              
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px', fontWeight: '500', color: 'var(--text)' }}>
+                  <Check size={16} style={{ color: 'var(--accent-l)' }} /> <span>Engineering talent from India</span>
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px', fontWeight: '500', color: 'var(--text)' }}>
+                  <Check size={16} style={{ color: 'var(--accent-l)' }} /> <span>Cost-effective AI development</span>
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px', fontWeight: '500', color: 'var(--text)' }}>
+                  <Check size={16} style={{ color: 'var(--accent-l)' }} /> <span>Remote global collaboration</span>
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px', fontWeight: '500', color: 'var(--text)' }}>
+                  <Check size={16} style={{ color: 'var(--accent-l)' }} /> <span>MSME registered company</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="fu d1" style={{ position: 'relative', display: 'flex', justifyContent: 'center' }}>
+              <div style={{ border: '1px solid var(--border2)', borderRadius: '16px', padding: '36px', background: 'var(--bg2)', textAlign: 'center', width: '100%' }}>
+                <div style={{ fontSize: '48px', marginBottom: '16px' }}>📍</div>
+                <h4 style={{ fontWeight: '800', fontSize: '18px', color: 'var(--text)' }}>Namakkal Office</h4>
+                <p style={{ fontSize: '14px', color: 'var(--muted)', marginTop: '8px', lineHeight: '1.6' }}>
+                  Moh-AI Tech, Namakkal District,<br/>
+                  Tamil Nadu, India.<br/>
+                  MSME Reg: UDYAM-TN-14-0088280.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== RESEARCH LAB PREVIEW ===== */}
+      <section id="research" style={{ background: 'var(--bg2)', padding: '80px 0', borderTop: '1px solid var(--border)' }}>
+        <div className="inner" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 5%' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '0.8fr 1.2fr', gap: '48px', alignItems: 'center' }}>
+            <div className="fu">
+              <span className="tag">{t('research_title')}</span>
+              <h2 className="h2" style={{ fontFamily: 'var(--syne)', fontWeight: '700', letterSpacing: '-1px', color: 'var(--text)', marginBottom: '16px' }}>
+                Long-Term R&D Credibility
+              </h2>
+              <p style={{ fontSize: '15px', color: 'var(--muted)', lineHeight: '1.7', marginBottom: '24px' }}>
+                While we deliver practical systems today, we invest in foundational machine learning research to shape the future of edge compute and human-aware models.
+              </p>
+              <Link href="/research" className="btn-ghost" style={{ border: '1px solid var(--border2)', color: 'var(--text)', padding: '10px 20px', borderRadius: '8px', textDecoration: 'none', fontWeight: '600', fontSize: '14px', display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
+                Explore Research Papers <ArrowRight size={14} />
+              </Link>
+            </div>
+
+            <div className="fu d1" style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+              {[
+                { title: 'Adaptive AI Prompt Correction', desc: 'Improving localized model prompt alignments dynamically without fine-tuning overheads.' },
+                { title: 'Human-Aware AI Systems', desc: 'Researching multi-modal model architectures to interpret natural operator gestures on factory lines.' },
+                { title: 'Energy-Efficient Edge deep learning', desc: 'Running visual checking neural networks locally on low-voltage edge processor chips.' }
+              ].map((item, idx) => (
+                <div key={idx} style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: '10px', padding: '24px' }}>
+                  <h4 style={{ fontWeight: '700', fontSize: '16px', color: 'var(--text)', marginBottom: '4px' }}>{item.title}</h4>
+                  <p style={{ fontSize: '13px', color: 'var(--muted)', lineHeight: '1.5' }}>{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== FOUNDER CORNER ===== */}
+      <section id="founder" style={{ background: 'var(--bg)', padding: '80px 0', borderTop: '1px solid var(--border)' }}>
+        <div className="inner" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 5%' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.8fr', gap: '48px', alignItems: 'center' }} className="fu">
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px' }}>
+              <div style={{ width: '160px', height: '160px', borderRadius: '50%', background: 'var(--bg2)', border: '4px solid var(--border2)', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
+                <Image 
+                  src="/images/general/founder.jpg" 
+                  alt="Mohan Kumar S" 
+                  width={160} 
+                  height={160} 
+                  style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
+                />
+              </div>
+              <h3 style={{ fontSize: '18px', fontWeight: '800', margin: 0, color: 'var(--text)' }}>Mohan Kumar S</h3>
+              <span style={{ fontSize: '13px', color: 'var(--accent-l)', fontWeight: '600' }}>Founder & CEO</span>
+            </div>
+            <div>
+              <span className="tag">Founder Story</span>
+              <h2 className="h2" style={{ fontFamily: 'var(--syne)', fontWeight: '700', letterSpacing: '-1px', color: 'var(--text)', margin: '8px 0 16px' }}>
+                Building from Tamil Nadu
+              </h2>
+              <p style={{ fontSize: '15px', color: 'var(--muted)', lineHeight: '1.7', marginBottom: '20px' }}>
+                "We reject general SaaS frameworks to build deep technical AI systems for physical industrial sectors. By controlling the direct architecture, training loops, and local databases, we deliver reliable and practical solutions for factories globally."
+              </p>
+              <p style={{ fontSize: '14px', color: 'var(--muted)', fontStyle: 'italic', marginBottom: '24px' }}>
+                "Building practical AI systems today while working toward advanced AI technology for tomorrow."
+              </p>
+              <a href="https://www.linkedin.com/in/mohan-kumar-subramanian/" target="_blank" rel="noopener noreferrer" className="btn-ghost" style={{ border: '1px solid var(--border2)', padding: '10px 20px', borderRadius: '8px', fontSize: '14px', fontWeight: '600', color: 'var(--text)', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
+                Connect on LinkedIn <ArrowRight size={14} />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== INTAKE CONTACT FORM ===== */}
+      <section id="contact" style={{ background: 'var(--bg2)', padding: '80px 0', borderTop: '1px solid var(--border)' }}>
+        <div className="inner" style={{ maxWidth: '800px', margin: '0 auto', padding: '0 5%' }}>
+          <div style={{ textAlign: 'center', marginBottom: '48px' }}>
+            <span className="tag">Get Started</span>
+            <h2 className="h2" style={{ fontFamily: 'var(--syne)', fontWeight: '700', letterSpacing: '-1px', color: 'var(--text)' }}>
+              {t('contact_title')}
+            </h2>
+            <p className="lead" style={{ margin: '8px auto 0', color: 'var(--muted)' }}>
+              {t('contact_subtitle')}
+            </p>
+          </div>
+          <div style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: '16px', padding: '40px', boxShadow: 'var(--shadow)' }}>
+            <ContactForm />
+          </div>
+        </div>
+      </section>
+
+      <Footer />
     </>
   );
 }

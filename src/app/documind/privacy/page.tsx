@@ -1,14 +1,5 @@
 import React from 'react';
 import Link from 'next/link';
-import type { Metadata } from 'next';
-
-export const metadata: Metadata = {
-  title: 'Privacy Policy - DocuMind AI',
-  description: 'Learn how DocuMind AI protects your document privacy, data isolation, and our zero-training policy.',
-  alternates: {
-    canonical: '/documind/privacy',
-  },
-};
 
 export default function DocuMindPrivacy() {
   return (

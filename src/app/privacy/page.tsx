@@ -3,9 +3,6 @@ import React from 'react';
 export const metadata = {
   title: 'Privacy Policy | Moh-AI Tech',
   description: 'Learn how Moh-AI Tech collects, uses, and protects your information when you visit our website or engage our AI services.',
-  alternates: {
-    canonical: '/privacy',
-  },
 };
 
 export default function PrivacyPage() {

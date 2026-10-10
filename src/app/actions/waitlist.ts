@@ -2,16 +2,39 @@
 
 import { prisma } from '@/lib/prisma';
 import nodemailer from 'nodemailer';
+import { z } from 'zod';
+import { escapeHtml, sanitizeEmail } from '@/lib/sanitize';
+import { checkRateLimit } from '@/lib/rate-limit';
+import { env } from '@/lib/env';
 
-export async function submitWaitlist(email: string) {
-  if (!email || !email.includes('@')) {
-    return { error: 'Invalid email address' };
+const waitlistSchema = z.object({
+  email: z.string().email('Please provide a valid email address').max(254, 'Email is too long'),
+});
+
+export async function submitWaitlist(rawEmail: string) {
+  // 1. Validate Email Input with Zod
+  const validationResult = waitlistSchema.safeParse({ email: rawEmail });
+  if (!validationResult.success) {
+    return { error: validationResult.error.issues[0]?.message || 'Invalid email address' };
+  }
+
+  const cleanEmail = sanitizeEmail(validationResult.data.email);
+
+  // 2. Apply Rate Limiting based on clean email identifier
+  const rateLimit = checkRateLimit(cleanEmail, {
+    limit: 5,
+    windowMs: 60 * 1000,
+    identifier: 'waitlist-action',
+  });
+
+  if (!rateLimit.success) {
+    return { error: 'Too many requests. Please wait a minute before trying again.' };
   }
 
   try {
-    // Check if it already exists to avoid unique constraint error
+    // 3. Prevent Duplicates with Parameterized Query
     const existing = await prisma.waitlist.findUnique({
-      where: { email },
+      where: { email: cleanEmail },
     });
 
     if (existing) {
@@ -20,61 +43,65 @@ export async function submitWaitlist(email: string) {
 
     await prisma.waitlist.create({
       data: {
-        email,
+        email: cleanEmail,
       },
     });
 
-    const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST || 'smtp.titan.email',
-      port: Number(process.env.SMTP_PORT) || 465,
-      secure: Number(process.env.SMTP_PORT) === 465 || !process.env.SMTP_PORT, // true for 465, false for other ports
-      auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASS,
-      },
-    });
+    const smtpHost = env.SMTP_HOST || process.env.SMTP_HOST || 'smtp.titan.email';
+    const smtpPort = Number(env.SMTP_PORT || process.env.SMTP_PORT) || 465;
+    const smtpUser = env.SMTP_USER || process.env.SMTP_USER;
+    const smtpPass = env.SMTP_PASS || process.env.SMTP_PASS;
 
-    const waitlistMailOptions = {
-      from: `"Moh-AI Tech" <${process.env.SMTP_USER}>`,
-      to: email,
-      subject: 'Thank You for Your Interest - Moh-AI Tech',
-      text: `Hi there,\n\nThank you for your interest in our upcoming products! We have added you to our waitlist.\n\nPlease wait for our launch. We will notify you as soon as we go live!\n\nBest regards,\nMoh-AI Tech Team`,
-      html: `
-        <div style="font-family: 'Segoe UI', Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 30px; border: 1px solid #eaeaea; border-radius: 12px; background-color: #ffffff;">
-          <div style="text-align: center; margin-bottom: 25px; border-bottom: 2px solid #f3f4f6; padding-bottom: 20px;">
-            <img src="https://moh-ai-tech.com/logo.png" alt="Moh-AI Tech Logo" width="200" height="60" style="height: 60px; object-fit: contain;" />
-            <h1 style="color: #1f2937; margin: 15px 0 0 0; font-size: 24px; font-weight: 700;">Moh-AI Tech</h1>
+    if (smtpUser && smtpPass) {
+      const transporter = nodemailer.createTransport({
+        host: smtpHost,
+        port: smtpPort,
+        secure: smtpPort === 465,
+        auth: {
+          user: smtpUser,
+          pass: smtpPass,
+        },
+      });
+
+      const safeEmailHtml = escapeHtml(cleanEmail);
+
+      const waitlistMailOptions = {
+        from: `"Moh-AI Tech" <${smtpUser}>`,
+        to: cleanEmail,
+        subject: 'Thank You for Your Interest - Moh-AI Tech',
+        text: `Hi there,\n\nThank you for your interest in our upcoming products! We have added you to our waitlist.\n\nWe will notify you as soon as we go live!\n\nBest regards,\nMoh-AI Tech Team`,
+        html: `
+          <div style="font-family: 'Segoe UI', Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 30px; border: 1px solid #eaeaea; border-radius: 12px; background-color: #ffffff;">
+            <div style="text-align: center; margin-bottom: 25px; border-bottom: 2px solid #f3f4f6; padding-bottom: 20px;">
+              <h1 style="color: #1f2937; margin: 15px 0 0 0; font-size: 24px; font-weight: 700;">Moh-AI Tech</h1>
+            </div>
+            <h2 style="color: #0066cc; font-size: 20px; margin-bottom: 20px;">You're on the Waitlist!</h2>
+            <p style="font-size: 16px; color: #4b5563; line-height: 1.6;">Hi there,</p>
+            <p style="font-size: 16px; color: #4b5563; line-height: 1.6;">Thank you for your interest in our upcoming products! We have successfully added <strong>${safeEmailHtml}</strong> to our waitlist.</p>
+            <p style="font-size: 16px; color: #4b5563; line-height: 1.6;">Please wait for our launch. We will notify you with early access as soon as we go live!</p>
+            <br/>
+            <p style="font-size: 16px; color: #4b5563; margin-top: 20px;">Best regards,<br/><strong style="color: #1f2937;">The Moh-AI Tech Team</strong></p>
           </div>
-          <h2 style="color: #6366f1; font-size: 20px; margin-bottom: 20px;">You're on the Waitlist!</h2>
-          <p style="font-size: 16px; color: #4b5563; line-height: 1.6;">Hi there,</p>
-          <p style="font-size: 16px; color: #4b5563; line-height: 1.6;">Thank you for your interest in our upcoming products! We have successfully added <strong>${email}</strong> to our waitlist.</p>
-          <p style="font-size: 16px; color: #4b5563; line-height: 1.6;">Please wait for our launch. We will notify you with early access as soon as we go live!</p>
-          <br/>
-          <p style="font-size: 16px; color: #4b5563; margin-top: 20px;">Best regards,<br/><strong style="color: #1f2937;">The Moh-AI Tech Team</strong></p>
-        </div>
-      `
-    };
+        `,
+      };
 
-    // Notify the admin as well
-    const adminMailOptions = {
-      from: `"Moh-AI Tech" <${process.env.SMTP_USER}>`,
-      to: process.env.NOTIFICATION_EMAIL || 'info@moh-ai-tech.com, mohaitechpvt@gmail.com',
-      subject: 'New Waitlist Signup!',
-      text: `A new user has joined the waitlist: ${email}`
-    };
+      const adminNotificationList = env.NOTIFICATION_EMAIL || process.env.NOTIFICATION_EMAIL || 'info@moh-ai-tech.com';
+      const adminMailOptions = {
+        from: `"Moh-AI Tech" <${smtpUser}>`,
+        to: adminNotificationList,
+        subject: 'New Waitlist Signup!',
+        text: `A new user has joined the waitlist: ${cleanEmail}`,
+      };
 
-    try {
-      await Promise.all([
+      await Promise.allSettled([
         transporter.sendMail(waitlistMailOptions),
-        transporter.sendMail(adminMailOptions)
+        transporter.sendMail(adminMailOptions),
       ]);
-    } catch (emailError) {
-      console.error("Waitlist Email failed:", emailError);
     }
 
     return { success: true, message: 'Thanks for joining the waitlist!' };
   } catch (error) {
-    console.error('Waitlist error:', error);
-    return { error: 'Something went wrong. Please try again.' };
+    console.error('[SECURITY LOG] Waitlist signup processing failure');
+    return { error: 'Unable to process waitlist signup at this time. Please try again later.' };
   }
 }

@@ -4,41 +4,42 @@
 
 /* ===== THEME VARIABLES ===== */
 :root {
-  --bg:      #F7F8FC;
-  --bg2:     #FFFFFF;
-  --bg3:     #EEF0F8;
+  --bg:      #FFFFFF;
+  --bg2:     #F8F9FA;
+  --bg3:     #E9ECEF;
   --card:    #FFFFFF;
-  --border:  rgba(18,10,60,0.08);
-  --border2: rgba(18,10,60,0.15);
-  --text:    #0E0A2A;
-  --muted:   #4B4668;
-  --muted2:  #5A5672;
-  --accent:  #2C1FA8;
-  --accent-l:#4B3FD4;
-  --accent-b:#EDEAFF;
+  --border:  rgba(10,37,64,0.06);
+  --border2: rgba(10,37,64,0.12);
+  --text:    #0E1113;
+  --muted:   #495057;
+  --muted2:  #ADB5BD;
+  --accent:  #0A2540;
+  --accent-l:#0066CC;
+  --accent-b:rgba(10,37,64,0.05);
   --accent2: #00B4D8;
-  --grad:    linear-gradient(135deg, #00C8E0 0%, #2C1FA8 55%, #8B5CF6 100%);
-  --shadow:  0 1px 3px rgba(18,10,60,0.08), 0 4px 16px rgba(18,10,60,0.05);
-  --syne: var(--font-syne), 'Syne', sans-serif;
-  --dm: var(--font-dm), 'DM Sans', sans-serif;
+  --grad:    linear-gradient(135deg, #0A2540 0%, #0066CC 100%);
+  --shadow:  0 1px 3px rgba(0,0,0,0.05), 0 4px 12px rgba(0,0,0,0.03);
+  --syne: 'Syne', sans-serif;
+  --dm: 'DM Sans', sans-serif;
 }
 [data-theme="dark"] {
-  --bg:      #06050F;
-  --bg2:     #0C0B1E;
-  --bg3:     #13112A;
-  --card:    #13112A;
+  --bg:      #0B0F13;
+  --bg2:     #12181F;
+  --bg3:     #1A232D;
+  --card:    #12181F;
   --border:  rgba(255,255,255,0.07);
   --border2: rgba(255,255,255,0.13);
-  --text:    #EEF0F8;
-  --muted:   #A19EB8;
-  --muted2:  #B8B5D5;
-  --accent:  #7C6FFF;
-  --accent-l:#9D93FF;
-  --accent-b:rgba(124,111,255,0.10);
+  --text:    #E9ECEF;
+  --muted:   #ADB5BD;
+  --muted2:  #6C757D;
+  --accent:  #0066CC;
+  --accent-l:#4DA3FF;
+  --accent-b:rgba(0,102,204,0.15);
   --accent2: #22D3EE;
-  --grad:    linear-gradient(135deg, #00C8E0 0%, #5B4FFF 55%, #A78BFA 100%);
+  --grad:    linear-gradient(135deg, #004B87 0%, #0066CC 100%);
   --shadow:  none;
 }
+
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
@@ -795,44 +796,3 @@ footer {
 
 /* chip dot */
 .chip-dot { background: var(--accent); }
-
-/* ===== 🇮🇳 INDEPENDENCE DAY TRICOLOR THEME (Active Aug 15 Only) ===== */
-.independence-day-active nav {
-  border: 1.5px solid transparent !important;
-  background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)) padding-box,
-              linear-gradient(90deg, #FF9933 0%, #000080 50%, #138808 100%) border-box !important;
-  box-shadow: 0 10px 30px rgba(255, 153, 51, 0.2), 0 0 20px rgba(19, 136, 8, 0.15) !important;
-}
-
-[data-theme="dark"] .independence-day-active nav,
-html.independence-day-active[data-theme="dark"] nav {
-  background: linear-gradient(rgba(12,11,30,0.85), rgba(12,11,30,0.85)) padding-box,
-              linear-gradient(90deg, #FF9933 0%, #000080 50%, #138808 100%) border-box !important;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.6), 0 0 25px rgba(255, 153, 51, 0.25) !important;
-}
-
-.independence-day-active .nav-cta,
-.independence-day-active .btn-primary {
-  background: linear-gradient(135deg, #FF9933 0%, #e67e22 50%, #138808 100%) !important;
-  border: none !important;
-  color: #ffffff !important;
-  box-shadow: 0 4px 18px rgba(255, 153, 51, 0.4) !important;
-}
-
-.independence-day-active .mono-badge {
-  background: linear-gradient(90deg, rgba(255, 153, 51, 0.15), rgba(19, 136, 8, 0.15)) !important;
-  border: 1px solid rgba(255, 153, 51, 0.45) !important;
-  color: #FF9933 !important;
-}
-
-.independence-day-active .grad-text {
-  background: linear-gradient(90deg, #FF9933 0%, #2563eb 50%, #138808 100%) !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent !important;
-}
-
-.independence-day-active .sol-card:hover,
-.independence-day-active .svc-card:hover {
-  border-color: rgba(255, 153, 51, 0.5) !important;
-  box-shadow: 0 0 25px rgba(255, 153, 51, 0.25), 0 0 15px rgba(19, 136, 8, 0.2) !important;
-}
