@@ -4,11 +4,9 @@ import React, { useState } from 'react';
 import { useLanguage } from '@/components/i18n-provider';
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
-import Link from 'next/link';
 
 export function Navbar() {
-  const { lang, setLang, t } = useLanguage();
-  const [menuOpen, setMenuOpen] = useState(false);
+  const { lang, setLang, t } = useLanguage();  const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
   
   if (pathname?.startsWith('/documind')) {
@@ -21,27 +19,26 @@ export function Navbar() {
 
   return (
     <nav>
-      <Link href="/" className="logo">
+      <a href="/" className="logo">
         <Image src="/logo.png" alt="Moh-AI Tech Logo" width={42} height={42} className="logo-img" style={{ height: "42px", width: "auto", display: "block", objectFit: "contain" }} priority />
         <span className="grad-text logo-text" style={{ marginLeft: "8px", fontWeight: "800", fontSize: "18px", letterSpacing: "1px", whiteSpace: "nowrap" }}>MOH-AI TECH</span>
-      </Link>
+      </a>
       <ul className={`nav-center ${menuOpen ? 'mobile-open' : ''}`} id="nav-links">
-        <li><Link href="/" onClick={() => setMenuOpen(false)}>{t('nav_home')}</Link></li>
-        <li><Link href="/industrial-ai" onClick={() => setMenuOpen(false)}>{t('nav_industrial')}</Link></li>
-        <li><Link href="/ai-product-engineering" onClick={() => setMenuOpen(false)}>{t('nav_product_eng')}</Link></li>
-        <li><Link href="/industries" onClick={() => setMenuOpen(false)}>{t('nav_industries')}</Link></li>
-        <li><Link href="/technology" onClick={() => setMenuOpen(false)}>{t('nav_tech')}</Link></li>
-        <li><Link href="/research" onClick={() => setMenuOpen(false)}>{t('nav_research')}</Link></li>
-        <li><Link href="/about" onClick={() => setMenuOpen(false)}>{t('nav_about')}</Link></li>
-        <li><Link href="/contact" onClick={() => setMenuOpen(false)}>{t('nav_contact')}</Link></li>
+          <li><a href="/#services" onClick={() => setMenuOpen(false)} data-t="nav_services">{t('nav_services')}</a></li>
+          <li><a href="/#solutions" onClick={() => setMenuOpen(false)} data-t="nav_solutions">{t('nav_solutions')}</a></li>
+          <li><a href="/products" onClick={() => setMenuOpen(false)} data-t="nav_products">{t('nav_products')}</a></li>
+          <li><a href="/about" onClick={() => setMenuOpen(false)}>About Us</a></li>
+        <li><a href="/#agents" onClick={() => setMenuOpen(false)} data-t="nav_agents">{t('nav_agents')}</a></li>
+        <li><a href="/#industries" onClick={() => setMenuOpen(false)} data-t="nav_industries">{t('nav_industries')}</a></li>
+        <li><a href="/#process" onClick={() => setMenuOpen(false)} data-t="nav_process">{t('nav_process')}</a></li>
       </ul>
       <div className="nav-right">
         <div className="lang-select">
-          <button className={`lang-btn ${lang === 'en' ? 'active' : ''}`} onClick={() => setLang('en')}>EN</button>
-          <button className={`lang-btn ${lang === 'ta' ? 'active' : ''}`} onClick={() => setLang('ta')}>தமிழ்</button>
-          <button className={`lang-btn ${lang === 'de' ? 'active' : ''}`} onClick={() => setLang('de')}>DE</button>
+          <button className={`lang-btn ${lang === 'en' ? 'active' : ''}`} data-lang="en" onClick={() => setLang('en')}>EN</button>
+          <button className={`lang-btn ${lang === 'ta' ? 'active' : ''}`} data-lang="ta" onClick={() => setLang('ta')}>தமிழ்</button>
+          <button className={`lang-btn ${lang === 'de' ? 'active' : ''}`} data-lang="de" onClick={() => setLang('de')}>DE</button>
         </div>
-        <Link href="/contact" className="nav-cta">{t('nav_contact')}</Link>
+        <a href="#contact" className="nav-cta" data-t="nav_contact">{t('nav_contact')}</a>
         <button className="menu-toggle" onClick={toggleMenu} aria-label="Menu">☰</button>
       </div>
     </nav>

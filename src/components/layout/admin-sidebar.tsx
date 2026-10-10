@@ -31,7 +31,7 @@ export default function AdminSidebar() {
     setIsMounted(true);
   }, []);
   
-  const appNameAdminTranslatedBase = (APP_NAME as Record<string, string>)[language] || APP_NAME['en'];
+  const appNameAdminTranslatedBase = APP_NAME[language] || APP_NAME['en'];
   const adminSuffixTranslated = t({en: 'Admin', ta: 'நிர்வாகம்'});
   const appNameAdminTranslated = isMounted ? `${appNameAdminTranslatedBase} ${adminSuffixTranslated}` : `${APP_NAME['en']} Admin`;
 

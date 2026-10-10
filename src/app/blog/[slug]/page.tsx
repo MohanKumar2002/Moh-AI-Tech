@@ -44,9 +44,8 @@ const POSTS: Record<string, any> = {
   }
 };
 
-export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
-  const resolvedParams = await params;
-  const post = POSTS[resolvedParams.slug];
+export default function BlogPostPage({ params }: { params: { slug: string } }) {
+  const post = POSTS[params.slug];
 
   if (!post) {
     notFound();

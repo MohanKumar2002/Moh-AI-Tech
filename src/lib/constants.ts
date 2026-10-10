@@ -2,10 +2,9 @@
 import type { NavLinkItem } from '@/types';
 import type { Language } from '@/contexts/language-context';
 
-export const APP_NAME: Record<string, string> = {
+export const APP_NAME: Record<Language, string> = {
   en: "Moh-AI Tech",
-  ta: "மோ-ஏஐ டெக்",
-  de: "Moh-AI Tech"
+  ta: "மோ-ஏஐ டெக்"
 };
 
 export const NAV_LINKS: NavLinkItem[] = [

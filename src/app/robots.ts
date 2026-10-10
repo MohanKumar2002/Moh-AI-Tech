@@ -1,12 +1,19 @@
-import { MetadataRoute } from 'next'
- 
+import { MetadataRoute } from 'next';
+
 export default function robots(): MetadataRoute.Robots {
+  const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://moh-ai-tech.com';
+
   return {
     rules: {
       userAgent: '*',
       allow: '/',
-      disallow: ['/private/'],
+      disallow: [
+        '/documind/dashboard/',
+        '/documind/chat/',
+        '/api/',
+        '/admin/',
+      ],
     },
-    sitemap: 'https://moh-ai-tech.com/sitemap.xml',
-  }
+    sitemap: `${baseUrl}/sitemap.xml`,
+  };
 }

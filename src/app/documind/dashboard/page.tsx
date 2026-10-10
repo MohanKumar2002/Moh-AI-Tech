@@ -141,12 +141,11 @@ export default function DocuMindApp() {
   const processFile = (file: File) => {
     setUploading(true);
     setTimeout(() => {
-      const ext = file.name.split('.').pop()?.toLowerCase() || '';
-      const docType: 'pdf' | 'doc' | 'txt' = ext === 'pdf' ? 'pdf' : ext === 'doc' || ext === 'docx' ? 'doc' : 'txt';
+      const ext = file.name.split('.').pop()?.toLowerCase() as 'pdf' | 'doc' | 'txt';
       const newDoc: Document = {
         id: Date.now().toString(),
         name: file.name,
-        type: docType,
+        type: ['pdf', 'doc', 'docx'].includes(ext) ? 'pdf' : 'txt',
         size: `${(file.size / 1024 / 1024).toFixed(1)} MB`,
         pages: Math.floor(Math.random() * 200) + 10,
         uploadedAt: 'Just now',

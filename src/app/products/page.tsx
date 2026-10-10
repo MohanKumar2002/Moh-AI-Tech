@@ -1,5 +1,145 @@
-import { redirect } from 'next/navigation';
+import React from 'react';
+import Image from 'next/image';
+import Footer from '@/components/layout/footer';
+import { Bot, FileText } from 'lucide-react';
+import { WaitlistForm } from '@/components/waitlist-form';
 
-export default function ProductsRedirectPage() {
-  redirect('/industrial-ai');
+export const metadata = {
+  title: 'Enterprise AI Products | AeroAudit AI, Docu-Mind & HR Recruiter AI — Moh-AI Tech',
+  description: 'Discover enterprise AI products built by Moh-AI Tech (Namakkal, India): AeroAudit AI (Logistics Auditing), Docu-Mind (Intelligent Document Processing), and HR Recruiter AI (Autonomous Recruiting).',
+};
+
+export default function ComingSoonPage() {
+  return (
+    <main style={{ minHeight: '100vh', background: 'var(--bg)', overflow: 'hidden' }}>
+      
+      {/* Premium Hero Section */}
+      <section style={{ position: 'relative', paddingTop: '160px', paddingBottom: '80px', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
+        <div className="hero-glow-1" style={{ position: 'absolute', top: '10%', left: '20%', filter: 'blur(100px)', opacity: 0.5, pointerEvents: 'none' }}></div>
+        <div className="hero-glow-2" style={{ position: 'absolute', top: '40%', right: '20%', filter: 'blur(100px)', opacity: 0.5, pointerEvents: 'none' }}></div>
+        
+        <div className="hero-badge fu vis d1" style={{ marginBottom: '24px' }}>
+          <div className="badge-pulse"></div>
+          <span>Unveiling Q3 2026</span>
+        </div>
+        
+        <h1 className="hero-h1 fu vis d2" style={{ maxWidth: '900px', margin: '0 auto 24px' }}>
+          The Future of Autonomous AI <br />
+          <em className="grad-text">Is Almost Here.</em>
+        </h1>
+        
+        <p className="hero-sub fu vis d3" style={{ margin: '0 auto 48px', fontSize: '18px', maxWidth: '600px' }}>
+          We are building the next generation of autonomous enterprise tools. 
+          Get exclusive early access to Docu-Mind and HR Recruiter AI before the public launch.
+        </p>
+
+        {/* Waitlist Form */}
+        <WaitlistForm />
+      </section>
+
+      {/* Products Showcase */}
+      <section style={{ padding: '80px 5%', background: 'var(--bg2)', borderTop: '1px solid var(--border)', position: 'relative', zIndex: 5 }}>
+        <div className="inner" style={{ padding: '0', maxWidth: '1200px' }}>
+          
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '40px' }}>
+            
+            {/* Product 1: Docu-Mind */}
+            <div className="sol-card" style={{ padding: '0', position: 'relative', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
+              <div style={{ width: '100%', height: '260px', position: 'relative', borderBottom: '1px solid var(--border)', background: 'var(--bg)' }}>
+                <Image src="/images/products/documind.png" alt="DocuMind AI Interface" fill style={{ objectFit: 'cover', objectPosition: 'top' }} />
+              </div>
+              <div style={{ padding: '32px', flex: 1, display: 'flex', flexDirection: 'column' }}>
+                <div style={{ position: 'absolute', top: '230px', right: '32px', width: '60px', height: '60px', background: 'var(--card)', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: 'var(--shadow)', border: '1px solid var(--border)', color: '#00B4D8' }}>
+                  <FileText size={28} />
+                </div>
+                
+                <h3 className="sol-name" style={{ fontSize: '28px', marginBottom: '8px' }}>Docu-Mind</h3>
+                <div className="sol-tagline" style={{ color: 'var(--accent2)', fontWeight: '600', marginBottom: '24px' }}>Intelligent Document Understanding</div>
+                
+                <p className="sol-desc" style={{ marginBottom: '32px' }}>
+                  <strong className="text-emerald-600 dark:text-emerald-500" style={{ display: 'block', marginBottom: '12px', fontSize: '18px', fontWeight: '800' }}>⏱️ Targets a 90% reduction in manual data entry timelines.</strong>
+                  Stop manually entering data from invoices, forms, and contracts. Docu-Mind reads any complex document, extracts structured JSON data instantly, and pushes it directly to your CRM or ERP. Outputs clean, schemas-validated structured JSON matrices ready for direct API consumption.
+                </p>
+                
+                <ul className="sol-feats" style={{ margin: 'auto 0 0 0' }}>
+                  <li>Handwriting & Bad Scan OCR</li>
+                  <li>Table Extraction & Line Items</li>
+                  <li>Zero-shot Custom Form Training</li>
+                  <li>Enterprise API Integration</li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Product 2: HR Recruiter AI */}
+            <div className="sol-card" style={{ padding: '0', position: 'relative', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
+              <div style={{ width: '100%', height: '260px', position: 'relative', borderBottom: '1px solid var(--border)', background: 'var(--bg)', overflow: 'hidden' }}>
+                <video 
+                  src="/videos/hr-demo.webm" 
+                  autoPlay 
+                  loop 
+                  muted 
+                  playsInline
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }}
+                />
+              </div>
+              <div style={{ padding: '32px', flex: 1, display: 'flex', flexDirection: 'column' }}>
+                <div style={{ position: 'absolute', top: '230px', right: '32px', width: '60px', height: '60px', background: 'var(--card)', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: 'var(--shadow)', border: '1px solid var(--border)', color: '#8B5CF6' }}>
+                  <Bot size={28} />
+                </div>
+                
+                <h3 className="sol-name" style={{ fontSize: '28px', marginBottom: '8px' }}>HR Recruiter AI</h3>
+                <div className="sol-tagline" style={{ color: '#8B5CF6', fontWeight: '600', marginBottom: '24px' }}>Autonomous Talent Acquisition</div>
+                
+                <p className="sol-desc" style={{ marginBottom: '32px' }}>
+                  <strong className="text-sky-600 dark:text-sky-400" style={{ display: 'block', marginBottom: '12px', fontSize: '18px', fontWeight: '800' }}>⏱️ Deployed to compress time-to-interview metrics by 75%.</strong>
+                  Scale your hiring without scaling your HR department. Our autonomous agent screens thousands of resumes, conducts initial conversational interviews, and ranks the top talent for your final review.
+                </p>
+                
+                <ul className="sol-feats" style={{ margin: 'auto 0 0 0' }}>
+                  <li>Semantic Resume Parsing</li>
+                  <li>Voice/Chat Pre-Screening Agent</li>
+                  <li>Bias-Free Candidate Ranking</li>
+                  <li>Automated Interview Scheduling</li>
+                </ul>
+              </div>
+            </div>
+            
+            {/* Product 3: AeroAudit AI */}
+            <div className="sol-card" style={{ padding: '0', position: 'relative', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
+              <div style={{ width: '100%', height: '260px', position: 'relative', borderBottom: '1px solid var(--border)', background: 'var(--bg)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <div style={{ padding: '32px', textAlign: 'center' }}>
+                  <div style={{ fontSize: '48px', marginBottom: '8px' }}>✈️ 🔍</div>
+                  <div style={{ fontSize: '20px', fontWeight: '800', color: 'var(--text)' }}>AeroAudit AI</div>
+                  <div style={{ fontSize: '13px', color: 'var(--muted)' }}>Private On-Premise Audit System</div>
+                </div>
+              </div>
+              <div style={{ padding: '32px', flex: 1, display: 'flex', flexDirection: 'column' }}>
+                <div style={{ position: 'absolute', top: '230px', right: '32px', width: '60px', height: '60px', background: 'var(--card)', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: 'var(--shadow)', border: '1px solid var(--border)', color: '#10B981' }}>
+                  <Bot size={28} />
+                </div>
+                
+                <h3 className="sol-name" style={{ fontSize: '28px', marginBottom: '8px' }}>AeroAudit AI</h3>
+                <div className="sol-tagline" style={{ color: '#10B981', fontWeight: '600', marginBottom: '24px' }}>Supply Chain & Logistics Auditing</div>
+                
+                <p className="sol-desc" style={{ marginBottom: '32px' }}>
+                  <strong className="text-emerald-600 dark:text-emerald-400" style={{ display: 'block', marginBottom: '12px', fontSize: '18px', fontWeight: '800' }}>⏱️ Designed for zero-data-leakage enterprise auditing.</strong>
+                  Private, on-premise AI pipeline built for supply chain, logistics, and financial compliance auditing. Processes sensitive enterprise manifests and ledgers without sending data to third-party cloud APIs.
+                </p>
+                
+                <ul className="sol-feats" style={{ margin: 'auto 0 0 0' }}>
+                  <li>100% On-Premise Data Sovereignty</li>
+                  <li>Manifest & Waybill Reconciliation</li>
+                  <li>Automated Discrepancy Detection</li>
+                  <li>Custom ERP Audit Connectors</li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+      
+      <Footer />
+    </main>
+  );
 }

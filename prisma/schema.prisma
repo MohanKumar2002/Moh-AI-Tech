@@ -9,38 +9,21 @@ datasource db {
 }
 
 model User {
-  id            String      @id @default(cuid())
+  id            String    @id @default(cuid())
   name          String?
-  email         String?     @unique
+  email         String?   @unique
   emailVerified DateTime?
   image         String?
   password      String?
-  role          String      @default("user") // RBAC: 'admin' | 'user'
-  createdAt     DateTime    @default(now())
-  updatedAt     DateTime    @updatedAt
-  toolUsages    ToolUsage[]
-}
-
-model ToolUsage {
-  id        String   @id @default(cuid())
-  userId    String
-  toolName  String
-  prompt    String
-  result    String
-  createdAt DateTime @default(now())
-
-  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-
-  @@index([userId, toolName])
 }
 
 model ContactQuery {
-  id            String   @id @default(cuid())
-  name          String
-  company       String?
-  email         String
-  country       String?
-  service       String?
+  id        String   @id @default(cuid())
+  name      String
+  company   String?
+  email     String
+  country   String?
+  service   String?
   message       String
   scheduledDate String?
   scheduledTime String?
