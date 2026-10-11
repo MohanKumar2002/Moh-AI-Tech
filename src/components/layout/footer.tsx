@@ -7,7 +7,7 @@ export default function Footer() {
   return (
     <footer className="premium-footer">
       <div className="footer-inner">
-        <div className="footer-grid">
+        <div className="footer-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-9 mb-11 w-full">
           <div>
             <Link href="/" className="logo mb-4 inline-block" style={{ gap: 0 }}>
               <Image
