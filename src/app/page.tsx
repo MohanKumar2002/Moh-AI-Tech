@@ -442,36 +442,67 @@ export default function Home() {
             </p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '32px', marginBottom: '48px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '28px', marginBottom: '40px' }}>
             {[
               {
-                title: 'Computer Vision Inspection',
-                status: 'Prototype',
-                tech: 'PyTorch · OpenCV · FastAPI',
-                desc: 'Defect checking system checking pass/fail optical samples. Processes frames and flags anomalies in under 80ms.'
+                title: 'Moh-AI TaxFlow (CA Suite)',
+                badge: 'Live Interactive Video',
+                badgeColor: '#0284c7',
+                link: '/taxflow',
+                cta: 'Watch 3-Min Demo',
+                desc: 'Autonomous invoice OCR extraction, GSTR-2B reconciliation, WhatsApp client reminders, and Sec 40A(3) statutory audit flags.'
               },
               {
-                title: 'Document Intelligence',
-                status: 'Research Prototype',
-                tech: 'Python · OCR · NLP',
-                desc: 'Automates tabular data extraction from printouts and scanned operational logs into structured database entries.'
+                title: 'VisionInspect Edge AI',
+                badge: 'Interactive Simulator',
+                badgeColor: '#10b981',
+                link: '/visioninspect',
+                cta: 'Test Defect Simulator',
+                desc: 'Sub-millimeter optical defect inspection (<50ms inference). Runs 100% on-premise on NVIDIA Jetson with 24V PLC rejection solenoid triggers.'
               },
               {
-                title: 'Industrial RAG Assistant',
-                status: 'Prototype',
-                tech: 'RAG · pgvector · FastAPI',
-                desc: 'Allows line operators to search local manuals and machinery SOP manuals via voice queries without internet access.'
+                title: 'Moh-AI Recruiter AI',
+                badge: 'Live Screencast Video',
+                badgeColor: '#8B5CF6',
+                link: '/hr-recruiter',
+                cta: 'Watch Platform Walkthrough',
+                desc: 'Autonomous resume semantic parser, conversational pre-screening interview agent, and ATS command center with zero candidate data training leaks.'
+              },
+              {
+                title: 'Docu-Mind Multimodal AI',
+                badge: 'Live Web Platform',
+                badgeColor: '#00B4D8',
+                link: '/documind',
+                cta: 'Explore DocuMind',
+                desc: 'Multimodal document intelligence reading contracts, freight bills, and handwritten tables into structured database entries.'
               }
             ].map((demo, idx) => (
-              <div key={idx} className="card fu" style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: '12px', padding: '28px', boxShadow: 'var(--shadow)' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
-                  <h4 style={{ fontWeight: '800', fontSize: '18px', color: 'var(--text)' }}>{demo.title}</h4>
-                  <span style={{ fontSize: '11px', background: 'var(--bg2)', padding: '3px 8px', borderRadius: '4px', border: '1px solid var(--border2)', fontWeight: '600', color: 'var(--muted)' }}>{demo.status}</span>
+              <div key={idx} className="card fu" style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: '16px', padding: '28px', boxShadow: 'var(--shadow)', display: 'flex', flexDirection: 'column', transition: 'all 0.2s', position: 'relative' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '14px', flexWrap: 'wrap', gap: '8px' }}>
+                  <span style={{ fontSize: '11px', background: 'rgba(0, 102, 204, 0.08)', color: demo.badgeColor, padding: '4px 10px', borderRadius: '9999px', fontWeight: '700', letterSpacing: '0.04em' }}>
+                    {demo.badge}
+                  </span>
                 </div>
-                <p style={{ fontSize: '14px', color: 'var(--muted)', lineHeight: '1.6', marginBottom: '20px' }}>{demo.desc}</p>
-                <div style={{ fontSize: '12px', color: 'var(--accent-l)', fontWeight: '600' }}>Tech: {demo.tech}</div>
+                <h4 style={{ fontWeight: '800', fontSize: '18px', color: 'var(--text)', marginBottom: '8px' }}>{demo.title}</h4>
+                <p style={{ fontSize: '14px', color: 'var(--muted)', lineHeight: '1.6', marginBottom: '24px', flex: 1 }}>{demo.desc}</p>
+                <Link
+                  href={demo.link}
+                  style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '8px', background: 'var(--bg2)', color: 'var(--text)', border: '1px solid var(--border)', padding: '10px 16px', borderRadius: '8px', fontWeight: '700', fontSize: '13px', textDecoration: 'none', transition: 'all 0.2s' }}
+                >
+                  {demo.cta} <ArrowRight size={14} />
+                </Link>
               </div>
             ))}
+          </div>
+
+          <div style={{ textAlign: 'center' }}>
+            <Link 
+              href="/products" 
+              className="btn-primary" 
+              style={{ background: 'var(--logo-grad)', color: '#fff', padding: '14px 32px', borderRadius: '10px', textDecoration: 'none', fontWeight: '700', fontSize: '15px', display: 'inline-flex', alignItems: 'center', gap: '10px', boxShadow: '0 8px 24px rgba(0, 102, 204, 0.25)' }}
+            >
+              Explore Full Product Suite (8 Products) <ArrowRight size={16} />
+            </Link>
           </div>
         </div>
       </section>

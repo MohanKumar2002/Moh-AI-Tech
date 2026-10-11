@@ -21,6 +21,14 @@
   --shadow:  0 1px 3px rgba(0,0,0,0.05), 0 4px 12px rgba(0,0,0,0.03);
   --syne: 'Syne', sans-serif;
   --dm: 'DM Sans', sans-serif;
+
+  /* ── Official Moh-AI Logo Connected Palette ── */
+  --logo-cyan:   #00D4FF;
+  --logo-blue:   #0066CC;
+  --logo-purple: #7C3AED;
+  --logo-grad:   linear-gradient(135deg, #00D4FF 0%, #0066CC 48%, #7C3AED 100%);
+  --logo-grad-subtle: linear-gradient(135deg, rgba(0,212,255,0.08) 0%, rgba(0,102,204,0.05) 45%, rgba(124,58,237,0.08) 100%);
+  --logo-glow:   0 0 25px rgba(0, 212, 255, 0.2), 0 0 50px rgba(124, 58, 237, 0.12);
 }
 [data-theme="dark"] {
   --bg:      #0B0F13;
@@ -38,6 +46,44 @@
   --accent2: #22D3EE;
   --grad:    linear-gradient(135deg, #004B87 0%, #0066CC 100%);
   --shadow:  none;
+
+  /* Dark mode logo tokens */
+  --logo-cyan:   #22D3EE;
+  --logo-blue:   #3B82F6;
+  --logo-purple: #A855F7;
+  --logo-grad:   linear-gradient(135deg, #22D3EE 0%, #3B82F6 45%, #A855F7 100%);
+  --logo-grad-subtle: linear-gradient(135deg, rgba(34,211,238,0.12) 0%, rgba(59,130,246,0.1) 45%, rgba(168,85,247,0.12) 100%);
+  --logo-glow:   0 0 30px rgba(34, 211, 238, 0.25), 0 0 60px rgba(168, 85, 247, 0.15);
+}
+
+/* ── Logo Identity Typography & Accent Utilities ── */
+.grad-text {
+  background: var(--logo-grad);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+}
+
+.logo-accent-border {
+  position: relative;
+}
+.logo-accent-border::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: var(--logo-grad);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.logo-glow-subtle {
+  box-shadow: 0 10px 30px rgba(0, 180, 216, 0.1), 0 2px 12px rgba(124, 58, 237, 0.08);
 }
 
 
