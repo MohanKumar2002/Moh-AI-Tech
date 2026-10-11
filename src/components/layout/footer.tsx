@@ -32,11 +32,12 @@ export default function Footer() {
           <div>
             <div className="footer-col-title">Pathways & Products</div>
             <ul className="footer-links">
-              <li><Link href="/industrial-ai">Industrial AI Solutions</Link></li>
+              <li><Link href="/products">All Products Catalog</Link></li>
               <li><Link href="/taxflow">Moh-AI TaxFlow (CA Suite)</Link></li>
-              <li><Link href="/ai-product-engineering">AI Product Engineering</Link></li>
-              <li><Link href="/products">All Products</Link></li>
-              <li><Link href="/industries">Target Industries</Link></li>
+              <li><Link href="/visioninspect">VisionInspect Edge AI</Link></li>
+              <li><Link href="/hr-recruiter">Moh-AI Recruiter AI</Link></li>
+              <li><Link href="/whatsapp-autodesk">WhatsApp AutoDesk</Link></li>
+              <li><Link href="/industrial-ai">Industrial AI Solutions</Link></li>
             </ul>
           </div>
 
