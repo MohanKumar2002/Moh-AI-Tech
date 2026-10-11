@@ -45,7 +45,7 @@ export default function Industries() {
   ];
 
   return (
-    <main className="min-h-screen bg-[var(--bg)] pt-32 pb-12 flex flex-col justify-between">
+    <main className="min-h-screen bg-[var(--bg)] pt-28 pb-16">
       <div className="inner" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 5%' }}>
         
         {/* Header Section */}
@@ -62,7 +62,7 @@ export default function Industries() {
         {/* Sectors Grid */}
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '32px', marginBottom: '80px' }}>
           {sectors.map((sec, idx) => (
-            <div key={idx} className="card fu" style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: '16px', padding: '36px', boxShadow: 'var(--shadow)', display: 'flex', flexDirection: 'column', gap: '16px' }}>
+            <div key={idx} className="card" style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: '16px', padding: '36px', boxShadow: 'var(--shadow)', display: 'flex', flexDirection: 'column', gap: '16px' }}>
               <div style={{ background: 'var(--bg2)', width: '56px', height: '56px', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 {sec.icon}
               </div>

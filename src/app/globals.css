@@ -56,12 +56,8 @@
   --logo-glow:   0 0 30px rgba(34, 211, 238, 0.25), 0 0 60px rgba(168, 85, 247, 0.15);
 }
 
-/* ── Logo Identity Typography & Accent Utilities ── */
 .grad-text {
-  background: var(--logo-grad);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--text);
   display: inline-block;
 }
 
@@ -717,14 +713,14 @@ footer {
 
 /* ===== ANIMATIONS ===== */
 .fu {
-  opacity: 0; transform: translateY(24px);
-  transition: opacity .55s ease, transform .55s ease;
+  opacity: 1 !important;
+  transform: none !important;
+  transition: opacity .3s ease, transform .3s ease;
 }
-.fu.vis { opacity: 1; transform: translateY(0); }
-.fu.d1 { transition-delay: .08s; }
-.fu.d2 { transition-delay: .16s; }
-.fu.d3 { transition-delay: .24s; }
-.fu.d4 { transition-delay: .32s; }
+.fu.vis {
+  opacity: 1 !important;
+  transform: none !important;
+}
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 1150px) {
@@ -783,22 +779,16 @@ footer {
 ::-webkit-scrollbar-track { background: var(--bg); }
 ::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 3px; }
 
-/* === BRAND GRADIENT UTILITIES === */
+/* === BRAND TYPOGRAPHY === */
 .grad-text {
-  background: var(--grad);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--text);
 }
 .logo img { filter: drop-shadow(0 1px 2px rgba(44,31,168,0.10)); }
 [data-theme="dark"] .logo img { filter: brightness(1.08) drop-shadow(0 1px 4px rgba(124,111,255,0.18)); }
 
-/* Override: hero h1 em gets brand gradient */
+/* Override: hero h1 em gets clean brand accent */
 .hero-h1 em {
-  background: var(--grad);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--accent);
   font-style: normal;
 }
 

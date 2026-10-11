@@ -662,11 +662,11 @@ export default function Home() {
       {/* ===== FOUNDER CORNER ===== */}
       <section id="founder" style={{ background: 'var(--bg)', padding: '80px 0', borderTop: '1px solid var(--border)' }}>
         <div className="inner" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 5%' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.8fr', gap: '48px', alignItems: 'center' }} className="fu">
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.8fr', gap: '48px', alignItems: 'center' }}>
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px' }}>
               <div style={{ width: '160px', height: '160px', borderRadius: '50%', background: 'var(--bg2)', border: '4px solid var(--border2)', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
                 <Image 
-                  src="/images/general/founder.jpg" 
+                  src="/images/mohan.jpg" 
                   alt="Mohan Kumar S" 
                   width={160} 
                   height={160} 

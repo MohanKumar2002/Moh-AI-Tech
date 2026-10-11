@@ -45,7 +45,7 @@ export default function IndustrialAI() {
   ];
 
   return (
-    <main className="min-h-screen bg-[var(--bg)] pt-32 pb-12 flex flex-col justify-between">
+    <main className="min-h-screen bg-[var(--bg)] pt-28 pb-16">
       <div className="inner" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 5%' }}>
         
         {/* Hero Section */}

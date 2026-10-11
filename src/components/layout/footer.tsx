@@ -18,7 +18,7 @@ export default function Footer() {
                 className="h-auto w-auto"
                 priority
               />
-              <span className="grad-text logo-text" style={{ marginLeft: "8px", fontWeight: "800", fontSize: "18px", letterSpacing: "1px", whiteSpace: "nowrap" }}>MOH-AI TECH</span>
+              <span className="logo-text" style={{ marginLeft: "10px", fontWeight: "800", fontSize: "17px", letterSpacing: "0.5px", color: "var(--text)", whiteSpace: "nowrap" }}>MOH-AI TECH</span>
             </Link>
             <p className="footer-tagline">
               Building practical AI systems from Tamil Nadu for businesses globally.

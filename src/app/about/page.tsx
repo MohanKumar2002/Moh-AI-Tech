@@ -10,7 +10,7 @@ export const metadata = {
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen bg-[var(--bg)] pt-32 pb-12 flex flex-col justify-between">
+    <main className="min-h-screen bg-[var(--bg)] pt-28 pb-16">
       <div className="inner" style={{ maxWidth: '900px', margin: '0 auto', padding: '0 5%' }}>
         <div style={{ textAlign: 'center', marginBottom: '48px' }}>
           <span className="tag">Our Story</span>
@@ -34,7 +34,7 @@ export default function AboutPage() {
           <div style={{ display: 'grid', gridTemplateColumns: '150px 1fr', gap: '24px', alignItems: 'center' }}>
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
               <Image 
-                src="/images/general/founder.jpg" 
+                src="/images/mohan.jpg" 
                 alt="Mohan Kumar S" 
                 width={120} 
                 height={120} 

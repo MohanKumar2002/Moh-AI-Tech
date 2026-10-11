@@ -43,7 +43,7 @@ export default function Technology() {
   ];
 
   return (
-    <main className="min-h-screen bg-[var(--bg)] pt-32 pb-12 flex flex-col justify-between">
+    <main className="min-h-screen bg-[var(--bg)] pt-28 pb-16">
       <div className="inner" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 5%' }}>
         
         {/* Header Section */}
@@ -60,7 +60,7 @@ export default function Technology() {
         {/* Tech Stack Cards */}
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px', marginBottom: '80px' }}>
           {stack.map((tech, idx) => (
-            <div key={idx} className="card fu" style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: '12px', padding: '32px', boxShadow: 'var(--shadow)' }}>
+            <div key={idx} className="card" style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: '12px', padding: '32px', boxShadow: 'var(--shadow)' }}>
               <div style={{ background: 'var(--bg2)', width: '56px', height: '56px', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '20px' }}>
                 {tech.icon}
               </div>

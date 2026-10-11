@@ -23,7 +23,7 @@ export function Navbar() {
     <nav>
       <Link href="/" className="logo">
         <Image src="/logo.png" alt="Moh-AI Tech Logo" width={42} height={42} className="logo-img" style={{ height: "42px", width: "auto", display: "block", objectFit: "contain" }} priority />
-        <span className="grad-text logo-text" style={{ marginLeft: "8px", fontWeight: "800", fontSize: "18px", letterSpacing: "1px", whiteSpace: "nowrap" }}>MOH-AI TECH</span>
+        <span className="logo-text" style={{ marginLeft: "10px", fontWeight: "800", fontSize: "18px", letterSpacing: "0.5px", color: "var(--text)", whiteSpace: "nowrap" }}>MOH-AI TECH</span>
       </Link>
       <ul className={`nav-center ${menuOpen ? 'mobile-open' : ''}`} id="nav-links">
         <li><Link href="/" onClick={() => setMenuOpen(false)}>{t('nav_home')}</Link></li>
