@@ -26,7 +26,7 @@ export default function ProductCard({ product }: ProductCardProps) {
         <div className="relative w-full aspect-[4/3] overflow-hidden">
           <Image
             src={product.imageUrl}
-            alt={product.name[language]}
+            alt={product.name[language] || product.name['en'] || ''}
             fill
             className="object-cover"
             data-ai-hint={product.dataAiHint || 'technology product'}
@@ -37,15 +37,15 @@ export default function ProductCard({ product }: ProductCardProps) {
       <CardHeader>
         <div className="flex items-center gap-3 mb-2">
           {IconComponent && <IconComponent className="h-8 w-8 text-primary" />}
-          <CardTitle className="font-headline text-2xl">{product.name[language]}</CardTitle>
+          <CardTitle className="font-headline text-2xl">{product.name[language] || product.name['en'] || ''}</CardTitle>
         </div>
-        <CardDescription>{product.description[language]}</CardDescription>
+        <CardDescription>{product.description[language] || product.description['en'] || ''}</CardDescription>
       </CardHeader>
 
       <CardContent className="flex-grow">
         <h4 className="font-semibold mb-2 text-foreground">{t({ en: "Key Features:", ta: "முக்கிய அம்சங்கள்:" })}</h4>
         <ul className="space-y-1.5 text-sm text-muted-foreground">
-          {product.keyFeatures[language].map((feature, index) => (
+          {(product.keyFeatures[language] || product.keyFeatures['en'] || []).map((feature, index) => (
             <li key={index} className="flex items-start">
               <CheckCircle className="h-4 w-4 text-accent mr-2 mt-0.5 shrink-0" />
               <span>{feature}</span>

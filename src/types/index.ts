@@ -1,5 +1,11 @@
 import type { Language } from '@/contexts/language-context';
-import type { LucideIcon } from 'lucide-react'; // Keep for potential direct use, but iconName is primary for data
+import type { LucideIcon } from 'lucide-react';
+
+export interface NavLinkItem {
+  href: string;
+  labelTranslations: Record<string, string>;
+  iconName?: string;
+}
 
 export interface BlogPostMapping {
   id: string;
@@ -8,7 +14,7 @@ export interface BlogPostMapping {
   date: string;
   author: string;
   excerpt: string;
-  content: string; // Should be HTML string
+  content: string;
   imageUrl?: string;
   dataAiHint?: string;
   tags?: string[];
@@ -22,7 +28,7 @@ export interface CareerOpening {
   department: string;
   description: string;
   requirements: string[];
-  postedDate: string; // ISO date string
+  postedDate: string;
 }
 
 export interface SubscriptionOption {
@@ -32,18 +38,16 @@ export interface SubscriptionOption {
 
 export interface Product {
   id: string;
-  name: Record<Language, string>;
-  description: Record<Language, string>;
-  keyFeatures: Record<Language, string[]>;
+  name: Record<string, string>;
+  description: Record<string, string>;
+  keyFeatures: Record<string, string[]>;
   iconName?: string;
   imageUrl?: string;
   dataAiHint?: string;
   subscriptionOptions?: SubscriptionOption[];
-
-  // ✅ NEW: Full flow and stack content
   details?: {
-    explanation?: Record<Language, string>;
-    stack?: Record<Language, string>;
+    explanation?: Record<string, string>;
+    stack?: Record<string, string>;
   };
 }
 
@@ -58,14 +62,14 @@ export interface User {
 
 export interface TeamMember {
   id: string;
-  name: Record<Language, string>;
-  role: Record<Language, string>;
-  bio: Record<Language, string>;
-  imageUrl: string;
+  name: string | Record<string, string>;
+  role: Record<string, string>;
+  bio: Record<string, string>;
+  imageUrl?: string;
   dataAiHint?: string;
-}
-
-export interface NavLinkItem {
-  href: string;
-  labelTranslations: Record<Language, string>;
+  socialLinks?: {
+    linkedin?: string;
+    twitter?: string;
+    github?: string;
+  };
 }

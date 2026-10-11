@@ -216,7 +216,7 @@ export function BookingForm() {
                 You have successfully sent your message, <strong>{formData.name.split(' ')[0]}</strong>.<br/><br/>
                 Our team is reviewing your request and will connect with you very soon!
               </p>
-              <button onClick={() => { setStep(1); setFormData({name:'',company:'',email:'',country:'',service:'',message:''}); }} className="btn-ghost" style={{ border: '1px solid var(--border)' }}>Send another</button>
+              <button onClick={() => { setStep(1); setFormData({name:'',company:'',email:'',country:'',service:'',infrastructure:'',message:''}); }} className="btn-ghost" style={{ border: '1px solid var(--border)' }}>Send another</button>
             </motion.div>
           )}
 
@@ -233,7 +233,7 @@ export function BookingForm() {
                 <br /><br />
                 A calendar invitation has been sent to <strong>{formData.email}</strong>.
               </p>
-              <button onClick={() => { setStep(1); setFormData({name:'',company:'',email:'',country:'',service:'',message:''}); setSelectedDate(undefined); setSelectedTime(''); }} className="btn-ghost" style={{ border: '1px solid var(--border)' }}>Done</button>
+              <button onClick={() => { setStep(1); setFormData({name:'',company:'',email:'',country:'',service:'',infrastructure:'',message:''}); setSelectedDate(undefined); setSelectedTime(''); }} className="btn-ghost" style={{ border: '1px solid var(--border)' }}>Done</button>
             </motion.div>
           )}
 
