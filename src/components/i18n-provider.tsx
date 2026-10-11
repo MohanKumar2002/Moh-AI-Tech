@@ -6,6 +6,7 @@ const TR: Record<string, Record<string, string>> = {
   en: {
     nav_home: "Home",
     nav_products: "Products",
+    nav_tools: "Tools & ROI",
     nav_industrial: "Industrial AI",
     nav_product_eng: "AI Product Engineering",
     nav_industries: "Industries",
@@ -45,6 +46,7 @@ const TR: Record<string, Record<string, string>> = {
   ta: {
     nav_home: "முகப்பு",
     nav_products: "தயாரிப்புகள்",
+    nav_tools: "கருவிகள் & ROI",
     nav_industrial: "தொழில்துறை AI",
     nav_product_eng: "AI தயாரிப்பு பொறியியல்",
     nav_industries: "துறைகள்",
@@ -84,6 +86,7 @@ const TR: Record<string, Record<string, string>> = {
   de: {
     nav_home: "Startseite",
     nav_products: "Produkte",
+    nav_tools: "Tools & ROI",
     nav_industrial: "Industrielle KI",
     nav_product_eng: "KI-Produktentwicklung",
     nav_industries: "Branchen",

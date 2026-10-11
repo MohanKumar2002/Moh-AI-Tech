@@ -42,6 +42,16 @@ export default function Footer() {
           </div>
 
           <div>
+            <div className="footer-col-title">Free Tools & Hubs</div>
+            <ul className="footer-links">
+              <li><Link href="/tools/quickinvoice">Free Invoice to Excel</Link></li>
+              <li><Link href="/tools/roi-calculator">Enterprise ROI Calculator</Link></li>
+              <li><Link href="/solutions/coimbatore-pump-valve-inspection">Coimbatore Industrial AI</Link></li>
+              <li><Link href="/solutions/chennai-auto-components">Chennai Automotive AI</Link></li>
+            </ul>
+          </div>
+
+          <div>
             <div className="footer-col-title">Company</div>
             <ul className="footer-links">
               <li><Link href="/about">About Us</Link></li>

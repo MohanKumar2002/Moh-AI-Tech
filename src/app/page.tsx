@@ -202,6 +202,98 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ===== FREE TOOLS & ROI ENGINES ===== */}
+      <section id="free-tools" style={{ background: 'var(--bg)', padding: '72px 0', borderTop: '1px solid var(--border)' }}>
+        <div className="inner" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 5%' }}>
+          <div style={{ textAlign: 'center', marginBottom: '40px' }}>
+            <span className="tag" style={{ background: 'rgba(2, 132, 199, 0.08)', color: '#0284c7' }}>
+              Instant Engineering Utilities
+            </span>
+            <h2 className="h2" style={{ fontFamily: 'var(--syne)', fontWeight: '800', letterSpacing: '-1px', color: 'var(--text)', margin: '8px 0' }}>
+              Free Tools & Financial Impact Calculators
+            </h2>
+            <p className="lead" style={{ margin: '8px auto 0', maxWidth: '640px', color: 'var(--muted)' }}>
+              Explore our browser-based utilities or model your plant’s defect recovery and audit hours before booking a pilot.
+            </p>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '24px' }}>
+            
+            {/* Tool 1: QuickInvoice */}
+            <div style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: '16px', padding: '36px', boxShadow: 'var(--shadow)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+              <div>
+                <div style={{ display: 'inline-flex', padding: '4px 10px', borderRadius: '6px', background: 'rgba(2, 132, 199, 0.1)', color: '#0284c7', fontSize: '11px', fontWeight: '800', marginBottom: '16px', textTransform: 'uppercase' }}>
+                  ⚡ Free Web Utility
+                </div>
+                <h3 style={{ fontFamily: 'var(--syne)', fontSize: '20px', fontWeight: '800', color: 'var(--text)', marginBottom: '8px' }}>
+                  QuickInvoice OCR to Excel & Tally
+                </h3>
+                <p style={{ fontSize: '14px', color: 'var(--muted)', lineHeight: '1.6', marginBottom: '20px' }}>
+                  Drag & drop any supplier invoice PDF or image. Extracts GSTIN, line items, and tax splits into clean Excel and Tally XML instantly with zero data retention.
+                </p>
+              </div>
+              <Link 
+                href="/tools/quickinvoice" 
+                style={{ background: 'var(--accent)', color: '#fff', padding: '12px 20px', borderRadius: '8px', fontWeight: '700', fontSize: '14px', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}
+              >
+                Launch Free Invoice Extractor <ArrowRight size={15} />
+              </Link>
+            </div>
+
+            {/* Tool 2: ROI Calculator */}
+            <div style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: '16px', padding: '36px', boxShadow: 'var(--shadow)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+              <div>
+                <div style={{ display: 'inline-flex', padding: '4px 10px', borderRadius: '6px', background: 'rgba(16, 185, 129, 0.1)', color: '#10b981', fontSize: '11px', fontWeight: '800', marginBottom: '16px', textTransform: 'uppercase' }}>
+                  📊 Financial Impact Modeler
+                </div>
+                <h3 style={{ fontFamily: 'var(--syne)', fontSize: '20px', fontWeight: '800', color: 'var(--text)', marginBottom: '8px' }}>
+                  Dual Enterprise ROI Calculator
+                </h3>
+                <p style={{ fontSize: '14px', color: 'var(--muted)', lineHeight: '1.6', marginBottom: '20px' }}>
+                  Simulate scrap loss savings for factory conveyor lines (VisionInspect) or ITC protection and reconciliation hours gained for CA firms (TaxFlow).
+                </p>
+              </div>
+              <Link 
+                href="/tools/roi-calculator" 
+                style={{ background: 'var(--card)', color: 'var(--text)', border: '1px solid var(--border2)', padding: '12px 20px', borderRadius: '8px', fontWeight: '700', fontSize: '14px', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}
+              >
+                Calculate Plant & Tax ROI <ArrowRight size={15} />
+              </Link>
+            </div>
+
+            {/* Tool 3: Regional Hubs */}
+            <div style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: '16px', padding: '36px', boxShadow: 'var(--shadow)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+              <div>
+                <div style={{ display: 'inline-flex', padding: '4px 10px', borderRadius: '6px', background: 'rgba(124, 58, 237, 0.1)', color: '#7c3aed', fontSize: '11px', fontWeight: '800', marginBottom: '16px', textTransform: 'uppercase' }}>
+                  🏭 Tamil Nadu Hubs
+                </div>
+                <h3 style={{ fontFamily: 'var(--syne)', fontSize: '20px', fontWeight: '800', color: 'var(--text)', marginBottom: '8px' }}>
+                  Industrial Cluster Solutions
+                </h3>
+                <p style={{ fontSize: '14px', color: 'var(--muted)', lineHeight: '1.6', marginBottom: '20px' }}>
+                  Tailored on-premise inspection architectures for Coimbatore foundries & pumps and Chennai Tier 1/2 automotive component corridors.
+                </p>
+              </div>
+              <div style={{ display: 'flex', gap: '8px' }}>
+                <Link 
+                  href="/solutions/coimbatore-pump-valve-inspection" 
+                  style={{ flex: 1, textAlign: 'center', padding: '10px 8px', background: 'var(--bg2)', border: '1px solid var(--border)', borderRadius: '8px', fontSize: '12px', fontWeight: '700', color: 'var(--text)', textDecoration: 'none' }}
+                >
+                  Coimbatore Hub →
+                </Link>
+                <Link 
+                  href="/solutions/chennai-auto-components" 
+                  style={{ flex: 1, textAlign: 'center', padding: '10px 8px', background: 'var(--bg2)', border: '1px solid var(--border)', borderRadius: '8px', fontSize: '12px', fontWeight: '700', color: 'var(--text)', textDecoration: 'none' }}
+                >
+                  Chennai Auto →
+                </Link>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
       {/* ===== WHO WE WORK WITH COMPARISON ===== */}
       <section id="who-we-work-with" style={{ background: 'var(--bg2)', padding: '80px 0', borderTop: '1px solid var(--border)' }}>
         <div className="inner" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 5%' }}>
@@ -217,7 +309,7 @@ export default function Home() {
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '32px' }}>
             {/* Target A: Industrial AI */}
-            <div className="card fu" style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: '16px', padding: '36px', boxShadow: 'var(--shadow)' }}>
+            <div className="card" style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: '16px', padding: '36px', boxShadow: 'var(--shadow)' }}>
               <h3 style={{ fontSize: '20px', fontWeight: '800', color: 'var(--text)', borderBottom: '1px solid var(--border)', paddingBottom: '16px', marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '8px' }}>
                 <Factory size={20} className="text-blue-600" style={{ color: 'var(--accent-l)' }} /> For Industrial Sectors
               </h3>
@@ -247,7 +339,7 @@ export default function Home() {
             </div>
 
             {/* Target B: AI Product Engineering */}
-            <div className="card fu" style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: '16px', padding: '36px', boxShadow: 'var(--shadow)' }}>
+            <div className="card" style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: '16px', padding: '36px', boxShadow: 'var(--shadow)' }}>
               <h3 style={{ fontSize: '20px', fontWeight: '800', color: 'var(--text)', borderBottom: '1px solid var(--border)', paddingBottom: '16px', marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '8px' }}>
                 <Bot size={20} style={{ color: 'var(--text)' }} /> For Business & Tech Teams
               </h3>

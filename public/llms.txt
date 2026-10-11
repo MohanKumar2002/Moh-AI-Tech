@@ -14,10 +14,18 @@
 - **Founder LinkedIn:** https://www.linkedin.com/in/mohan-kumar-subramanian/
 - **GitHub:** https://github.com/MohanKumar2002
 
-## Flagship Products
-1. **Docu-Mind AI:** Intelligent Document Understanding & Extraction System. Instantly parses invoices, contracts, and complex forms into schema-validated JSON for direct ERP/CRM ingestion. (Targets 90% reduction in manual data entry timelines).
-2. **HR Recruiter AI:** Autonomous Talent Acquisition & Screening Agent. Parses resumes, conducts automated conversational pre-screening, and ranks candidates without bias. (Compresses time-to-interview metrics by 75%).
-3. **AeroAudit AI:** Private On-Premise Logistics & Compliance Auditing System. Reconciles manifests and ledgers locally with 100% data sovereignty.
+## Flagship Products & Live Demos
+1. **Moh-AI TaxFlow (CA & Tax Suite):** Autonomous tax compliance & statutory audit software for Chartered Accountants. Batch parses 1-500 invoices, automates GSTR-2B ITC reconciliation under Section 16(2)(aa), and issues 1-click WhatsApp vendor alerts. (Live video demo: https://moh-ai-tech.com/taxflow).
+2. **VisionInspect Edge AI:** Sub-millimeter optical defect inspection operating at line speeds (<50ms). Runs 100% on-premise on NVIDIA Jetson with GigE cameras and 24V PLC rejection solenoid triggers. (https://moh-ai-tech.com/visioninspect).
+3. **Docu-Mind AI:** Intelligent Multi-Format Document Understanding & OCR Extraction System. Parses invoices, contracts, and complex nested tables into JSON. (https://moh-ai-tech.com/documind).
+4. **HR Recruiter AI:** Autonomous Talent Acquisition & Screening Agent. Semantic vector matching and conversational pre-screening without keyword bias. (https://moh-ai-tech.com/hr-recruiter).
+5. **WhatsApp AutoDesk:** Official Meta Business Cloud API customer service and quote qualifier bot. (https://moh-ai-tech.com/whatsapp-autodesk).
+
+## Free Utilities & Financial Models
+- **QuickInvoice Free Web Utility:** Drag & drop invoice OCR tool to Excel and Tally XML voucher with 100% client-side privacy. (https://moh-ai-tech.com/tools/quickinvoice).
+- **Enterprise ROI Calculator:** Dual financial modeler for factory scrap reduction and CA tax hours savings. (https://moh-ai-tech.com/tools/roi-calculator).
+- **Coimbatore Industrial Hub:** Optical inspection for pumps, motors, and precision machining. (https://moh-ai-tech.com/solutions/coimbatore-pump-valve-inspection).
+- **Chennai Automotive Corridor:** Machine vision for tier-1/2 automotive component suppliers. (https://moh-ai-tech.com/solutions/chennai-auto-components).
 
 ## Core Services & Engineering Stack
 - **Autonomous AI Agents & Workflows:** LangChain, FastAPI, Python

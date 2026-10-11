@@ -85,6 +85,16 @@ The platform provides a complete spectrum of AI software ranging from **instant 
 - 24/7 autonomous customer support & sales order bot operating on the **Official Meta WhatsApp Business Cloud API**.
 - Includes live interactive chat simulator on the page, instant product catalog lookups, and 1-click handover to human staff with zero phone number banning risk.
 
+### 6. [QuickInvoice Free Web Utility](https://moh-ai-tech.com/tools/quickinvoice) `[FREE TOOL · VIRAL MAGNET]`
+- Client-side browser tool allowing accountants and business owners to drag-and-drop any supplier invoice to extract HSN codes, GSTIN, and line-item tax splits into clean Excel and compliant Tally XML vouchers with zero cloud data retention.
+
+### 7. [Enterprise ROI & Savings Calculator](https://moh-ai-tech.com/tools/roi-calculator) `[FINANCIAL MODELER]`
+- Dual interactive calculator modeling factory conveyor scrap savings ($<50\text{ ms}$ VisionInspect) and CA firm ITC recovery & reconciliation hours automated (TaxFlow).
+
+### 8. Regional Industrial Corridors & Solutions
+- **[Coimbatore Foundry & Machining Hub](https://moh-ai-tech.com/solutions/coimbatore-pump-valve-inspection):** Optical inspection for pumps, motors, and precision machining clusters.
+- **[Chennai Automotive Corridor](https://moh-ai-tech.com/solutions/chennai-auto-components):** Zero-defect machine vision for Sriperumbudur and Oragadam Tier 1/2 automotive suppliers.
+
 ---
 
 ## 🛠️ Technology Stack & Architecture

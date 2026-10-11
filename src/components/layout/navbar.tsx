@@ -28,6 +28,7 @@ export function Navbar() {
       <ul className={`nav-center ${menuOpen ? 'mobile-open' : ''}`} id="nav-links">
         <li><Link href="/" onClick={() => setMenuOpen(false)}>{t('nav_home')}</Link></li>
         <li><Link href="/products" onClick={() => setMenuOpen(false)}>{t('nav_products') || 'Products'}</Link></li>
+        <li><Link href="/tools/quickinvoice" onClick={() => setMenuOpen(false)}>{t('nav_tools') || 'Tools & ROI'}</Link></li>
         <li><Link href="/industrial-ai" onClick={() => setMenuOpen(false)}>{t('nav_industrial')}</Link></li>
         <li><Link href="/ai-product-engineering" onClick={() => setMenuOpen(false)}>{t('nav_product_eng')}</Link></li>
         <li><Link href="/industries" onClick={() => setMenuOpen(false)}>{t('nav_industries')}</Link></li>
