@@ -15,13 +15,11 @@ import {
   Cpu,
   Layers
 } from 'lucide-react';
-import { Navbar } from '@/components/layout/navbar';
 import Footer from '@/components/layout/footer';
 
 export default function ProductsPage() {
   return (
-    <main style={{ minHeight: '100vh', background: 'var(--bg)', color: 'var(--text)' }}>
-      <Navbar />
+    <div style={{ minHeight: '100vh', background: 'var(--bg)', color: 'var(--text)' }}>
 
       {/* Header */}
       <section style={{ padding: '140px 5% 60px', textAlign: 'center', background: 'radial-gradient(ellipse at 50% 0%, rgba(2, 132, 199, 0.1) 0%, transparent 70%)', borderBottom: '1px solid var(--border)' }}>
@@ -64,8 +62,8 @@ export default function ProductsPage() {
                   playsInline
                   style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                 />
-                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 60%)' }} />
-                <div style={{ position: 'absolute', bottom: '16px', left: '16px', color: '#fff', fontSize: '13px', fontWeight: '700', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 60%)', pointerEvents: 'none' }} />
+                <div style={{ position: 'absolute', bottom: '16px', left: '16px', color: '#fff', fontSize: '13px', fontWeight: '700', display: 'flex', alignItems: 'center', gap: '8px', pointerEvents: 'none' }}>
                   <Play size={14} fill="#fff" /> Includes 3-Minute Live Interactive Demo
                 </div>
               </div>
@@ -93,10 +91,10 @@ export default function ProductsPage() {
                   </ul>
                 </div>
 
-                <div style={{ marginTop: 'auto', display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+                <div style={{ marginTop: 'auto', display: 'flex', gap: '12px', flexWrap: 'wrap', position: 'relative', zIndex: 5 }}>
                   <Link 
                     href="/taxflow"
-                    style={{ flex: 1, textAlign: 'center', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '8px', background: 'var(--accent)', color: '#fff', padding: '12px 20px', borderRadius: '10px', fontWeight: '700', fontSize: '14px', textDecoration: 'none' }}
+                    style={{ flex: 1, textAlign: 'center', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '8px', background: 'var(--accent)', color: '#fff', padding: '12px 20px', borderRadius: '10px', fontWeight: '700', fontSize: '14px', textDecoration: 'none', cursor: 'pointer', transition: 'all 0.2s' }}
                   >
                     View Product Page & Demo
                     <ArrowRight size={16} />
@@ -104,7 +102,7 @@ export default function ProductsPage() {
 
                   <Link 
                     href="/contact?service=taxflow"
-                    style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', background: 'var(--bg2)', color: 'var(--text)', border: '1px solid var(--border)', padding: '12px 18px', borderRadius: '10px', fontWeight: '600', fontSize: '14px', textDecoration: 'none' }}
+                    style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', background: 'var(--bg2)', color: 'var(--text)', border: '1px solid var(--border)', padding: '12px 18px', borderRadius: '10px', fontWeight: '600', fontSize: '14px', textDecoration: 'none', cursor: 'pointer', transition: 'all 0.2s' }}
                   >
                     Book Pilot
                   </Link>
@@ -248,6 +246,6 @@ export default function ProductsPage() {
       </section>
 
       <Footer />
-    </main>
+    </div>
   );
 }

@@ -2,14 +2,11 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { Navbar } from '@/components/layout/navbar';
 import Footer from '@/components/layout/footer';
 
 export default function PlaybookEarnPage() {
   return (
     <>
-      <Navbar />
-      
       <main style={{ paddingTop: '100px', backgroundColor: 'var(--bg)', color: 'var(--text)', minHeight: '100vh' }}>
         <section style={{ maxWidth: '800px', margin: '0 auto', padding: '40px 20px 80px 20px', lineHeight: '1.8' }}>
           

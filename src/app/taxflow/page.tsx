@@ -28,7 +28,6 @@ import {
   HelpCircle,
   ExternalLink
 } from 'lucide-react';
-import { Navbar } from '@/components/layout/navbar';
 import Footer from '@/components/layout/footer';
 
 export default function TaxFlowProductPage() {
@@ -79,8 +78,7 @@ export default function TaxFlowProductPage() {
   };
 
   return (
-    <main style={{ minHeight: '100vh', background: 'var(--bg)', color: 'var(--text)' }}>
-      <Navbar />
+    <div style={{ minHeight: '100vh', background: 'var(--bg)', color: 'var(--text)' }}>
 
       {/* ── HERO SECTION ── */}
       <section style={{ padding: '140px 5% 70px', background: 'radial-gradient(ellipse at 50% 0%, rgba(14, 165, 233, 0.12) 0%, transparent 70%)', borderBottom: '1px solid var(--border)' }}>
@@ -581,6 +579,6 @@ export default function TaxFlowProductPage() {
       </section>
 
       <Footer />
-    </main>
+    </div>
   );
 }
